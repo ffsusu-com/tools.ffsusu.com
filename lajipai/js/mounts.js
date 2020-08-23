@@ -1,4 +1,4 @@
-﻿function mounts() {
+function mounts() {
     var infolist = [];
     //读取
     $(function () {

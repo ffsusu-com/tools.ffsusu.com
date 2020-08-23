@@ -1,5 +1,5 @@
 function checklist() {    
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {        
         $('#left').remove();
         $('#right').remove();
@@ -19,8 +19,8 @@ function checklist() {
         , '<ul id="page_item"></ul>'
         );        
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li style="width: 150px;"><a><img src="image/³É¾Í³ÆºÅ.png"><div></div></a><p>×¼±¸ÁĞ±í</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li style="width: 150px;"><a><img src="image/æˆå°±ç§°å·.png"><div></div></a><p>å‡†å¤‡åˆ—è¡¨</p></li>'
     );
         $.ajax({
             url: './txt/checklisttop.txt',
@@ -29,7 +29,7 @@ function checklist() {
                 $('#page_explain3').append(data);
             }
         });
-        $('#page_explain2').append('<li><strong><span style="color:#DD7907;">¡ùÇë×¢Òâ¿ÉÄÜ»á´æÔÚ¾çÍ¸µÄÇé¿ö£¬½éÒâÉ÷ÓÃ</span></strong></li>');
+        $('#page_explain2').append('<li><strong><span style="color:#DD7907;">â€»è¯·æ³¨æ„å¯èƒ½ä¼šå­˜åœ¨å‰§é€çš„æƒ…å†µï¼Œä»‹æ„æ…ç”¨</span></strong></li>');
         checklistload("checklist4.5");
         open("page");
     });

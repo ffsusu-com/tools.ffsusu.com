@@ -1,6 +1,6 @@
 function fateshop() {
     var infolist = [];
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
         $('#left').remove();
         $('#right').remove();
@@ -18,11 +18,11 @@ function fateshop() {
          , '<ul id="page_item"  style="min-height: 540px;"><li id="page_item_left"><ul style="top:0px;min-height: 400px;" id="fateitem"></ul></li><li style="padding-top: 20px;float: left;padding-left: 0px;" id="page_item_right"><ul  id="fateshop"></ul></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li style="width: 160px;"><a><img src="image/Î£ÃüÉÌÈË.png"><div></div></a><p>Î£ÃüÉÌÈË</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li style="width: 160px;"><a><img src="image/å±å‘½å•†äºº.png"><div></div></a><p>å±å‘½å•†äºº</p></li>'
     );
         $.ajax({
-            url: './csv/Î£ÃüÉÌÈË.csv',
+            url: './csv/å±å‘½å•†äºº.csv',
             success: function (data) {
                 Page.setTotalPageNums();
                 Page.setClickPageNum();
@@ -31,19 +31,19 @@ function fateshop() {
         });
         open("page");
     });
-    //·ÖÒ³
+    //åˆ†é¡µ
     var Page = {
-        //Ã¿Ò³ÄÚÈİÊıÄ¿    
+        //æ¯é¡µå†…å®¹æ•°ç›®    
         setTotalPageNums: function () {
             var insert = '';
-            insert += '<a style="width:150px;" class="off">À×¿ËÀ¼µÂ</a>';
-            insert += '<a style="width:150px;" class="off">°²ÄÂ¡¤°¬À¼</a>';
-            insert += '<a style="width:150px;" class="off">ÒÁ¶ûÃÀ¸ñ</a>';
-            insert += '<a style="width:150px;" class="off">À­¿­Ìá¿¨´óÉ­ÁÖ</a>';
-            insert += '<a style="width:150px;" class="off">çæÂ¶Î÷ÑÇµº</a>';
-            insert += '<a style="width:150px;" class="off">ºÚ·çº£</a>';
-            insert += '<a style="width:150px;" class="off">Ë®¾§¶¼</a>';
-            insert += '<a style="width:150px;" class="off">ÓÎÄ©°î</a>';
+            insert += '<a style="width:150px;" class="off">é›·å…‹å…°å¾·</a>';
+            insert += '<a style="width:150px;" class="off">å®‰ç©†ãƒ»è‰¾å…°</a>';
+            insert += '<a style="width:150px;" class="off">ä¼Šå°”ç¾æ ¼</a>';
+            insert += '<a style="width:150px;" class="off">æ‹‰å‡¯æå¡å¤§æ£®æ—</a>';
+            insert += '<a style="width:150px;" class="off">ç‚éœ²è¥¿äºšå²›</a>';
+            insert += '<a style="width:150px;" class="off">é»‘é£æµ·</a>';
+            insert += '<a style="width:150px;" class="off">æ°´æ™¶éƒ½</a>';
+            insert += '<a style="width:150px;" class="off">æ¸¸æœ«é‚¦</a>';
             $("#pagenum").append(insert);
             Page.setClickPageNum();
         },
@@ -80,7 +80,7 @@ function fateshop() {
 function fateshopexplain(name) {
     var csvList;
     var insert1 = '';
-    var insert2 = '<ul style="top:0px;"><li style="width:250px;">ÎïÆ·</li><li style="width:100px;">µÈ¼¶</li><li style="width:100px;">»õ±Ò</li></ul>';
+    var insert2 = '<ul style="top:0px;"><li style="width:250px;">ç‰©å“</li><li style="width:100px;">ç­‰çº§</li><li style="width:100px;">è´§å¸</li></ul>';
     var target1 = '#fateshop';
     var target2 = '#fateitem';
     $('a.btn').click(function () {
@@ -88,7 +88,7 @@ function fateshopexplain(name) {
         $(this).find('.bd').addClass('Selected');
     });
     $.ajax({
-        url: './csv/Î£ÃüÉÌÈË.csv',
+        url: './csv/å±å‘½å•†äºº.csv',
         success: function (data) {
 
             csvList = $.csv()(data);

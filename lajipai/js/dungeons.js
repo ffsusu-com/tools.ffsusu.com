@@ -1,6 +1,6 @@
 function dungeons() {
     var infolist = [];    
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
         var csvList;
         $('#left').remove();
@@ -19,8 +19,8 @@ function dungeons() {
         , '<ul id="page_item"><li id="page_item_left" style="min-height: 560px;width: 500px;border-right: 1px solid rgba(42,42,41,1);box-shadow: 1px 1px 0px rgba(67,67,67,1);"><ul style="width: 500px;top:0px;text-align: center;" id="dungeonstype"></ul><ul style="width: 500px;top:0px;padding-top: 20px;" id="music"></ul></li><li id="page_item_right" style="width: 450px;"></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li style="width: 150px;"><a><img src="image/¸±±¾¿ªÆô.png"><div></div></a><p>¸±±¾¿ªÆô</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li style="width: 150px;"><a><img src="image/å‰¯æœ¬å¼€å¯.png"><div></div></a><p>å‰¯æœ¬å¼€å¯</p></li>'
     );
         $.ajax({
             url: './csv/dungeons.csv',
@@ -44,9 +44,9 @@ function dungeons() {
                     infolist[num] += '<li><a class="btn" onclick="dungeonsexplain(this,' + i + ')" target="_blank"><p>' + csvList[i][2] + '</p></a></li>';
                 }
                 $('#dungeonstype').append(
-                '<li><a style="float:left;width:32px;height: 32px;background-image: url(image/dungeons/ÃÔ¹¬ÌôÕ½.png);margin-right: 20px;margin-left: 10px;" onclick="dungeons(1)" class="on"><div class="bd"></div></a></li>'
-                , '<li><a style="float:left;width:32px;height: 32px;background-image: url(image/dungeons/ÌÖ·¥¼ßÃğÕ½.png);margin-right: 20px;" onclick="dungeons(2)" class="off"><div class="bd"></div></a></li>'
-                , '<li><a style="float:left;width:32px;height: 32px;background-image: url(image/dungeons/´óĞÍÈÎÎñ.png);margin-right: 20px;" onclick="dungeons(3)" class="off"><div class="bd"></div></a></li>'
+                '<li><a style="float:left;width:32px;height: 32px;background-image: url(image/dungeons/è¿·å®«æŒ‘æˆ˜.png);margin-right: 20px;margin-left: 10px;" onclick="dungeons(1)" class="on"><div class="bd"></div></a></li>'
+                , '<li><a style="float:left;width:32px;height: 32px;background-image: url(image/dungeons/è®¨ä¼æ­¼ç­æˆ˜.png);margin-right: 20px;" onclick="dungeons(2)" class="off"><div class="bd"></div></a></li>'
+                , '<li><a style="float:left;width:32px;height: 32px;background-image: url(image/dungeons/å¤§å‹ä»»åŠ¡.png);margin-right: 20px;" onclick="dungeons(3)" class="off"><div class="bd"></div></a></li>'
                 );
                 Page.setTotalPageNums();
                 Page.setClickPageNum();
@@ -56,9 +56,9 @@ function dungeons() {
         open("page");
     });
 
-    //·ÖÒ³
+    //åˆ†é¡µ
     var Page = {
-        //Ã¿Ò³ÄÚÈİÊıÄ¿    
+        //æ¯é¡µå†…å®¹æ•°ç›®    
         setTotalPageNums: function () {
             var insert = '';
             insert += '<a style="float:left;width:200px;height: 54px;background-image: url(image/dungeons/5.0.jpg);margin-right: 20px;margin-left: 10px;" class="off"><p style="top: 55px;position: relative;">5.0<p><div class="bd"></div></a>';
@@ -133,12 +133,12 @@ function dungeonsexplain(obj, i) {
 
             csvList = $.csv()(data);            
             insert += '<img style="float:left;width:376px;height:120px;margin-top: 10px;" src=image/dungeons/' + csvList[i][0] + '.png onload="image(this)">';
-            insert += '<p style="float:left;">¸±±¾£º</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][2] + '</p>';
-            insert += '<p style="float:left;">µÈ¼¶£º</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][8] + '</p>';
-            insert += '<p style="float:left;">×°µÈ£º</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][7] + '</p>';
-            insert += '<p style="float:left;">ÈÎÎñ£º</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][3] + '</p>';
-            csvList[i][4] == "" ? insert += '' : insert += '<p style="float:left;">Î»ÖÃ£º</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][4] + '</p>';
-            csvList[i][5] == "" ? insert += '' : insert += '<p style="float:left;">NPC£º</p><p style="color: #FFC125;font-weight: bold;margin-bottom: 10px;">' + csvList[i][5] + '</p>';
+            insert += '<p style="float:left;">å‰¯æœ¬ï¼š</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][2] + '</p>';
+            insert += '<p style="float:left;">ç­‰çº§ï¼š</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][8] + '</p>';
+            insert += '<p style="float:left;">è£…ç­‰ï¼š</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][7] + '</p>';
+            insert += '<p style="float:left;">ä»»åŠ¡ï¼š</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][3] + '</p>';
+            csvList[i][4] == "" ? insert += '' : insert += '<p style="float:left;">ä½ç½®ï¼š</p><p style="color: #FFC125;font-weight: bold;">' + csvList[i][4] + '</p>';
+            csvList[i][5] == "" ? insert += '' : insert += '<p style="float:left;">NPCï¼š</p><p style="color: #FFC125;font-weight: bold;margin-bottom: 10px;">' + csvList[i][5] + '</p>';
             csvList[i][6] == "" ? insert += '' : insert += '<iframe src="https://www.ffxiv.cn/assets/map/index.html?' + csvList[i][6] + '" style="width: 380px;height: 280px;"></iframe>';
             $(target).append(insert);
         }

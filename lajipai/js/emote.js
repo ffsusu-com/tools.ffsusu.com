@@ -1,6 +1,6 @@
 function emote() {
     var infolist = [];
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
 
         $('#left').remove();
@@ -19,8 +19,8 @@ function emote() {
         , '<ul id="page_item"><li style="width:560px;" id="page_item_left"><div style="width: 100%;" id="pagenum"></div><ul style="top:0px;" id="emote"></ul></li><li style="padding-left: 10px;padding-top: 10px;width:430px;" id="page_item_right"></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li style="width: 150px;"><a><img src="image/±íÇéÒ»ÀÀ.png"><div></div></a><p>±íÇéÒ»ÀÀ</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li style="width: 150px;"><a><img src="image/è¡¨æƒ…ä¸€è§ˆ.png"><div></div></a><p>è¡¨æƒ…ä¸€è§ˆ</p></li>'
     );
         $.ajax({
             url: './txt/pets.txt',
@@ -62,9 +62,9 @@ function emote() {
         });
         open("page");
     });
-    //·ÖÒ³
+    //åˆ†é¡µ
     var Page = {
-        //Ã¿Ò³ÄÚÈİÊıÄ¿
+        //æ¯é¡µå†…å®¹æ•°ç›®
         defaultPerPageNum: 100,
         arr: 0,
         setTotalPageNums: function () {
@@ -127,11 +127,11 @@ function emoteexplain(i) {
             insert += '<img style="float:left;width:192px;height:192px;margin-right: 210px;" src=image/emote/' + csvList[i][6] + '.png onerror=this.src="image/emote/064000.tex.png" onload="image(this)">';
             csvList[i][1] == "" ? insert += '<p style="font-size: 19px;float:left;">' + csvList[i][2] + '</p>' : insert += '<p style="font-size: 19px;float:left;">' + csvList[i][1] + '(' + csvList[i][2] + ')</p>';
             csvList[i][0] == "*" ? insert += '<p style="margin: 4px 0px 0px 0px;">Patch--</p><br>' : insert += '<p style="margin: 4px 0px 0px 0px;">Patch' + csvList[i][0] + '</p><br>';
-            csvList[i][3] == "" ? insert += '' : insert += '<p>ÊôĞÔ£º' + csvList[i][3] + '</p>';
-            insert += '<p>»ñÈ¡·½Ê½£º' + csvList[i][4] + '</p><br>';
-            insert += '<p>´úÂëÖ¸Áî£º' + csvList[i][5] + '</p><br>';
-            csvList[i][7] == "" ? insert += '' : insert += '<p>¶ÔÄ¿±êÊ¹ÓÃ£º' + csvList[i][7] + '</p>';
-            csvList[i][8] == "" ? insert += '' : insert += '<p>ÎŞÄ¿±êÊ¹ÓÃ£º' + csvList[i][8] + '</p>';            
+            csvList[i][3] == "" ? insert += '' : insert += '<p>å±æ€§ï¼š' + csvList[i][3] + '</p>';
+            insert += '<p>è·å–æ–¹å¼ï¼š' + csvList[i][4] + '</p><br>';
+            insert += '<p>ä»£ç æŒ‡ä»¤ï¼š' + csvList[i][5] + '</p><br>';
+            csvList[i][7] == "" ? insert += '' : insert += '<p>å¯¹ç›®æ ‡ä½¿ç”¨ï¼š' + csvList[i][7] + '</p>';
+            csvList[i][8] == "" ? insert += '' : insert += '<p>æ— ç›®æ ‡ä½¿ç”¨ï¼š' + csvList[i][8] + '</p>';            
             $(target).append(insert);
         }
 

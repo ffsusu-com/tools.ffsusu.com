@@ -1,6 +1,6 @@
 function niaojia() {
     var infolist = [];
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
         $('#left').remove();
         $('#right').remove();
@@ -17,16 +17,16 @@ function niaojia() {
         , '<ul id="page_item"  style="min-height: 540px;"><li id="page_item_left" style="border-right: 1px solid rgba(42,42,41,1);box-shadow: 1px 1px 0px rgba(67,67,67,1);"><ul style="padding-left: 40px;top:0px;min-height: 400px;"></ul></li><li style="padding-top: 20px;float: left;padding-left: 0px;" id="page_item_right"><ul id="niaojiaexplain" style="top:7px;padding-left: 20px;"></ul></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li style="width: 160px;"><a><img src="image/Äñ¼×.png"><div></div></a><p>Äñ¼×Ò»ÀÀ</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li style="width: 160px;"><a><img src="image/é¸Ÿç”².png"><div></div></a><p>é¸Ÿç”²ä¸€è§ˆ</p></li>'
     );
         $.ajax({
-            url: './csv/Äñ¼×.csv',
+            url: './csv/é¸Ÿç”².csv',
             success: function (data) {
 
                 csvList = $.csv()(data);
                 var insert = '';
-                insert += '<ul style="top:0px;"><li style="width:50px;padding: 6px;">Í¼±ê</li><li style="width:120px;">Ãû³Æ</li><li style="width:280px;">»ñµÃ·½·¨</li></ul>';
+                insert += '<ul style="top:0px;"><li style="width:50px;padding: 6px;">å›¾æ ‡</li><li style="width:120px;">åç§°</li><li style="width:280px;">è·å¾—æ–¹æ³•</li></ul>';
                 for (var i = csvList.length-1; i > 0; i--) {
                     insert += '<ul style="top:0px;"><li style="width:50px;height:57px;padding: 6px;"><a class="btn" onclick="niaojiaexplain(' + i + ')" target="_blank"><img alt="" src="image/niaojia/' + csvList[i][0] + '.png" onload="image(this)"><div class="bd"></div></a></li><li style="width:120px;">' + csvList[i][1] + '</li><li style="width:280px;">' + csvList[i][3] + '</li>';
                 }
@@ -46,13 +46,13 @@ function niaojiaexplain(num) {
         $(this).find('.bd').addClass('Selected');
     });
     $.ajax({
-        url: './csv/Äñ¼×.csv',
+        url: './csv/é¸Ÿç”².csv',
         success: function (data) {
 
             csvList = $.csv()(data);
-            csvList[num][6] == "" ? insert += '' : insert += '<p style="font-size: 13px;">Î»ÖÃ£º' + csvList[num][4] + '</p>';
-            csvList[num][6] == "" ? insert += '' : insert += '<p style="font-size: 13px;">Npc£º' + csvList[num][5] + '</p>';
-            insert += '<p style="font-size: 13px;">½éÉÜ£º' + csvList[num][2] + '</p>';
+            csvList[num][6] == "" ? insert += '' : insert += '<p style="font-size: 13px;">ä½ç½®ï¼š' + csvList[num][4] + '</p>';
+            csvList[num][6] == "" ? insert += '' : insert += '<p style="font-size: 13px;">Npcï¼š' + csvList[num][5] + '</p>';
+            insert += '<p style="font-size: 13px;">ä»‹ç»ï¼š' + csvList[num][2] + '</p>';
             csvList[num][6] == "" ? insert += '' : insert += '<iframe src="https://www.ffxiv.cn/assets/map/index.html?' + csvList[num][6] + '" style="width: 380px;height: 300px;"></iframe>'; ;
             $(target).append(insert);
         }

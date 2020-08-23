@@ -1,4 +1,4 @@
-﻿function explore() {
+function explore() {
     var infolist = [];
     //读取
     $(function () {

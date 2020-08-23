@@ -1,4 +1,4 @@
-﻿function bigger(obj) {
+function bigger(obj) {
     $("#bigger").css("background-image", "url(" + obj.src + ")");
     $("#overlay").fadeIn();
     var img = new Image();

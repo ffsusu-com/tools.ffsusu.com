@@ -1,6 +1,6 @@
 function music() {
     var infolist = [];
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
         var csvList;        
         $('#left').remove();
@@ -20,8 +20,8 @@ function music() {
         , '<ul id="page_item"><li id="page_item_left"><ul style="top:0px;" id="music"></ul></li><li id="page_item_right"><ul id="musicplayer"></ul></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li><a><img src="image/ÀÖÆ×.png"><div></div></a><p>ÀÖÆ×</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li><a><img src="image/ä¹è°±.png"><div></div></a><p>ä¹è°±</p></li>'
     );
         $.ajax({
             url: './txt/music.txt',
@@ -50,21 +50,21 @@ function music() {
         open("page");
     });
 
-    //·ÖÒ³
+    //åˆ†é¡µ
     var Page = {
-        //Ã¿Ò³ÄÚÈİÊıÄ¿    
+        //æ¯é¡µå†…å®¹æ•°ç›®    
         setTotalPageNums: function () {
             var insert = '';
-            insert += '<a style="float:left;background-position: -144px -600px;" class="off">1<div class="bd"><p style="width: 55px;">ÇøÓò³¡¾°I</p></div></a>';
-            insert += '<a style="float:left;background-position: -144px -600px;" class="off">2<div class="bd"><p style="width: 55px;">ÇøÓò³¡¾°II</p></div></a>';
-            insert += '<a style="float:left;background-position: -212px -600px;" class="off">3<div class="bd"><p>ÃÔ¹¬ÌôÕ½</p></div></a>';
-            insert += '<a style="float:left;background-position: -280px -600px;" class="off">4<div class="bd"><p>ÌÖ·¥¼ßÃğ</p></div></a>';
-            insert += '<a style="float:left;background-position: -348px -600px;" class="off">5<div class="bd"><p style="width: 55px;">´óĞÍÈÎÎñI</p></div></a>';
-            insert += '<a style="float:left;background-position: -348px -600px;" class="off">6<div class="bd"><p style="width: 55px;">´óĞÍÈÎÎñII</p></div></a>';
-            insert += '<a style="float:left;background-position: -76px -600px;" class="off">7<div class="bd"><p>»·¾³Òô</p></div></a>';
-            insert += '<a style="float:left;background-position: -416px -600px;" class="off">8<div class="bd"><p>ÆäËû</p></div></a>';
-            insert += '<a style="float:left;background-position: -484px -600px;" class="off">9<div class="bd"><p>¼¾½Ú»î¶¯</p></div></a>';
-            insert += '<a style="float:left;background-position: -552px -600px;" class="off">10<div class="bd"><p>ÉÌ³Ç¹ºÂò</p></div></a>';
+            insert += '<a style="float:left;background-position: -144px -600px;" class="off">1<div class="bd"><p style="width: 55px;">åŒºåŸŸåœºæ™¯I</p></div></a>';
+            insert += '<a style="float:left;background-position: -144px -600px;" class="off">2<div class="bd"><p style="width: 55px;">åŒºåŸŸåœºæ™¯II</p></div></a>';
+            insert += '<a style="float:left;background-position: -212px -600px;" class="off">3<div class="bd"><p>è¿·å®«æŒ‘æˆ˜</p></div></a>';
+            insert += '<a style="float:left;background-position: -280px -600px;" class="off">4<div class="bd"><p>è®¨ä¼æ­¼ç­</p></div></a>';
+            insert += '<a style="float:left;background-position: -348px -600px;" class="off">5<div class="bd"><p style="width: 55px;">å¤§å‹ä»»åŠ¡I</p></div></a>';
+            insert += '<a style="float:left;background-position: -348px -600px;" class="off">6<div class="bd"><p style="width: 55px;">å¤§å‹ä»»åŠ¡II</p></div></a>';
+            insert += '<a style="float:left;background-position: -76px -600px;" class="off">7<div class="bd"><p>ç¯å¢ƒéŸ³</p></div></a>';
+            insert += '<a style="float:left;background-position: -416px -600px;" class="off">8<div class="bd"><p>å…¶ä»–</p></div></a>';
+            insert += '<a style="float:left;background-position: -484px -600px;" class="off">9<div class="bd"><p>å­£èŠ‚æ´»åŠ¨</p></div></a>';
+            insert += '<a style="float:left;background-position: -552px -600px;" class="off">10<div class="bd"><p>å•†åŸè´­ä¹°</p></div></a>';
             $("#typenum").append(insert);
             Page.setClickPageNum();
         },
@@ -110,9 +110,9 @@ function musicexplain(obj, i) {
 
             csvList = $.csv()(data);
             insert += '<p style="font-size: 19px;">' + ('000' + csvList[i][3]).slice(-3) + '-' + csvList[i][1] + '</p>';
-            csvList[i][6] == "" ? insert += '<p style="font-size: 13px;">ÔİÎŞÊÔÌı</p>' : insert += '<iframe style="float:left;" id="BGML" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=' + csvList[i][6] + '&id=' + csvList[i][5] + '&auto=0&height=90"></iframe>';
-            insert += '<p>»ñµÃ·½·¨:</p>';
-            csvList[i][2] == "" ? insert += '<p style="font-size: 13px;">ÔİÎŞ</p>' : insert += '<p style="font-size: 13px;">' + csvList[i][2] + '</p>';
+            csvList[i][6] == "" ? insert += '<p style="font-size: 13px;">æš‚æ— è¯•å¬</p>' : insert += '<iframe style="float:left;" id="BGML" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=' + csvList[i][6] + '&id=' + csvList[i][5] + '&auto=0&height=90"></iframe>';
+            insert += '<p>è·å¾—æ–¹æ³•:</p>';
+            csvList[i][2] == "" ? insert += '<p style="font-size: 13px;">æš‚æ— </p>' : insert += '<p style="font-size: 13px;">' + csvList[i][2] + '</p>';
             $(target).append(insert);
         }
 

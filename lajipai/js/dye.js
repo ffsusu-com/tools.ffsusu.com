@@ -1,6 +1,6 @@
 function dye() {
     var infolist = [];
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
         $('#left').remove();
         $('#right').remove();
@@ -18,8 +18,8 @@ function dye() {
         , '<ul id="page_item"><li id="dye" style="left: 50%;position: relative;"></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li><a><img src="image/È¾ÁÏÒ»ÀÀ.png"><div></div></a><p>È¾ÁÏ</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li><a><img src="image/æŸ“æ–™ä¸€è§ˆ.png"><div></div></a><p>æŸ“æ–™</p></li>'
     );
         var insert = '';
         insert += '<a style="float:left;background-position-x: 0px;" class="off">1</div></a>';

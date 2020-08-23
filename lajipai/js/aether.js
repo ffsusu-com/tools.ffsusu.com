@@ -1,6 +1,6 @@
 function aether() {
     var infolist = [];
-    //¶ÁÈ¡
+    //è¯»å–
     $(function () {
         $('#left').remove();
         $('#right').remove();
@@ -18,30 +18,30 @@ function aether() {
         , '<ul id="page_item"><li style="width:560px;" id="page_item_left"></li><li style="padding-left: 10px;padding-top: 10px;" id="page_item_right"></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li><a><img src="image/·çÂö.png"><div></div></a><p>·çÂö</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/è¿”å›.png"></a></li>'
+        , '<li><a><img src="image/é£è„‰.png"><div></div></a><p>é£è„‰</p></li>'
     );
         var insert2 = '';
-        insert2 += '<p style="font-size: 19px;">Ê¹ÓÃËµÃ÷</p><ul style="width:420px;height:480px;top: 0px;">';
+        insert2 += '<p style="font-size: 19px;">ä½¿ç”¨è¯´æ˜</p><ul style="width:420px;height:480px;top: 0px;">';
         insert2 += '<img alt="" src="image/aether/nothing/shuoming.jpg" style="width: 193px; height: 59px;opacity: 1;" /><br />'
-        insert2 += '<p class="explain-main">·çÂöĞ¡Í¼¶ÔÓ¦1-10£¬´Ó×óµ½ÓÒ£¬×óÉÏÎª1-5£¬×óÏÂÎª6-10</p>';
-        insert2 += '<p class="explain-main">ÈôÎŞÌØµØ±ê×¢µØÃû£¬Ö»ÏÔÊ¾×ø±êµÄÇé¿ö£¬ÔòÎªµ±Ç°µØÍ¼µÄÈÎÎñ</p>';
-        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Q£ºÊ²Ã´ÊÇ·çÂö£¿</span></p>';
-        insert2 += '<p class="explain-main">A£º·çÂöÊÇ·ÉĞĞ¿ªÆôµÄ±ØÒªÌõ¼şÖ®Ò»</p>';
-        insert2 += '<p class="explain-main">10¸ö·Ö²¼ÔÚ¸ÃµØÍ¼¸÷¸ö½ÇÂäµÄ[·çÂöÈª]</p>';
-        insert2 += '<p class="explain-main">4¸öÍê³É¸ÃµØÍ¼Ö¸¶¨µÄÖ§ÏßÈÎÎñËÍµÄ[·çÂöÈª]</p>';
-        insert2 += '<p class="explain-main">1¸öÖ¸¶¨Ö÷ÏßÈÎÎñËÍµÄ[·çÂöÈª]</p>';
-        insert2 += '<p class="explain-main">Íê³ÉÒÔÉÏÀÛ»ı15¸ö[·çÂöÈª]¾Í¿ÉÒÔ·É¸ÃÕÅÍ¼ÁË</p>';
-        insert2 += '<p class="explain-main">3.0Ò»¹²6ÕÅµØÍ¼¡¢4.0Ò»¹²6ÕÅµØÍ¼¡¢5.0Ò»¹²6ÕÅÍ¼</p>';
-        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Q£ºÔõÃ´·É? </span></p>';
-        insert2 += '<p class="explain-main">Íê³É15¸ö[·çÂöÈª]ºó£¬ÒªÈ·±£¸Ã×øÆïÊÇ·ÉĞĞ×øÆï<img alt="" src="image/logo/·ÉĞĞ.png" style="width: 20px; height: 20px;opacity: 1;" /></p>';
-        insert2 += '<p class="explain-main">¶øÂ½ĞĞÄñÏµÁĞ×øÆï£¬ĞèÒªÈ¥Íê³É¡¸ÎÒĞÄ·ÉÏè¡¹²Å¿É·ÉĞĞ</p>';
-        insert2 += '<p class="explain-main">¡¸ÎÒĞÄ·ÉÏè¡¹ÒÁĞŞ¼ÓµÂ»ù´¡²ã Ê¥´óÄñ·¿ °¢¶ûÅ¬À¼(X:7 Y:11)</p>';
-        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Q£ºÈçºÎ²é¿´·çÂö</span></p>';
-        insert2 += '<p class="explain-main">A£º°´i´ò¿ª±³°ü£¬ÔÚÈÎÎñµÀ¾ß±³°üÀï£¬ÕÒµ½¡¸·çÂöÒÇ¡¹£¬Ê¹ÓÃËü¿ÉÒÔ²éÑ¯·çÂöµÄÎ»ÖÃ</p>';
-        insert2 += '<p class="explain-main">»ò°´P£¬¿ì½İÖ¸Áî ÏÂµÄ µØÍ¼&amp;ÒÆ¶¯£¬µã¿ª·çÂöÈª£¬¿ÉÒÔ²é¿´ÄãÏÖÔÚ¿ªÆôµÄ·çÂöÇé¿ö</p>';
-        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Q£ºÈç¹û²»Ğ¡ĞÄ°Ñ ¡¸·çÂöÒÇ¡¹¶ªÁË</p>';
-        insert2 += '<p class="explain-main">A£ºÔÚÉñÈ­ºÛ£¨X£º14.3 £¬Y£º9.6£©ÕÒNPC¼ÓÎÚ¸¥ÀïµÂ»òÕßÒÁĞŞ¼ÓµÂ»ù´¡²ã£¨X£º13 £¬Y£º11.9£©ÕÒNPC¼ª²¼ÀïÂ¡ÔÙ´ÎÁìÈ¡¡£</p></ul>';
+        insert2 += '<p class="explain-main">é£è„‰å°å›¾å¯¹åº”1-10ï¼Œä»å·¦åˆ°å³ï¼Œå·¦ä¸Šä¸º1-5ï¼Œå·¦ä¸‹ä¸º6-10</p>';
+        insert2 += '<p class="explain-main">è‹¥æ— ç‰¹åœ°æ ‡æ³¨åœ°åï¼Œåªæ˜¾ç¤ºåæ ‡çš„æƒ…å†µï¼Œåˆ™ä¸ºå½“å‰åœ°å›¾çš„ä»»åŠ¡</p>';
+        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Qï¼šä»€ä¹ˆæ˜¯é£è„‰ï¼Ÿ</span></p>';
+        insert2 += '<p class="explain-main">Aï¼šé£è„‰æ˜¯é£è¡Œå¼€å¯çš„å¿…è¦æ¡ä»¶ä¹‹ä¸€</p>';
+        insert2 += '<p class="explain-main">10ä¸ªåˆ†å¸ƒåœ¨è¯¥åœ°å›¾å„ä¸ªè§’è½çš„[é£è„‰æ³‰]</p>';
+        insert2 += '<p class="explain-main">4ä¸ªå®Œæˆè¯¥åœ°å›¾æŒ‡å®šçš„æ”¯çº¿ä»»åŠ¡é€çš„[é£è„‰æ³‰]</p>';
+        insert2 += '<p class="explain-main">1ä¸ªæŒ‡å®šä¸»çº¿ä»»åŠ¡é€çš„[é£è„‰æ³‰]</p>';
+        insert2 += '<p class="explain-main">å®Œæˆä»¥ä¸Šç´¯ç§¯15ä¸ª[é£è„‰æ³‰]å°±å¯ä»¥é£è¯¥å¼ å›¾äº†</p>';
+        insert2 += '<p class="explain-main">3.0ä¸€å…±6å¼ åœ°å›¾ã€4.0ä¸€å…±6å¼ åœ°å›¾ã€5.0ä¸€å…±6å¼ å›¾</p>';
+        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Qï¼šæ€ä¹ˆé£? </span></p>';
+        insert2 += '<p class="explain-main">å®Œæˆ15ä¸ª[é£è„‰æ³‰]åï¼Œè¦ç¡®ä¿è¯¥åéª‘æ˜¯é£è¡Œåéª‘<img alt="" src="image/logo/é£è¡Œ.png" style="width: 20px; height: 20px;opacity: 1;" /></p>';
+        insert2 += '<p class="explain-main">è€Œé™†è¡Œé¸Ÿç³»åˆ—åéª‘ï¼Œéœ€è¦å»å®Œæˆã€Œæˆ‘å¿ƒé£ç¿”ã€æ‰å¯é£è¡Œ</p>';
+        insert2 += '<p class="explain-main">ã€Œæˆ‘å¿ƒé£ç¿”ã€ä¼Šä¿®åŠ å¾·åŸºç¡€å±‚ åœ£å¤§é¸Ÿæˆ¿ é˜¿å°”åŠªå…°(X:7 Y:11)</p>';
+        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Qï¼šå¦‚ä½•æŸ¥çœ‹é£è„‰</span></p>';
+        insert2 += '<p class="explain-main">Aï¼šæŒ‰iæ‰“å¼€èƒŒåŒ…ï¼Œåœ¨ä»»åŠ¡é“å…·èƒŒåŒ…é‡Œï¼Œæ‰¾åˆ°ã€Œé£è„‰ä»ªã€ï¼Œä½¿ç”¨å®ƒå¯ä»¥æŸ¥è¯¢é£è„‰çš„ä½ç½®</p>';
+        insert2 += '<p class="explain-main">æˆ–æŒ‰Pï¼Œå¿«æ·æŒ‡ä»¤ ä¸‹çš„ åœ°å›¾&amp;ç§»åŠ¨ï¼Œç‚¹å¼€é£è„‰æ³‰ï¼Œå¯ä»¥æŸ¥çœ‹ä½ ç°åœ¨å¼€å¯çš„é£è„‰æƒ…å†µ</p>';
+        insert2 += '<p class="explain-main"><span style="color:#ff0000;">Qï¼šå¦‚æœä¸å°å¿ƒæŠŠ ã€Œé£è„‰ä»ªã€ä¸¢äº†</p>';
+        insert2 += '<p class="explain-main">Aï¼šåœ¨ç¥æ‹³ç—•ï¼ˆXï¼š14.3 ï¼ŒYï¼š9.6ï¼‰æ‰¾NPCåŠ ä¹Œå¼—é‡Œå¾·æˆ–è€…ä¼Šä¿®åŠ å¾·åŸºç¡€å±‚ï¼ˆXï¼š13 ï¼ŒYï¼š11.9ï¼‰æ‰¾NPCå‰å¸ƒé‡Œéš†å†æ¬¡é¢†å–ã€‚</p></ul>';
         $.ajax({
             url: './csv/aether.csv',
             success: function (data) {
@@ -65,9 +65,9 @@ function aether() {
         });
         open("page");
     });
-    //·ÖÒ³
+    //åˆ†é¡µ
     var Page = {
-        //Ã¿Ò³ÄÚÈİÊıÄ¿    
+        //æ¯é¡µå†…å®¹æ•°ç›®    
         setTotalPageNums: function () {
             var insert = '';
             insert += '<a style="float:left;width:50px;" class="off">3.0</a>';
@@ -123,7 +123,7 @@ function aetherexplain(obj, i) {
         success: function (data) {
 
             csvList = $.csv()(data);
-            csvList[i][0] == "" ? insert += '<p style="font-size: 19px;">È«²¿ÓÉÖ÷Ïß´¥·¢</p>' : insert += '<img onclick="bigger(this)" style="float:left;width:340px;"src="image/aether/' + csvList[i][0] + '.jpeg" onerror=this.style="display:none;">';
+            csvList[i][0] == "" ? insert += '<p style="font-size: 19px;">å…¨éƒ¨ç”±ä¸»çº¿è§¦å‘</p>' : insert += '<img onclick="bigger(this)" style="float:left;width:340px;"src="image/aether/' + csvList[i][0] + '.jpeg" onerror=this.style="display:none;">';
             insert += '<ul style="top:0px;">';
             for (var n = 1; n < 11; n++) {
                 insert += '<div style="float:left;width:100px;height:70px;text-align:center;"><img onclick="bigger(this)" style="width:80px;"src="image/aether/' + csvList[i][0] + n + '.jpeg" onerror=this.style="display:none;">';

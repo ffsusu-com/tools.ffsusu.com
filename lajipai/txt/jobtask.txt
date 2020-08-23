@@ -1,4 +1,4 @@
-﻿<strong><span style="color:#ff8c00;">使用说明</span></strong><br />
+<strong><span style="color:#ff8c00;">使用说明</span></strong><br />
 因<strong>1-30</strong>任务皆在各职业公会处接取，所以<strong>1-30</strong>不做任务引导<br />
 因<strong>60-70</strong>的职业任务是由NPC提供材料做任务道具，所以也不会有缴纳物品提供<br />
 <br />

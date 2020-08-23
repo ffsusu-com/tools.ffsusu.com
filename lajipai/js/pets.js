@@ -1,4 +1,4 @@
-﻿function pets() {
+function pets() {
     var infolist = [];
     //读取
     $(function () {

@@ -1,4 +1,4 @@
-﻿function jobtask() {
+function jobtask() {
     var infolist = [];
     //读取
     $(function () {

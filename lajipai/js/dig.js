@@ -1,6 +1,6 @@
 function dig() {
     var infolist = [];
-    //¶ÁÈ¡
+    //Â¶ÃÃˆÂ¡
     $(function () {
         $('#left').remove();
         $('#right').remove();
@@ -18,11 +18,11 @@ function dig() {
         , '<ul id="page_item" style="min-height:560px;"><li style="padding-right: 160px; padding-left: 160px;position: relative;"></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/·µ»Ø.png"></a></li>'
-        , '<li style="width: 140px;"><a><img src="image/²Ø±¦Í¼.png"><div></div></a><p>²Ø±¦Í¼</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/Â·ÂµÂ»Ã˜.png"></a></li>'
+        , '<li style="width: 140px;"><a><img src="image/Â²Ã˜Â±Â¦ÃÂ¼.png"><div></div></a><p>Â²Ã˜Â±Â¦ÃÂ¼</p></li>'
     );
         $.ajax({
-            url: './csv/µÉÁç¸ï.csv',
+            url: './csv/ÂµÃ‰ÃÃ§Â¸Ã¯.csv',
             success: function (data) {
                 infolist[1] = "";
                 infolist[2] = "";
@@ -43,16 +43,16 @@ function dig() {
         });
         open("page");
     });
-    //·ÖÒ³
+    //Â·Ã–Ã’Â³
     var Page = {
-        //Ã¿Ò³ÄÚÈİÊıÄ¿    
+        //ÃƒÂ¿Ã’Â³Ã„ÃšÃˆÃÃŠÃ½Ã„Â¿    
         setTotalPageNums: function () {
             var insert = '';
-            insert += '<a style="float:left;width:100px;" class="off">²øÎ²òÔ¸ï</a>';
-            insert += '<a style="float:left;width:100px;" class="off">ÂÌÆ®Áú¸ï</a>';
-            insert += '<a style="float:left;width:100px;" class="off">Éî²ãÂÌÍ¼</a>';
-            insert += '<a style="float:left;width:100px;" class="off">åÈåÈÄÉ¸ï</a>';
-            insert += '<a style="float:left;width:100px;" class="off">µÉÁç¸ï</a>';
+            insert += '<a style="float:left;width:100px;" class="off">Â²Ã¸ÃÂ²Ã²Ã”Â¸Ã¯</a>';
+            insert += '<a style="float:left;width:100px;" class="off">Ã‚ÃŒÃ†Â®ÃÃºÂ¸Ã¯</a>';
+            insert += '<a style="float:left;width:100px;" class="off">Ã‰Ã®Â²Ã£Ã‚ÃŒÃÂ¼</a>';
+            insert += '<a style="float:left;width:100px;" class="off">Ã¥ÃˆÃ¥ÃˆÃ„Ã‰Â¸Ã¯</a>';
+            insert += '<a style="float:left;width:100px;" class="off">ÂµÃ‰ÃÃ§Â¸Ã¯</a>';
             $("#pagenum").append(insert);
             Page.setClickPageNum();
         },
@@ -78,11 +78,11 @@ function dig() {
                 divb.className = "on";
             }
             var pg = this.getClickPageNum(divb); // 1 2 3
-            if (pg == "åÈåÈÄÉ¸ï") { pg = "1"; }
-            else if (pg == "µÉÁç¸ï") { pg = "1"; }
-            else if (pg == "Éî²ãÂÌÍ¼") { pg = "2"; }
-            else if (pg == "²øÎ²òÔ¸ï") { pg = "3"; }
-            else if (pg == "ÂÌÆ®Áú¸ï") { pg = "3"; }
+            if (pg == "Ã¥ÃˆÃ¥ÃˆÃ„Ã‰Â¸Ã¯") { pg = "1"; }
+            else if (pg == "ÂµÃ‰ÃÃ§Â¸Ã¯") { pg = "1"; }
+            else if (pg == "Ã‰Ã®Â²Ã£Ã‚ÃŒÃÂ¼") { pg = "2"; }
+            else if (pg == "Â²Ã¸ÃÂ²Ã²Ã”Â¸Ã¯") { pg = "3"; }
+            else if (pg == "Ã‚ÃŒÃ†Â®ÃÃºÂ¸Ã¯") { pg = "3"; }
             $("#page_item li").empty();
             $(target).empty();
             $(target).append(infolist[pg]);

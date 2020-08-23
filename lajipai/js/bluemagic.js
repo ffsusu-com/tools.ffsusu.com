@@ -1,4 +1,4 @@
-﻿function bluemagic() {
+function bluemagic() {
     var infolist = [];
     //读取
     $(function () {

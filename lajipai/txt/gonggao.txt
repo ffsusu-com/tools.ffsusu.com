@@ -1,4 +1,4 @@
-﻿<p>※ 本工具推荐吃用chrome，不支持IE</p>
+<p>※ 本工具推荐吃用chrome，不支持IE</p>
 <p>※ 请使用PC电脑端，无PE移动端自适应</p>
 <p><span style="color:#ff8c00;">※ 若更新记录增加新内容，请F5/Ctrl+F5/刷新</span></p>
 <p>使用过程中如遇到数据问题，欢迎将问题发邮件至</p>susu@ffxiv.vip

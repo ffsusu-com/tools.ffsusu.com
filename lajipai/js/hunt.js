@@ -1,6 +1,6 @@
 function hunt() {
     var infolist = [];
-    //读取
+    //璇诲彇
     $(function () {
         $('#left').remove();
         $('#right').remove();
@@ -18,8 +18,8 @@ function hunt() {
         , '<ul id="page_item" style="min-height: 400px;"><li style="left: 300px;position: relative;"></li></ul>'
         );
         $('#page_itemtop').append(
-        '<li class="back"><a onclick="back()"><img src="image/返回.png"></a></li>'
-        , '<li><a><img src="image/狩猎.png"><div></div></a><p>狩猎</p></li>'
+        '<li class="back"><a onclick="back()"><img src="image/杩斿洖.png"></a></li>'
+        , '<li><a><img src="image/鐙╃寧.png"><div></div></a><p>鐙╃寧</p></li>'
     ); 
         $.ajax({
             url: './csv/aether.csv',
@@ -43,9 +43,9 @@ function hunt() {
         });
         open("page");
     });
-    //分页
+    //鍒嗛〉
     var Page = {
-        //每页内容数目    
+        //姣忛〉鍐呭鏁扮洰    
         setTotalPageNums: function () {
             var insert = '';
             insert += '<a style="float:left;width:50px;" class="off">3.0</a>';

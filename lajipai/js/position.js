@@ -7,7 +7,7 @@ window.onload = function () {
         $("#right").css("left", (document.documentElement.clientWidth - 1014) / 2 + 10);
         $(".top_left").css("left", (document.documentElement.clientWidth - 1014) / 2);
         $(".top_right").css("right", (document.documentElement.clientWidth - 1014) / 2);
-        //µ±ä¯ÀÀÆ÷Ò³Ãæ·¢Éú¸Ä±äÊ±£¬DIVËæ×ÅÒ³ÃæµÄ¸Ä±ä¾ÓÖĞ¡£
+        //å½“æµè§ˆå™¨é¡µé¢å‘ç”Ÿæ”¹å˜æ—¶ï¼ŒDIVéšç€é¡µé¢çš„æ”¹å˜å±…ä¸­ã€‚
     }
     else if (document.documentElement.clientWidth - 1004 < 40 && document.documentElement.clientWidth - 677 > 40) {
         $("#right").css("visibility", "hidden");
@@ -33,7 +33,7 @@ $(window).resize(function(){
         $("#right").css("left", (document.documentElement.clientWidth - 1014) / 2 + 10);        
         $(".top_left").css("left", (document.documentElement.clientWidth - 1014) / 2);
         $(".top_right").css("right", (document.documentElement.clientWidth - 1014) / 2);        
-        //µ±ä¯ÀÀÆ÷Ò³Ãæ·¢Éú¸Ä±äÊ±£¬DIVËæ×ÅÒ³ÃæµÄ¸Ä±ä¾ÓÖĞ¡£
+        //å½“æµè§ˆå™¨é¡µé¢å‘ç”Ÿæ”¹å˜æ—¶ï¼ŒDIVéšç€é¡µé¢çš„æ”¹å˜å±…ä¸­ã€‚
     }
     else if (document.documentElement.clientWidth - 1004 < 40 && document.documentElement.clientWidth - 677 > 40) {
         $("#right").css("visibility", "hidden");
@@ -54,14 +54,14 @@ $(window).resize(function(){
         $("#page").css("left", (document.documentElement.clientWidth - 1009) / 2);
         $(".top_left").css("left", (document.documentElement.clientWidth - 1009) / 2);
         $(".top_right").css("right", (document.documentElement.clientWidth - 1009) / 2); 
-        //µ±ä¯ÀÀÆ÷Ò³Ãæ·¢Éú¸Ä±äÊ±£¬DIVËæ×ÅÒ³ÃæµÄ¸Ä±ä¾ÓÖĞ¡£
+        //å½“æµè§ˆå™¨é¡µé¢å‘ç”Ÿæ”¹å˜æ—¶ï¼ŒDIVéšç€é¡µé¢çš„æ”¹å˜å±…ä¸­ã€‚
     }
     else if (document.documentElement.clientWidth - 1009 < 10) {
         $("#page").css("left", 0);
         $(".top_right").css("visibility", "hidden");
         $(".top_left").css("left", 0);        
     }
-    //µ±ä¯ÀÀÆ÷Ò³Ãæ·¢Éú¸Ä±äÊ±£¬DIVËæ×ÅÒ³ÃæµÄ¸Ä±ä¾ÓÖĞ¡£
+    //å½“æµè§ˆå™¨é¡µé¢å‘ç”Ÿæ”¹å˜æ—¶ï¼ŒDIVéšç€é¡µé¢çš„æ”¹å˜å±…ä¸­ã€‚
 });
 
 function back() {
@@ -78,7 +78,7 @@ function back() {
         $("#right").css("left", (document.documentElement.clientWidth - 1014) / 2 + 10);
         $(".top_left").css("left", (document.documentElement.clientWidth - 1014) / 2);
         $(".top_right").css("right", (document.documentElement.clientWidth - 1014) / 2);
-        //µ±ä¯ÀÀÆ÷Ò³Ãæ·¢Éú¸Ä±äÊ±£¬DIVËæ×ÅÒ³ÃæµÄ¸Ä±ä¾ÓÖĞ¡£
+        //å½“æµè§ˆå™¨é¡µé¢å‘ç”Ÿæ”¹å˜æ—¶ï¼ŒDIVéšç€é¡µé¢çš„æ”¹å˜å±…ä¸­ã€‚
     }
     else if (document.documentElement.clientWidth - 1004 < 40 && document.documentElement.clientWidth - 677 > 40) {
         $("#right").css("visibility", "hidden");
