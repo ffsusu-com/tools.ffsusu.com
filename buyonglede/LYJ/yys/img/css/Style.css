@@ -1,0 +1,232 @@
+@charset "utf-8";
+body * {
+	font-family:"Consolas","Microsoft Yahei", Arial, sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 320px;
+	margin: 0 auto 50px;
+}
+
+.container>.title {
+	color: #555;
+	font-weight: bold;
+	margin-bottom: 10px;
+	height: 28px;
+	padding: 12px 5px;
+	border-bottom-right-radius:15px;
+	border-bottom-left-radius:15px;
+}
+
+.wblink {
+	text-align: center;
+	font-size: 11pt;
+}
+
+.wblink a {
+	text-decoration: none;
+	display:block;
+	color: #666;
+	font-weight: bold;
+	margin-bottom: 10px;
+	background: #eee;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 10pt;
+	margin-top: 10pt;
+}
+
+.date{
+	font-size:17pt;
+	font-weight: bold;
+	line-height: 5pt;
+	text-align: center;
+	margin-bottom: 5px;
+	position:relative;
+	top:-5px;
+}
+
+.split, .clear {
+	clear: both;
+	height: 1px;
+	overflow-y: hidden;
+}
+.good, .bad {
+	clear: both;
+	position:absolute;
+}
+
+.good{
+	border-radius:15px;
+
+}
+
+.bad {
+	border-radius:15px;
+	top: 3px;
+}
+
+.good .title{
+	color:#FF0000;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	float: left;
+	width: 100px;
+	font-weight: bold;
+	text-align: left;
+	font-size: 20pt;
+	position:relative;
+	top:55px;
+	bottom:0;
+}
+
+.bad .title {
+	color: #000;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	float: right;
+	width: 320px;
+	font-weight: bold;
+	text-align: right;
+	font-size: 20pt;
+	position:relative;
+	top:125px;
+	bottom:0;
+}
+
+.good .title>table, .bad .title>table {
+	position:absolute;
+	width:100%;
+	height:100%;
+	border:none;
+}
+
+.good .content, .bad .content {
+	margin-left: 50px;
+	padding-right: 10px;
+	padding-top: 0px;
+	font-size:15pt;
+}
+
+.content ul {
+	list-style: none;
+	margin:10px 0 0;
+	padding:0;
+}
+
+.content ul li {
+	line-height:150%;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #444;
+}
+
+.content ul li div.description {
+	font-size: 4pt;
+	font-weight: normal;
+	color: #777;
+	line-height: 40%;
+	margin-bottom: 5px;
+}
+
+.line-tip {
+	font-size: 11pt;
+	margin-top: 10px;
+	margin-left: 10px;
+	top:216px;
+	position:relative;
+}
+
+.direction_value {
+	color:#4a4;
+	font-weight: bold;
+}
+
+.goddes_value {
+	color: #f87;
+}
+
+.comment {
+	color: #bbb;
+	margin-bottom: 10px;
+	background: #eee;
+	padding: 5px 15px;
+	border-radius:15px;
+	margin-top: 10px;
+	font-size: 9pt;
+}
+
+.comment ul {
+	margin-left: 0;
+	padding-left: 20px;
+	color: #999;
+}
+
+.fengmo{
+	font-size:16pt;
+	font-weight: bold;
+	line-height: 5pt;
+	text-align: center;
+	margin-bottom: 5px;
+	position:relative;
+	top:214px;
+	font-family: "Microsoft JhengHei";
+}
+
+.yuhun{
+	font-size:18pt;
+	font-weight: bold;
+	line-height: 5pt;
+	text-align: center;
+	margin-bottom: 5px;
+	position:relative;
+	top:160px;
+	font-family:"FangSong";
+}
+.about{
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5em;
+    font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+    color: #000000;
+    left:258px;
+	position:relative;
+	top:232px;
+}
+.box{
+	width: 320px;
+    height: 120px;
+    line-height: 150px;
+    border-radius:15px;
+	position:absolute;
+	top:428px;
+	background-color: rgba(255, 255, 255, 0.4);  
+}
+.luckyshishen{
+	font-size:16pt;
+	font-weight: bold;
+	line-height: 5pt;
+	text-align: center;
+	margin-bottom: 5px;
+	position:relative;
+	top:240px;
+	font-family: "Microsoft JhengHei";
+}
+.event{
+	color: #777;
+	line-height: 160%;
+	font-size:9pt;
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 5px;
+	position:relative;
+	top:255px;
+	font-family: "Microsoft JhengHei";
+}

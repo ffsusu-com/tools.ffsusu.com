@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>木人歼灭战DPS计算器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anima_weapon_progress.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    
+
+<script>
+                //   ナ、    戦、    暗、    白、    学、    占、    モ、    竜、     忍、    吟、    機、    黒、    召、の木人のHPを設定
+    var m001_arr = [ 92480,103200, 96160,109120,104320,107520,164960,158240,152640,137600,136960,161280,151840];    //木人歼殛战 (未选择)
+    var m002_arr = [100960,112640,104960,119040,113920,117440,180000,172640,166560,150240,149440,176160,165760];    //極ビスマルク級
+    var m003_arr = [110240,123040,114560,129920,124320,128160,196480,188480,181760,163840,163200,192160,180800];    //アレキサンダー：起動編級
+    var m004_arr = [120320,134240,124960,141920,135680,139840,214560,205600,198400,178880,178080,209760,197440];    //アレキサンダー零式：起動編1級
+    var m005_arr = [125760,140480,130720,148320,141920,146240,224320,215040,207520,187040,186240,219360,206400];    //アレキサンダー零式：起動編2級
+    var m006_arr = [137280,153280,142720,161920,154880,159520,244800,234720,226560,204160,203200,239360,225280];    //アレキサンダー零式：起動編3級
+    var m007_arr = [143360,160000,148960,168960,161600,166560,255520,244960,236480,213120,212160,244920,235200];    //アレキサンダー零式：起動編4級
+    var m008_arr = [125760,140480,130720,148320,141920,146240,224320,215040,207520,187040,186240,219360,206400];    //蒼天幻想ナイツ・オブ・ラウンド
+    var m009_arr = [143360,160000,148960,168960,161600,166560,255520,244960,236480,213120,212160,249920,235200];    //極魔人セフィロト級
+    var m010_arr = [131360,146560,136480,154880,148160,152640,234080,224480,216640,195360,194400,228960,215520];    //アレキサンダー：律動編級
+    var m011_arr = [161120,179840,167360,184480,176480,181760,278880,267360,258080,232640,231520,272800,256640];    //アレキサンダー零式：律動編1級
+    var m012_arr = [168480,188000,175040,192960,184480,190080,291680,279680,269760,243200,242080,285280,268480];    //アレキサンダー零式：律動編2級
+    var m013_arr = [183840,205280,191040,210560,201440,207520,318240,305120,294560,265440,264320,311360,292960];    //アレキサンダー零式：律動編3級
+    var m014_arr = [191840,214240,199520,219680,210240,216640,332160,318560,307360,277120,275840,324960,305760];    //アレキサンダー零式：律動編4級
+    var m015_arr = [168480,188000,175040,192960,184480,190080,291680,279680,269760,243200,258880,285280,268480];    //極ニーズヘッグ級
+
+    $(function(){
+        mokujinHpSeach();
+        checkedJobCurrent()
+
+        $('select').change(function() {
+            mokujinHpSeach();
+        });
+        $('input').change(function() {
+            checkedJobCurrent()
+            mokujinHpSeach();
+        });
+
+        $('.remainingHitpoint').change(function(){
+            $('.remainingSeconds').val(0);
+        })
+        $('.remainingSeconds').change(function(){
+            $('.remainingHitpoint').val(0);
+        })
+
+        $('.calculation_btn').click(function(){
+            dpsCalculation();
+        })
+    })
+
+    function checkedJobCurrent(){
+        $('label').children('.btn_job').removeClass('current');
+        $('input:checked').parent('.btn_job').addClass('current');
+    }
+
+    function mokujinHpSeach() {
+        var mokujinType = $('option[name=mokujin]:selected').attr('class');
+        var jobType     = $('input[name=job]:checked').attr('id');
+        switch (jobType) {
+            case "job001":
+                jobType = 0;    //ナイト
+                break;
+            case "job002":
+                jobType = 1;    //戦士
+                break;
+            case "job003":
+                jobType = 2;    //暗黒
+                break;
+            case "job004":
+                jobType = 3;    //白魔
+                break;
+            case "job005":
+                jobType = 4;    //学者
+                break;
+            case "job006":
+                jobType = 5;    //占星
+                break;
+            case "job007":
+                jobType = 6;    //モンク
+                break;
+            case "job008":
+                jobType = 7;    //竜騎士
+                break;
+            case "job009":
+                jobType = 8;    //忍者
+                break;
+            case "job010":
+                jobType = 9;    //吟遊詩人
+                break;
+            case "job011":
+                jobType = 10;    //機工士
+                break;
+            case "job012":
+                jobType = 11;    //黒魔
+                break;
+            case "job013":
+                jobType = 12;    //召喚
+                break;
+        }
+        var mokujinHitPoint = eval(mokujinType + "_arr")[jobType];
+        $('.mokujin_hp').text(mokujinHitPoint);
+// console.log('mokujinType = '+mokujinType);
+// console.log('jobType = '+jobType);
+// console.log('mokujinHitPoint = '+mokujinHitPoint);
+    }
+
+    function dpsCalculation() {
+        var mokujinHitPoint   = $('.mokujin_hp').text();
+        var remainingSeconds  = $('.remainingSeconds').val();
+        var remainingHitpoint = $('.remainingHitpoint').val();
+        var select_mokujin    = $('option:selected').val();
+        var select_job        = $('input[name=job]:checked').parent('a').text();
+
+        if ( remainingSeconds == 0 && remainingHitpoint == 0) {
+            //残時間、残HPもない場合
+            var DpsValue = mokujinHitPoint / 180;
+            var DpsValue = Math.round( DpsValue * 100 ) / 100 ;
+            $('.dps_value').text(DpsValue);
+            $('.tweet_button').socialbutton('twitter', {
+                button: 'horizontal',
+                text: '木人歼殛战:DPS【 约 '+DpsValue+' 】噢！\n・挑战木人…'+select_mokujin+'\n・挑战职业…'+select_job+'\n#FF14# #最终幻想14# #木人DPS#\n',
+                url: 'http://ff14moo.moo.jp/mokujin_attack.html'
+            });
+        } else if ( remainingHitpoint > 0) {
+            //HPが残った場合
+            var DpsValue = ( mokujinHitPoint - mokujinHitPoint * remainingHitpoint / 100 ) / 180;
+            var DpsValue = Math.round( DpsValue * 100 ) / 100 ;
+            $('.dps_value').text(DpsValue);
+            $('.tweet_button').socialbutton('twitter', {
+                button: 'horizontal',
+                text: '木人歼殛战:DPS【 约 '+DpsValue+' 】噢！\n・挑战木人…'+select_mokujin+'\n・挑战职业…'+select_job+'\n(木人HP剩余 '+remainingHitpoint+'%)\n#FF14# #最终幻想14# #木人DPS#\n',
+                url: 'http://ff14moo.moo.jp/mokujin_attack.html'
+            });
+        } else if ( remainingSeconds > 0) {
+            //時間が残った場合
+            var DpsValue = mokujinHitPoint / ( 180 - remainingSeconds );
+            var DpsValue = Math.round( DpsValue * 100 ) / 100 ;
+            $('.dps_value').text(DpsValue);
+            $('.tweet_button').socialbutton('twitter', {
+                button: 'horizontal',
+                text: '木人歼殛战:DPS【 约 '+DpsValue+' 】噢！\n・挑战木人…'+select_mokujin+'\n・挑战职业…'+select_job+'\n(剩余战斗时间 '+remainingSeconds+'秒)\n#FF14# #最终幻想14# #木人DPS#\n',
+                url: 'http://ff14moo.moo.jp/mokujin_attack.html'
+            });
+        }
+// console.log('mokujinHitPoint = '+mokujinHitPoint);
+// console.log('remainingSeconds = '+remainingSeconds);
+// console.log('remainingHitpoint = '+remainingHitpoint);
+// console.log(DpsValue)
+// console.log(select_mokujin);
+// console.log(select_job);
+    }
+</script>
+<style type="text/css">article {
+        vertical-align: top;
+        display: inline-block;
+        width: 320px;
+    }
+    input[type=radio] {
+        display: none;
+    }
+    label img {
+        vertical-align: middle;
+        width: 30px;
+        margin-right: 5px;
+    }
+    label .btn_job {
+        display: inline-block;
+        vertical-align: top;
+        width: 100px;
+        box-shadow: 1px 1px 0px #000, -1px -1px 0px #888;
+        border-radius: 3px;
+        line-height: 30px;
+    }
+    label .btn_job.current {
+        color: #0f0;
+        background: #050;
+        box-shadow: 1px 1px 0px #888, -1px -1px 0px #000;
+    }
+    .block_02 {
+        position: relative;
+        height: 161px;
+    }
+    .block_02 img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .block_02 .mokujin_text {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        width: 320px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 1px 1px #000, 1px -1px #000, -1px 1px #000, -1px -1px #000;
+    }
+    .mokujin_hp {
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 1px 1px #000, 1px -1px #000, -1px 1px #000, -1px -1px #000;
+    }
+    .remaining_text,
+    .remaining_text input {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .dps_text {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .dps_value {
+        font-size: 20px;
+        font-weight: bold;
+        color: #0f0;
+    }
+</style>
+
+    <div id="stage">
+        木人歼殛战DPS计算工具 ver:patch3.3<br>
+        <hr>
+
+        <article class="block_01">
+            <p class="color_orange">选择你要挑战的木人</p><br>
+            <select style="width:320px;">
+                <option name="mokujin" class="m001" selected>木人歼殛战 (未选择)</option>
+                <option name="mokujin" class="m002">俾斯麦歼殛战</option>
+                <option name="mokujin" class="m003">亚历山大机神城 启动之章</option>
+                <option name="mokujin" class="m004">亚历山大机神城 启动之章1</option>
+                <option name="mokujin" class="m005">亚历山大机神城 启动之章2</option>
+                <option name="mokujin" class="m006">亚历山大机神城 启动之章3</option>
+                <option name="mokujin" class="m007">亚历山大机神城 启动之章4</option>
+                <option name="mokujin" class="m008">圆桌骑士幻想歼灭战</option>
+                <option name="mokujin" class="m009">萨菲洛特歼殛战</option>
+                <option name="mokujin" class="m010">亚历山大机神城 律动之章</option>
+                <option name="mokujin" class="m011">亚历山大机神城 律动之章1</option>
+                <option name="mokujin" class="m012">亚历山大机神城 律动之章2</option>
+                <option name="mokujin" class="m013">亚历山大机神城 律动之章3</option>
+                <option name="mokujin" class="m014">亚历山大机神城 律动之章4</option>
+                <option name="mokujin" class="m015">尼德霍格传奇征龙战</option>
+            </select>
+            <br>
+            <br>
+
+            <p class="color_orange">选择你要挑战的职业</p><br>
+            <label for="job001"><a class="btn_job"><img src="img/icon_job_001.png"><input type="radio" name="job" id="job001">骑士</a></label>
+            <label for="job002"><a class="btn_job"><img src="img/icon_job_002.png"><input type="radio" name="job" id="job002">战士</a></label>
+            <label for="job003"><a class="btn_job"><img src="img/icon_job_003.png"><input type="radio" name="job" id="job003">暗黑骑士</a></label>
+            <br>
+            <label for="job004"><a class="btn_job"><img src="img/icon_job_004.png"><input type="radio" name="job" id="job004">白魔法师</a></label>
+            <label for="job005"><a class="btn_job"><img src="img/icon_job_005.png"><input type="radio" name="job" id="job005">学者</a></label>
+            <label for="job006"><a class="btn_job"><img src="img/icon_job_006.png"><input type="radio" name="job" id="job006">占星术士</a></label>
+            <br>
+            <label for="job007"><a class="btn_job"><img src="img/icon_job_007.png"><input type="radio" name="job" id="job007">武僧</a></label>
+            <label for="job008"><a class="btn_job"><img src="img/icon_job_008.png"><input type="radio" name="job" id="job008">龙骑士</a></label>
+            <label for="job009"><a class="btn_job"><img src="img/icon_job_009.png"><input type="radio" name="job" id="job009">忍者</a></label>
+            <br>
+            <label for="job010"><a class="btn_job"><img src="img/icon_job_010.png"><input type="radio" name="job" id="job010">吟游诗人</a></label>
+            <label for="job011"><a class="btn_job"><img src="img/icon_job_011.png"><input type="radio" name="job" id="job011">机工士</a></label>
+            <br>
+            <label for="job012"><a class="btn_job"><img src="img/icon_job_012.png"><input type="radio" name="job" id="job012">黑魔法师</a></label>
+            <label for="job013"><a class="btn_job"><img src="img/icon_job_013.png"><input type="radio" name="job" id="job013">召唤士</a></label>
+            <br><br>
+        </article>
+
+        <article class="block_02">
+            <img width="320" src="img/mokujin_img.png">
+            <div class="mokujin_text">
+                木人HP： <p class="mokujin_hp">0</p>
+            </div>
+        </article>
+
+        <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+        <article class="block_03">
+            <div class="remaining_text btn_S center" style="padding:5px; width: 155px;">
+                木人剩余HP<br>
+                <input class="remainingHitpoint" type='number' value='0' min='0' max='100'> %<br>
+            </div>
+            <div class="remaining_text btn_S center" style="padding:5px; width: 155px;">
+                剩余战斗时间<br> <input class="remainingSeconds" type='number' value='0' min='0' max='180'> 秒<br>
+            </div>
+            <div class="size_S center color_red">※只能输入其中一方</div>
+            <br>
+        </article>
+
+        <article class="block_04 center">
+            <a class="btn_M center calculation_btn">DPS计算</a>
+            <br>
+            你的DPS数值大概…<br>
+            <p class="dps_text">
+                约 <p class="dps_value">0</p>
+            </p>噢！
+            <p class="tweet_button"></p>
+        </article>
+
+        <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+        <article class="size_S">
+            以下メモ。<br>
+            <br>
+            ・打倒！吉田P！<br>
+            <a href="http://dengekionline.com/elem/000/001/221/1221731/" class="underline" target="blank">参照电击的报道。</a><br>
+            ---顺便说一下、我在PLL时挑战的是“启动篇：零式4”的难度。<br>
+            ---现在我的最好记录是用苍穹之咒杖和一身禁书强化装备下剩余15秒、作为黑魔有自信的人以剩余15秒为目标挑战一下吧。<br>
+            <br>
+            ・第一个木人歼灭战是极骑神的木人。<br>
+            ・机工城亚历山大：启动篇之类的、是启动篇1-4共通的木人。因为这个所需的dps大致差不多。<br>
+            ・极罗波那讨伐战跟极云神是共通的。<br>
+            <br>
+            ・部分安卓端、一些浏览器可能会不能正常运作。<br>
+            ・如果不能正常运作的话，试一下别的手机别的浏览器。<br>
+            <br>
+            ・角色设置＞界面设置＞界面<br>
+            　在「显示所选目标的体力百分比」上打勾就能表示出剩余HP百分比。<br>
+            <img width="320" src="img/mokujin_settings.png"><br>
+            <br>
+        </article>
+
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

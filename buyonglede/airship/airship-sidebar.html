@@ -1,0 +1,215 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>FF14：地下工房</title>
+		<link rel="shortcut icon" type="../LYJ/icon/Logo.png" href="../LYJ/icon/Logo.png" media="screen" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--<link href='http://fonts.useso.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="../LYJ/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="js/airship.js"> </script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+<body onload="init();">
+
+
+		<!-- Header -->
+		<div id="header">
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">FF14:地下工房</a></h1>
+					<span>Design by Aya_Tsuki</span>
+				</div>
+				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="left-sidebar.html">飞空艇材料</a></li>
+						<li class="active"><a href="airship-sidebar.html">飞空艇属性</a></li>
+						<li><a href="right-sidebar.html">房屋材料</a></li>
+						<li><a href="no-sidebar.html">飞空艇路线开放&奖励</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+			  <div class="row"> 
+					<!-- Content -->
+			    <div id="content" class="8u skel-cell-important">
+						<section>
+				  		<header>
+								<h2>飞空艇属性</h2>
+								<span class="byline">
+									<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+									飞空艇属性计算器<br>
+									<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+									已更新3.2版本威尔特甘斯级属性。【2016.7.11】
+								</span>
+					    </header>
+							<h3>计算结果</h3>
+							<hr>
+							<div id="result">
+							  <table>
+							    <thead>
+							      <tr>
+							        <th style="width:80px">部位</th>
+							        <th style="width:9em">使用部件</th>
+							        <th style="width:80px">探索性能</th>
+							        <th style="width:80px">收集性能</th>
+							        <th style="width:80px">巡航速度</th>
+							        <th style="width:80px">航行距离</th>
+							        <th style="width:80px">恩惠</th>
+							        <th style="width:80px">配件重量</th>
+						          </tr>
+						        </thead>
+							    <tbody>
+							      <tr id="hull-result">
+							        <th>船体</th>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+						          </tr>
+							      <tr id="rigging-result">
+							        <th>气囊</th>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+						          </tr>
+							      <tr id="forecastle-result">
+							        <th>船首</th>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+						          </tr>
+							      <tr id="aftcastle-result">
+							        <th>船尾</th>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+						          </tr>
+						        </tbody>
+							    <tfoot>
+							      <tr id="sum">
+							        <th>合計</th>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+							        <td></td>
+						          </tr>
+						        </tfoot>
+						      </table>
+							  <p>重量:<span id="maxcap">0/0</span> <span id="capover"> /span></p>
+				 		</div>
+					</div>
+					<p>
+					  <!-- Content End-->
+					  
+				  </p>
+				<div id="menu">
+					  <h3>部件设定</h3>
+						<form onsubmit="changeTable();">
+						<p>
+							<label for="rank">飞空艇等级</label>
+							<input id="rank" type="text" value=50 size="4" onchange="changeRank(this.value,0);">
+							<input type="button" value="+" onclick="changeRank(document.getElementById('rank').value,1);" />
+							<input type="button" value="-" onclick="changeRank(document.getElementById('rank').value,-1);" />
+						</p>
+						<p>
+							<label for="hull">船体</label>
+							<select id="hull" onchange="changeTable();">
+								<option value="bronco">野马级</option>
+								<option value="invincible">无敌级</option>
+								<option value="enterprise">企业级</option>
+								<option value="invincible2">无敌级Ⅱ级</option>
+								<option value="odyssey">奥德赛级</option>
+								<option value="tatanora">塔塔诺拉级</option>
+								<option value="Viltgance">威尔特甘斯级</option>
+							</select>
+						</p>
+						<p>
+							<label for="rigging">气囊</label>
+							<select id="rigging" onchange="changeTable();">
+								<option value="bronco">野马级</option>
+								<option value="invincible">无敌级</option>
+								<option value="enterprise">企业级</option>
+								<option value="invincible2">无敌级Ⅱ级</option>
+								<option value="odyssey">奥德赛级</option>
+								<option value="tatanora">塔塔诺拉级</option>
+								<option value="Viltgance">威尔特甘斯级</option>
+							</select>
+						</p>
+						<p>
+							<label for="forecastle">船首</label>
+							<select id="forecastle" onchange="changeTable();">
+								<option value="bronco">野马级</option>
+								<option value="invincible">无敌级</option>
+								<option value="enterprise">企业级</option>
+								<option value="invincible2">无敌级Ⅱ级</option>
+								<option value="odyssey">奥德赛级</option>
+								<option value="tatanora">塔塔诺拉级</option>
+								<option value="Viltgance">威尔特甘斯级</option>
+							</select>
+						</p>
+						<p>
+							<label for="aftcastle">船尾</label>
+							<select id="aftcastle" onchange="changeTable();">
+								<option value="bronco">野马级</option>
+								<option value="invincible">无敌级</option>
+								<option value="enterprise">企业级</option>
+								<option value="invincible2">无敌级Ⅱ级</option>
+								<option value="odyssey">奥德赛级</option>
+								<option value="tatanora">塔塔诺拉级</option>
+								<option value="Viltgance">威尔特甘斯级</option>
+							</select>
+						</p>
+						</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				create by Aya_Tsuki - for FF14 微博<a href="http://www.weibo.com/aya1210/" target="_blank">@黑羽叽</a>
+			</div>
+		</div>
+		
+	</body>
+</html>

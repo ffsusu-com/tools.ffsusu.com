@@ -1,0 +1,1534 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>FF14：地下工房</title>
+		<link rel="shortcut icon" type="../LYJ/icon/Logo.png" href="../LYJ/icon/Logo.png" media="screen" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--<link href='http://fonts.useso.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="../LYJ/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="../LYJ/plugins/js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="../LYJ/plugins/js/jquery.lightbox.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<script  type="text/javascript">
+$(document).ready(function(){
+	//alert($("#goTopBtn").css("top"));
+	if($("#goTopBtn").css("top")=="180px"){
+                $("#goTopBtn").hide();
+            }
+      $(window).scroll(function(){//滚动时触发函数
+            if($("#goTopBtn").css("top")=="180px"){
+				//alert(111);
+                $("#goTopBtn").hide();
+            }else{
+                 $("#goTopBtn").show();
+            }
+          $("#goTopBtn").css("top",$(document).scrollTop()+500);//将滚动条高度赋给悬浮框
+      });
+})
+
+</script>
+<script>
+	function button1(){
+	
+	button2(button3);	
+}
+function button2(callback){
+  window.scrollTo(0,0);
+  callback();
+}
+function button3(){
+	
+  $("#goTopBtn").hide();
+ // alert(22);
+}
+</script>
+<style> 
+
+#goTopBtn { 
+POSITION: fixed; TEXT-ALIGN: center;margin-right:50px; LINE-HEIGHT: 30px; WIDTH: 30px; bottom:90px;HEIGHT: 20px; FONT-SIZE: 12px; CURSOR: pointer; RIGHT: 0px; _position: absolute; _right: auto 
+} 
+</style> 
+	</head>
+	<body class="no-sidebar">
+		<div style="position: absolute;z-index:90;top:180px" id="goTopBtn" onclick="button1()"><img border=0 src="http://tool.ffsusu.com/wp-content/uploads/2015/10/top.png"></div>
+		<!-- Header -->
+		<div id="header">
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="#">FF14:地下工房</a></h1>
+					<span>Design by Aya_Tsuki</span>
+				</div>
+				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="left-sidebar.html">飞空艇材料</a></li>
+						<li><a href="airship-sidebar.html">飞空艇属性</a></li>
+						<li><a href="right-sidebar.html">房屋材料</a></li>
+						<li class="active"><a href="no-sidebar.html">飞空艇路线开放&奖励</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+					<!-- Content -->
+					<h1>更新日志</h1><br>
+					<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+						对应[3.1版本/3.2版本](2016.3.18)<br>
+					<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+						加入了各区域必要等级(2016.1.11)<br>
+					<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+						修正了部分错误内容(2016.1.7)
+					<center>
+					<hr>
+					<div id="content" class="8u skel-cell-important">
+						<section>
+							<header>
+								<span class="byline">区域开放一览</span>
+								<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+									[点击<span style="color:red;">编号</span>可跳转到<span style="color:red;">对应编号</span>查看奖励]<br>
+								<img src="http://ww1.sinaimg.cn/large/6d781e30gw1exdhbtoynsj200k00k04k.jpg">
+									[参考链接:<a href = "http://wiki.joyme.com/ff14/%E9%83%A8%E9%98%9F%E9%A3%9E%E7%A9%BA%E8%89%87" target="_blank">FF14中文维基 - 部队飞空艇</a>]
+							</header>
+					</div>
+					
+					<table border="1" cellpadding="1" cellspacing="1" width="100%" style="width:690px;">
+						<tbody>
+							<tr>
+								<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+									<span style="color:#FFFFFF;">探索区域</span>
+								</td>
+								<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+									<span style="color:#FFFFFF;">开放区域</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#01">[01]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#03">[03]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#02">[02]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#04">[04]</a> <a href="#05">[05]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#05">[05]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#06">[06]</a> <a href="#07">[07]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#06">[06]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#11">[11]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#07">[07]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#08">[08]</a> <a href="#10">[10]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#08">[08]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#09">[09]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#10">[10]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#12">[12]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#11">[11]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#13">[13]</a> <a href="#14">[14]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#12">[12]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#16">[16]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#13">[13]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#15">[15]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#15">[15]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#19">[19]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#16">[16]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#17">[17]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#17">[17]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#18">[18]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#19">[19]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#20">[20]</a> <a href="#23">[23]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#20">[20]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#21">[21]</a> <a href="#22">[22]</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#21">[21]</a></span>
+								</td>
+								<td colspan="4" style="border: 1px solid #cacaca;text-align:center;">
+									<span>云海 <a href="#24">[24]</a></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<span class="byline">❤地图[点击可查看大图]:</span><br>
+					<a href="http://tool.ffsusu.com/wp-content/uploads/2015/12/fkt.png" rel="lightbox" title="点我看大图(⁄ ⁄•⁄ω⁄•⁄ ⁄)"><img src="http://tool.ffsusu.com/wp-content/uploads/2015/12/fkt.png" width="50%"></a><br>
+					<hr>
+					<div id="content" class="8u skel-cell-important">
+						<section>
+						<header>
+							<span class="byline">探索奖励一览</span>
+						</header>
+					</div>
+		<p style="text-align: center;">
+	<script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width:920px;">
+	<tbody>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="01"></a><span style="color:#FFFFFF;">云海01 &amp; 【开放可能区域】云海03</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmfw1kej203k03kaao.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				莫古力的王冠
+			</td>
+			<td style="text-align: center;">
+				家具素材：莫古莫古吊灯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnnc03wj203k03kjrx.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1f1szkthpn1j203k03k3z1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				浮岛陶石(不确定)
+			</td>
+			<td style="text-align: center;">
+				家具素材：小仙女吊灯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunpmdrhqj203k03kaak.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				蓝铁矿、钨铁矿、竹片、巧力/耐力魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="02"></a><span style="color:#FFFFFF;">云海02 &amp; 【开放可能区域】云海04 05</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlo4il3yj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				灌木树苗
+			</td>
+			<td style="text-align: center;">
+				庭具素材：莫古力绿雕
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlo1kegtj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				蓝铁矿、金矿、竹片、咏唱/刚柔魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="03"></a><span style="color:#FFFFFF;">云海03 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnwgvnsj203k03k74v.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				红莫柯草
+			</td>
+			<td style="text-align: center;">
+				零件素材：致远帆布
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlmjq3f1j203k03kt97.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhln8qatuj203k03kgm4.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				东方小判金币
+			</td>
+			<td style="text-align: center;">
+				家具素材：招财宝
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlngbtsdj203k03kmxn.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				白金矿、轻木废材、巨匠/名匠魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="04"></a><span style="color:#FFFFFF;">云海04 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnwgvnsj203k03k74v.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				红莫柯草
+			</td>
+			<td style="text-align: center;">
+				零件素材：致远帆布
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlmjq3f1j203k03kt97.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhln6b34fj203k03kdgd.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				除臭明矾
+			</td>
+			<td style="text-align: center;">
+				家具素材：熊皮地毯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnjdtmoj203k03kdg7.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				轻木废材、绯红树汁、博识/器识魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="05"></a><span style="color:#FFFFFF;">云海05 &amp; 【开放可能区域】云海06 07</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnuk4goj203k03kaal.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				玩具箱设计图
+			</td>
+			<td style="text-align: center;">
+				家具素材：玩具箱
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlo6p3otj203k03k74t.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				桦树枝、轻木废材、深色/深红/深绿水晶、雄略/耐力魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="06"></a><span style="color:#FFFFFF;">云海06 &amp; 【开放可能区域】云海11</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlo4il3yj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				灌木树苗
+			</td>
+			<td style="text-align: center;">
+				庭具素材：莫古力绿雕
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlo1kegtj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1eyunpn0csgj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				龙堡浮草(3.1)
+			</td>
+			<td style="text-align: center;">
+				庭具素材：龙堡绒树<br />
+				莫古外墙必要素材
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1eyunpnes7nj203k03kjro.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				轻木废材、深色/深绿水晶、暗栗树枝、咏唱/信力魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="07"></a><span style="color:#FFFFFF;">云海07 &amp; 【开放可能区域】云海08 10</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhln6b34fj203k03kdgd.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				除臭明矾
+			</td>
+			<td style="text-align: center;">
+				家具素材：熊皮地毯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnjdtmoj203k03kdg7.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szku3linj203k03kgm5.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				チンカルコナイト(3.2)
+			</td>
+			<td style="text-align: center;">
+				家具素材：プリンソファー/プリンラグ<br />
+				プリンフロアランプ/プリンデスク
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szku75gqj203k03kjrs.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szkvax9cj203k03kt92.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szkutmn6j203k03kjrt.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szkvf2awj203k03k0t2.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				天然粘土、深蓝/深红水晶、钨铁矿、魔匠/巨匠魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="08"></a><span style="color:#FFFFFF;">云海08 &amp; 【开放可能区域】云海09&nbsp;</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnyhinwj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				铁巨人核心
+			</td>
+			<td style="text-align: center;">
+				宠物素材：铁小人
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmx5k22j203k03k0tg.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szkw1qdcj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				多玛芒草苗(3.1)
+			</td>
+			<td style="text-align: center;">
+				家具素材：多玛芒草
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szkw6kg1j203k03kaap.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				金矿、苍天石原石、轻木木材、信力/意力/武略魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="09"></a><span style="color:#FFFFFF;">云海09 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnuk4goj203k03kaal.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				玩具箱设计图
+			</td>
+			<td style="text-align: center;">
+				家具素材：玩具箱
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlo6p3otj203k03k74t.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szkwvqf7j203k03k750.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				ボイジャースポイル:黄銅(3.2)
+			</td>
+			<td style="text-align: center;">
+				兑换素材：エクスペディションキャップ&nbsp;
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szkxi9uuj203k03k0tb.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				轻木木材、苍天石原石、白金矿、刚力/战技魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="10"></a><span style="color:#FFFFFF;">云海10 &amp; 【开放可能区域】云海12</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmfw1kej203k03kaao.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				莫古力的王冠
+			</td>
+			<td style="text-align: center;">
+				家具素材：莫古莫古吊灯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnnc03wj203k03kjrx.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunpq5ogdj203k03k3z1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				浮岛陶石(3.1)
+			</td>
+			<td style="text-align: center;">
+				照明家具:小仙女吊灯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunpmdrhqj203k03kaak.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				石粉粘土、苍天石原石、绯红树汁、博识/达识魔晶石3型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="11"></a><span style="color:#FFFFFF;">云海11 &amp; 【开放可能区域】云海13 14</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmfw1kej203k03kaao.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				莫古力的王冠
+			</td>
+			<td style="text-align: center;">
+				家具素材：莫古莫古吊灯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnnc03wj203k03kjrx.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				炼金纤维、合成生物的粗皮、桦树枝、智力/咏唱魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="12"></a><span style="color:#FFFFFF;">云海12 &amp; 【开放可能区域】云海16</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlo4il3yj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				灌木树苗
+			</td>
+			<td style="text-align: center;">
+				庭具素材：莫古力绿雕
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlo1kegtj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				合成生物的粗皮、炼金纤维、神眼/巧力魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="13"></a><span style="color:#FFFFFF;">云海13 &amp; 【开放可能区域】云海15</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhln6b34fj203k03kdgd.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				除臭明矾
+			</td>
+			<td style="text-align: center;">
+				家具素材：熊皮地毯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnjdtmoj203k03kdg7.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1eyunpn0csgj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				龙堡浮草(3.1)
+			</td>
+			<td style="text-align: center;">
+				庭具素材：龙堡绒树<br />
+				莫古外墙必要素材
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1eyunpnes7nj203k03kjro.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				炼金树脂、合成生物的粗皮、钨铁矿、名匠/魔匠魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="14"></a><span style="color:#FFFFFF;">云海14 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnuk4goj203k03kaal.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				玩具箱设计图
+			</td>
+			<td style="text-align: center;">
+				家具素材：玩具箱
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlo6p3otj203k03k74t.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szkw1qdcj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				多玛芒草苗(3.1)
+			</td>
+			<td style="text-align: center;">
+				家具素材：多玛芒草
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szkw6kg1j203k03kaap.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				铁刀木、魔科学纤维、金矿、智力/神眼魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="15"></a><span style="color:#FFFFFF;">云海15 &amp; 【开放可能区域】19</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmfw1kej203k03kaao.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				莫古力的王冠
+			</td>
+			<td style="text-align: center;">
+				家具素材：莫古莫古吊灯
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnnc03wj203k03kjrx.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szky934vj203k03kdge.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				古代獣の化石片(3.2)
+			</td>
+			<td style="text-align: center;">
+				<p>
+					家具素材：古代獣の頭骨標本<br />
+					古代獣の骨格標本/古代獣の尾骨標本
+				</p>
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1f1szkyynsmj203k03kaam.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szkzdh7hj203k03k74z.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szl08ryhj203k03k74v.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				铁刀木、魔科学纤维、白金矿、武略/耐力魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="16"></a><span style="color:#FFFFFF;">云海16 &amp; 【开放可能区域】17</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				获得物品
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhln8qatuj203k03kgm4.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				东方小判金币
+			</td>
+			<td style="text-align: center;">
+				家具素材：招财宝
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlngbtsdj203k03kmxn.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				铁刀木、绯红树汁、深色晶簇、达识/器识魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="17"></a><span style="color:#FFFFFF;">云海17 &amp; 【开放可能区域】18</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnuk4goj203k03kaal.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				玩具箱设计图
+			</td>
+			<td style="text-align: center;">
+				家具素材：玩具箱
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlo6p3otj203k03k74t.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlmstj9rj203k03kgm1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				黄昏鞣革
+			</td>
+			<td style="text-align: center;">
+				部队纹章盾/部队帽/部队短袖罩衣
+			</td>
+			<td>
+				<div style="text-align: center;">
+					<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlnvihsfj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmgsiltj203k03kwet.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlo3fol8j203k03kwez.jpg" style="width: 50px; height: 50px;" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunplf08wj203k03k74s.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				风绢(3.1)
+			</td>
+			<td style="text-align: center;">
+				高贵紧身上衣<br />
+				高贵裙撑礼服<br />
+				高贵马裤
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1eyunpnra86j203k03k74u.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunpor1taj203k03kwew.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1eyunpoi87nj203k03k74k.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				桦树枝、深红晶簇、名匠/巨匠魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="18"></a><span style="color:#FFFFFF;">云海18 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlmstj9rj203k03kgm1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				黄昏鞣革
+			</td>
+			<td style="text-align: center;">
+				部队纹章盾/部队帽/部队短袖罩衣
+			</td>
+			<td>
+				<div style="text-align: center;">
+					<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlnvihsfj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmgsiltj203k03kwet.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlo3fol8j203k03kwez.jpg" style="width: 50px; height: 50px;" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnyhinwj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				铁巨人核心(3.1增加?)
+			</td>
+			<td style="text-align: center;">
+				铁小人
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmx5k22j203k03k0tg.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				深绿晶簇、刚力/战技魔晶石3/4型、刚力5型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="19"></a><span style="color:#FFFFFF;">云海19 &amp; 【开放可能区域】20、23</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlmstj9rj203k03kgm1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				黄昏鞣革
+			</td>
+			<td style="text-align: center;">
+				部队纹章盾/部队帽/部队短袖罩衣
+			</td>
+			<td>
+				<div style="text-align: center;">
+					<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlnvihsfj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmgsiltj203k03kwet.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlo3fol8j203k03kwez.jpg" style="width: 50px; height: 50px;" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnyhinwj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				铁巨人核心(3.1增加?)
+			</td>
+			<td style="text-align: center;">
+				铁小人
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmx5k22j203k03k0tg.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunpl80bsj203k03k3z3.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				恐龙革(3.1)
+			</td>
+			<td style="text-align: center;">
+				高贵钟形帽/高贵筒靴/高贵皮靴
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1eyunpp26o0j203k03kjrr.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1eyunplwz2mj203k03kq39.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1eyunpklm0ij203k03kjrp.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				钨铁矿、深蓝晶簇、信力/意力魔晶石3/4/5型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="20"></a><span style="color:#FFFFFF;">云海20 &amp; 【开放可能区域】21 22</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnyhinwj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				铁巨人核心(3.1增加?)
+			</td>
+			<td style="text-align: center;">
+				铁小人
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmx5k22j203k03k0tg.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlmstj9rj203k03kgm1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				黄昏鞣革
+			</td>
+			<td style="text-align: center;">
+				部队纹章盾/部队帽/部队短袖罩衣
+			</td>
+			<td>
+				<div style="text-align: center;">
+					<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlnvihsfj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmgsiltj203k03kwet.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlo3fol8j203k03kwez.jpg" style="width: 50px; height: 50px;" />&nbsp;
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl0vrikj203k03kgm7.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				アンティークレザー（3.2）
+			</td>
+			<td style="text-align: center;">
+				エクスペディションコート<br />
+				エクスペディショングローブ<br />
+				エクスペディションモカシン<br />
+				エクスペディション・サイブーツ<br />
+				エクスペディションタバード<br />
+				エクスペディションケクス<br />
+				エクスペディションパンタレット
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl176w3j203k03kjrx.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl1oxa5j203k03kaah.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szl23z8lj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl2n35sj203k03kjrp.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl3adh6j203k03kaag.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				深红晶簇、金矿、巧力/刚柔魔晶石3/4型、巧力5型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="21"></a><span style="color:#FFFFFF;">云海21 &amp; 【开放可能区域】24</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlnuk4goj203k03kaal.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				玩具箱设计图
+			</td>
+			<td style="text-align: center;">
+				家具素材：玩具箱
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1exhlo6p3otj203k03k74t.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlmstj9rj203k03kgm1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				黄昏鞣革
+			</td>
+			<td style="text-align: center;">
+				部队纹章盾/部队帽/部队短袖罩衣
+			</td>
+			<td>
+				<div style="text-align: center;">
+					<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlnvihsfj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmgsiltj203k03kwet.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlo3fol8j203k03kwez.jpg" style="width: 50px; height: 50px;" />&nbsp;
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				深绿晶簇、咏唱/雄略魔晶石3/4/5型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="22"></a><span style="color:#FFFFFF;">云海22 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlmstj9rj203k03kgm1.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				黄昏鞣革
+			</td>
+			<td style="text-align: center;">
+				部队纹章盾/部队帽/部队短袖罩衣
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1exhlnvihsfj203k03kq3h.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmgsiltj203k03kwet.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlo3fol8j203k03kwez.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1exhlnyhinwj203k03kdg9.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				铁巨人核心(3.1增加?)
+			</td>
+			<td style="text-align: center;">
+				铁小人
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1exhlmx5k22j203k03k0tg.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl3pmypj203k03kq3g.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				アンティークラグ（3.2）
+			</td>
+			<td style="text-align: center;">
+				エクスペディションコート<br />
+				エクスペディションモカシン<br />
+				エクスペディションタバード<br />
+				エクスペディションケクス<br />
+				エクスペディションパンタレット
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szl464dfj203k03kjrx.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1f1szl522rhj203k03kaah.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl5whiyj203k03kaag.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl6l10ej203k03k74s.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szl74cusj203k03k74l.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				深蓝晶簇、绯红树汁、钨铁矿、博识/器识魔晶石3/4型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="23"></a><span style="color:#FFFFFF;">云海23 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl7tp1ij203k03kt9b.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				古びた譜面:そして世界へ(3.2)
+			</td>
+			<td style="text-align: center;">
+				乐谱素材：オーケストリオン譜:そして世界へ
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl7nz7gj203k03k74u.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl3pmypj203k03kq3g.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				アンティークラグ（3.2）
+			</td>
+			<td style="text-align: center;">
+				エクスペディションコート<br />
+				エクスペディションモカシン<br />
+				エクスペディションタバード<br />
+				エクスペディションケクス<br />
+				エクスペディションパンタレット
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szl464dfj203k03kjrx.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1f1szl522rhj203k03kaah.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl5whiyj203k03kaag.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww2.sinaimg.cn/large/a7a9f7f3gw1f1szl6l10ej203k03k74s.jpg" style="width: 50px; height: 50px;" /><img alt="" src="http://ww1.sinaimg.cn/large/a7a9f7f3gw1f1szl74cusj203k03k74l.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				深红晶簇、铁刀木、智力/神眼魔晶石3/4/5型
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center; background-color: rgb(172, 109, 78);">
+				<a name="24"></a><span style="color:#FFFFFF;">云海24 &amp; 【开放可能区域】无</span>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				图
+			</td>
+			<td style="text-align: center;">
+				取得内容
+			</td>
+			<td style="text-align: center;">
+				用途
+			</td>
+			<td style="text-align: center;">
+				图
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww4.sinaimg.cn/large/a7a9f7f3gw1f1szl8oxysj203k03kq3m.jpg" style="width: 50px; height: 50px;" />
+			</td>
+			<td style="text-align: center;">
+				ボイジャースポイル:鋳鉄(3.2)
+			</td>
+			<td style="text-align: center;">
+				坐骑兑换素材：ズー
+			</td>
+			<td style="text-align: center;">
+				<img alt="" src="http://ww3.sinaimg.cn/large/a7a9f7f3gw1f1szl8ygoaj203k03kdgb.jpg" style="width: 50px; height: 50px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				暗栗树枝、深绿晶簇、铁刀木、武略/耐力魔晶石3/4/5型
+			</td>
+		</tr>
+	</tbody>
+</table>
+			</div>
+		</div>
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				create by Aya_Tsuki - for FF14 微博<a href="http://www.weibo.com/aya1210/" target="_blank">@黑羽叽</a>
+			</div>
+		</div>
+		
+	</body>
+</html>

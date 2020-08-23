@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+<head>
+<!--<meta charset="utf-8">-->
+    <title>正在跳转...</title>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a13bc04b2d80225bbc8fefec290b6bd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script type="text/javascript">
+		window.onload=function(){
+			var url=randomUrl();
+			window.location=url;
+			//var url="window.location='"+randomUrl()+"'";
+			//window.setTimeout(url,2000);
+			};
+		function randomNum(Min,Max){
+			var Range = Max - Min;   
+			var Rand = Math.random();   
+			return(Min + Math.round(Rand * Range));   
+		}
+		function randomUrl(){
+			var url="http://s"+randomNum(0,3)+".tool.ffxiv.cn/xiaogongju";
+			return url;
+		}	
+    </script>
+    </head>
+    <body>
+</body>
+</html>

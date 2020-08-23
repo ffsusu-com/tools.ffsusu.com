@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>3.5版本、任务列表一览</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+
+<script>
+
+    patch_array = [
+        {
+            type:  '0',
+            title:  'patch 3.5　(2017/06/06)',
+        },
+        {
+            type: '1',
+            title:  '主线',
+            notice1: '「来自基拉巴尼亚的消息」<br>',
+            notice2: '石之家 (X: 6.6 Y: 6.1)　塔塔露<br>',
+            notice3: '<p class="color_orange">主线「灵魂继承者」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '新地下城：坚牢铁壁 巴埃萨长城',
+            notice1: '「？？？？？」<br>',
+            notice2: '？？？？？<br>',
+            notice3: '<p class="color_orange">主线「？？？？？？」完成</p><br>',
+            notice4: '<p class="color_red">平均装等230～</p><br>',
+        },
+        {
+            type: '1',
+            title:  '新地下城：天山深境 索姆阿尔灵峰',
+            notice1: '「天山深境 索姆阿尔灵峰」<br>',
+            notice2: '田园郡 (X: 4.6 Y: 8.4)　轻悠悠的莫古力<br>',
+            notice3: '<p class="color_orange">主线「苍穹之禁城」完成</p><br>',
+            notice4: '<p class="color_red">平均装等230～</p><br>',
+        },
+        {
+            type: '1',
+            title:  '禁忌城邦玛哈 关联「影之国」',
+            notice1: '「影之国」<br>',
+            notice2: '阿巴拉提亚云海 (X: 6.2 Y: 5.8)　斯塔西娅<br>',
+            notice3: '<p class="color_orange">支线「维护天空的和平」完成</p><br>',
+            notice4: '<p class="color_red"> 平均装等235～</p><br>',
+        },
+        {
+            type: '1',
+            title:  '支线「三斗神」关联',
+            notice1: '「新的同伴」<br>',
+            notice2: '石之家 (X: 6.1 Y: 5.2)　蛇心<br>',
+            notice3: '<p class="color_orange">支线「黄金色的灾厄」完成</p><br>',
+            notice4: '<p class="color_red">平均装等235～</p><br>',
+        },
+        {
+            type: '1',
+            title:  '支线「三斗神」关联',
+            notice1: '「登峰造极的鬼神祖尔宛」<br>',
+            notice2: '石之家 (X: 6.1 Y: 5.2)　蛇心<br>',
+            notice3: '<p class="color_orange">支线「新的同伴」完成</p><br>',
+            notice4: '<p class="color_red">平均装等250～</p><br>',
+        },
+        {
+            type: '1',
+            title:  '支线「调查员」关联',
+            notice1: '「进退维谷」<br>',
+            notice2: '伊修加德基础层 (X: 9.9 Y: 11.4)　齐尔<br>',
+            notice3: '<p class="color_orange">支线剧情任务「时魔法之谜」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '支线「圣恩达利姆神学院记」关联',
+            notice1: '「弱者的叛乱」<br>',
+            notice2: '伊修加德砥柱层 (X: 8.7 Y: 7.9)　布里亚迪安<br>',
+            notice3: '<p class="color_orange">支线剧情任务「雪中福音」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '元灵武器关联',
+            notice1: '「人造元灵终绽放」<br>',
+            notice2: '魔大陆 阿济兹拉 (X: 7.4 Y: 11.5)　阿尔达希尔<br>',
+            notice3: '<p class="color_orange">支线剧情任务「人造元灵的未来」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '蛮族支线关联',
+            notice1: '「修复团之乱！」<br>',
+            notice2: '田园郡 (X: 6.9 Y: 7.2)　德莱德克斯<br>',
+            notice3: '<p class="color_orange">主线「苍穹之禁城」、蛮族剧情任务「感激之情，难以比喻」、「离群者的故事」、「着眼未来的修复团！」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '召唤兽幻化',
+            notice1: '「召唤兽变形」<br>',
+            notice2: '利姆萨·罗敏萨下层甲板 (X: 4.7 Y: 11.4)　图比尔盖姆<br>',
+            notice3: '<p class="color_orange">职业任务「邪道与正道」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '凤凰坐骑',
+            notice1: '「凤鸣朝阳」<br>',
+            notice2: '田园郡 (X: 7.5 Y: 6.1)　想要带路的冒险者<br>',
+            notice3: '<p class="color_orange">主线「苍穹之禁城」完成、获得坐骑「白云猎鹰」 「怒武猎鹰」 「圆桌猎鹰」 「战争猎鹰」 「暗黑猎鹰」「睿智猎鹰」「厉鬼猎鹰」</p><br>',
+        },
+        {
+            type: '1',
+            title:  '新房屋外观',
+            notice1: '小型猴面雀外墙<br>中型猴面雀外墙<br>大型猴面雀外墙<br>',
+        },
+        {
+            type: '1',
+            title:  '家具「画框」',
+            notice1: '追加可以放置绘画的「画框」。<br>≪「绘画」获得方法≫<br>',
+            notice2: '田园郡(X:4.5 Y:6.4)　一挥而就的画家<br>',
+        },
+        {
+            type: '1',
+            title:  '家具',
+            notice1: '追加新的家具<br>',
+        },
+        {
+            type: '1',
+            title:  '水族箱',
+            notice1: '「水族箱」可饲养的鱼类增加<br>',
+        },
+        {
+            type: '1',
+            title:  '九宫幻卡',
+            notice1: '1：大会规则有大幅度改变<br>',
+            notice2: '2：追加新的卡牌<br>',
+            notice3: '<p class="color_orange">3：NPC对战时、规则「随机」删除</p><br>',
+        },
+        {
+            type: '1',
+            title:  '发型',
+            notice1: '追加新的发型。<br>',
+        },
+        {
+            type: '1',
+            title:  '情感动作',
+            notice1: '追加新的情感动作。<br>',
+        },
+        {
+            type: '1',
+            title:  '田园郡',
+            notice1: '增加了田园郡的建筑物。<br>',
+        },
+        {
+            type: '1',
+            title:  '新PVP装备',
+            notice1: '新增235装等的PVP向装备。<br>',
+            notice2: '<p class="color_orange">牙狼-GARO-联动装备</p><br>',
+        },
+        {
+            type: '1',
+            title:  '搭档关联',
+            notice1: '搭档系统，进行以下调整。<br>',
+            notice2: '・搭档呼出时，一部分副本可以申请<br>',
+            notice3: '・搭档呼出时，可以开始理符任务<br>',
+            notice4: '・搭档呼出时，可使用陆行鸟运输<br>',
+            notice5: '・满编队伍下，可以呼出搭档<br>',
+            notice6: '・可以邀请 已经招出搭档的玩家<br>',
+            notice7: '・队伍列表内，搭档的显示方法变更<br>'
+        },
+        {
+            type: '1',
+            title:  '食物关联',
+            notice1: '同一个食物的效果可以叠加延长，普通品质和高品质区别对待，不可叠加。<br><br>',
+            notice2: '配合部队特效使用，可以获得2倍以上的时间。<br>',
+            notice3: '<p class="color_orange">※区分NQ／HQ道具。</p><br>',
+        },
+        {
+            type: '1',
+            title:  'gpose',
+            notice1: 'gpose新增以下功能。<br>',
+            notice2: '・实装画角变焦功能。 <br>',
+            notice3: '・实装镜头反转功能。<br>',
+            notice4: '・集体动作里的目标角色可以附加各种状态和异常状态。<br>',
+            notice5: '・可设置的光源数从1个扩大到3个。<br>',
+            notice6: '・实装光源的调光功能。<br>',
+            notice7: '其他等等<br>'
+        },
+        {
+            type: '1',
+            title:  '新装备',
+            notice1: '追加新道具。<br>',
+        },
+        {
+            type: '1',
+            title:  '陆行鸟鸟甲',
+            notice1: '追加新鸟甲。<br>',
+        },
+        {
+            type: '1',
+            title:  '坐骑',
+            notice1: '追加新坐骑。<br>',
+        },
+        {
+            type: '1',
+            title:  '宠物',
+            notice1: '追加新宠物。<br>',
+        },
+        {
+            type: '1',
+            title:  '招募关联',
+            notice1: '<p class="color_orange">招募新增，大区内的所有服可以通过募集板招募/参与</p><br>',
+            notice2: '招募的范围分为：同服/全区招募。<br>',
+        },
+        {
+            type: '1',
+            title:  '任务搜索器关联',
+            notice1: '追加详细的预约排本情况。<br>',
+        },
+
+        {
+            type:  '0',
+            title:  'patch 3.55a　(2017/00/00)',
+        },
+        {
+            type: '1',
+            title:  '支线',
+            notice1: '「いにしえの鼓動」<br>',
+            notice2: '田园郡 (X: 7.7 Y: 4.2)　スリップスリクス<br>',
+            notice3: '<p class="color_orange">支线「维护天空的和平」完成、开放了24人副本「影之国」</p><br>',
+        },
+        {
+            type: '1',
+            title:  '元灵武器关联',
+            notice1: '「新たな報せ」<br>',
+            notice2: '魔大陆 阿济兹拉 (X: 7.4 Y: 11.5)　阿尔达希尔<br>',
+            notice3: '<p class="color_orange">支线剧情任务「研究结束」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '新增内容「お得意様取引」',
+            notice1: '「お得意様シロ・アリアポー」<br>',
+            notice2: '田园郡 (X: 5.8 Y: 7.0)　ゲイムロナ<br>',
+            notice3: '<p class="color_orange">支线任务「打开新世界的大门」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  'プロトアルテマ戦',
+            notice1: '2016–2017 FanFest 会场内可先行体验，测试实装的「プロトアルテマ戦」。<br>',
+        },
+        {
+            type: '1',
+            title:  '群狼盛宴 新地图',
+            notice1: '直接新增的地图，在随机排队中新的地图将随机选择；如果使用自定义的比赛，可选择你想要的地图。<br>',
+        },
+        {
+            type: '1',
+            title:  '「异界证书」交换',
+            notice1: '艾普上衣（男性专用装备）艾普手套（男性专用装备）<br>艾普短裤（男性专用装备）艾普矮靴（男性专用装备）<br>大召唤士礼服（女性专用装备）<br>大召唤士护臂（女性专用装备）<br>大召唤士长靴（女性专用装备）<br>',
+        },
+
+        {
+            type:  '0',
+            title:  'patch 3.55b　(2017/00/00)',
+        },
+        {
+            type: '1',
+            title:  '云海探索 云冠群岛',
+            notice1: '「云海探索 云冠群岛」更新。<br>',
+        },
+
+        {
+            type:  '0',
+            title:  'patch 3.56　(2017/00/00)',
+        },
+        {
+            type: '1',
+            title:  '主线',
+            notice1: '「想定外の協力者」<br>',
+            notice2: '石之家 (X: 6.0 Y: 5.9)　阿莉塞<br>',
+            notice3: '<p class="color_orange">主线「永远的毕业生」完成</p><br>',
+        },
+        {
+            type: '1',
+            title:  '牙狼＜GARO＞联动',
+            notice1: '可在金蝶游乐场使用金蝶币兑换相关装备，但不可染色<br>',
+        },
+        {
+            type: '1',
+            title:  '管弦乐琴乐谱',
+            notice1: '追加新管弦乐琴乐谱。'
+        },
+        {
+            type: '1',
+            title:  '亚历山大零式机神城：天动之章。',
+            notice1: '・宝箱必定出现两个，宝箱获得道具的周限制废除。<br>',
+            notice2: '・各层通关后的进行度记录废除。<br>',
+            notice3: '・各层的通关顺序废除，可从任意层数攻略。<br>',
+            notice4: '・任务搜索器内可申请。<br>',
+            notice5: '・可获得「超越之力」。<br>',
+        },
+        {
+            type: '1',
+            title:  '亚拉戈圣典神典石',
+            notice1: '一周内获得上限从、450 → 900 变化<br>',
+            notice2: '<p class="color_red">※所持上限2,000不变。</p><br>',
+        },
+        {
+            type: '1',
+            title:  '免费试玩',
+            notice1: '<br>',
+            notice2: '<a class="link" href="#">活动地址</a><br>',
+        },
+
+        // {
+        //     type:  '0',
+        //     title:  'patch 3.55b　(2017/03/09)',
+        // },
+        // {
+        //     type: '1',
+        //     title:  'あああああああああああああ',
+        //     notice1: '「いいいいいいいい」<br>',
+        //     notice2: 'ううううううううううううううう<br>',
+        //     notice3: '<p class="color_orange">ええええええええええええ</p><br>',
+        //     notice4: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice5: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice6: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice7: '<p class="color_red">おおおおおおおおおおおお</p><br>'
+        // },
+        // {
+        //     type: '1',
+        //     title:  'あああああああああああああ',
+        //     notice1: '「いいいいいいいい」<br>',
+        //     notice2: 'ううううううううううううううう<br>',
+        //     notice3: '<p class="color_orange">ええええええええええええ</p><br>',
+        //     notice4: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice5: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice6: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice7: '<p class="color_red">おおおおおおおおおおおお</p><br>'
+        // },
+        // {
+        //     type: '1',
+        //     title:  'あああああああああああああ',
+        //     notice1: '「いいいいいいいい」<br>',
+        //     notice2: 'ううううううううううううううう<br>',
+        //     notice3: '<p class="color_orange">ええええええええええええ</p><br>',
+        //     notice4: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice5: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice6: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice7: '<p class="color_red">おおおおおおおおおおおお</p><br>'
+        // },
+        // {
+        //     type: '1',
+        //     title:  'あああああああああああああ',
+        //     notice1: '「いいいいいいいい」<br>',
+        //     notice2: 'ううううううううううううううう<br>',
+        //     notice3: '<p class="color_orange">ええええええええええええ</p><br>',
+        //     notice4: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice5: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice6: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice7: '<p class="color_red">おおおおおおおおおおおお</p><br>'
+        // },
+        // {
+        //     type: '1',
+        //     title:  'あああああああああああああ',
+        //     notice1: '「いいいいいいいい」<br>',
+        //     notice2: 'ううううううううううううううう<br>',
+        //     notice3: '<p class="color_orange">ええええええええええええ</p><br>',
+        //     notice4: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice5: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice6: '<p class="color_red">おおおおおおおおおおおお</p><br>',
+        //     notice7: '<p class="color_red">おおおおおおおおおおおお</p><br>'
+        // },
+
+    ];
+
+    $(function(){
+
+        // 自動JSON化を有効に
+        $.cookie.json = true;
+
+        var isset = function(data){
+            if(data === "" || data === null || data === undefined){
+                return false;
+            }else{
+                return true;
+            }
+        };
+
+        //パッチリストの生成
+        for (var i = 0; i < patch_array.length; i++) {
+
+            if ( patch_array[i]['type'] == '0' ) {
+                insert = '';//reset
+                insert = '<hr><div style="color:#fc0; font-size:20px; font-weight:bold;">'+patch_array[i]['title']+'</div>'
+
+                $('.patch_list_wrapper').append(insert);
+            }
+
+            if ( patch_array[i]['type'] == '1' ) {
+                img_num = ('00'+(i-1)).slice(-3);
+                insert = '';//reset
+                insert += '<div class="layout_box check_flag">';
+                insert += '<div>【'+ patch_array[i]['title'] +'】</div>';
+                insert += '<img src="./img/patch3.5/'+ img_num +'.png" width="300" height="81">';
+                insert += patch_array[i]['notice1'];
+                if(isset(patch_array[i]['notice2'])){
+                    insert += patch_array[i]['notice2'];
+                };
+                if(isset(patch_array[i]['notice3'])){
+                    insert += patch_array[i]['notice3'];
+                };
+                if(isset(patch_array[i]['notice4'])){
+                    insert += patch_array[i]['notice4'];
+                };
+                if(isset(patch_array[i]['notice5'])){
+                    insert += patch_array[i]['notice5'];
+                };
+                if(isset(patch_array[i]['notice6'])){
+                    insert += patch_array[i]['notice6'];
+                };
+                if(isset(patch_array[i]['notice7'])){
+                    insert += patch_array[i]['notice7'];
+                };
+                if(isset(patch_array[i]['notice8'])){
+                    insert += patch_array[i]['notice8'];
+                };
+                insert += '</div>'
+
+                $('.patch_list_wrapper').append(insert);
+            }
+        }
+
+        //保存クッキーの展開
+        if($.cookie("checkFlag")){
+            var checkFlagArr = $.cookie("checkFlag");
+            var countCheckFlagArr = checkFlagArr.length;
+            for (var i = 0; i < countCheckFlagArr; i++) {
+                if ( checkFlagArr[i]=='1') {
+                    $('.check_flag').eq(i).addClass('check');
+                };
+            };
+        }
+
+        $('.check_flag').click(function(){
+            if ($(this).hasClass('check')) {
+                $(this).removeClass('check');
+            }else{
+                $(this).addClass('check');
+            };
+            saveCheckFlag()
+        });
+
+        $('.tweet_button').socialbutton('twitter', {
+            button: 'horizontal',
+            text: 'FF14 patch3.5 初動リスト #FF14 #FFXIV\n',
+            url: 'http://ff14moo.moo.jp/patch3.5checklist.html'
+        });
+
+    })
+
+    function saveCheckFlag(){
+        var countCheckFlag = $('.check_flag').length;
+        var checkFlagArr = [];
+        //0or1で配列にぶっこむ
+        for ( var i = 0; i < countCheckFlag; i++ ) {
+            if ($('.check_flag').eq(i).hasClass('check')) {
+                checkFlagArr.push(1);
+            }else{
+                checkFlagArr.push(0);
+            };
+        };
+        //配列をクッキー保存
+        $.cookie("checkFlag",checkFlagArr, { expires: 365 , path: "/patch3.5checklist.html" });
+    }
+</script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+<style type="text/css">.device_sp .title {
+        width: 320px;
+    }
+    .commonBox {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5px;
+        margin-top: 0px;
+        padding: 5px;
+        background: #000;
+        font-size: 11px;
+    }
+    .layout_box {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 300px;
+        /*height: 150px;*/
+        border: 1px solid #fc0;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5px;
+        padding: 5px;
+        padding-top: 85px;
+        background: #000;
+        font-size: 11px;
+    }
+    .layout_box:hover {
+        background: #333;
+    }
+    .layout_box.check {
+        border: 1px solid #aaa;
+    }
+    .layout_box.check:after {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        content:"";
+        background: url("img/patch3.4/check_stamp.png");
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+    }
+    .layout_box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid #fc0;
+    }
+    .layout_box.check  img{
+        border-bottom: 1px solid #aaa;
+        -webkit-filter: grayscale(100%);
+    }
+    .layout_box div {
+        background: #fc0;
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: -4px;
+        width: 298px;
+        margin-left: -5px;
+        padding-left: 10px;
+    }
+    .layout_box.check  div{
+        background: #aaa;
+        color: #000;
+    }
+    .layout_box p {
+        font-size: 11px;
+    }
+    .layout_box.check .color_orange {
+        color: #fc8;
+    }
+    .layout_box.check .color_red {
+        color: #f88;
+    }
+</style>
+
+    <div id="stage">
+
+        <p style="vertical-align: top;">
+            <img class="title" src="img/patch3.5/logo.png">
+        </p>
+        <div class="commonBox">
+            <a href="http://ff.sdo.com/web6/news/newsDetail.asp?id=278941" target="blank" class="link">[官方]patch3.5 更新笔记　　　　　　　　　　　　　　</a><br>
+			<br>
+			<br>
+            <br>
+            过去任务列表
+            <a href="patch3.3checklist.html" class="link">patch3.3</a>/<a href="patch3.4checklist.html" class="link">patch3.4</a>
+        </div>
+        <br>
+        FF14 patch3.5 任务列表
+
+        <p class="color_red size_S">※请注意，以下内容包含很多剧透！</p><br>
+        <!-- <hr> -->
+
+        <div class="patch_list_wrapper">
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

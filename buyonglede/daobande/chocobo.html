@@ -1,0 +1,375 @@
+<html lang="cn">
+<head>
+    <title>陆行鸟染色</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anima_weapon_progress.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    
+
+    <style>
+		#Nb_lxn{background-color:#414441; margin:0px;}
+.Nb-pallette{width:800px;margin:10px 0;position:relative;padding:15px;overflow:hidden; text-align:center; min-height:215px;}
+.Nb-pallette h1{float:left;width:100%;padding:0px;margin:10px 0px;color:#8F8F8F;text-shadow:1px 1px #000000;font-size:16px}
+.Nb-pallette .Nb-colour-categories{width:263px; clear:both; margin:0px auto; overflow:hidden;}
+.Nb-lxnrs-circle{float:left;background-color:#ffffff;border:2px solid #202418;font-size:0.0em;text-indent:-10000px;box-shadow:inset 0px 0px 5px 0px rgba(0,0,0,0.75);outline:0;cursor:pointer;width:28px;height:28px;margin-right:6px;border-radius:50%;}
+.Nb-lxnrs-circle:last-of-type{margin-right:0}
+.Nb-lxnrs-circle.active{border:2px solid #ffffff;box-shadow:inset 0px 0px 5px 1px rgba(123,183,211,0.75)}
+.Nb-lxnrs-circle.red{background-color:#DA2C2C}
+.Nb-lxnrs-circle.brown{background-color:#B8864A}
+.Nb-lxnrs-circle.yellow{background-color:#F3E33F}
+.Nb-lxnrs-circle.green{background-color:#A7D550}
+.Nb-lxnrs-circle.blue{background-color:#5F95F5}
+.Nb-lxnrs-circle.purple{background-color:#B577E9}
+.Nb-colours{width:100%; margin:0px auto;margin-top:6px; clear:both;}
+.Nb-colour-space{margin:0px auto; overflow:hidden;width:320px;display:none;}
+.Nb-colour-space:first-of-type{display:block}
+.Nb-square{float:left; padding:13px; width:0px; height:0px;border:1px solid #000000;background-color:#ffffff;font-size:0.0em;text-indent:-10000px;margin:3px;box-shadow:inset 0px 0px 5px 0px rgba(0,0,0,0.75);outline:0;cursor:pointer; border-radius:5px;}
+.Nb-square.active{border:2px solid #ffffff;box-shadow:inset 0px 0px 5px 1px rgba(123,183,211,0.75); margin:2px;}
+.Nb-pallette .colour{float:left;width:100%;margin:5px 0px;padding-left:5px;color:#8F8F8F;text-shadow:1px 1px #000000;font-size:12px;transform: scale(0.9);}
+#Nb-colour-now{float:left;width:100%;color:#ffffff;font-size:14px}
+.img-lxn_destid{float:left;display:block;position:absolute;top:15px;right:15px}
+.img-lxn_origid{float:left;display:block;position:absolute;top:15px;left:15px}
+#Nb_lxn_output{ color:#FFF; font-size:14px;padding-top: 40px;}
+.Nb-results-order{margin:0px; padding:0px;}
+#Nb_lxn_output p{padding:0px; margin:0px;}
+#Nb_lxn_output ol{margin:0px auto; width:160px;}
+#Nb_lxn_output li{text-align:left;}
+#Nb_lxn_output li:hover{background:#FFF; color:#000}
+.Nb-order-btn{border-radius:5px;color:#fff;background-color:#428bca;border:#357ebd 1px solid; padding:6px 12px; margin:7px auto; display:inline-block;}
+#Nb-opt-change{ margin:0px; padding:3px; font-size:14px;}
+.lxn_origid{font-size:16px; margin:0px auto; padding:0px; color:#FFF;}
+.lxn_origid input{color:#000}
+    </style>
+
+    <div id="stage">
+		<div id="Nb_lxn" class="easyui-panel" data-options="fit:true">
+  <div class="Nb-pallette">
+						<p class="lxn_origid"><label for="lxn_origid">当前颜色</label>
+						<select name="lxn_origid" id="lxn_origid" class="form-control">
+													<option value="34">Abyssal Blue</option>
+													<option value="60">Acorn Brown</option>
+													<option value="81">Adamantoise Green</option>
+													<option value="27">Aldgoat Brown</option>
+													<option value="44">Apple Green</option>
+													<option value="46">Ash Grey</option>
+													<option value="80">Bark Brown</option>
+													<option value="5">Blood Red</option>
+													<option value="49">Bone White</option>
+													<option value="74">Cactuar Green</option>
+													<option value="43">Celeste Green</option>
+													<option value="75">Ceruleum Blue</option>
+													<option value="68">Charcoal Grey</option>
+													<option value="64">Chestnut Brown</option>
+													<option value="83">Chocolate Brown</option>
+													<option value="6">Coeurl Yellow</option>
+													<option value="55">Colibri Pink</option>
+													<option value="29">Coral Pink</option>
+													<option value="24">Cork Brown</option>
+													<option value="41">Corpse Blue</option>
+													<option value="48">Cream Yellow</option>
+													<option value="15">Currant Purple</option>
+													<option value="12">Dalamud Red</option>
+													<option value="20">Deepwood Green</option>
+													<option value="1" selected="selected">Desert Yellow</option>
+													<option value="31">Gloom Purple</option>
+													<option value="26">Gobbiebag Brown</option>
+													<option value="35">Goobbue Grey</option>
+													<option value="14">Grape Purple</option>
+													<option value="59">Halatali Yellow</option>
+													<option value="56">Honey Yellow</option>
+													<option value="76">Hunter Green</option>
+													<option value="52">Ice Blue</option>
+													<option value="21">Ink Blue</option>
+													<option value="54">Iris Purple</option>
+													<option value="19">Kobold Brown</option>
+													<option value="10">Lavender Purple</option>
+													<option value="9">Lilac Purple</option>
+													<option value="7">Lime Green</option>
+													<option value="70">Loam Brown</option>
+													<option value="53">Lotus Pink</option>
+													<option value="16">Marsh Green</option>
+													<option value="45">Meadow Green</option>
+													<option value="78">Mesa Red</option>
+													<option value="18">Midnight Blue</option>
+													<option value="2">Millioncorn Yellow</option>
+													<option value="67">Mole Brown</option>
+													<option value="71">Morbol Green</option>
+													<option value="66">Moss Green</option>
+													<option value="63">Mud Green</option>
+													<option value="84">Nophica Green</option>
+													<option value="79">Ochu Green</option>
+													<option value="69">Olive Green</option>
+													<option value="58">Opo-Opo Brown</option>
+													<option value="62">Orchard Brown</option>
+													<option value="37">Othard Blue</option>
+													<option value="38">Peacock Blue</option>
+													<option value="30">Plum Purple</option>
+													<option value="3">Pumpkin Orange</option>
+													<option value="8">Qiqirn Brown</option>
+													<option value="61">Raisin Brown</option>
+													<option value="36">Raptor Blue</option>
+													<option value="11">Regal Purple</option>
+													<option value="72">Rhotano Blue</option>
+													<option value="13">Rolanberry Red</option>
+													<option value="57">Rose Pink</option>
+													<option value="33">Royal Blue</option>
+													<option value="85">Russet Brown</option>
+													<option value="73">Rust Red</option>
+													<option value="47">Salmon Pink</option>
+													<option value="40">Seafog Blue</option>
+													<option value="82">Shadow Blue</option>
+													<option value="28">Shale Brown</option>
+													<option value="42">Sky Blue</option>
+													<option value="65">Slate Grey</option>
+													<option value="51">Snow White</option>
+													<option value="23">Soot Black</option>
+													<option value="32">Storm Blue</option>
+													<option value="4">Sunset Orange</option>
+													<option value="50">Sylph Green</option>
+													<option value="39">Turquoise Green</option>
+													<option value="25">Ul Brown</option>
+													<option value="22">Void Blue</option>
+													<option value="17">Wine Red</option>
+													<option value="77">Woad Blue</option>
+												</select>
+	<label for="lxn_destid">目标颜色</label>
+	<select name="lxn_destid" id="lxn_destid" class="form-control">
+													<option value="34" selected="selected">Abyssal Blue</option>
+													<option value="60">Acorn Brown</option>
+													<option value="81">Adamantoise Green</option>
+													<option value="27">Aldgoat Brown</option>
+													<option value="44">Apple Green</option>
+													<option value="46">Ash Grey</option>
+													<option value="80">Bark Brown</option>
+													<option value="5">Blood Red</option>
+													<option value="49">Bone White</option>
+													<option value="74">Cactuar Green</option>
+													<option value="43">Celeste Green</option>
+													<option value="75">Ceruleum Blue</option>
+													<option value="68">Charcoal Grey</option>
+													<option value="64">Chestnut Brown</option>
+													<option value="83">Chocolate Brown</option>
+													<option value="6">Coeurl Yellow</option>
+													<option value="55">Colibri Pink</option>
+													<option value="29">Coral Pink</option>
+													<option value="24">Cork Brown</option>
+													<option value="41">Corpse Blue</option>
+													<option value="48">Cream Yellow</option>
+													<option value="15">Currant Purple</option>
+													<option value="12">Dalamud Red</option>
+													<option value="20">Deepwood Green</option>
+													<option value="1">Desert Yellow</option>
+													<option value="31">Gloom Purple</option>
+													<option value="26">Gobbiebag Brown</option>
+													<option value="35">Goobbue Grey</option>
+													<option value="14">Grape Purple</option>
+													<option value="59">Halatali Yellow</option>
+													<option value="56">Honey Yellow</option>
+													<option value="76">Hunter Green</option>
+													<option value="52">Ice Blue</option>
+													<option value="21">Ink Blue</option>
+													<option value="54">Iris Purple</option>
+													<option value="19">Kobold Brown</option>
+													<option value="10">Lavender Purple</option>
+													<option value="9">Lilac Purple</option>
+													<option value="7">Lime Green</option>
+													<option value="70">Loam Brown</option>
+													<option value="53">Lotus Pink</option>
+													<option value="16">Marsh Green</option>
+													<option value="45">Meadow Green</option>
+													<option value="78">Mesa Red</option>
+													<option value="18">Midnight Blue</option>
+													<option value="2">Millioncorn Yellow</option>
+													<option value="67">Mole Brown</option>
+													<option value="71">Morbol Green</option>
+													<option value="66">Moss Green</option>
+													<option value="63">Mud Green</option>
+													<option value="84">Nophica Green</option>
+													<option value="79">Ochu Green</option>
+													<option value="69">Olive Green</option>
+													<option value="58">Opo-Opo Brown</option>
+													<option value="62">Orchard Brown</option>
+													<option value="37">Othard Blue</option>
+													<option value="38">Peacock Blue</option>
+													<option value="30">Plum Purple</option>
+													<option value="3">Pumpkin Orange</option>
+													<option value="8">Qiqirn Brown</option>
+													<option value="61">Raisin Brown</option>
+													<option value="36">Raptor Blue</option>
+													<option value="11">Regal Purple</option>
+													<option value="72">Rhotano Blue</option>
+													<option value="13">Rolanberry Red</option>
+													<option value="57">Rose Pink</option>
+													<option value="33">Royal Blue</option>
+													<option value="85">Russet Brown</option>
+													<option value="73">Rust Red</option>
+													<option value="47">Salmon Pink</option>
+													<option value="40">Seafog Blue</option>
+													<option value="82">Shadow Blue</option>
+													<option value="28">Shale Brown</option>
+													<option value="42">Sky Blue</option>
+													<option value="65">Slate Grey</option>
+													<option value="51">Snow White</option>
+													<option value="23">Soot Black</option>
+													<option value="32">Storm Blue</option>
+													<option value="4">Sunset Orange</option>
+													<option value="50">Sylph Green</option>
+													<option value="39">Turquoise Green</option>
+													<option value="25">Ul Brown</option>
+													<option value="22">Void Blue</option>
+													<option value="17">Wine Red</option>
+													<option value="77">Woad Blue</option>
+												</select>
+                                                <span id="Nb-opt-change" class="Nb-order-btn">对调</span>
+                                                </p>
+                                                <img style="float:left;" class="img-lxn_origid" src="http://nenge.net/api/lxnrs/images/millioncorn-yellow.png" alt="">
+                    <p id="Nb-colour-now">Millioncorn Yellow</p>
+						<div class="Nb-colour-categories">
+							<a class="Nb-lxnrs-circle white" data-colour="white"></a>
+							<a class="Nb-lxnrs-circle red" data-colour="red"></a>
+							<a class="Nb-lxnrs-circle brown" data-colour="brown"></a>
+							<a class="Nb-lxnrs-circle yellow active" data-colour="yellow"></a>
+							<a class="Nb-lxnrs-circle green" data-colour="green"></a>
+							<a class="Nb-lxnrs-circle blue" data-colour="blue"></a>
+							<a class="Nb-lxnrs-circle purple" data-colour="purple"></a>
+						</div>
+						<div class="Nb-colours">
+														<div class="Nb-colour-space" data-id="white" style="display: none;">
+																	<a class="Nb-square" style="background-color: #e4dfd0" data-url="snow-white" data-id="51">Snow White</a>
+																	<a class="Nb-square" style="background-color: #aca8a2" data-url="ash-grey" data-id="46">Ash Grey</a>
+																	<a class="Nb-square" style="background-color: #898784" data-url="goobbue-grey" data-id="35">Goobbue Grey</a>
+																	<a class="Nb-square" style="background-color: #656565" data-url="slate-grey" data-id="65">Slate Grey</a>
+																	<a class="Nb-square" style="background-color: #484742" data-url="charcoal-grey" data-id="68">Charcoal Grey</a>
+																	<a class="Nb-square" style="background-color: #2b2923" data-url="soot-black" data-id="23">Soot Black</a>
+															</div>
+														<div class="Nb-colour-space" data-id="red" style="display: none;">
+																	<a class="Nb-square" style="background-color: #e69f96" data-url="rose-pink" data-id="57">Rose Pink</a>
+																	<a class="Nb-square" style="background-color: #836969" data-url="lilac-purple" data-id="9">Lilac Purple</a>
+																	<a class="Nb-square" style="background-color: #5b1729" data-url="rolanberry-red" data-id="13">Rolanberry Red</a>
+																	<a class="Nb-square" style="background-color: #781a1a" data-url="dalamud-red" data-id="12">Dalamud Red</a>
+																	<a class="Nb-square" style="background-color: #622207" data-url="rust-red" data-id="73">Rust Red</a>
+																	<a class="Nb-square" style="background-color: #451511" data-url="wine-red" data-id="17">Wine Red</a>
+																	<a class="Nb-square" style="background-color: #cc6c5e" data-url="coral-pink" data-id="29">Coral Pink</a>
+																	<a class="Nb-square" style="background-color: #913b27" data-url="blood-red" data-id="5">Blood Red</a>
+																	<a class="Nb-square" style="background-color: #e4aa8a" data-url="salmon-pink" data-id="47">Salmon Pink</a>
+															</div>
+														<div class="Nb-colour-space" data-id="brown" style="display: none;">
+																	<a class="Nb-square" style="background-color: #b75c2d" data-url="sunset-orange" data-id="4">Sunset Orange</a>
+																	<a class="Nb-square" style="background-color: #7d3906" data-url="mesa-red" data-id="78">Mesa Red</a>
+																	<a class="Nb-square" style="background-color: #6a4b37" data-url="bark-brown" data-id="80">Bark Brown</a>
+																	<a class="Nb-square" style="background-color: #6e3d24" data-url="chocolate-brown" data-id="83">Chocolate Brown</a>
+																	<a class="Nb-square" style="background-color: #4f2d1f" data-url="russet-brown" data-id="85">Russet Brown</a>
+																	<a class="Nb-square" style="background-color: #30211b" data-url="kobold-brown" data-id="19">Kobold Brown</a>
+																	<a class="Nb-square" style="background-color: #c99156" data-url="cork-brown" data-id="24">Cork Brown</a>
+																	<a class="Nb-square" style="background-color: #996e3f" data-url="qiqirn-brown" data-id="8">Qiqirn Brown</a>
+																	<a class="Nb-square" style="background-color: #7b5c2d" data-url="opo-opo-brown" data-id="58">Opo-Opo Brown</a>
+																	<a class="Nb-square" style="background-color: #a2875c" data-url="aldgoat-brown" data-id="27">Aldgoat Brown</a>
+																	<a class="Nb-square" style="background-color: #c57424" data-url="pumpkin-orange" data-id="3">Pumpkin Orange</a>
+																	<a class="Nb-square" style="background-color: #8e581b" data-url="acorn-brown" data-id="60">Acorn Brown</a>
+																	<a class="Nb-square" style="background-color: #644216" data-url="orchard-brown" data-id="62">Orchard Brown</a>
+																	<a class="Nb-square" style="background-color: #3d290d" data-url="chestnut-brown" data-id="64">Chestnut Brown</a>
+																	<a class="Nb-square" style="background-color: #b9a489" data-url="gobbiebag-brown" data-id="26">Gobbiebag Brown</a>
+																	<a class="Nb-square" style="background-color: #92816c" data-url="shale-brown" data-id="28">Shale Brown</a>
+																	<a class="Nb-square" style="background-color: #615245" data-url="mole-brown" data-id="67">Mole Brown</a>
+																	<a class="Nb-square" style="background-color: #3f3329" data-url="loam-brown" data-id="70">Loam Brown</a>
+															</div>
+														<div class="Nb-colour-space" data-id="yellow" style="display: block;">
+																	<a class="Nb-square" style="background-color: #ebd3a0" data-url="bone-white" data-id="49">Bone White</a>
+																	<a class="Nb-square" style="background-color: #b7a370" data-url="ul-brown" data-id="25">Ul Brown</a>
+																	<a class="Nb-square" style="background-color: #dbb457" data-url="desert-yellow" data-id="1">Desert Yellow</a>
+																	<a class="Nb-square" style="background-color: #fac62b" data-url="honey-yellow" data-id="56">Honey Yellow</a>
+																	<a class="Nb-square active" style="background-color: #e49e34" data-url="millioncorn-yellow" data-id="2">Millioncorn Yellow</a>
+																	<a class="Nb-square" style="background-color: #bc8804" data-url="coeurl-yellow" data-id="6">Coeurl Yellow</a>
+																	<a class="Nb-square" style="background-color: #f2d770" data-url="cream-yellow" data-id="48">Cream Yellow</a>
+																	<a class="Nb-square" style="background-color: #a58430" data-url="halatali-yellow" data-id="59">Halatali Yellow</a>
+																	<a class="Nb-square" style="background-color: #403311" data-url="raisin-brown" data-id="61">Raisin Brown</a>
+															</div>
+														<div class="Nb-colour-space" data-id="green" style="display: none;">
+																	<a class="Nb-square" style="background-color: #585230" data-url="mud-green" data-id="63">Mud Green</a>
+																	<a class="Nb-square" style="background-color: #bbbb8a" data-url="sylph-green" data-id="50">Sylph Green</a>
+																	<a class="Nb-square" style="background-color: #abb054" data-url="lime-green" data-id="7">Lime Green</a>
+																	<a class="Nb-square" style="background-color: #707326" data-url="moss-green" data-id="66">Moss Green</a>
+																	<a class="Nb-square" style="background-color: #8b9c63" data-url="meadow-green" data-id="45">Meadow Green</a>
+																	<a class="Nb-square" style="background-color: #4b5232" data-url="olive-green" data-id="69">Olive Green</a>
+																	<a class="Nb-square" style="background-color: #323621" data-url="marsh-green" data-id="16">Marsh Green</a>
+																	<a class="Nb-square" style="background-color: #9bb363" data-url="apple-green" data-id="44">Apple Green</a>
+																	<a class="Nb-square" style="background-color: #658241" data-url="cactuar-green" data-id="74">Cactuar Green</a>
+																	<a class="Nb-square" style="background-color: #284b2c" data-url="hunter-green" data-id="76">Hunter Green</a>
+																	<a class="Nb-square" style="background-color: #406339" data-url="ochu-green" data-id="79">Ochu Green</a>
+																	<a class="Nb-square" style="background-color: #5f7558" data-url="adamantoise-green" data-id="81">Adamantoise Green</a>
+																	<a class="Nb-square" style="background-color: #3b4d3c" data-url="nophica-green" data-id="84">Nophica Green</a>
+																	<a class="Nb-square" style="background-color: #1e2a21" data-url="deepwood-green" data-id="20">Deepwood Green</a>
+																	<a class="Nb-square" style="background-color: #96bdb9" data-url="celeste-green" data-id="43">Celeste Green</a>
+																	<a class="Nb-square" style="background-color: #437272" data-url="turquoise-green" data-id="39">Turquoise Green</a>
+																	<a class="Nb-square" style="background-color: #1f4646" data-url="morbol-green" data-id="71">Morbol Green</a>
+															</div>
+														<div class="Nb-colour-space" data-id="blue" style="display: none;">
+																	<a class="Nb-square" style="background-color: #b2c4ce" data-url="ice-blue" data-id="52">Ice Blue</a>
+																	<a class="Nb-square" style="background-color: #83b0d2" data-url="sky-blue" data-id="42">Sky Blue</a>
+																	<a class="Nb-square" style="background-color: #6481a0" data-url="seafog-blue" data-id="40">Seafog Blue</a>
+																	<a class="Nb-square" style="background-color: #3b6886" data-url="peacock-blue" data-id="38">Peacock Blue</a>
+																	<a class="Nb-square" style="background-color: #1c3d54" data-url="rhotano-blue" data-id="72">Rhotano Blue</a>
+																	<a class="Nb-square" style="background-color: #8e9bac" data-url="corpse-blue" data-id="41">Corpse Blue</a>
+																	<a class="Nb-square" style="background-color: #4f5766" data-url="ceruleum-blue" data-id="75">Ceruleum Blue</a>
+																	<a class="Nb-square" style="background-color: #2f3851" data-url="woad-blue" data-id="77">Woad Blue</a>
+																	<a class="Nb-square" style="background-color: #1a1f27" data-url="ink-blue" data-id="21">Ink Blue</a>
+																	<a class="Nb-square" style="background-color: #5b7fc0" data-url="raptor-blue" data-id="36">Raptor Blue</a>
+																	<a class="Nb-square" style="background-color: #2f5889" data-url="othard-blue" data-id="37">Othard Blue</a>
+																	<a class="Nb-square" style="background-color: #234172" data-url="storm-blue" data-id="32">Storm Blue</a>
+																	<a class="Nb-square" style="background-color: #112944" data-url="void-blue" data-id="22">Void Blue</a>
+																	<a class="Nb-square" style="background-color: #273067" data-url="royal-blue" data-id="33">Royal Blue</a>
+																	<a class="Nb-square" style="background-color: #181937" data-url="midnight-blue" data-id="18">Midnight Blue</a>
+																	<a class="Nb-square" style="background-color: #373747" data-url="shadow-blue" data-id="82">Shadow Blue</a>
+																	<a class="Nb-square" style="background-color: #312d57" data-url="abyssal-blue" data-id="34">Abyssal Blue</a>
+															</div>
+														<div class="Nb-colour-space" data-id="purple" style="display: none;">
+																	<a class="Nb-square" style="background-color: #877fae" data-url="lavender-purple" data-id="10">Lavender Purple</a>
+																	<a class="Nb-square" style="background-color: #514560" data-url="gloom-purple" data-id="31">Gloom Purple</a>
+																	<a class="Nb-square" style="background-color: #322c3b" data-url="currant-purple" data-id="15">Currant Purple</a>
+																	<a class="Nb-square" style="background-color: #b79ebc" data-url="iris-purple" data-id="54">Iris Purple</a>
+																	<a class="Nb-square" style="background-color: #3b2a3d" data-url="grape-purple" data-id="14">Grape Purple</a>
+																	<a class="Nb-square" style="background-color: #fecef5" data-url="lotus-pink" data-id="53">Lotus Pink</a>
+																	<a class="Nb-square" style="background-color: #dc9bca" data-url="colibri-pink" data-id="55">Colibri Pink</a>
+																	<a class="Nb-square" style="background-color: #79526c" data-url="plum-purple" data-id="30">Plum Purple</a>
+																	<a class="Nb-square" style="background-color: #66304e" data-url="regal-purple" data-id="11">Regal Purple</a>
+															</div>
+													</div>
+						<img class="img-lxn_destid" src="http://nenge.net/api/lxnrs/images/abyssal-blue.png" alt="" />
+                        <div id="Nb_lxn_output"></div>
+
+</div>
+<p style="color: #999; font-size:14px;">参考网站:http://ffxivchocobo.com/(英)</p>
+</div>
+<script type="text/javascript">
+jQuery(function($){if(!Nb)var Nb={};Nb.lxn={"url":"http://nenge.net/api/lxnrs/images/","deid":"#lxn_destid","orid":"#lxn_origid","api":function(a,b){return"http://nenge.net/api/lxnrs/query.php?origid="+a+"&destid="+b},cn:{"Desert Yellow":"\u6c99\u6f20\u9ec4","Snow White":"\u7d20\u96ea\u767d","Abyssal Blue":"\u6df1\u6e0a\u84dd","Acorn Brown":"\u6a61\u679c\u68d5","Adamantoise Green":"\u91d1\u9f9f\u7eff","Aldgoat Brown":"\u5c71\u7f8a\u68d5","Apple Green":"\u82f9\u679c\u7eff","Ash Grey":"\u82cd\u767d\u7070","Bark Brown":"\u6811\u76ae\u68d5","Blood Red":"\u9c9c\u8840\u7ea2","Bone White":"\u9ab8\u9aa8\u767d","Cactuar Green":"\u4ed9\u4eba\u638c","Celeste Green":"\u5929\u4e0a\u84dd","Ceruleum Blue":"\u9752\u78f7\u84dd","Charcoal Grey":"\u6728\u70ad\u7070","Chestnut Brown":"\u5c71\u6817\u68d5","Chocolate Brown":"\u5de7\u514b\u529b","Coeurl Yellow":"\u731b\u8c79\u9ec4","Colibri Pink":"\u8702\u9e1f\u7c89","Coral Pink":"\u73ca\u745a\u7c89","Cork Brown":"\u8f6f\u6728\u68d5","Corpse Blue":"\u8150\u5c38\u84dd","Cream Yellow":"\u5976\u6cb9\u9ec4","Currant Purple":"\u918b\u6817\u7d2b","Dalamud Red":"\u536b\u6708\u7ea2","Deepwood Green":"\u6df1\u6797\u7eff","Gloom Purple":"\u5fe7\u90c1\u7d2b","Gobbiebag Brown":"\u54e5\u5e03\u6797","Goobbue Grey":"\u53e4\u83e9\u7070","Grape Purple":"\u8461\u8404\u7d2b","Halatali Yellow":"\u65e5\u5f71\u9ec4","Honey Yellow":"\u8702\u871c\u9ec4","Hunter Green":"\u730e\u4eba\u7eff","Ice Blue":"\u5bd2\u51b0\u84dd","Ink Blue":"\u6cb9\u58a8\u84dd","Iris Purple":"\u8679\u819c\u7d2b","Kobold Brown":"\u94b4\u94c1\u68d5","Lavender Purple":"\u85b0\u8863\u8349","Lilac Purple":"\u4e01\u9999\u7d2b","Lime Green":"\u9752\u67e0\u7eff","Loam Brown":"\u6c83\u571f\u68d5","Lotus Pink":"\u83b2\u82b1\u7c89","Marsh Green":"\u6cbc\u6cfd\u7eff","Meadow Green":"\u7267\u8349\u7eff","Mesa Red":"\u53f0\u5730\u7ea2","Midnight Blue":"\u5348\u591c\u84dd","Millioncorn Yellow":"\u7389\u7c73\u9ec4","Mole Brown":"\u9f39\u9f20\u68d5","Morbol Green":"\u9b54\u82b1\u7eff","Moss Green":"\u82d4\u85d3\u7eff","Mud Green":"\u6ce5\u6cbc\u7eff","Nophica Green":"\u5730\u795e\u7eff","Ochu Green":"\u53e3\u82b1\u7eff","Olive Green":"\u6a44\u6984\u7eff","Opo-Opo Brown":"\u5965\u7334\u68d5","Orchard Brown":"\u679c\u56ed\u68d5","Othard Blue":"\u4e1c\u6d32\u84dd","Peacock Blue":"\u5b54\u96c0\u84dd","Plum Purple":"\u4ed9\u5b50\u6885","Pumpkin Orange":"\u5357\u74dc\u6a59","Qiqirn Brown":"\u5362\u6069\u68d5","Raisin Brown":"\u8404\u5e72\u68d5","Raptor Blue":"\u76d7\u9f99\u84dd","Regal Purple":"\u5e1d\u738b\u7d2b","Rhotano Blue":"\u7f57\u6d77\u84dd","Rolanberry Red":"\u7f57\u5170\u8393","Rose Pink":"\u73ab\u7470\u7c89","Royal Blue":"\u7687\u5ba4\u84dd","Russet Brown":"\u94c1\u9508\u68d5","Rust Red":"\u94c1\u9508\u7ea2","Salmon Pink":"\u9c91\u9c7c\u7c89","Seafog Blue":"\u6d77\u96fe\u84dd","Shadow Blue":"\u9634\u5f71\u84dd","Shale Brown":"\u9875\u5ca9\u68d5","Sky Blue":"\u5929\u7a7a\u84dd","Slate Grey":"\u77f3\u677f\u7070","Soot Black":"\u7164\u70df\u9ed1","Storm Blue":"\u98ce\u66b4\u84dd","Sunset Orange":"\u65e5\u843d\u6a59","Sylph Green":"\u5996\u7cbe\u7eff","Turquoise Green":"\u7eff\u677e\u84dd","Ul Brown":"\u9ec4\u6c99\u68d5","Void Blue":"\u865a\u7a7a\u84dd","Wine Red":"\u679c\u9152\u7ea2","Woad Blue":"\u975b\u9752\u84dd"},allchange:{},need:function(a,b){if(a==b)return $("#Nb_lxn_output").html("\u4f60\u5728\u9017\u6211\u73a9\u5417,\u4e00\u6a21\u4e00\u6837\u8fd8\u9700\u8981\u5403\u679c\u5b50\u5417?");if(Nb.lxn.allchange[a]&&Nb.lxn.allchange[a][b])return $("#Nb_lxn_output").html(Nb.lxn.allchange[a][b]);if(Nb.lxn._Nb_lxn_output)return $("#Nb_lxn_output").html("\u8bf7\u52ff\u64cd\u4f5c\u8fc7\u5feb,\u4e0a\u4e00\u6b21\u67e5\u8be2\u5c1a\u672a\u7ed3\u675f,\u5361\u592a\u4e45\u8bf7\u5237\u65b0\u6d4f\u89c8\u5668!");$("#Nb_lxn_output").html("\u6b63\u5728\u67e5\u8be2,\u8bf7\u8010\u5fc3\u7b49\u5f85!\u4e0d\u8981\u505a\u5176\u4ed6\u64cd\u4f5c@ @");Nb.lxn._Nb_lxn_output=true;if(!Nb.lxn.allchange[a])Nb.lxn.allchange[a]={};$.ajax({url:Nb.lxn.api(a,b),type:'get',dataType:"jsonp",success:function(s){Nb.lxn.allchange[a][b]=s;Nb.lxn._Nb_lxn_output=false;if($(Nb.lxn.deid).val()!=b){$(Nb.lxn.deid).val(b);return $(Nb.lxn.deid).change()}$("#Nb_lxn_output").html(s)}})}};$(Nb.lxn.orid).change(function(){if(!Nb.lxn._origid){$(this).children("option").each(function(){var text=$(this).html();$(this).data("name",text);$(this).html(Nb.lxn.cn[text]||text)});Nb.lxn._origid=true}var t=$(this).val(),e=$(".Nb-colour-space").find("[data-id='"+t+"']");$(".img-lxn_origid").attr("src",Nb.lxn.url+$(e).data("url")+".png");return $(Nb.lxn.deid).change()});$(Nb.lxn.deid).change(function(){if(!Nb.lxn._destid){$(this).children("option").each(function(){var text=$(this).html();$(this).data("name",text);$(this).html(Nb.lxn.cn[text]||text)});Nb.lxn._destid=true}var t=$(this).val(),e=$(".Nb-colour-space").find("[data-id='"+t+"']"),n=$(e).text(),o=$(e).parent("div"),r=o.data("id"),a=$(".Nb-colour-categories").find("[data-colour='"+r+"']");$(".Nb-square").not(e).removeClass("active");$(e).addClass("active");$(".Nb-colour-space").not(o).hide();$(o).show();$(".Nb-lxnrs-circle").not(a).removeClass("active");$(a).addClass("active");$(".img-lxn_destid").attr("src",Nb.lxn.url+$(e).data("url")+".png");$("#Nb-colour-now").text(Nb.lxn.cn[n]||n);Nb.lxn.need($(Nb.lxn.orid).val(),t)});$(".Nb-colour-categories a").on("click",function(){if($(this).hasClass("active"))return;var c=$(".Nb-colour-space[data-id="+$(this).data("colour")+"]").children(".Nb-square").get(0);c.click()});$(".Nb-square").on("click",function(){if($(this).hasClass("active"))return;$(Nb.lxn.deid).val($(this).data("id"));return $(Nb.lxn.deid).change()});$("#Nb-opt-change").click(function(){var a=$(Nb.lxn.deid).val(),b=$(Nb.lxn.orid).val();$(Nb.lxn.deid).val(b);$(Nb.lxn.orid).val(a);$(Nb.lxn.orid).change()});$(Nb.lxn.orid).change()});</script>
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

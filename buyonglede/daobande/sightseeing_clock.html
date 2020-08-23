@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>探索笔记</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/eorzeaclock3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/table_sorter_min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anima_weapon_progress.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    <div id="stage">
+
+       探索笔记 patch3.5<br>
+        
+        <div class="size_S">
+		<br>
+		<br>
+		<br>
+            专为不想逐一去查探险手册里天气和时间的懒癌人士设计<br>
+            <p class="color_red">※内含大量剧透，想自食其力的人就不要看了</p><br>
+            
+            *项目栏点击后即为高亮，可根据自身情况管理已完成的项目<br>
+            *支持浏览器Cookie功能，点击保存按钮即可保存进度<br>
+			<br>
+            *点击标题即可分类<br>
+            <br>
+        </div>
+
+        <div class="size_S">进行情况:　<p class="color_orange" id="count_comp" style="font-size:15px">0</p> /80</div>
+        <a class="btn_S" id="save" href="javascript:void(0)">Cookie保存当前进度</a><br>
+
+        <a class="btn_S size_S comp01_20" href="javascript:void(0)">01-20 comp</a>
+        <a class="btn_S size_S comp21_40" href="javascript:void(0)">21-40 comp</a>
+        <a class="btn_S size_S comp41_60" href="javascript:void(0)">41-60 comp</a>
+        <a class="btn_S size_S comp61_80" href="javascript:void(0)">61-80 comp</a>
+
+    <script type="text/javascript">
+    $(document).ready(function()
+        {
+            $("#sightseeingTable").tablesorter();
+        }
+    );
+    </script>
+
+    <table width="100%" align="center">
+  <tr>
+    <td>        <table id="sightseeingTable" class="sightseeing_clock_layout">
+    <caption>2.0探索笔记</caption>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>场所</th>
+                    <th>坐标</th>
+                    <th>天气</th>
+                    <th>时间</th>
+                    <th>动作</th>
+                    <th>切替目安</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="no001" class=" ">
+                    <td>1</td>
+                    <td>海都(上)</td>
+                    <td>X9 Y7</td>
+                    <td>晴朗</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no002" class=" ">
+                    <td>2</td>
+                    <td>海都(下)</td>
+                    <td>X7 Y15</td>
+                    <td>碧空</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no003" class=" ">
+                    <td>3</td>
+                    <td>中拉诺西亚</td>
+                    <td>X20 Y19</td>
+                    <td>雨</td>
+                    <td>05:00-07:59</td>
+                    <td>祈祷</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no004" class=" ">
+                    <td>4</td>
+                    <td>中拉诺西亚</td>
+                    <td>X16 Y17</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no005" class=" ">
+                    <td>5</td>
+                    <td>中拉诺西亚</td>
+                    <td>X25 Y27</td>
+                    <td>阴云</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no006" class=" ">
+                    <td>6</td>
+                    <td>低地拉诺西亚</td>
+                    <td>X23 Y40</td>
+                    <td>晴朗</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no007" class=" ">
+                    <td>7</td>
+                    <td>低地拉诺西亚</td>
+                    <td>X33 Y19</td>
+                    <td>薄雾</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no008" class=" ">
+                    <td>8</td>
+                    <td>西拉诺西亚</td>
+                    <td>X29 Y30</td>
+                    <td>晴朗</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no009" class=" ">
+                    <td>9</td>
+                    <td>森都(旧)</td>
+                    <td>X12 Y8</td>
+                    <td>阴云</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no010" class=" ">
+                    <td>10</td>
+                    <td>森都(旧)</td>
+                    <td>X10 Y16</td>
+                    <td>碧空</td>
+                    <td>22:00-04:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no011" class=" ">
+                    <td>11</td>
+                    <td>中央森林</td>
+                    <td>X21 Y21</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>坐下</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no012" class=" ">
+                    <td>12</td>
+                    <td>东部森林</td>
+                    <td>X17 Y18</td>
+                    <td>晴朗</td>
+                    <td>08:00-11:59</td>
+                    <td>祈祷</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no013" class=" ">
+                    <td>13</td>
+                    <td>东部林区</td>
+                    <td>X22 Y26</td>
+                    <td>碧空</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no014" class=" ">
+                    <td>14</td>
+                    <td>沙都(来生)</td>
+                    <td>X11 Y11</td>
+                    <td>晴朗</td>
+                    <td>05:00-07:59</td>
+                    <td>敬礼</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no015" class=" ">
+                    <td>15</td>
+                    <td>沙都(来生)</td>
+                    <td>X11 Y11</td>
+                    <td>阴云</td>
+                    <td>12:00-15:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no016" class=" ">
+                    <td>16</td>
+                    <td>西萨纳兰</td>
+                    <td>X22 Y22</td>
+                    <td>晴朗</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no017" class=" ">
+                    <td>17</td>
+                    <td>中萨纳兰</td>
+                    <td>X15 Y22</td>
+                    <td>薄雾</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no018" class=" ">
+                    <td>18</td>
+                    <td>东萨纳兰</td>
+                    <td>X19 Y24</td>
+                    <td>雨</td>
+                    <td>17:00-17:59</td>
+                    <td>慰め</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no019" class=" ">
+                    <td>19</td>
+                    <td>东萨纳兰</td>
+                    <td>X14 Y18</td>
+                    <td>阴云</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no020" class=" ">
+                    <td>20</td>
+                    <td>东萨纳兰</td>
+                    <td>X20 Y20</td>
+                    <td>晴朗</td>
+                    <td>05:00-07:59</td>
+                    <td>祈祷</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no021" class=" ">
+                    <td>21</td>
+                    <td>中央拉诺西亚</td>
+                    <td>X20 Y13</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no022" class=" ">
+                    <td>22</td>
+                    <td>中央拉诺西亚</td>
+                    <td>X25 Y17</td>
+                    <td>碧空</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no023" class=" ">
+                    <td>23</td>
+                    <td>低地拉诺西亚</td>
+                    <td>X31 Y12</td>
+                    <td>雨</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no024" class=" ">
+                    <td>24</td>
+                    <td>东拉诺西亚</td>
+                    <td>X32 Y23</td>
+                    <td>碧空</td>
+                    <td>08:00-11:59</td>
+                    <td>坐下</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no025" class=" ">
+                    <td>25</td>
+                    <td>东拉诺西亚</td>
+                    <td>X29 Y33</td>
+                    <td>雨</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no026" class=" ">
+                    <td>26</td>
+                    <td>西拉诺西亚</td>
+                    <td>X26 Y26</td>
+                    <td>碧空</td>
+                    <td>17:00-17:59</td>
+                    <td>祈祷</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no027" class=" ">
+                    <td>27</td>
+                    <td>西拉诺西亚</td>
+                    <td>X17 Y36</td>
+                    <td>强风</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no028" class=" ">
+                    <td>28</td>
+                    <td>西拉诺西亚</td>
+                    <td>X22 Y22</td>
+                    <td>晴朗</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no029" class=" ">
+                    <td>29</td>
+                    <td>西拉诺西亚</td>
+                    <td>X19 Y23</td>
+                    <td>碧空</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no030" class=" ">
+                    <td>30</td>
+                    <td>高地拉诺西亚</td>
+                    <td>X30 Y22</td>
+                    <td>晴朗</td>
+                    <td>17:00-17:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no031" class=" ">
+                    <td>31</td>
+                    <td>高地拉诺西亚</td>
+                    <td>X12 Y22</td>
+                    <td>碧空</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no032" class=" ">
+                    <td>32</td>
+                    <td>高地拉诺西亚</td>
+                    <td>X29 Y25</td>
+                    <td>雷雨</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no033" class=" ">
+                    <td>33</td>
+                    <td>外地拉诺西亚</td>
+                    <td>X12 Y15</td>
+                    <td>晴朗</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no034" class=" ">
+                    <td>34</td>
+                    <td>外地拉诺西亚</td>
+                    <td>X17 Y16</td>
+                    <td>阴云</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no035" class=" ">
+                    <td>35</td>
+                    <td>外地拉诺西亚</td>
+                    <td>X23 Y11</td>
+                    <td>碧空</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no036" class=" ">
+                    <td>36</td>
+                    <td>外地拉诺西亚</td>
+                    <td>X15 Y10</td>
+                    <td>雨</td>
+                    <td>18:00-04:59</td>
+                    <td>坐下</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no037" class=" ">
+                    <td>37</td>
+                    <td>森都(新)</td>
+                    <td>X14 Y14</td>
+                    <td>晴朗</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no038" class=" ">
+                    <td>38</td>
+                    <td>森都(旧)</td>
+                    <td>X14 Y5</td>
+                    <td>雨</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no039" class=" ">
+                    <td>39</td>
+                    <td>中央森林</td>
+                    <td>X23 Y19</td>
+                    <td>雨</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no040" class=" ">
+                    <td>40</td>
+                    <td>中央森林</td>
+                    <td>X13 Y23</td>
+                    <td>碧空</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no041" class=" ">
+                    <td>41</td>
+                    <td>中央森林</td>
+                    <td>X16 Y22</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no042" class=" ">
+                    <td>42</td>
+                    <td>中央森林</td>
+                    <td>X26 Y18</td>
+                    <td>碧空</td>
+                    <td>11:00-13:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no043" class=" ">
+                    <td>43</td>
+                    <td>东部林区</td>
+                    <td>X21 Y10</td>
+                    <td>雷</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no044" class=" ">
+                    <td>44</td>
+                    <td>南部森林</td>
+                    <td>X17 Y20</td>
+                    <td>雷雨</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no045" class=" ">
+                    <td>45</td>
+                    <td>南部森林</td>
+                    <td>X14 Y33</td>
+                    <td>碧空</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no046" class=" ">
+                    <td>46</td>
+                    <td>南部森林</td>
+                    <td>X33 Y23</td>
+                    <td>薄雾</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no047" class=" ">
+                    <td>47</td>
+                    <td>南部森林</td>
+                    <td>X25 Y21</td>
+                    <td>晴朗</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no048" class=" ">
+                    <td>48</td>
+                    <td>北部森林</td>
+                    <td>X18 Y19</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no049" class=" ">
+                    <td>49</td>
+                    <td>北部森林</td>
+                    <td>X15 Y32</td>
+                    <td>碧空</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no050" class=" ">
+                    <td>50</td>
+                    <td>北部森林</td>
+                    <td>X15 Y27</td>
+                    <td>阴云</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no051" class=" ">
+                    <td>51</td>
+                    <td>西萨纳兰</td>
+                    <td>X8 Y5</td>
+                    <td>碧空</td>
+                    <td>17:00-17:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no052" class=" ">
+                    <td>52</td>
+                    <td>西萨纳兰</td>
+                    <td>X12 Y14</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>指向</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no053" class=" ">
+                    <td>53</td>
+                    <td>中央萨纳兰</td>
+                    <td>X21 Y17</td>
+                    <td>扬沙</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no054" class=" ">
+                    <td>54</td>
+                    <td>中央萨纳兰</td>
+                    <td>X18 Y26</td>
+                    <td>碧空</td>
+                    <td>12:00-16:59</td>
+                    <td>坐下</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no055" class=" ">
+                    <td>55</td>
+                    <td>东萨纳兰</td>
+                    <td>X30 Y26</td>
+                    <td>碧空</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no056" class=" ">
+                    <td>56</td>
+                    <td>东萨纳兰</td>
+                    <td>X10 Y16</td>
+                    <td>晴朗</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no057" class=" ">
+                    <td>57</td>
+                    <td>东萨纳兰</td>
+                    <td>X25 Y14</td>
+                    <td>暴雨</td>
+                    <td>18:00-04:59</td>
+                    <td>祈祷</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no058" class=" ">
+                    <td>58</td>
+                    <td>南萨纳兰</td>
+                    <td>X12 Y22</td>
+                    <td>薄雾</td>
+                    <td>05:00-07:59</td>
+                    <td>祈祷</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no059" class=" ">
+                    <td>59</td>
+                    <td>南萨纳兰</td>
+                    <td>X19 Y20</td>
+                    <td>晴朗</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no060" class=" ">
+                    <td>60</td>
+                    <td>南萨纳兰</td>
+                    <td>X21 Y38</td>
+                    <td>热浪</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no061" class=" ">
+                    <td>61</td>
+                    <td>南萨纳兰</td>
+                    <td>X23 Y11</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no062" class=" ">
+                    <td>62</td>
+                    <td>南萨纳兰</td>
+                    <td>X14 Y26</td>
+                    <td>热浪</td>
+                    <td>05:00-07:59</td>
+                    <td>激励</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no063" class=" ">
+                    <td>63</td>
+                    <td>北萨纳兰</td>
+                    <td>X21 Y24</td>
+                    <td>碧空</td>
+                    <td>05:00-07:59</td>
+                    <td>敬礼</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no064" class=" ">
+                    <td>64</td>
+                    <td>北萨纳兰</td>
+                    <td>X20 Y29</td>
+                    <td>晴朗</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no065" class=" ">
+                    <td>65</td>
+                    <td>北萨纳兰</td>
+                    <td>X20 Y22</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no066" class=" ">
+                    <td>66</td>
+                    <td>北萨纳兰</td>
+                    <td>X19 Y17</td>
+                    <td>阴云</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no067" class=" ">
+                    <td>67</td>
+                    <td>北萨纳兰</td>
+                    <td>X26 Y22</td>
+                    <td>薄雾</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no068" class=" ">
+                    <td>68</td>
+                    <td>中央高地</td>
+                    <td>X25 Y29</td>
+                    <td>碧空</td>
+                    <td>17:00-17:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no069" class=" ">
+                    <td>69</td>
+                    <td>中央高地</td>
+                    <td>X25 Y29</td>
+                    <td>薄雾</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no070" class=" ">
+                    <td>70</td>
+                    <td>中央高地</td>
+                    <td>X11 Y15</td>
+                    <td>暴雪</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no071" class=" ">
+                    <td>71</td>
+                    <td>中央高地</td>
+                    <td>X12 Y17</td>
+                    <td>晴朗</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no072" class=" ">
+                    <td>72</td>
+                    <td>中央高地</td>
+                    <td>X7 Y28</td>
+                    <td>碧空</td>
+                    <td>17:00-17:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no073" class=" ">
+                    <td>73</td>
+                    <td>中央高地</td>
+                    <td>X7 Y31</td>
+                    <td>暴雪</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no074" class=" ">
+                    <td>74</td>
+                    <td>中央高地</td>
+                    <td>X2 Y21</td>
+                    <td>晴朗</td>
+                    <td>08:00-11:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no075" class=" ">
+                    <td>75</td>
+                    <td>中央高地</td>
+                    <td>X26 Y17</td>
+                    <td>晴朗</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no076" class=" ">
+                    <td>76</td>
+                    <td>中央高地</td>
+                    <td>X28 Y10</td>
+                    <td>碧空</td>
+                    <td>05:00-07:59</td>
+                    <td>张望</td>
+                    <td>0:00</td>
+                </tr>
+                <tr id="no077" class=" ">
+                    <td>77</td>
+                    <td>摩杜纳</td>
+                    <td>X9 Y13</td>
+                    <td>妖雾</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no078" class=" ">
+                    <td>78</td>
+                    <td>摩杜纳</td>
+                    <td>X27 Y8</td>
+                    <td>晴朗</td>
+                    <td>18:00-04:59</td>
+                    <td>张望</td>
+                    <td>16:00</td>
+                </tr>
+                <tr id="no079" class=" ">
+                    <td>79</td>
+                    <td>摩杜纳</td>
+                    <td>X18 Y17</td>
+                    <td>碧空</td>
+                    <td>12:00-16:59</td>
+                    <td>张望</td>
+                    <td>8:00</td>
+                </tr>
+                <tr id="no080" class=" ">
+                    <td>80</td>
+                    <td>摩杜纳</td>
+                    <td>X26 Y11</td>
+                    <td>晴朗</td>
+                    <td>17:00-17:59</td>
+                    <td>坐下</td>
+                    <td>16:00</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+      </td>
+    <td  style="vertical-align:top"><table id="sightseeingTable2" class="sightseeing_clock_layout">
+        <caption>3.0探索笔记</caption>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>场所</th>
+                    <th>坐标</th>                    
+                    <th>动作</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="Tr1">
+<td>001</td>
+<td>库尔扎斯西部高地</td>
+<td>X32 Y36</td>
+<td></td>
+</tr>
+                <tr id="Tr2">
+<td>002</td>
+<td>库尔扎斯西部高地</td>
+<td>X20 Y23</td>
+<td></td>
+</tr>
+                <tr id="Tr3">
+<td>003</td>
+<td>库尔扎斯西部高地</td>
+<td>X10 Y18</td>
+<td></td>
+</tr>
+                <tr id="Tr4">
+<td>004</td>
+<td>库尔扎斯西部高地</td>
+<td>X20 Y6</td>
+<td></td>
+</tr>
+<tr id="Tr5">
+<td>005</td>
+<td>库尔扎斯西部高地</td>
+<td>X31 Y4</td>
+<td></td>
+</tr>
+<tr id="Tr6">
+<td>006</td>
+<td>库尔扎斯西部高地</td>
+<td>X36 Y19</td>
+<td></td>
+</tr>
+<tr id="Tr7">
+<td>007</td>
+<td>库尔扎斯西部高地</td>
+<td>X20 Y36</td>
+<td></td>
+</tr>
+<tr id="Tr8">
+<td>008</td>
+<td>龙堡参天高地</td>
+<td>X27 Y36</td>
+<td></td>
+</tr>
+<tr id="Tr9">
+<td>009</td>
+<td>龙堡参天高地</td>
+<td>X12 Y39</td>
+<td></td>
+</tr>
+<tr id="Tr10">
+<td>010</td>
+<td>龙堡参天高地</td>
+<td>X16 Y23</td>
+<td></td>
+</tr>
+<tr id="Tr11">
+<td>011</td>
+<td>龙堡参天高地</td>
+<td>X29 Y6</td>
+<td></td>
+</tr>
+<tr id="Tr12">
+<td>012</td>
+<td>龙堡参天高地</td>
+<td>X8 Y6</td>
+<td>祈祷</td>
+</tr>
+<tr id="Tr13">
+<td>013</td>
+<td>龙堡参天高地</td>
+<td>X33 Y23</td>
+<td></td>
+</tr>
+<tr id="Tr14">
+<td>014</td>
+<td>龙堡参天高地</td>
+<td>X11 Y13</td>
+<td></td>
+</tr>
+
+<tr id="Tr15">
+<td>015</td>
+<td>翻云雾海</td>
+<td>X29 Y35</td>
+<td></td>
+</tr>
+<tr id="Tr16">
+<td>016</td>
+<td>翻云雾海</td>
+<td>X29 Y13</td>
+<td></td>
+</tr>
+<tr id="Tr17">
+<td>017</td>
+<td>翻云雾海</td>
+<td>X18 Y6</td>
+<td></td>
+</tr>
+<tr id="Tr18">
+<td>018</td>
+<td>翻云雾海</td>
+<td>X7 Y27</td>
+<td></td>
+</tr>
+<tr id="Tr19">
+<td>019</td>
+<td>翻云雾海</td>
+<td>X17 Y37</td>
+<td>祈祷</td>
+</tr>
+<tr id="Tr20">
+<td>020</td>
+<td>翻云雾海</td>
+<td>X35 Y20</td>
+<td></td>
+</tr>
+<tr id="Tr21">
+<td>021</td>
+<td>翻云雾海</td>
+<td>X23 Y18</td>
+<td></td>
+</tr>
+<tr id="Tr22">
+<td>022</td>
+<td>阿巴拉提亚云海</td>
+<td>X15 Y37</td>
+<td></td>
+</tr>
+<tr id="Tr23">
+<td>023</td>
+<td>阿巴拉提亚云海</td>
+<td>X37 Y40</td>
+<td></td>
+</tr>
+<tr id="Tr24">
+<td>024</td>
+<td>阿巴拉提亚云海</td>
+<td>X39 Y21</td>
+<td>打盹</td>
+</tr>
+<tr id="Tr25">
+<td>025</td>
+<td>阿巴拉提亚云海</td>
+<td>X13 Y9</td>
+<td></td>
+</tr>
+<tr id="Tr26">
+<td>026</td>
+<td>阿巴拉提亚云海</td>
+<td>X18 Y27</td>
+<td></td>
+</tr>
+<tr id="Tr27">
+<td>027</td>
+<td>阿巴拉提亚云海</td>
+<td>X25 Y23</td>
+<td></td>
+</tr>
+<tr id="Tr28">
+<td>028</td>
+<td>阿巴拉提亚云海</td>
+<td>X38 Y11</td>
+<td></td>
+</tr>
+<tr id="Tr29">
+<td>029</td>
+<td>龙堡内陆低地</td>
+<td>X40 Y21</td>
+<td></td>
+</tr>
+<tr id="Tr30">
+<td>030</td>
+<td>龙堡内陆低地</td>
+<td>X17 Y23</td>
+<td></td>
+</tr>
+<tr id="Tr31">
+<td>031</td>
+<td>龙堡内陆低地</td>
+<td>X22 Y27</td>
+<td></td>
+</tr>
+<tr id="Tr32">
+<td>032</td>
+<td>龙堡内陆低地</td>
+<td>X10 Y35</td>
+<td></td>
+</tr>
+<tr id="Tr33">
+<td>033</td>
+<td>龙堡内陆低地</td>
+<td>X28 Y37</td>
+<td></td>
+</tr>
+<tr id="Tr34">
+<td>034</td>
+<td>龙堡内陆低地</td>
+<td>X32 Y11</td>
+<td></td>
+</tr>
+<tr id="Tr35">
+<td>035</td>
+<td>龙堡内陆低地</td>
+<td>X13 Y21</td>
+<td></td>
+</tr>
+<tr id="Tr36">
+<td>036</td>
+<td>魔大陆</td>
+<td>X39 Y17</td>
+<td></td>
+</tr>
+<tr id="Tr37">
+<td>037</td>
+<td>魔大陆</td>
+<td>X33 Y35</td>
+<td></td>
+</tr>
+<tr id="Tr38">
+<td>038</td>
+<td>魔大陆</td>
+<td>X6 Y30</td>
+<td></td>
+</tr>
+<tr id="Tr39">
+<td>039</td>
+<td>魔大陆</td>
+<td>X10 Y35</td>
+<td></td>
+</tr>
+<tr id="Tr40">
+<td>040</td>
+<td>魔大陆</td>
+<td>X6 Y9</td>
+<td></td>
+</tr>
+<tr id="Tr41">
+<td>041</td>
+<td>魔大陆</td>
+<td>X9 Y21</td>
+<td></td>
+</tr>
+<tr id="Tr42">
+<td>042</td>
+<td>魔大陆</td>
+<td>X30 Y11</td>
+<td></td>
+</tr>
+<tr id="Tr43">
+<td>043</td>
+<td>库尔扎斯西部高地</td>
+<td>X32 Y28</td>
+<td>鼓励</td>
+</tr>
+<tr id="Tr44">
+<td>044</td>
+<td>库尔扎斯西部高地</td>
+<td>X29 Y23</td>
+<td></td>
+</tr>
+<tr id="Tr45">
+<td>045</td>
+<td>库尔扎斯西部高地</td>
+<td>X9 Y10</td>
+<td>坐下</td>
+</tr>
+<tr id="Tr46">
+<td>046</td>
+<td>库尔扎斯西部高地</td>
+<td>X12 Y8</td>
+<td>展示</td>
+</tr>
+<tr id="Tr47">
+<td>047</td>
+<td>龙堡参天高地</td>
+<td>X23 Y39</td>
+<td></td>
+</tr>
+<tr id="Tr48">
+<td>048</td>
+<td>龙堡参天高地</td>
+<td>X24 Y18</td>
+<td></td>
+</tr>
+<tr id="Tr49">
+<td>049</td>
+<td>龙堡参天高地</td>
+<td>X34 Y15</td>
+<td></td>
+</tr>
+<tr id="Tr50">
+<td>050</td>
+<td>龙堡参天高地</td>
+<td>X18 Y32</td>
+<td></td>
+</tr>
+<tr id="Tr51">
+<td>051</td>
+<td>翻云雾海</td>
+<td>X34 Y32</td>
+<td>祈祷</td>
+</tr>
+<tr id="Tr52">
+<td>052</td>
+<td>翻云雾海</td>
+<td>X37 Y14</td>
+<td></td>
+</tr>
+<tr id="Tr53">
+<td>053</td>
+<td>翻云雾海</td>
+<td>X14 Y25</td>
+<td></td>
+</tr>
+<tr id="Tr54">
+<td>054</td>
+<td>阿巴拉提亚云海</td>
+<td>X6 Y5</td>
+<td></td>
+</tr>
+<tr id="Tr55">
+<td>055</td>
+<td>阿巴拉提亚云海</td>
+<td>X26 Y6</td>
+<td></td>
+</tr>
+<tr id="Tr56">
+<td>056</td>
+<td>阿巴拉提亚云海</td>
+<td>Y9 Y28</td>
+<td></td>
+</tr>
+<tr id="Tr57">
+<td>057</td>
+<td>龙堡内陆低地</td>
+<td>X12 Y13</td>
+<td></td>
+</tr>
+<tr id="Tr58">
+<td>058</td>
+<td>龙堡内陆低地</td>
+<td>X19 Y38</td>
+<td></td>
+</tr>
+<tr id="Tr59">
+<td>059</td>
+<td>龙堡内陆低地</td>
+<td>X30 Y31</td>
+<td></td>
+</tr>
+<tr id="Tr60">
+<td>060</td>
+<td>魔大陆</td>
+<td>X10 Y14</td>
+<td></td>
+</tr>
+<tr id="Tr61">
+<td>061</td>
+<td>魔大陆</td>
+<td>X35 Y6</td>
+<td></td>
+</tr>
+<tr id="Tr62">
+<td>062</td>
+<td>魔大陆</td>
+<td>X25 Y28</td>
+<td></td>
+</tr>
+            </tbody>
+        </table>
+        <br></td>
+  </tr>
+</table>
+        <div class="size_S">
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

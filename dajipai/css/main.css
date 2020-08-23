@@ -1,0 +1,454 @@
+﻿* {       
+    font-family: "微软雅黑",Sans-Serif;
+    line-height: 1.4;
+    padding:0;    
+}
+body
+{
+    background-color:#000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+ul, ol, dl, dd {    
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.main 
+{
+    position:absolute;    
+    background-image: url(../tupian/default.png);
+    width: 708px;
+    height: 526px;    
+    padding: 20px;    
+}
+.title 
+{
+    font-size: 19px;
+    color: #D8C078;
+    font-weight:800;
+    width: 680px;
+    height: 26px;    
+}
+.link-ex {
+    float:left;    
+    width: 180px;
+    height: 300px;
+    position: relative;        
+}
+.link-ex a.declaration {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    font-size: 13px;
+    color: #a8a8a8;    
+}
+.link-ex ul li a {
+    font-size: 19px;
+    color: #D8C078;
+    font-weight:800;
+    display: inline-block;
+    cursor:pointer;
+    width:180px;
+    margin-left: 15px;
+}
+.link-ex ul li:hover {
+    background: linear-gradient(to right, #6f593c , rgba(0, 0, 0, 0));
+    border-radius: 15px 0px 0px 15px;
+}
+.link {
+    float:left;
+    width: 480px;
+    height: 300px;
+    margin: 0px 20px; 
+}
+.link ul {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow: auto;
+}
+.link ul li {
+    display: inline-block;
+    vertical-align: top;    
+    margin: 4px;    
+}
+.link ul li a {
+    position: relative;
+    display: inline-block;
+	width:40px;
+	height:40px;	
+}
+.link ul li a div {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 42px;
+    height:45px;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAtCAYAAADYxvnjAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+IEmuOgAAAv9JREFUWIXt2c9r02AcgPHnbZM12jk7LBuZ4oZY6LJ1Jz0EYXrwoAdZ2cGDB3/s4EVwkL/Au2x48eJB1IMXMQSGQ8TDhoNexMJwi1qQgqjgip3aTbN2q4e8VZApHuIyIQ+8EEhSPgkJlG/ExMQElmUBYNv2eUVRxuPxeFYIoRFCzWbz2/r6+otGo3FtdHT0NsDQ0BBK6wDHcW709PTke3t7X6XT6UeqqtbDgNbrdbVSqewpl8tXHcc5ks/nLwI+1Lbtc9ls9phhGPeAl0AVaIQBVVVV0XW9U9f17OLi4nHbts8Dt2IAyWRy3DCM+8AcsBQWUtaQhieGYdxPJpOXAYSmaarrug/7+vpuAhshAjcrVi6XL/T395+MASld158BzbBVm9TUdb0IdMaA7kQiscQ2hUpbVwzoAFZDBv0uD3gBdCiACjwGvgD7AR1IhGfDA94Db4B3wEFAVwCB/xK9lUsAnUAa2CPXrn8IWwU+4r/pS3L718dQKL+eJQ/6KFerNmA3/mOSBHYCO/DvvCr3C7ndqi5/a01ue8BXCVsBPsvl/c3VbAbdrDV+XnEo/YBOTk6GZfhjrf8hsZAdf10EDboIGnQRNOgiaNBF0KCLoEEXQYMuggZdBA26CBp0/x1UWJYlQpX8PgESWiwWO9mGd9eyrPj8/HwKJG56enoYf0Sz3doxNTV1FHxoc2Zm5jTQbVmW+ufzti5p6Za2ZlxRlL3Ly8snXNcdHBkZKZqmWTdNc71QKIQy2LUsK26aZhLYOzY2dmVubi7ted4DoWnaIHApnU6fNQzj+fDw8N18Pl8YGBj4xNZPocXCwsJux3HM2dnZM67rDlYqlTvAdaFpWhdwChhrb28/lEql2hKJBLFYOO/WxsYGnudRrVbXVlZWngI3gSkF/5tSAeiu1WqiVqtl8GehrSHvVtbE/3zzCXgFPJC2qsjlcpRKJQ04AJjAYWAf/rA2DOgq/lj8qUS+zmQy30QulwOgVCqp+CPxLvzJshoStI4/if4AVDOZTB3gO4PC63fBsLR3AAAAAElFTkSuQmCC");
+    /* background:url(../tupian/mask.png); */
+}
+
+.link ul li a div.Selected 
+{
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 0 1px 3px #FFFF77 inset;
+}
+
+.link ul li a div:hover 
+{
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 0 1px 3px #FFFF77 inset;
+}
+
+.pagenum 
+{
+    padding: 20px 0px 0px 0px;
+}
+.pagenum a 
+{
+    display: inline-block;
+    text-align: center;
+    font-size: 19px;
+    color: #778899;
+    width:26px;
+    height:25px;
+    font-weight:800;
+}
+.pagenum a:hover 
+{
+    color: #fff;
+}
+.pagenum a.on{    
+    color: #fff;
+    border-radius: 6px;
+    border:1px solid #333;
+    box-shadow:inset 0 0 5px 5px #ccc;
+    text-shadow:0 0 0.5em #FFD700,
+                -0 -0 0.5em #FFD700;
+}
+.explain{
+    float: left;
+    color: #fff;
+    width: 700px;
+    height : 190px;
+    margin: 10px 10px 0px 0px;
+    position: relative;
+}
+.explain p{
+    margin: 0;
+}
+.explain-title
+{
+    font-size: 19px;   
+    margin: 10px;
+}
+.explain-main
+{
+    font-size: 9px;
+}
+.explain-foot
+{
+    position: absolute;
+    bottom: 0px;
+    font-size: 8px;
+    color:#a8a8a8;
+}
+#index li
+{
+    float: left;
+    width: 200px;
+    margin: 0px 20px;
+}
+#index li a
+{
+    float: left;
+}
+#index li p
+{
+    font-size: 19px;
+    color: #a8a8a8;
+    cursor:default;
+    font-weight: 800;
+    position: relative;
+    left: -70px;
+    top: -10px;
+    float: right;
+}
+#typenum 
+{
+    left: 50%;
+    position: relative;
+    clear: left;
+    float: left;
+}    
+#typenum a 
+{
+    position: relative;	
+	width: 50px;
+	height: 50px;	
+	background: url(../tupian/logo/music.png) 0 0 no-repeat;
+	cursor: pointer;
+	color:rgba(0, 0, 0, 0);
+	top:10px;
+	right:50%	
+}
+#typenum a div
+{
+    position: absolute;	
+	width: 50px;
+	height: 50px;	
+	background: url(../tupian/logo/music.png) 0 0 no-repeat;
+	font-size: 12px;
+	text-align: center;
+	bottom: 0px;
+	top:0px;		
+}
+#typenum a.on div
+{
+    background: url(../tupian/logo/music.png) 0 0 no-repeat;
+    background-position: -8px -600px;
+}
+ #typenum a div p
+{
+    position: absolute;
+    top:-26px;
+    width:50px;
+    height:16px;    
+    font-size: 12px;
+	text-align: center;
+	bottom: 0px;
+	color:rgba(0, 0, 0, 0);
+}
+ #typenum a div:hover p
+{ 
+    color:#fff;
+    background: rgba(0, 0, 0, 0.5)
+}
+#music
+{
+    height:220px;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+#music li
+{
+    float: left;
+    width: 200px;
+    height:20px;    
+}
+#music li a
+{
+    float: left;
+    width: 200px;
+    height:16px;
+}
+#music li a:hover 
+{
+    border-radius: 15px 0px 0px 15px;    
+    background: linear-gradient(to right, #000000 , rgba(0, 0, 0, 0));
+}
+#music li p
+{
+    font-size: 12px;
+    color: #a8a8a8;
+    cursor:default;
+    font-weight: 800;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.type2num 
+{
+    left: 50%;
+    position: relative;
+    clear: left;
+    float: left;
+    top: 10px;
+}    
+.type2num a 
+{
+    position: relative;	
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	color:rgba(0, 0, 0, 0);
+	top:10px;
+	right:50%	
+}
+.type2num a div
+{
+    position: absolute;	
+	width: 32px;
+	height: 32px;
+	font-size: 12px;
+	text-align: center;
+	bottom: 0px;
+	top:0px;		
+}
+.type2num a.on div
+{
+    width:32px;
+    height:32px;
+    background: url(../tupian/logo/dungeons.png) 0 0 no-repeat;
+    background-position: -2px -2px;
+}
+.type2num a div div
+{
+    position: absolute;
+    width:16px;
+    height:16px;
+    background: url(../tupian/logo/dungeons.png) 0 0 no-repeat;    
+    top:17px;
+    left:14px;
+}
+.type2num a.on div div
+{
+    width:16px;
+    height:16px;    
+}
+.type2num a div p
+{
+    position: absolute;
+    top:-34px;
+    left:-29px;
+    width:90px;
+    height:16px;   
+    font-size: 12px;
+	text-align: center;
+	bottom: 0px;
+	color:rgba(0, 0, 0, 0);
+	margin:0;	
+}
+.type2num a div:hover p
+{
+    top:-17px; 
+    color:#fff;
+    background: rgba(0, 0, 0, 0.5)
+}
+#dungeons
+{
+    height:220px;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+#dungeons li
+{
+    width:80px;
+    height:40px;
+}
+#dungeons li a div
+{
+    width:82px;
+    height:42px;
+    background-image:url("");
+}
+#dungeons li a img
+{
+    border-radius: 5px;
+    height: 40px;
+    width:80px;
+}
+#aether li
+{
+    width:228px;
+    height:79px;
+}
+#aether li a img
+{
+    width:226px;
+    height:74px;
+}
+#aether li a div
+{
+    width:228px;
+    height:76px;
+}
+#jobtask 
+{
+    height: 160px;
+    position: relative;    
+    top: 26px;
+}
+#jobtask li a
+{
+    float: left;
+    width: 450px;
+    height:16px;
+}
+#jobtask li a p
+{
+    font-size: 12px;
+    color: #a8a8a8;
+    cursor:default;
+    font-weight: 800;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#jobtask li a:hover 
+{
+    border-radius: 15px 0px 0px 15px;    
+    background: linear-gradient(to right, #000000 , rgba(0, 0, 0, 0));
+}
+#overlay {
+	display: none;
+	width: 100%;
+	height:100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	background: rgba(0,0,0,0.7);
+}
+#bigger {
+	width: 100%;
+	height:100%;
+	background-repeat: no-repeat;
+	position: absolute;	
+}
+.slink-ex {
+    position: relative;
+    top: 220px;
+    width: 117px;
+    height: 34px;
+    margin-bottom: 6px;
+}
+.slink-ex a
+{
+    display:block;
+	cursor: pointer;
+    width:117px;
+    height:34px;    
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+    ::-webkit-scrollbar  
+    {  
+        width: 6px;  
+        height: 16px;  
+        background-color: rgba(0,0,0,0);  
+    }  
+      
+    /*定义滚动条轨道 内阴影+圆角*/  
+    ::-webkit-scrollbar-track  
+    {  
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+        border-radius: 10px;  
+        background-color: rgba(0,0,0,0);  
+    }  
+      
+    /*定义滑块 内阴影+圆角*/  
+    ::-webkit-scrollbar-thumb  
+    {  
+        border-radius: 10px;  
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+        background-color: #555;  
+    }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>挖宝攻略Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min1.11.1.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>    
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+
+    <script async="" src="js/analytics.js"></script>    
+    <script src="js/map_treasure1.1.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/moment.min.js"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="css/cssreset-min.css">
+    <link href="css/tool_style.css" rel="stylesheet" type="text/css">
+    <link href="css/style2.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    <div id="stage">
+    <div class="topInfo">
+	推荐使用chrome浏览器。firefox可以运行。开始使用的时候按「Ctrl＋F5」刷新画面。
+</div>
+   <div id="mapArea">
+	<nav>
+		<ul id="menu2">
+			<li>库尔扎斯西部高地</li>
+			<li>龙堡参天高地</li>
+			<li>阿巴拉提亚云海</li>
+			<li>翻云雾海</li>
+		</ul>
+	</nav>
+	<div id="pull">
+		参加人数：<select id="select1">
+			<option value="4" selected="selected">４人</option>
+			<option value="5">５人</option>
+			<option value="6">６人</option>
+			<option value="7">７人</option>
+			<option value="8">８人</option>
+		</select>
+		地图的张数：<select id="select2">
+			<option value="1" selected="selected">１张</option>
+			<option value="2">２张</option>
+		</select>
+	</div>
+	<div id="set">
+		<p class="info">①点击这里的旗子标记<br>
+			②在地图上标记，点击便签修改内容<br>
+			※可以输入坐标、地图上的旗帜是可以移动的</p>
+		<ul id="setArea" class="modeEnd">
+			<li><span></span><span><input placeholder="名字、备忘或其他" type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+			<li><span></span><span><input type="text"><input value="SET" type="button"></span><span class="flag"></span><span class="flag2"></span><span class="end"></span></li>
+		</ul>
+		<p class="endCheck">
+			<label><input type="checkbox" checked> 显示结束的标记（点击END可以消掉标记）</label>
+		</p>
+		<div id="sinkouArea" data-clipboard-text="" style="display: none;">
+			<p>▼个别进行复制用（现在的MAP）</p>
+			<ul></ul>
+		</div>
+		<p class="viewBtn">▼宏专用记事本　<span>全部</span><span class="on">第１张</span><span>第２张</span><span>不要坐标</span></p>
+		<textarea wrap="off" class="copyBase" rows="8" id="outPut" placeholder="自动输入&排序"></textarea>
+		<div class="copyBtn" data-clipboard-text="">
+			<span>复制到剪切板</span><span class="alert">已复制</span>
+		</div>
+		<div id="allReset">
+			<input value="记号复位" type="reset">
+		</div>		
+	</div>
+	<section id="page1">
+    </section>
+	<section id="page2">
+	</section>
+	<section id="page3">
+	</section>
+	<section id="page4">
+	</section>	
+</div>
+<div id="news">
+	<span>NEWS</span>
+	<ul>
+		<li>2016.10.23 追加了在地图上表示地名＆个别进行复制用的框。</li>
+		<li>2016.10.22 追加了结束标记。</li>
+		<li>2016.10.12 更改了切换宏的时候、只有1张地图的时候不显示「第二张」。</li>
+		<li>2016.10.12 对应了可以调节尺寸（大概）。</li>
+		<li>2016.10.12 更改了切换地图的时候标记再生成的样子。</li>
+		<li>2016.10.11 更改了点击地图上方导航以外的时候、输入模式会取消的问题。</li>
+		<li>2016.10.11 地图的数量变更的时候便签按键可以切换显示或者不显示。修正了内容的重置。</li>
+		<li>2016.10.11 更改了排版、追加了地图的标记。</li>
+	</ul>
+</div>
+    </div> 
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

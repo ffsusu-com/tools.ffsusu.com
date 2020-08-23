@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>九宫幻卡一览 patch3.5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.csv.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/triple_tryad.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    <style type="text/css">.tab1,.tab2 {
+            display: none;
+        }
+        #eorzeadb_tooltip {
+            z-index: 1000;
+        }
+    </style>
+
+    <div id="stage">
+
+        FF14 九宫幻卡 收集攻略 ver.patch3.5
+        <p class="size_S color_green">　　推荐使用Chrome、Safari、FireFox。　最好别用InternetExplorer。</p><br>
+        <hr>
+
+        <a class="btn_M center show_tab0 current">全部清单</a>
+        <a class="btn_M center show_tab1">NPC一览</a>
+        <a class="btn_M center show_tab2">卡牌一览</a>
+        <br>
+        <p class="size_S color_red">※由于是新程序，比较容易出现错误...如果一览显示不出来的时候，请重新加载</p><br>
+        <hr>
+
+        <div class="tab0">
+            <table class="tripletryad_checklist">
+            <tr>
+            <td>
+                【对战NPC一览】
+                【<p class="color_orange" id="count_comp1">0</p>/<p id="count_comp1_max">99</p>】<br>
+                <table class="tripletryad_layout" id="npc_list_count">
+                    <tr><th style="background: #833">NPC名</th></tr>
+                </table>
+            </td>
+            <td>
+                【卡牌一览】
+                【<p class="color_orange" id="count_comp2">0</p>/<p id="count_comp2_max">99</p>】<br>
+                <table class="tripletryad_layout" id="card_list_count1">
+                    <tr><th>卡牌名 ★1</th></tr>
+                </table>
+                <br>
+                <table class="tripletryad_layout" id="card_list_count2">
+                    <tr><th>卡牌名 ★2</th></tr>
+                </table>
+            </td>
+            <td>
+                <br>
+                <table class="tripletryad_layout" id="card_list_count3">
+                    <tr><th>卡牌名 ★3</th></tr>
+                </table>
+            </td>
+            <td>
+                <br>
+                <table class="tripletryad_layout" id="card_list_count4">
+                    <tr><th>卡牌名 ★4</th></tr>
+                </table>
+                <br>
+                <table class="tripletryad_layout" id="card_list_count5">
+                    <tr><th>卡牌名 ★5</th></tr>
+                </table>
+            </td>
+            </tr>
+            </table>
+        </div>
+
+        <div class="tab1">
+        <table id="npc_all_list" class="tripletryad_layout">
+            <thead>
+                <tr>
+                    <th>NPC名</th>
+                    <th>场所</th>
+                    <th>对战规则</th>
+                    <th>掉落</th>
+                </tr>
+            </thead>
+        </table>
+        </div>
+
+        <div class="tab2">
+        <a class="btn_M center everget_extraction">未获得限定</a><br>
+        <p class="size_S color_red">※九宫幻卡卡包内变动较多，因此不确定因素也较多</p><br>
+        <table id="card_all_list" class="tripletryad_layout">
+            <thead>
+                <tr>
+                    <th style="width:200px">卡牌名</th>
+                    <th style="width:230px">获得方法…NPC</th>
+                    <th style="width:240px">获得方法…副本</th>
+                    <th>获得方法…金蝶币・成就・其他</th>
+                </tr>
+            </thead>
+        </table>
+        </div>
+
+        <br>
+        <hr>
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

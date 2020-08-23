@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+.eorzeatime3_txt{
+/*    display: none;*/
+}
+#eorzeaclock2{
+    display: none;
+}
+.gathering_list *{
+    font-size: 10px;
+}
+.gathering_list{
+    background: #888;
+}
+.gathering_list td{
+    background: #000;
+    vertical-align: top;
+    padding: 1px 3px;
+}
+.gathering_list td.list_subtitle{
+    background: #002966;
+}
+.gathering_list td.list_subtitle.current{
+    background: #aa0000;
+}
+.popup{
+    color: #0af;
+    text-decoration: underline;
+}
+.popup_table{
+    display: none;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -67px;
+    -webkit-animation: opacity;
+}
+.saikutsu_icon,
+.sakugan_icon,
+.engei_icon,
+.kusakari_icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: bottom;
+    margin-right: 2px;
+}
+.saikutsu_icon{
+    background: url("../img/icon_001.png");
+    background-size: 15px 15px;
+}
+.sakugan_icon{
+    background: url("../img/icon_002.png");
+    background-size: 15px 15px;
+}
+.engei_icon{
+    background: url("../img/icon_003.png");
+    background-size: 15px 15px;
+}
+.kusakari_icon{
+    background: url("../img/icon_004.png");
+    background-size: 15px 15px;
+}
+
+.eorzeatime3_ice,
+.eorzeatime3_ice .eorzeatime3_txt{
+    color: #8ea9c6;
+}
+.eorzeatime3_water,
+.eorzeatime3_water .eorzeatime3_txt{
+    color: #2c9dbd;
+}
+.eorzeatime3_wind,
+.eorzeatime3_wind .eorzeatime3_txt{
+    color: #91b086;
+}
+.eorzeatime3_lightning,
+.eorzeatime3_lightning .eorzeatime3_txt{
+    color: #846e92;
+}
+.eorzeatime3_fire,
+.eorzeatime3_fire .eorzeatime3_txt{
+    color: #cf410f;
+}
+.eorzeatime3_earth,
+.eorzeatime3_earth .eorzeatime3_txt{
+    color: #9f6632;
+}

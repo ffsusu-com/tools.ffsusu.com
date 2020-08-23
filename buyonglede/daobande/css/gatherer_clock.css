@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+.eorzeatime3_txt{
+    display: none;
+}
+#eorzeaclock2{
+    display: none;
+}
+.gathering_list *{
+    font-size: 10px;
+}
+.gathering_list{
+    background: #000;
+}
+.gathering_list td{
+    background: #222;
+    vertical-align: top;
+    padding: 1px 3px;
+}
+.gathering_list td.list_subtitle{
+    background: #002966;
+}
+.gathering_list td.list_subtitle.current{
+    background: #aa0000;
+}
+.popup{
+    color: #0af;
+    text-decoration: underline;
+}
+.popup_table{
+    display: none;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -67px;
+    -webkit-animation: opacity;
+}
+.saikutsu_icon,
+.sakugan_icon,
+.engei_icon,
+.kusakari_icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: bottom;
+    margin-right: 2px;
+}
+.saikutsu_icon{
+    background: url("../img/icon_001.png");
+    background-size: 15px 15px;
+}
+.sakugan_icon{
+    background: url("../img/icon_002.png");
+    background-size: 15px 15px;
+}
+.engei_icon{
+    background: url("../img/icon_003.png");
+    background-size: 15px 15px;
+}
+.kusakari_icon{
+    background: url("../img/icon_004.png");
+    background-size: 15px 15px;
+}
+.blue_scrip{
+    background: url("../img/icon_005.png");
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+.red_scrip{
+    background: url("../img/icon_006.png");
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+.sound_off{
+    background: url("../img/icon_007.png");
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    vertical-align: top;
+}
+.sound_on{
+    background: url("../img/icon_008.png");
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    vertical-align: top;
+}
+
+.gathering_list tr.current td{
+    background: #500;
+}
+.gathering_list tr.current td.list_subtitle{
+    background: #f00;
+}

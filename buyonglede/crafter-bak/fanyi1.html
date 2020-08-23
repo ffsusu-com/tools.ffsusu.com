@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+ul{ padding:0px; margin:30px auto; overflow:hidden; width:900px;}
+ul li{ float:left; width:50%; overflow:hidden;}
+ul li span{float:left; margin-left:5px;}
+ul li input{float:right;}
+
+</style>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script src="l.js"></script>
+<script type="text/javascript">
+var itemData;if(!lang)var lang={"gil":"金币"};var nlang = {};for(var nnn in lang){nlang[lang[nnn]]=true;}
+//l.js 为翻译文件 文件内容为 var lang={"原文":"译文"}
+//选择载入数据库文件
+$.getJSON('item_info.jp.json',function (itemData){
+var i=0,HTML="";
+for(x in itemData.data){
+	var datas = itemData.data[x];
+	if(typeof datas.name == 'string'&&datas.name!=lang[datas.name]){
+		datas.name = lang[datas.name]? lang[datas.name]: datas.name;
+		HTML +='<li><span>['+i+']'+datas.name +'</span><input tyle="text" id="id--'+x+'" value="'+datas.name+'" onchange="itemchange(this,\'data\')"></li>';
+	}
+	for(y in datas){
+		i++;
+	var datay = datas[y];
+	//datay.category = datay.category.replace("甲冑師","铸甲匠");
+	//足防具
+	//datay.type = datay.type.replace("錬金術材","炼金原料");
+	if(typeof datay.category == 'string'&&lang[datay.category]!=datay.category){
+		datay.category = lang[datay.category]? lang[datay.category]: datay.category;
+		HTML += '<li><span>['+i+']'+datay.category +'</span><input tyle="text" id="id--'+x+'" value="'+datay.category+'" onchange="itemchange(this,\'category\','+y+')"></li>';
+	}
+	if(typeof datay.type == 'string'&&lang[datay.type]!=datay.type){
+		datay.type = lang[datay.type]? lang[datay.type]: datay.type;
+		HTML += '<li><span>['+i+']'+datay.type +'</span><input tyle="text" id="id--'+x+'" value="'+datay.type+'" onchange="itemchange(this,\'type\','+y+')"></li>';
+	}
+}}
+if(itemData.text_list){
+	for(y in itemData.text_list){
+		i++;
+		var data = itemData.text_list[y];
+		if(typeof data== 'string'&&lang[data]!=data){
+			itemData.text_list[y] = lang[data]? lang[data]: data;
+			HTML +='<li><span>['+i+']'+data +'</span><input tyle="text" id="'+y+'" value="'+data+'" onchange="itemchange(this,\'text_list\')"></li>';
+		}
+	}
+}
+window.itemData = itemData;
+if(HTML)$("#show").html('<br /><br />加载完毕<br /><ul>'+HTML+'</ul>');
+else $("#show").html('<br /><br />加载完毕<br />');
+});
+function itemchange(obj,type,i){
+	var x = obj.id.replace("id--","")
+	if(type=="data")itemData.data[x]["name"] = obj.value;
+	else if(type=='text_list')itemData.text_list[x] = obj.value;
+	else if(type=='category')itemData.data[x][i]['category'] = obj.value;
+	else if(type=='type')itemData.data[x][i]['type'] = obj.value;
+}
+</script>
+</head>
+<body>
+<input style="position:fixed; top:10px; left:10px;" type="button" value="生成" onclick="this.style.display='none';document.getElementById('output').style.display='';document.getElementById('output').value = JSON.stringify(itemData);"  />
+<textarea id="output" style="position:fixed; width:90%; height:90%; top:0PX;LEFT:0PX; display:none"></textarea>
+<div id="show"><br />
+<br />
+<br />
+<br />
+如果无显示则是无需翻译</div>
+</body>
+</html>

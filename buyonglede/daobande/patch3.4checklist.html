@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>3.4版本、任务列表一览</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anima_weapon_progress.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+<script>
+    $(function(){
+
+        // 自動JSON化を有効に
+        $.cookie.json = true;
+
+        var isset = function(data){
+            if(data === "" || data === null || data === undefined){
+                return false;
+            }else{
+                return true;
+            }
+        };
+
+        //保存クッキーの展開
+        if($.cookie("checkFlag")){
+            var checkFlagArr = $.cookie("checkFlag");
+            var countCheckFlagArr = checkFlagArr.length;
+            for (var i = 0; i < countCheckFlagArr; i++) {
+                if ( checkFlagArr[i]=='1') {
+                    $('.check_flag').eq(i).addClass('check');
+                };
+            };
+        }
+
+        $('.check_flag').click(function(){
+            if ($(this).hasClass('check')) {
+                $(this).removeClass('check');
+            }else{
+                $(this).addClass('check');
+            };
+            saveCheckFlag()
+        });
+
+        $('.tweet_button').socialbutton('twitter', {
+            button: 'horizontal',
+            text: 'FF14 patch3.4 初動リスト #FF14 #FFXIV\n',
+            url: 'http://ff14moo.moo.jp/patch3.4checklist.html'
+        });
+
+    })
+
+    function saveCheckFlag(){
+        var countCheckFlag = $('.check_flag').length;
+        var checkFlagArr = [];
+        //0or1で配列にぶっこむ
+        for ( var i = 0; i < countCheckFlag; i++ ) {
+            if ($('.check_flag').eq(i).hasClass('check')) {
+                checkFlagArr.push(1);
+            }else{
+                checkFlagArr.push(0);
+            };
+        };
+        //配列をクッキー保存
+        $.cookie("checkFlag",checkFlagArr, { expires: 365 , path: "/patch3.4checklist.html" });
+    }
+</script>
+
+<style type="text/css">.device_sp .title {
+        width: 320px;
+    }
+    .layout_box {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 300px;
+        /*height: 150px;*/
+        border: 1px solid #fc0;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 4px;
+        padding: 5px;
+        padding-top: 85px;
+        background: #000;
+        font-size: 11px;
+    }
+    .layout_box:hover {
+        background: #333;
+    }
+    .layout_box.check {
+        border: 1px solid #aaa;
+    }
+    .layout_box.check:after {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        content:"";
+        background: url("img/patch3.4/check_stamp.png");
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+    }
+    .layout_box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid #fc0;
+    }
+    .layout_box.check  img{
+        border-bottom: 1px solid #aaa;
+        -webkit-filter: grayscale(100%);
+    }
+    .layout_box div {
+        background: #fc0;
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: -4px;
+        width: 298px;
+        margin-left: -5px;
+        padding-left: 10px;
+    }
+    .layout_box.check  div{
+        background: #aaa;
+        color: #000;
+    }
+    .layout_box p {
+        font-size: 11px;
+    }
+    .layout_box.check .color_orange {
+        color: #fc8;
+    }
+    .layout_box.check .color_red {
+        color: #f88;
+    }
+</style>
+
+    <div id="stage">
+        <img class="title" src="img/patch3.4/000.png"><br>
+
+        FF14 patch3.4 任务列表
+        <a href="http://ff.sdo.com/web6/news/newsDetail.asp?id=274226" target="blank" class="underline">更新笔记</a><br>
+        <p class="color_red size_S">※以下内容包含很多剧透，请注意！</p><br>
+        <hr>
+
+        <div class="layout_box check_flag">
+            <div>【主线】</div>
+            <img src="img/patch3.4/001.png" width="300">
+            「伊修加德假日」<br>
+            伊修加德砥柱层 (X:11.5 Y:11.2) 福尔唐家的骑兵<br>
+            <p class="color_orange">完成主线「绝命怒嚎」</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/002.png" width="300">
+            <div>【亚历山大机神城 天动之章】</div>
+            「加速的危机」<br>
+            龙堡内陆低地 (X:21.7 Y:18.8) 米黛<br>
+            <p class="color_orange">完成支线「没有她的世界」</p><br>
+            <p class="color_red">平均装等230～</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/003.png" width="300">
+            <div>【亚历山大零式机神城 天动之章】</div>
+            「英雄幻想诗：机神城之章」<br>
+            摩杜纳 (X:21.7 Y:8.7) 异国的诗人<br>
+            <p class="color_orange">完成支线「迈向无人知晓的明天」</p><br>
+            <p class="color_red">天动之章1 平均装等245～&nbsp;天动之章2 平均装等250～</p><br>
+            <p class="color_red">天动之章3 平均装等255～&nbsp;天动之章4 平均装等255～</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/004.png" width="300">
+            <div>【圣恩达利姆神学院记】</div>
+            「恩师的指引」<br>
+            伊修加德砥柱层 (X:8.7 Y:7.8)布里亚迪安<br>
+            <p class="color_orange">完成支线「欢笑的使者」</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/005.png" width="300">
+            <div>【三斗神】</div>
+            「黄金色的灾厄」<br>
+            石之家 (X:6.1 Y:5.2) 蛇心<br>
+            <p class="color_orange">完成支线「赌上行星的命运」</p><br>
+            <p class="color_red">平均装等220～</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/006.png" width="300">
+            <div>【歼殛：三斗神】</div>
+            「登峰造极的女神索菲娅」<br>
+            石之家 (X:6.1 Y:5.2) 蛇心<br>
+            <p class="color_orange">完成支线「黄金色的灾厄」</p><br>
+            <p class="color_red">平均装等235～</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/007.png" width="300">
+            <div>【希尔迪布兰德】</div>
+            「第一个家」<br>
+            伊修加德基础层 (X:9.9 Y:11.4) 齐尔<br>
+            <p class="color_orange">完成支线「抓住线索」</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/008.png" width="300">
+            <div>【险峻峡谷 塞尔法特尔溪谷】</div>
+            「险峻溪谷」<br>
+            福尔唐伯爵府 (X:6.1 Y:6.0) 阿尔菲诺<br>
+            <p class="color_orange">完成主线「伊修加德假日」</p><br>
+            <p class="color_red">平均装等210～</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/009.png" width="300">
+            <div>【秘本宝库 迦巴勒幻想图书馆】</div>
+            「秘本宝库 迦巴勒幻想图书馆」<br>
+            田园郡 (X:5.5 Y:6.6) 米德奈特·迪尤<br>
+            <p class="color_orange">完成主线「苍穹之禁城」</p><br>
+            <p class="color_red">平均装等210～</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/010.png" width="300">
+            <div>【冒险者小队】</div>
+            「荣光与分队同在」<br>
+            各大国防联军 人事负责人<br>
+            <p class="color_orange">完成支线「遗失的挑战笔记」</p><br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/011.png" width="300">
+            <div>【库洛的奇谈书】</div>
+            「天书奇谈」<br>
+            田园郡 (X:7.0 Y:5.9) 温柔的冒险者<br>
+        </div>
+<!--
+        <div class="layout_box check_flag">
+            <img src="./img/patch3.4/001.png" width="300">
+            <div>【】</div>
+            「」<br>
+            <br>
+            <p class="color_red"></p><br>
+        </div>
+ -->
+
+        <hr style="margin-bottom: 10px;">
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/101.png" width="300">
+            <div>【公寓】</div>
+            在各国的冒险者居住区里追加了个人用的居住设施「公寓」。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/102.png" width="300">
+            <div>【家具】</div>
+            追加新的家具。<br>
+            一部分的家具/庭具撤去的时候不会消失。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/103.png" width="300">
+            <div>【水族箱】</div>
+            追了可以把鱼放进去观赏的调度品「水族箱」。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/104.png" width="300">
+            <div>【管弦乐琴】</div>
+            追加了新的管弦乐琴乐谱。<br>
+            追加了新的功能「播放列表」。<br>
+            没获得的乐谱的曲名也可以表示了。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/105.png" width="300">
+            <div>【地下工坊】</div>
+            小型陆行鸟外墙<br>
+            中型陆行鸟外墙<br>
+            大型陆行鸟外墙<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/106.png" width="300">
+            <div>【九宫幻卡对局】</div>
+            追加了卡牌对战专用房间「幻卡对局室」。<br>
+            追加了新的九宫幻卡。<br>
+            追加了新的可对战NPC。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/107.png" width="300">
+            <div>【萌宠之王】</div>
+            可以通过「任务搜索器」申请参加。<br>
+            大会对战的对手扩展到同区的玩家。<br>
+            萌宠之王对战时的费用取消了。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/108.png" width="300">
+            <div>【美容师】</div>
+            追加新的发型。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/109.png" width="300">
+            <div>【情感动作】</div>
+            追加新的情感动作。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/110.png" width="300">
+            <div>【田园郡】</div>
+            增加了田园郡的建筑物。<br>
+            伴随着建筑物的增加 变更了一部分NPC的位置。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/111.png" width="300">
+            <div>【决斗】</div>
+            实装了在特定的公共区域里可进行1v1对战（PVP）的「决斗」。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/112.png" width="300">
+            <div>【群狼盛宴】</div>
+            新增观战模式。<br>
+            新增任意对战「自定义比赛」。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/113.png" width="300">
+            <div>【陆行鸟用装甲】</div>
+            追加新的陆行鸟用装甲。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/114.png" width="300">
+            <div>【坐骑】</div>
+            追加新的坐骑。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="http://ff14moo.moo.jp/img/patch3.4/115.png" width="300">
+            <div>【宠物】</div>
+            追加新的宠物。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/116.png" width="300">
+            <div>【集体动作/观景相机】暂定</div>
+            追加了可以调整画面表现的「照相机设定」窗口。<br>
+            集体动作功能里追加了照明。<br>
+            追加了集体动作的对象动作可以暂时停止的「动作停止」功能。<br>
+            景观相机在执行中在一定范围内可以操作，可以调整构图。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/117.png" width="300">
+            <div>【倒计时】暂定</div>
+            追加战斗开始倒计时功能。<br>
+        </div>
+
+        <div class="layout_box check_flag">
+            <img src="img/patch3.4/118.png" width="300">
+            <div>【双十字热键栏】</div>
+            追加了指定的十字手柄图标可以更进一步的展开的「双十字热键栏」。<br>
+        </div>
+<!--
+        <div class="layout_box check_flag">
+            <img src="./img/patch3.4/101.png" width="300">
+            <div>【】</div>
+            <br>
+        </div>
+-->
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

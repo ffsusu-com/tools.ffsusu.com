@@ -1,0 +1,1410 @@
+﻿<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>管弦乐琴乐谱集 出处一览</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anima_weapon_progress.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu" target="_self">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+<script>
+    $(function () {
+
+        // 自動JSON化を有効に
+        $.cookie.json = true;
+
+        //保存データの展開
+        if ($.cookie("musicData")) {
+            var musicArray = $.cookie("musicData");
+            var countMusicData = musicArray.length;
+            for (var i = 0; i < countMusicData; i++) {
+                if (musicArray[i] == '1') {
+                    $('.orchestrion_list_layout').find('.checkbox').eq(i).addClass('check');
+                };
+            };
+        }
+
+        //全Music数のカウント
+        var countMusic = $('.orchestrion_list_layout').find('.checkbox').length;
+        $('.count_num').text(countMusic);
+
+        //進捗チェック
+        compCountMusic();
+
+        $('.orchestrion_list_layout').find('.checkbox').click(function () {
+            if ($(this).hasClass('check')) {
+                $(this).removeClass('check');
+            } else {
+                $(this).addClass('check')
+            };
+            compCountMusic();
+            saveMusicdata();
+        });
+
+    })
+
+    function compCountMusic() {
+        var countCompMusic = $('.orchestrion_list_layout').find('.checkbox.check').length;
+        $('.count_comp_num').text(countCompMusic);
+    }
+
+    function saveMusicdata() {
+        var countMusic = $('.orchestrion_list_layout').find('.checkbox').length;
+        var musicArray = [];
+        //0or1で配列にぶっこむ
+        for (var i = 0; i < countMusic; i++) {
+            if ($('.orchestrion_list_layout').find('.checkbox').eq(i).hasClass('check')) {
+                musicArray.push(1);
+            } else {
+                musicArray.push(0);
+            };
+        };
+        //配列をクッキー保存
+        $.cookie("musicData", musicArray, { expires: 365, path: "/orchestrion_list.html" });
+    }
+</script>
+<script>
+    function tableSwitch(_this) {
+        var table = document.getElementsByClassName("orchestrion_list_layout");
+        var old = document.getElementsByClassName(_this.className + " current");
+        if (old.length != 0) { old[0].className = _this.className; }
+        var number = table.length;
+        for (var i = 0; i < number; i++) {
+            var title = table[i];
+            if (_this.title == "ALL") { title.style.display = ''; }
+            else if (_this.title == title.title) { title.style.display = ''; }
+            else { title.style.display = 'none'; }
+        }
+        _this.className = _this.className + " current";
+    }
+</script>
+<style type="text/css" media="screen">.orchestrion_list_layout {
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width:697px;
+    }
+    .orchestrion_list_layout th{
+        position: relative;
+        font-size: 10px;
+        background: #888;
+        padding: 1px 3px;
+    }
+    .orchestrion_list_layout td{
+        position: relative;
+        font-size: 10px;
+        background: #555;
+        padding: 1px 3px;
+        white-space: nowrap;
+    }
+    .orchestrion_list_layout td.checkbox{
+        padding-right: 20px;
+    }
+    .orchestrion_list_layout td.check{
+        background: #383;
+    }
+    .orchestrion_list_layout td.check:after{
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background: url("img/triple_tryad/check.png");
+        background-size: 18px 15px;
+        width: 18px;
+        height: 15px;
+    }
+</style>
+
+    <div id="stage">
+
+        管弦乐琴乐谱集 出处一览 ver.patch3.4
+        <p class="size_S color_green">　　推荐Chrome　不支持IE</p><br>
+		点击对应<p class="size_S color_green">乐谱名称</p>可跳转到<p class="size_S color_green">网易云音乐</p>进行试听，墙外用户可能无法试听<br>
+		现内容对应<p class="size_S color_green">3.4版本</p>不可试听音乐以注明<br>
+		排版对应<p class="size_S color_green">3.4版本</p>不和<p class="size_S color_green">3.3版本</p>完全是不同的排版<br>
+		欢迎在主站留言板，留言纠错
+        <hr>        
+        获得数：<p class="count_comp_num color_orange">99</p>/<p class="count_num">99</p><br>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="ALL">ALL</a><br>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="区域场景">区域场景</a>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="迷宫挑战">迷宫挑战</a>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="讨伐歼灭战">讨伐歼灭战</a>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="大型任务">大型任务</a>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="其他">其他</a>
+        <a class="btn_M center" onclick="tableSwitch(this);" href="javascript:void(0)" title="季节活动">季节活动</a>
+<table class="orchestrion_list_layout" title="区域场景">
+	<tbody>
+		<tr>
+			<th colspan="4">
+				<span style="font-size:15px;">区域场景</span></th>
+		</tr>
+		<tr>
+			<th>
+				番号</th>
+			<th>
+				管弦乐琴乐谱・名称</th>
+			<th>
+				入手方法</th>
+			<th>
+				备注</th>
+		</tr>
+		<tr>
+			<td>
+				001</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409319" target="_blank">水车低鸣</a></td>
+			<td>
+				格里达尼亚新街 麦森塔(11,11)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				002</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409306" target="_blank">伟大的母港</a></td>
+			<td>
+				利姆萨&middot;罗敏萨下层甲板 班戈&middot;赞戈(10,11)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				003</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409287" target="_blank">希望之都</a></td>
+			<td>
+				乌尔达哈现世回廊 劳力士(10,9)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				004</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672490" target="_blank">监牢</a></td>
+			<td>
+				伊修加德砥柱层 芙莉妮(6,10)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				005</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409334" target="_blank">沙之家</a></td>
+			<td>
+				沙之家 哈奈可&middot;布恩奈可・5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				006</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672506" target="_blank">华彩的山麓</a></td>
+			<td>
+				龙堡参天高地（A/S狩猎怪稀有掉落）</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				007</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672499" target="_blank">云中匿影</a></td>
+			<td>
+				阿巴拉提亚云海（A/S狩猎怪稀有掉落）</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				008</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409289" target="_blank">再来一杯！</a></td>
+			<td>
+				摩杜纳 奥里亚娜 诗学1,000</td>
+			<td>
+				炼金Lv50</td>
+		</tr>
+		<tr>
+			<td>
+				009</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274408" target="_blank">曼德维尔金碟游乐场</a></td>
+			<td>
+				纪念品兑换员 10,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				010</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274410" target="_blank">陆行鸟竞赛</a></td>
+			<td>
+				纪念品兑换员 15,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				011</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409317" target="_blank">水手不眠</a></td>
+			<td>
+				利姆萨&middot;罗敏萨下层甲板 班戈&middot;赞戈(10,11)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				012</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409324" target="_blank">萤火之舞</a></td>
+			<td>
+				格里达尼亚新街 麦森塔(11,11)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				013</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409292" target="_blank">女王的美梦</a></td>
+			<td>
+				乌尔达哈现世回廊 劳力士(10,9)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				014</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672516" target="_blank">位高责重</a></td>
+			<td>
+				伊修加德砥柱层 芙莉妮 (6,10)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				015</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672526" target="_blank">玛托雅的洞窟</a></td>
+			<td>
+				玛托雅的洞穴 杂用商人(6,6)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				016</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672498" target="_blank">歇宿</a></td>
+			<td>
+				龙堡参天高地 杂用商人(32,23)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				017</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672491" target="_blank">迎风</a></td>
+			<td>
+				库尔扎斯西部高地（A/S狩猎怪稀有掉落）</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				018</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672511" target="_blank">人王</a></td>
+			<td>
+				翻云雾海（A/S狩猎怪稀有掉落）</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				019</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672524" target="_blank">缺失的书页</a></td>
+			<td>
+				龙堡内陆低地（A/S狩猎怪稀有掉落）</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				020</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409307" target="_blank">乘上西风</a></td>
+			<td>
+				利姆萨&middot;罗敏萨下层甲板 班戈&middot;赞戈(10,11)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				021</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409320" target="_blank">沉静</a></td>
+			<td>
+				格里达尼亚新街 麦森塔(11,11)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				022</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409285" target="_blank">灼热之地</a></td>
+			<td>
+				乌尔达哈现世回廊 劳力士(10,9)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				023</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=27586622" target="_blank">拉诺西亚的疾风</a></td>
+			<td>
+				水城 宝物库</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				024</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=27586627" target="_blank">大地低语</a></td>
+			<td>
+				水城 宝物库</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				025</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=537615" target="_blank">萨纳兰的黄昏</a></td>
+			<td>
+				水城 宝物库</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				026</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=27586637" target="_blank">クルザスの静寂</a></td>
+			<td>
+				水城 宝物库</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				027</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672496" target="_blank">ノブレス・スリーブス</a></td>
+			<td>
+				伊修加德砥柱层 芙莉妮 (6,10)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				028</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672519" target="_blank">雲霧街の夜霧</a></td>
+			<td>
+				伊修加德砥柱层 芙莉妮 (6,10)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				029</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672502" target="_blank">天上の世界</a></td>
+			<td>
+				阿巴拉提亚云海（A/S狩猎怪稀有掉落）</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				030</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409335" target="_blank">燻る灰</a></td>
+			<td>
+				南萨纳兰(23.2, 14.1)蜥蜴人杂用商人 白钢刀币3</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				031</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409335" target="_blank">大らかな家</a></td>
+			<td>
+				阿巴拉提亚云海(7.0, 14.2)商人鲁纳瓦努 白骨币3 </td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td rowspan="3">
+				032</td>
+			<td class="checkbox" rowspan="3">
+				<a href="http://music.163.com/#/song?id=27586643" target="_blank">安らぎの部屋</a></td>
+			<td>
+				格里达尼亚新街 麦森塔(11,11)5,000金币</td>
+			<td colspan="1" rowspan="3">
+		</tr>
+		<tr>
+			<td>
+				利姆萨·罗敏萨下层甲板 班戈·赞戈(10,11)5,000金币</td>
+		</tr>
+		<tr>
+			<td>
+				乌尔达哈现世回廊 劳力士(10,9)5,000金币</td>
+		</tr>
+		<tr>
+			<td>
+				033</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409378" target="_blank">リフレクション</a></td>
+			<td>
+				摩杜纳 奥里亚娜 诗学1,000</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				034</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=27586653" target="_blank">心の故郷</a></td>
+			<td>
+				各住宅区的道具屋和公寓的大厅5,000金币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				035</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672528" target="_blank">ホームステッド</a></td>
+			<td>
+				田园郡 杂用商人(6,7)5,000金币</td>
+			<td>
+				</td>
+		</tr>
+        </tbody>
+</table>
+<table class="orchestrion_list_layout" title="迷宫挑战">
+	<tbody>
+		<tr>
+			<th colspan="4">
+				<span style="font-size:15px;" target="_blank">迷宫挑战</span></th>
+		</tr>
+		<tr>
+			<th>
+				番号</th>
+			<th>
+				管弦乐琴乐谱・名称</th>
+			<th>
+				入手方法</th>
+			<th>
+				备注</th>
+		</tr>
+		<tr>
+			<td>
+				001</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274397" target="_blank">风暴中的灯火</a></td>
+			<td>
+				领航明灯 天狼星灯塔／地脉灵灯 天狼星灯塔</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				002</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409390" target="_blank">黑暗的拥抱</a></td>
+			<td>
+				骚乱坑道 铜铃铜山／封锁坑道 铜铃铜山</td>
+			<td>
+				炼金Lv30</td>
+		</tr>
+		<tr>
+			<td>
+				003</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274364" target="_blank">魔大战的伤痕</a></td>
+			<td>
+				神圣遗迹 无限城市街古迹／腐坏遗迹 无限城市街古迹</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				004</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274382" target="_blank">漆黑的誓言</a></td>
+			<td>
+				惨剧灵殿 塔姆 塔拉墓园／地下灵殿 塔姆 塔拉墓园</td>
+			<td>
+				炼金Lv30</td>
+		</tr>
+		<tr>
+			<td>
+				005</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274398" target="_blank">激潮</a></td>
+			<td>
+				逆转要害 沙斯塔夏溶洞／天然要害 沙斯塔夏溶洞</td>
+			<td>
+				炼金Lv30</td>
+		</tr>
+		<tr>
+			<td>
+				006</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672538" target="_blank">异想天开</a></td>
+			<td>
+				血战苍穹 魔科学研究所</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				007</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">上下易位(无试听)</a></td>
+			<td>
+				星海空间 颠倒塔</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+				<tr>
+			<td>
+				008</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274380" target="_blank">越过地平线</a></td>
+			<td>
+				财宝传说 破舰岛／黑涡传说破舰岛</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				009</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274402" target="_blank">密道</a></td>
+			<td>
+				凛冽洞天 披雪大冰壁</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				010</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672527" target="_blank">万世箴言</a></td>
+			<td>
+				学识宝库 迦巴勒幻想图书馆</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				011</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672537" target="_blank">坚不可摧</a></td>
+			<td>
+				博物战舰 无限回廊</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				012</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">谢罪之诗(无试听)</a></td>
+			<td>
+				天龙宫殿 忆罪宫</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				013</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274421" target="_blank">銀の涙</a></td>
+			<td>
+				幻龙残骸 密约之塔</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				014</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672510" target="_blank">永遠の眠り</a></td>
+			<td>
+				天山绝顶 索姆阿尔灵峰</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				015</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">地殻(无试听)</a></td>
+			<td>
+				主线「天険の谷へ」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				016</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">漆黒のエッダ(无试听)</a></td>
+			<td>
+				死者の宮殿：埋もれた財宝G2</td>
+			<td>
+				Patch3.45</td>
+		</tr>
+		<tr>
+			<td>
+				017</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">笛吹大魔王(无试听)</a></td>
+			<td>
+				クォーリーミル交换：通关「死者の宮殿」B150后开放交换</td>
+			<td>
+				Patch3.45</td>
+		</tr>
+		<tr>
+			<td>
+				018</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">トイレに行けない夜(无试听)</a></td>
+			<td>
+				クォーリーミル交换：通关「死者の宮殿」B100后开放交换</td>
+			<td>
+				Patch3.45</td>
+		</tr>
+		<tr>
+			<td>
+				019</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">死亡報告(无试听)</a></td>
+			<td>
+				クォーリーミル交换：通关「死者の宮殿」B200后开放交换</td>
+			<td>
+				Patch3.45</td>
+		</tr>
+        </tbody>
+</table>
+<table class="orchestrion_list_layout" title="讨伐歼灭战">
+	<tbody>
+		<tr>
+			<th colspan="4">
+				<span style="font-size:15px;">讨伐歼灭战</span></th>
+		</tr>
+		<tr>
+			<th>
+				番号</th>
+			<th>
+				管弦乐琴乐谱・名称</th>
+			<th>
+				入手方法</th>
+			<th>
+				备注</th>
+		</tr>
+		<tr>
+			<td>
+				001</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409283" target="_blank">天降之力</a></td>
+			<td>
+				纪念品兑换员 50,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				002</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409404" target="_blank">究极神兵</a></td>
+			<td>
+				成就报酬(30曲入手)</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				003</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409403" target="_blank">诸神已死</a></td>
+			<td>
+				究极神兵破坏作战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				004</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409338" target="_blank">原始的审判</a></td>
+			<td>
+				伊芙利特歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				005</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409376" target="_blank">堕天使</a></td>
+			<td>
+				迦楼罗歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				006</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409362" target="_blank">重压灭顶！</a></td>
+			<td>
+				泰坦歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				007</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672539" target="_blank">英杰</a></td>
+			<td>
+				圆桌骑士幻想歼灭战</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				008</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">魔神(无试听)</a></td>
+			<td>
+				萨菲洛特歼殛战</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				009</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274362" target="_blank">水手遇难</a></td>
+			<td>
+				利维亚桑歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				010</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274363" target="_blank">混沌的漩涡</a></td>
+			<td>
+				利维亚桑歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				011</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409384" target="_blank">贤王莫古尔&middot;莫古十二世</a></td>
+			<td>
+				莫古力贤王歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				012</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">绝命怒嚎(无试听)</a></td>
+			<td>
+				尼德霍格传奇征龙战</td>
+			<td>
+				炼金Lv60-秘籍第四卷</td>
+		</tr>
+		<tr>
+			<td>
+				013</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274374" target="_blank">大桥上的死斗</a></td>
+			<td>
+				大桥上的决斗</td>
+			<td>
+				炼金Lv50-秘籍第一卷</td>
+		</tr>
+		<tr>
+			<td>
+				014</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">死斗（无试听）</a></td>
+			<td>
+				纪念品兑换员 20,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				015</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274403" target="_blank">雪上の足跡</a></td>
+			<td>
+				希瓦歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				016</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274404" target="_blank">忘却の彼方</a></td>
+			<td>
+				希瓦歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				017</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274384" target="_blank">雷光雷鳴</a></td>
+			<td>
+				拉姆歼殛战</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				018</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">女神(无试听)</a></td>
+			<td>
+				女神ソフィア討滅戦</td>
+			<td>
+				炼金Lv60-秘籍第四卷</td>
+		</tr>
+        </tbody>
+</table>
+<table class="orchestrion_list_layout" title="大型任务">
+	<tbody>
+		<tr>
+			<th colspan="4">
+				<span style="font-size:15px;">大型任务</span></th>
+		</tr>
+		<tr>
+			<th>
+				番号</th>
+			<th>
+				管弦乐琴乐谱・名称</th>
+			<th>
+				入手方法</th>
+			<th>
+				备注</th>
+		</tr>
+		<tr>
+			<td>
+				001</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409392" target="_blank">傲慢</a></td>
+			<td>
+				水晶塔 古代人迷宫</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				002</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409394" target="_blank">一落千丈</a></td>
+			<td>
+				水晶塔 古代人迷宫</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				003</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274393" target="_blank">绚烂</a></td>
+			<td>
+				水晶塔 希尔科斯塔</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				004</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274392" target="_blank">多加与乌内之心</a></td>
+			<td>
+				水晶塔 希尔科斯塔</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				005</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274414" target="_blank">暗淡</a></td>
+			<td>
+				水晶塔 暗之世界</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				006</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274417" target="_blank">最后的死斗</a></td>
+			<td>
+				水晶塔 暗之世界</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td rowspan="3">
+				007</td>
+			<td class="checkbox" rowspan="3">
+				<a href="http://music.163.com/#/song?id=34274418" target="_blank">悠久之风</a></td>
+			<td>
+				水晶塔 古代人迷宫</td>
+			<td colspan="1" rowspan="3">
+				炼金Lv60-秘籍第三卷
+		</tr>
+		<tr>
+			<td>
+				水晶塔 希尔科斯塔</td>
+		</tr>
+		<tr>
+			<td>
+				水晶塔 暗之世界</td>
+		</tr>
+		<tr>
+			<td>
+				008</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409370" target="_blank">雷鸣</a></td>
+			<td>
+				巴哈姆特大迷宫 邂逅之章5</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				009</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274379" target="_blank">白银凶鸟展翅翱翔</a></td>
+			<td>
+				巴哈姆特大迷宫 入侵之章4</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td>
+				010</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274406" target="_blank">死灰复燃</a></td>
+			<td>
+				巴哈姆特大迷宫 真源之章3</td>
+			<td>
+				炼金Lv50-秘籍第二卷</td>
+		</tr>
+		<tr>
+			<td rowspan="3">
+				011</td>
+			<td class="checkbox" rowspan="3">
+				<a href="http://music.163.com/#/song?id=27586721" target="_blank">Answers</a></td>
+			<td>
+				巴哈姆特大迷宫 邂逅之章5</td>
+			<td colspan="1" rowspan="3">
+				炼金Lv60-秘籍第四卷
+		</tr>
+		<tr>
+			<td>
+				巴哈姆特大迷宫 入侵之章4</td>
+		</tr>
+		<tr>
+			<td>
+				巴哈姆特大迷宫 真源之章4</td>
+		</tr>
+		<tr>
+			<td>
+				012</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672543" target="_blank">製造者責任</a></td>
+			<td>
+				支线「君の知らない明日へ」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				013</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672544" target="_blank">ローカス</a></td>
+			<td>
+				支线「君の知らない明日へ」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				014</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">メタル(无试听)</a></td>
+			<td>
+				支线「君の知らない明日へ」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				015</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">メタル：ブルートジャスティスモード(无试听)</a></td>
+			<td>
+				支线「君の知らない明日へ」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				016</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">指数崩壊(无试听)</a></td>
+			<td>
+				支线「定められし未来」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				017</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">ライズ(无试听)</a></td>
+			<td>
+				支线「聖なる審判」任务报酬</td>
+			<td>
+				</td>
+		</tr>
+        </tbody>
+</table>
+<table class="orchestrion_list_layout" title="其他">
+	<tbody>
+		<tr>
+			<th colspan="4">
+				<span style="font-size:15px;">其他</span></th>
+		</tr>
+		<tr>
+			<th>
+				番号</th>
+			<th>
+				管弦乐琴乐谱・名称</th>
+			<th>
+				入手方法</th>
+			<th>
+				备注</th>
+		</tr>
+		<tr>
+			<td>
+				001</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672542" target="_blank">水晶序曲</a></td>
+			<td>
+				成就报酬(10曲入手)</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				002</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672489" target="_blank">雪风</a></td>
+			<td>
+				纪念品兑换员 5,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				003</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672515" target="_blank">斗争</a></td>
+			<td>
+				田园郡 希丝梅娜(6,5)禁书750</td>
+			<td>
+				</td>
+		</tr>
+
+		<tr>
+			<td>
+				004</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409344" target="_blank">非著名调查员</a></td>
+			<td>
+				纪念品兑换员 30,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+
+		<tr>
+			<td>
+				005</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409400" target="_blank">唯一的行路</a></td>
+			<td>
+				藏宝图：鞣/山羊/飞龙/巨龙革、鞣革隐藏</td>
+			<td>
+				炼金Lv50</td>
+		</tr>
+		<tr>
+			<td>
+				006</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409301" target="_blank">走向世界</a></td>
+			<td>
+				飞空艇探索：云海23</td>
+			<td>
+				炼金Lv50</td>
+		</tr>
+		<tr>
+			<td>
+				007</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=27586650" target="_blank">坚毅</a></td>
+			<td>
+				伊修加德基础层 稀少琥珀商人(10,10) 虫珀5</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				008</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409297" target="_blank">挥汗如雨</a></td>
+			<td>
+				伊修加德基础层 稀少琥珀商人(10,10) 虫珀10</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				009</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274389" target="_blank">以血洗血</a></td>
+			<td>
+				狼印战绩 5,000枚</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				010</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">饿狼群集(无试听)</a></td>
+			<td>
+				狼印战绩 10,000枚</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				011</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672494" target="_blank">凶兆</a></td>
+			<td>
+				田园郡 希丝梅娜(6,5)禁书750</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				012</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409374" target="_blank">苍翼</a></td>
+			<td>
+				飞空艇探索：云海18</td>
+			<td>
+				炼金Lv60-秘籍第三卷</td>
+		</tr>
+		<tr>
+			<td>
+				013</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409395" target="_blank">艾欧泽亚的守护者</a></td>
+			<td>
+				成就报酬(50曲入手)</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				014</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672542" target="_blank">Dragonsong　-千年龙诗-</a></td>
+			<td>
+				主线任务报酬</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				015</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409407" target="_blank">第七星暦</a></td>
+			<td>
+				成就报酬(100曲入手)</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				016</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409413" target="_blank">試練を超える力</a></td>
+			<td>
+				水城 宝物库</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				017</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=28409342" target="_blank">戦闘シーン1.X</a></td>
+			<td>
+				纪念品兑换员 20,000金蝶币</td>
+			<td>
+				</td>
+		</tr>
+        </tbody>
+</table>
+<table class="orchestrion_list_layout" title="季节活动">
+	<tbody>
+		<tr>
+			<th colspan="4">
+				<span style="font-size:15px;">季节活动</span></th>
+		</tr>
+		<tr>
+			<th>
+				番号</th>
+			<th>
+				管弦乐琴乐谱・名称</th>
+			<th>
+				入手方法</th>
+			<th>
+				备注</th>
+		</tr>
+		<tr>
+			<td>
+				-</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274370" target="_blank">啪啪呀</a></td>
+			<td>
+				【2017】彩蛋节</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				-</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=34274385" target="_blank">紅蓮祭</a></td>
+			<td>
+				【2017】红莲祭</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				-</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=41672488" target="_blank">Heavensward</a></td>
+			<td>
+				【2017】新生祭</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				-</td>
+			<td class="checkbox">
+				<a href="http://music.163.com/#/song?id=27586670" target="_blank">守護天節</a></td>
+			<td>
+				【2017】守护天节</td>
+			<td>
+				</td>
+		</tr>
+		<tr>
+			<td>
+				-</td>
+			<td class="checkbox">
+				<a href="#" target="_blank">朝まで大騒ぎ(无试听)</a></td>
+			<td>
+				【2017】守护天节</td>
+			<td>
+				</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+
+
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

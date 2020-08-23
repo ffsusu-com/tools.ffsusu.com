@@ -1,0 +1,70 @@
+#yy-hunt-map{
+	border: 2px solid #c3c3c3;
+	margin: 4.5px;
+}
+
+#yy-hunt-map-container{
+	font-size: 14px;
+}
+
+.yy-nav-button{
+	padding: 6px 0 6px 0;
+	width: 128px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+	float: left;
+	background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+}
+
+.yy-nav-button:hover {
+	background-color: #555555;
+    color: white;
+}
+
+.yy-nav-button-unselect{
+	background-color: white;
+    color: black;
+}
+
+#yy-nav-clear{
+	padding: 6px 0 6px 0;
+	width: 128px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+	float: left;
+	background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+}
+
+#nav-border{
+	width: 820px;
+}
+
+#yy-hunt-map-border{
+	width: 820px;
+}
+
+#yy-map-coo{
+	display: none;
+	z-index: 99;
+	width: 125px;
+    text-align: center;
+    padding: 4px;
+    background-color: black;
+    color: white;
+	position:absolute;
+	margin-top: 25px;
+}

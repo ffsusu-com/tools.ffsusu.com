@@ -1,0 +1,289 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="shortcut icon" type="../LYJ/icon/Logo.png" href="../LYJ/icon/Logo.png" media="screen" />
+<title>料理大全|FFsusu</title>
+<script language="javascript">
+<!--
+//config
+var isSMP = false;
+
+var isDebug = false;
+var isRandom = true;
+var apVersion = (!isDebug ? "0.0.0.64" : "debug_fix") + (isDebug && isRandom ? Math.random() : "");
+var currentDataVersion = "201507252330";
+var itemDataFile = "./equip_item_detail.LANG.json";
+var itemData = null;
+var isForceLoadItemData = false;
+var browserType = "chrome";
+
+//smp mode
+/*
+if (-1 == location.search.indexOf("force_pc=1")) {
+	var ua = window.navigator.userAgent.toLowerCase();
+	if (-1 != ua.indexOf("ipad") ||
+		-1 != ua.indexOf("ipod") ||
+		-1 != ua.indexOf("iphone") ||
+		-1 != ua.indexOf("android")) {
+		location.href = "/meal_list_smp.html" + location.search;
+	}
+}
+*/
+
+//check browser
+checkBrowser();
+
+//get language
+var lang = getLangCookie();
+setLangCookie(lang);
+//console.log("lang is " + lang);
+
+// load css and javascript
+var css_list = ["main.css"];
+var js_list = [
+	"jquery-2.0.3.min.js", 
+	"jqselector-0.0.1.js", 
+	"jquery.blockUI.js", 
+	"jquery.xdomainajax.js", 
+	"base64.min.js", 
+	"jqnud-0.0.1.js", 
+	"lang." + lang + ".js",
+	"meals_info." + lang + ".js", 
+	"lang_base.js",
+	"main.js", 
+	"main_meals.js", 
+];
+
+
+for (css in css_list) {
+	document.write("<link href=\"css/" + css_list[css] + "?" + apVersion + "\" rel=\"stylesheet\">");
+}
+for (js in js_list) {
+	document.write("<script src=\"js/" + js_list[js] + "?" + apVersion + "\"></script>");
+}
+
+//for cookie
+function getLangCookie() {
+	var allCk = ";" + document.cookie + ";";
+	allCk = allCk.replace(" ", "");
+	var regEx = allCk.match(/lang=([a-z]+)/);
+	var value = "";
+	if (null != regEx && regEx.length >= 2) {
+		value = regEx[1];
+	}
+	if ("jp" != value && "en" != value && "fr" != value && "de" != value) {
+		value = "jp";
+	}
+	//パラメタ上書き
+	var overwriteLang = "";
+	if (-1 != location.search.indexOf("lang=jp")) {
+		overwriteLang = "jp";
+	} else if (-1 != location.search.indexOf("lang=en")) {
+		overwriteLang = "en";
+	} else if (-1 != location.search.indexOf("lang=fr")) {
+		overwriteLang = "fr";
+	} else if (-1 != location.search.indexOf("lang=de")) {
+		overwriteLang = "de";
+	}
+	if ("" != overwriteLang) {
+		if (value != overwriteLang) {
+			window.localStorage.removeItem("dataVersion");
+			window.localStorage.removeItem("itemData");
+		}
+		value = overwriteLang;
+	}
+	return value;
+}
+
+//for cookie
+function setLangCookie(langValue) {
+	var domain = 
+		(-1 != location.host.indexOf("localhost") ? "es.localhost" : ".exdreams.net" );
+	var ck = 
+		"lang=" + langValue + "; " + 
+		"path=/; " + 
+		"domain=" + domain + "; " + 
+		"expires=Thr, 31-Dec-2037 23:59:59; ";
+	//console.log(ck);
+	document.cookie = ck;
+}
+//browser
+function checkBrowser() {
+	var ua = window.navigator.userAgent.toLowerCase();
+	if (-1 != ua.indexOf("chrome")) {
+		browserType = "chrome";
+	} else if (-1 != ua.indexOf("firefox")) {
+		browserType = "ff";
+	} else if (-1 != ua.indexOf("trident")) {
+		browserType = "ie";
+	/*
+	} else if (-1 != ua.indexOf("mac os x")) {
+		browserType = "safari";
+	*/
+	} else {
+		browserType = "chrome"; //default
+	}
+//console.log(browserType);
+}
+// -->
+</script>
+
+<script>
+//documen.ready
+$(function(){
+	// unblock when ajax activity stops 
+	$(document).ajaxStop($.unblockUI); 
+
+	$("#version_info").text("ap version: " + apVersion + " / data version: " + currentDataVersion);
+	applyLanguage();
+	mealsInit();
+});
+</script>
+</head>
+
+<body><div align="center">
+<!-- centering --><div class="base" id="base" style="padding-right: 85px; padding-left: 85px;">
+
+	<!-- header link -->
+	<div class="ntable header_link">
+		实用小工具：&nbsp;&nbsp;<!--
+		--><a href="http://www.ffxiv.cn/" target="_blank"><b id="mlt_site_ap">主站</b></a> | <!--
+		--><a href="/caiji/" target="_blank"><b id="mlt_site_ap">采集时钟</b></a> | <!--
+		--><a href="/peizhuang/" target="_blank"><b id="mlt_site_ap">配装模拟器</b></a> | <!--
+		--><a href="/crafter/" target="_blank"><b id="mlt_site_ap">工匠模拟器</b></a> | <!--
+		--><a href="/peizhuang/meal_list.html" target="_blank"><b id="mlt_site_ap">料理大全</b></a> | <!--
+		--><a href="http://cn.ff14angler.com/" target="_blank"><b id="mlt_site_ap">钓鱼时钟</b></a> | <!--
+		--><a href="http://gt.nenge.net/#skywatcher/all" target="_blank"><b id="mlt_site_ap">天气预报</b></a> | <!--
+		--><a href="http://eriones.com/" target="_blank"><b id="mlt_site_ap">生产配方</b></a> | <!--
+		-->
+	</div>
+	<!-- /header_link -->
+	
+	<table width="100%"><tr>
+		<td style="width:280px">
+			<img src="image/sys/fflogo.png" alt="final fantasy xiv equipment simulator">
+<!--
+			<div style="margin-left:24px;background-color:#000000">
+			<span>Language</span>
+				<img id="lang_jp" onclick="changeLanguage('jp')" src="image/sys/jp.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<img id="lang_en" onclick="changeLanguage('en')" src="image/sys/en.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<img id="lang_fr" onclick="changeLanguage('fr')" src="image/sys/fr.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<img id="lang_de" onclick="changeLanguage('de')" src="image/sys/de.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+			</div>
+-->
+		</td>
+		<td>
+			<span id="version_info" style="font-weight:bold"></span><br>
+				<ul style="padding-left: 16px">
+				<li id="mlt_note_0">推荐使用chrome浏览器。firefox可以运行。IE未确认。【已更新3.5版本】</li>
+				<li id="mlt_note_2">有什么问题联系以下地址↓已经作者源码授权</li>
+				<li>微博 : <a href="http://weibo.com/susubu2">@素素素素丶</a> 翻译@玥姬</li>
+				<li>原作者Twitter : <a href="https://twitter.com/dol_z_dreams">@dol_z_dreams</a> (JP Only)</li>
+				</ul>
+		</td>
+		
+	</tr></table>
+	<br><br>
+
+	<div class="main_table" style="margin:0 auto">
+		<div class="cell cell_1st" id="main_cell_0">
+			<!-- start main column1 -->
+
+			<!-- start filter -->
+			<div class="ntable" style="width: 850px" id="meals_panel">
+				<div class="header">
+					<div><img src="image/sys/caption_meals.png"></div>
+				</div>
+
+				<div id="panel_main_filter">
+
+					<!-- contents -->
+					<table>
+					<tr>
+						<td>
+							<label class="control_select_label"><select id="useful_filter" class="control_select">
+								<option value="" selected>按职业筛选</option>
+								<option value="0">坦克（招架／信念）</option>
+								<option value="1">DPS（信念／暴击）</option>
+								<option value="2">DPS詩人（暴击／信念）</option>
+								<option value="3">DPS法系（咏唱／信念）</option>
+								<option value="4">治疗（意志／暴击／信仰）</option>
+								<option value="5">大地使者（采集力/获得／鉴别）</option>
+								<option value="6">能工巧匠（制作力／作业／加工）</option>
+							</select><span class="control_select_mark">▼</span></label>
+							<input type="button" value="确定" onclick="setFilterParamSample(-1)" class="control_general">
+							&nbsp;&nbsp;
+							<input type="button" value="全部解除" onclick="setFilterParamSample(99)" class="control_general">
+						</td>
+					</tr>
+					<tr>
+						<td id="meals_filter">
+							<input type="checkbox" id="general_filter_ignore_iddrop"><label id="l_expect_iddrop" for="general_filter_ignore_iddrop" class="check_label unselectable">ほげ</label>
+							<input type="checkbox" id="general_filter_ignore_iddrop"><label id="l_expect_iddrop" for="general_filter_ignore_iddrop" class="check_label unselectable">ほげ</label>
+							<input type="checkbox" id="general_filter_ignore_iddrop"><label id="l_expect_iddrop" for="general_filter_ignore_iddrop" class="check_label unselectable">ほげ</label>
+							<input type="checkbox" id="general_filter_ignore_iddrop"><label id="l_expect_iddrop" for="general_filter_ignore_iddrop" class="check_label unselectable">ほげ</label>
+							<input type="checkbox" id="general_filter_ignore_iddrop"><label id="l_expect_iddrop" for="general_filter_ignore_iddrop" class="check_label unselectable">ほげ</label>
+						</td>
+					</tr>
+					</table>
+					<br>
+
+					<div class="meals_table_scroll">
+						<span class="note">※表中所写数字含义「增加百分比/最大值/到达最大值所需初始数值。」</span>
+						<table id="meals_table" class="meals_table" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<td colspan="2">名称</td>
+									<td>备注</td>
+									<td>备注</td>
+									<td>备注</td>
+									<td>备注</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><img id="image_meal" src="http://img.finalfantasyxiv.com/lds/pc/global/images/itemicon/31/3119390fd5d42b7375eafedd72f5cc81917ef707.png" class="itemimage" style=""></td>
+									<td>レバーケースゼンメルHQ</td>
+									<td>5% / 37 / 600</td>
+									<td>5% / 37 / 600</td>
+									<td>5% / 37 / 600</td>
+									<td>調理Lv60 [未知2/精選2/青貨2]</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!-- /contents -->
+				</div>
+			</div>
+			<!-- end filter -->
+
+		</div><!-- /cell -->
+
+	</div><!-- /main_table -->
+
+	<br style="clear: both">
+
+	<br><br>
+
+
+	<!-- footer --><div class="footer">
+	<span class="copyright">記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。</span>
+	<span class="copyright">system: Copyright (C) 2013 - 2015 dreams All Rights Reserved.</span>
+	<span class="copyright">data, image: Copyright (C) 2010 - 2015 SQUARE ENIX CO., LTD. All Rights Reserved. &nbsp;<a href="http://jp.finalfantasyxiv.com/lodestone/" target="_blank">[site]</a></span>
+	<span class="copyright">image: POMO <a href="http://pomo.vis.ne.jp/" target="_blank">[site]</a></span>
+	</div><!-- /footer -->
+
+</div><!-- /centering -->
+
+<!-- sort icon -->
+<div id="sortIcon" class="sort_icon" style="display: none"><img src="image/sys/arrow_down.png"></div>
+<!-- /sort icons -->
+
+</div>
+
+</body></html>

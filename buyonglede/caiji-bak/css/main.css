@@ -1,0 +1,635 @@
+
+/* 基本 */
+
+body {
+	background-color: #000000;
+	font-family: "Arial", "Arial", "Arial", "Lucida Grande", "Lucida Sans Unicode", Arial, Arial, Arial;
+	/* font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; */
+
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+
+
+}
+body, th, td {
+	font-size: 9pt;
+	color: #ffffff;
+
+}
+.base {
+	background-color: #000000;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: inline-block;
+	text-align: left;
+}
+
+a:link {
+	color: #73bfe6;
+	text-decoration: none;
+}
+a:visited {
+	color: #73bfe6;
+	text-decoration: none;
+}
+a:hover {
+	color: #7fd4ff;
+	text-decoration: underline;
+}
+a:active {
+	color: #7fd4ff;
+	text-decoration: underline;
+}
+
+
+.caption_default {
+	color: #ffffff;
+}
+.caption_bold {
+	color: #ffffff;
+	font-weight: bold;
+}
+.caption_earth_time {
+	color: #a0a0ff;
+	font-weight: bold;
+	font-size: 12pt;
+}
+.caption_eorzea_time {
+	color: #ffa0a0;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+
+.caption_phy {
+	color: #80ff80;
+}
+.caption_mag {
+	color: #ff8080;
+}
+.caption_gc {
+	color: #ffff80;
+}
+.caption_fire {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_fire.png) no-repeat 0 0;
+}
+.caption_ice {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_ice.png) no-repeat 0 0;
+}
+.caption_wind {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_wind.png) no-repeat 0 0;
+}
+.caption_earth {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_earth.png) no-repeat 0 0;
+}
+.caption_thunder {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_thunder.png) no-repeat 0 0;
+}
+.caption_water {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_water.png) no-repeat 0 0;
+}
+
+.text_value {
+	text-align: right;
+	color: #ffffff;
+}
+
+
+
+/* フッタ */
+.footer {
+	border-top: solid 1px #333333;
+	text-align: right;
+	line-height: 1.2;
+	padding-top:4px;
+}
+.footer .copyright {
+	font-size: 8pt;
+	color: #808080;
+	display: block;
+	padding-right:120px;
+}
+
+/* アイテム画像枠 */
+.itemimage {
+	visibility: visible;
+	display: inline;
+	width :40px;
+	height :40px;
+	padding-left: 2px;
+	padding-top: 1px
+}
+.itemimage_disabled {
+	visibility: hidden;
+	display: none;
+}
+
+/* 汎用 */
+*.unselectable {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.control_general {
+	background: -prefix-linear-gradient(top, #666, #111);
+	background: linear-gradient(to bottom, #666, #111);
+	color: #ffffff;
+	border: 1px solid #d0d0d0;
+}
+.control_general_area {
+	/*
+	background: -prefix-linear-gradient(top, #333, #111);
+	background: linear-gradient(to bottom, #333, #111);
+	*/
+	background-color: #000000;
+	color: #ffffff;
+	border: 1px solid #d0d0d0;
+}
+.main_border {
+	margin-top:5px;
+	height: 0;
+	border: 0;
+	border-top: 2px solid #404080;
+	border-bottom: 1px solid #8080a0;
+}
+
+
+/* セレクトボックスデザイン */
+.control_select {
+	font-size: 9pt;
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+
+    padding:2px;
+    margin: 0;
+    background: #000000;
+    color:#ffffff;
+    border:1px solid #ffffff;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none; 
+
+	/* height: 22px !important; */
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    .control_select {padding-right:18px}
+    .control_select_label {position:relative}
+
+	.control_select_mark {
+		font: 11px "Consolas", monospace;
+		color: #ccc;
+		position: absolute;
+		right: 1px;
+		top: -3px;
+		pointer-events: none;
+		background: -prefix-linear-gradient(top, #555, #333);
+		background: linear-gradient(to bottom, #555, #333);
+		height: 15px;
+		width: 14px;
+		padding-top: 3px;
+		text-align: center !important;
+	}
+}
+/* リスト */
+.list_base {
+	background-color: #000000;
+	color: #808080;
+	border-bottom: 1px solid #404040;
+	width: 400px;
+	height: 20px;
+	display: block;
+	text-align: left;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	cursor:default;
+}
+.list_base_active {
+	background-color: #404080 !important;
+	color: #ffffff !important;
+}
+.list_base_next {
+	background-color: #202040 !important;
+	color: #ffffff !important;
+}
+
+.list_base_last {
+	border-bottom: 0px solid #000000 !important;
+}
+.list_image_base {
+	display: inline-block;
+	width: 24px;
+	height: 20px;
+	text-align: center;
+}
+.list_image {
+	margin-top: 2px;
+}
+.list_text_base {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 5px
+}
+.list_text_time {
+	display: inline-block;
+	width: 40px
+}
+.list_text_limit {
+	display: inline-block;
+	width: 80px
+}
+
+.list_text_type {
+	display: inline-block;
+	width: 60px
+}
+
+.list_text_item {
+	display: inline-block;
+	width: 180px
+}
+.line_hover {
+	background-color: #b0b060 !important;
+	color: #000000 !important;
+}
+
+/* アイテムリスト */
+.itemlist_base {
+	background-color: #000000;
+	color: #ffffff;
+	border-bottom: 1px solid #404040;
+	width: 280px;
+	height: 24px;
+	display: block;
+	text-align: left;
+}
+.itemlist_image {
+	display: inline-block;
+	width: 24px;
+	height: 20px;
+	text-align: center;
+}
+.itemlist_image_image {
+	width: 24px;
+	height: 24px
+}
+.itemlist_text {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 6px;
+	margin-left: 4px;
+}
+
+.itemlist_bar_base {
+	position: absolute;
+	background-color: #606060;
+}
+.itemlist_bar_line {
+	position: absolute;
+	background-color: #c0c0c0;
+}
+
+
+/* =================== 新スタイル =================== */
+
+/* 全体テーブル */
+.main_table {
+	display: table;
+}
+.main_table .cell {
+	display: table-cell;
+	padding-left: 12px;
+}
+.main_table .cell_1st {
+	padding-left: 0px !important;
+}
+
+/* ヘッダリンク */
+.header_link {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+	padding-left: 8px !important;
+	margin-bottom: 16px !important;
+}
+/* テーブル枠 */
+.ntable {
+	border-top:    1px solid #808080;
+	border-left:   1px solid #606060;
+	border-right:  1px solid #404040;
+	border-bottom: 1px solid #404040;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+
+	padding: 4px;
+	background: #202020;
+}
+
+/* テーブルヘッダ＆パネルトグル */
+.ntable .header {
+	width: 100%;
+	display: table;
+}
+.ntable .header div {
+	display: table-cell;
+	vertical-align: top;
+}
+.ntable .header .header_toggle {
+	width: 22px;
+}
+
+
+/* パネルトグル */
+.panel_toggle_base  {
+	font: 11px "Consolas", monospace;
+	color: #ccc;
+	background: -prefix-linear-gradient(top, #777, #333);
+	background: linear-gradient(to bottom, #777, #333);
+	border: 1px solid #aaa;
+	display: block;
+	cursor: pointer;
+
+	width: 17px;
+	height: 14px;
+	position: relative;
+	top: 5px;
+	/* left: 20px; */
+
+	text-align: center !important;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+
+}
+.panel_toggle_hover {
+	background: -prefix-linear-gradient(top, #999, #666);
+	background: linear-gradient(to bottom, #999, #666);
+}
+.panel_toggle_press {
+	background: -prefix-linear-gradient(top, #aaa, #999);
+	background: linear-gradient(to bottom, #aaa, #999);
+}
+
+.menu_language_flag {
+	width: 24px;
+	height: 24px;
+	border: 1px solid black;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+
+/* PC用新テーブル */
+.gtmtable {
+	margin-bottom: 8px;
+	background-color: #000000;
+	width: 97%;
+}
+.gtmtable tr td {
+	color: #808080;
+
+	padding-top: 2px;
+	padding-bottom: 0px;
+	padding-right: 4px;
+	padding-left: 4px;
+
+	border-bottom: 1px solid #404040;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.gtmtable tr:nth-last-of-type(1) td {
+	border-bottom: 1px solid #202020;
+}
+.gtmtable tr {
+	background-color: #000000;
+}
+.gtmtable tr.active_line {
+	background-color: #404080 !important;
+}
+.gtmtable tr.active_line td {
+	color: #ffffff !important;
+}
+
+.gtmtable tr.next_line {
+	background-color: #202040 !important;
+}
+.gtmtable tr.next_line td {
+	color: #ffffff !important;
+}
+
+.gtmtable tr.hover_line {
+	background-color: #b0b060 !important;
+}
+.gtmtable tr.hover_line td {
+	color: #000000 !important;
+}
+
+.gtmtable_bell {
+	margin-top: 2px;
+}
+
+
+.back_lines {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #202020;
+}
+
+
+.tab_mode {
+	margin-left: 8px;
+	margin-bottom: 8px;
+}
+.tab_mode div {
+	display: inline-block;
+	color: #a0a0a0;
+	background-color:#404040;
+	border: 1px solid #808080;
+	padding: 4px;
+	font-weight:bold;
+	cursor: pointer;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+
+}
+.tab_mode div.active {
+	display: inline-block;
+	background-color:#606060;
+	color: #ffffff;
+	border: 1px solid #a0a0a0;
+	padding: 4px;
+	font-weight:bold;
+}
+
+/* リセットボタン */
+.all_reset {
+	background-color: #606060;
+	border: 1px solid #b0b0b0;
+
+	text-align: center;
+	margin-top:    8px;
+	margin-left:   8px;
+	margin-right:  0px;
+	margin-bottom: 8px;
+
+	padding: 4px;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.all_reset_hover {
+	background-color: #808080 !important;
+	border: 1px solid #d0d0d0 !important;
+}
+.all_reset_click {
+	background-color: #a0a0a0 !important;
+	border: 1px solid #f0f0f0 !important;
+}
+
+.all_bell_reset {
+	background-color: #606060;
+	border: 1px solid #b0b0b0;
+	color: #606060;
+
+	text-align: center;
+	margin-top:    8px;
+	margin-left:   8px;
+	margin-right:  0px;
+	margin-bottom: 8px;
+
+	padding: 4px;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.all_bell_reset_hover {
+	background-color: #808080 !important;
+	border: 1px solid #d0d0d0 !important;
+	color: #808080;
+}
+.all_bell_reset_click {
+	background-color: #a0a0a0 !important;
+	border: 1px solid #f0f0f0 !important;
+	color: #a0a0a0;
+}
+
+/** アラーム有効無効ボタン */
+.all_alarm {
+	display: block;
+	width: 85%;
+	margin-top: 12px;
+	margin-bottom: 8px;
+	margin-left:8px;
+	padding: 4px;
+	padding-right: 12px;
+	border: 1px solid #b0b0b0;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+.all_alarm_enable {
+	background-color: #606060;
+}
+.all_alarm_disable {
+	background-color: #404040;
+}
+.all_alarm_image {
+	width: 16px;
+	height: 16px;
+}
+.all_alarm_text {
+	position: relative;
+	top: -3px;
+	left: 4px;
+}
+
+.all_alarm_ctrl_disabled span,
+.all_alarm_ctrl_disabled td,
+.all_alarm_ctrl_disabled *[disabled]
+{
+	color: #808080;
+
+}

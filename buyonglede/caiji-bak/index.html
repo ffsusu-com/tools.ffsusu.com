@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<title id="mlt_title">cj|FFsusu</title>
+<link rel="shortcut icon" type="../LYJ/icon/Logo.png" href="../LYJ/icon/Logo.png" media="screen" />
+<script language="javascript">
+<!--
+
+//config
+var isDebug = false;
+var isRandom = false;
+var apVersion = (!isDebug ? "0.0.53.0" : "debug_fix") + (isDebug && isRandom ? Math.random() : "");
+var currentDataVersion = "201701172030";
+var isForceLoadItemData = false;
+
+var browserType = "chrome";
+var nictTimeDiff = 0;
+
+//check browser
+checkBrowser();
+
+//get language
+var lang = getLangCookie();
+var langForView = ("en" == lang ? "na" : lang);
+setLangCookie(lang);
+console.log("lang is " + lang);
+
+
+//load
+var css_list = ["main.css"];
+var js_list = [
+	"jquery-2.0.3.min.js", 
+	"jquery.blockUI.js",
+	"lang." + lang + ".js",
+	"lang_base.js",
+	"desktop-notify-min.js",
+	"gt_data.js",
+	 "main.js"
+];
+
+if (isDebug) {
+	apVersion = "debug_fix";
+}
+for (css in css_list) {
+	document.write("<link href=\"css/" + css_list[css] + "?" + apVersion + "\" rel=\"stylesheet\">");
+}
+for (js in js_list) {
+	document.write("<script src=\"js/" + js_list[js] + "?" + apVersion + "\"></script>");
+}
+
+//NTP
+var url = "http://ntp-a1.nict.go.jp/cgi-bin/jsont?" + (new Date().getTime() / 1000);
+document.write("<script src=\"" + url + "\"></script>");
+function jsont(timeData) {
+
+	var rt = new Date().getTime();
+	var it = timeData.it * 1000;
+	var st = timeData.st * 1000;
+	var lb = it - 16 - st;
+	var ub = rt + 16 - st;
+	nictTimeDiff = - (lb + ub) / 2;
+}
+
+//for cookie
+function getLangCookie() {
+	var allCk = ";" + document.cookie + ";";
+	allCk = allCk.replace(" ", "");
+	var regEx = allCk.match(/lang=([a-z]+)/);
+	var value = "";
+	if (null != regEx && regEx.length >= 2) {
+		value = regEx[1];
+	}
+	if ("jp" != value && "en" != value && "fr" != value && "de" != value && "ch" != value) {
+		value = "jp";
+	}
+	//パラメタ上書き
+	var overwriteLang = "";
+	if (-1 != location.search.indexOf("lang=jp")) {
+		overwriteLang = "jp";
+	} else if (-1 != location.search.indexOf("lang=en")) {
+		overwriteLang = "en";
+	} else if (-1 != location.search.indexOf("lang=fr")) {
+		overwriteLang = "fr";
+	} else if (-1 != location.search.indexOf("lang=de")) {
+		overwriteLang = "de";
+	} else if (-1 != location.search.indexOf("lang=ch")) {
+		overwriteLang = "ch";
+	}
+	if ("" != overwriteLang) {
+		if (value != overwriteLang) {
+			window.localStorage.removeItem("dataVersion");
+			window.localStorage.removeItem("itemData");
+		}
+		value = overwriteLang;
+	}
+	return value;
+}
+
+//for cookie
+function setLangCookie(langValue) {
+	var domain = 
+		(-1 != location.host.indexOf("localhost") ? "rs.localhost" : ".exdreams.net" );
+	var ck = 
+		"lang=" + langValue + "; " + 
+		"path=/; " + 
+		"domain=" + domain + "; " + 
+		"expires=Thr, 31-Dec-2037 23:59:59; ";
+	//console.log(ck);
+	document.cookie = ck;
+}
+//browser
+function checkBrowser() {
+	var ua = window.navigator.userAgent.toLowerCase();
+	if (-1 != ua.indexOf("chrome")) {
+		browserType = "chrome";
+	} else if (-1 != ua.indexOf("firefox")) {
+		browserType = "ff";
+	} else if (-1 != ua.indexOf("trident")) {
+		browserType = "ie";
+	/*
+	} else if (-1 != ua.indexOf("mac os x")) {
+		browserType = "safari";
+	*/
+	} else {
+		browserType = "chrome"; //default
+	}
+}
+
+// -->
+</script>
+
+<script>
+//documen.ready
+$(function(){
+	// unblock when ajax activity stops 
+	$(document).ajaxStop($.unblockUI); 
+
+	$("#version_info").html("ap version: " + apVersion + "<br>data version: " + currentDataVersion);
+	applyLanguage();
+	init();
+
+});
+
+var soundAPI={config:{baiduper:0,baiduspd:5,baidupit:5,baiduvol:9},change:function(){soundAPI.config[this.id]=$(this).val();if($("#alarm_sound").val()==0)playSound();soundAPI.save()},save:function(){window.localStorage.setItem("soundset",JSON.stringify(this.config))},};$(function(){var set=window.localStorage.getItem("soundset");$("#contents_all_alarm tbody").append('<tr><td class="caption_bold">合成语音性别</td><td><select id="baiduper"><option value="0"selected="selected">女</option><option value="1">男</option></select></td></tr><tr><td class="caption_bold">合成语音语速</td><td><select id="baiduspd"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5"selected="selected">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></td></tr><tr><td class="caption_bold">合成语音语调</td><td><select id="baidupit"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5"selected="selected">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></td></tr><tr><td class="caption_bold">合成语音语量</td><td><select id="baiduvol"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9"selected="selected">9</option></select></td></tr>');if(set&&JSON.parse(set)){set=JSON.parse(set);for(var i in set)if(set[i]){soundAPI.config[i]=set[i];$('#'+i).val(set[i])}}var now=Math.ceil((new Date()).getTime()/1000),config=soundAPI.config;if(!config.baiduapi||!config.baiduexp||config.baiduexp-now<0){$.ajax({type:"get",url:"http://nenge.net/api/sound-bell-api.php",success:function(s){soundAPI.config.baiduapi=s;soundAPI.config.baiduexp=Math.ceil((new Date()).getTime()/1000)+2592000;soundAPI.save()}})}window.playSound=function(){if(!window.HTMLAudioElement){return}var index=$("#alarm_sound").val();if(""==index||null==soundList[index]){return}var file=soundList[index];var audio=new Audio();var volume=Number($("#alarm_volume").val())/100;if(index==0){var msg,config=soundAPI.config;
+
+for(var i in currentAlarmList){
+	var data=currentAlarmList[i]["data"];
+	if(!msg)msg="";
+	if(data["viewIndex"]>=scheduleBaseId){
+		msg+="[MySchedule] "+data["mainItem"]+"<br>"
+	}else{
+		msg+=sprintf("{0} {1} {2}",[translateByType("area",data["pointM"]),translateByType("item",data["mainItem"]),translateByType("job",data["type"])])
+	}
+}
+	if(!msg)msg="测试百度合成语音";
+	audio.src="http://tsn.baidu.com/text2audio?tex="+msg+"&lan=zh&cuid=nenge&ctp=1&spd="+config.baiduspd+"&pit="+config.baidupit+"&vol="+config.baiduvol+"&per="+config.baiduper+"&tok="+config.baiduapi;}else audio.src="sound/"+file;audio.volume=volume;audio.play()};$('#baiduper').change(soundAPI.change);$('#baiduspd').change(soundAPI.change);$('#baidupit').change(soundAPI.change);$('#baiduvol').change(soundAPI.change)});
+</script>
+</head>
+
+<body align="center"><div align="center">
+<!-- centering --><div class="base">
+
+	<!-- header link -->
+	<div class="ntable header_link" id="posbase_header" style="width: 870px">
+		<span id="mlt_site_prefix">syxgj</span>：&nbsp;&nbsp;<!--
+		--><a href="http://www.ffxiv.cn/" target="_blank"><b id="mlt_site_ap">主站</b></a> | <!--
+		--><a href="/caiji/" target="_blank"><b id="mlt_site_ap">cj</b></a> | <!--
+		--><a href="/peizhuang/" target="_blank"><b id="mlt_site_ap">pz</b></a> | <!--
+		--><a href="/crafter/" target="_blank"><b id="mlt_site_ap">工匠模拟器</b></a> | <!--
+		--><a href="/peizhuang/meal_list.html" target="_blank"><b id="mlt_site_ap">料理大全</b></a> | <!--
+		--><a href="http://cn.ff14angler.com/" target="_blank"><b id="mlt_site_ap">钓鱼时钟</b></a> | <!--
+		--><a href="http://gt.nenge.net/#skywatcher/all" target="_blank"><b id="mlt_site_ap">天气预报</b></a> | <!--
+		--><a href="http://eriones.com/" target="_blank"><b id="mlt_site_ap">生产配方</b></a> | <!--
+		-->
+	</div>
+	<!-- /header_link -->
+
+	<table>
+		<tr>
+			<td>
+				<img src="image/sys/fflogo.png" alt="final fantasy xiv unknown gathering point">
+				<div style="margin-left:24px;background-color:#000000">
+				<span>语言</span>
+					<img id="lang_jp" onclick="changeLanguage('jp')" src="image/sys/jp.png" class="menu_language_flag">
+					<!-- <img id="lang_en" onclick="changeLanguage('en')" src="image/sys/en.png" class="menu_language_flag"> -->
+					<!-- <img id="lang_fr" onclick="changeLanguage('fr')" src="image/sys/fr.png" class="menu_language_flag"> -->
+					<!-- <img id="lang_de" onclick="changeLanguage('de')" src="image/sys/de.png" class="menu_language_flag"> -->
+				</div>
+			</td>
+			<td nowrap style="line-height: 130%">
+				<span id="version_info" style="font-weight:bold"></span><br>
+				<ul style="padding-left: 16px">
+				<li id="mlt_note_0">推荐使用chrome浏览器。firefox可以运行。【已更新3.5版本】</li>
+				<li id="mlt_note_2">有什么问题联系以下地址↓↓已经作者源码授权</li>
+				<li>微博 : <a href="http://weibo.com/susubu2">@素素素素丶</a> 翻译@玥姬</li>
+				<li>原作者Twitter : <a href="https://twitter.com/dol_z_dreams">@dol_z_dreams</a> (JP Only)</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<!--
+		<div class="tab_mode"><div class="active">タイマーモード</div><div>マップモード</div></div>
+	-->
+
+
+	<div align="center">
+
+	<div class="main_table">
+	<div class="cell cell_1st">
+		<!-- start main column1 -->
+
+		<!-- start filter -->
+		<div class="ntable" style="width: 420px;text-align:left" id="posbase_timetable">
+			<div class="header" style="margin-bottom:2px">
+				<div><img src="image/sys/caption_timetable.png"></div>
+			</div>
+
+			<div id="panel_main_timetable">
+				<!-- contents -->
+				<div align="center">
+
+					<div>
+						<span class="caption_bold" id="mlt_lt">地球时间</span>
+						<span id="time_earth" class="caption_earth_time">--/-- --:--:--</span>
+
+						<span class="caption_bold">&nbsp;/&nbsp;</span>
+
+						<span class="caption_bold" id="mlt_et">艾欧泽亚时间</span>
+						<span id="time_eorzea" class="caption_eorzea_time">--/-- --:--:--</span>
+					</div>
+
+					<div id="list_filter" style="margin: 8px;margin-bottom:0;text-align: left">
+						<table width="100%">
+						<tr>
+							<td nowrap id="mlt_filter_area">区域</td>
+							<td>
+								<label class="control_select_label"><select class="control_select" id="filter_area">
+									<option value="0" selected>全部</option>
+									<option value="1">黑衣森林</option>
+									<option value="2">拉诺西亚</option>
+									<option value="3">萨纳兰</option>
+									<option value="4">库尔扎斯</option>
+									<option value="5">摩杜纳</option>
+									<option value="6">伊修加德</option>
+								</select><span class="control_select_mark">▼</span></label>
+							</td>
+
+							<td nowrap id="mlt_filter_patch">版本</td>
+							<td>
+								<label class="control_select_label"><select class="control_select" id="filter_patch">
+									<option value="0" selected>全部</option>
+									<option value="1">2.x</option>
+									<option value="2">3.0</option>
+								</select><span class="control_select_mark">▼</span></label>
+							</td>
+
+							<td nowrap id="mlt_filter_point">场所</td>
+							<td>
+								<label class="control_select_label"><select class="control_select" id="filter_point">
+									<option value="0" selected>全部</option>
+									<option value="1">通常</option>
+									<option value="2">未知系全部</option>
+									<option value="6">未知＋时间限制</option>
+									<option value="3">未知</option>
+									<option value="4">时间限制</option>
+									<option value="5">传说</option>
+									<option value="8">护符</option>
+									<option value="7">提醒设置</option>
+								</select><span class="control_select_mark">▼</span></label>
+							</td>
+							<td><span class="all_reset" id="btn_reset">×</span></td>
+						</tr>
+						<tr>
+							<td nowrap id="mlt_filter_class">职业</td>
+							<td>
+								<label class="control_select_label"><select class="control_select" id="filter_class">
+									<option value="0" selected>全部</option>
+									<option value="1">园艺</option>
+									<option value="2">采矿</option>
+								</select><span class="control_select_mark">▼</span></label>
+							</td>
+
+							<td nowrap id="mlt_filter_search">搜索</td>
+							<td colspan="3" nowrap>
+								<input type="text" id="filter_text" style="width: 100%" class="control_general_area" placeholder="输入关键字">
+							</td>
+							<td><span class="all_bell_reset" id="btn_bell_reset" style="width:12px;height:12px;display:inline-block"><img src="image/sys/bell_reset.png" style="width: 12px; height:12px;position:relative"></span></td>						
+						</tr>
+						<tr style="display: none">
+							<td nowrap id="mlt_view_mode">模式</td>
+							<td colspan="5">
+								<label class="control_select_label"><select class="control_select" id="view_mode">
+								<option value="0" selected></option>
+								<option value="1"></option>
+								<option value="2"></option>
+								<option value="3"></option>
+								</select><span class="control_select_mark">▼</span></label>
+							</td>
+						</tr>
+						</table>
+					</div>
+
+					<table id="list" class="gtmtable" cellpadding="0" cellspacing="0" style="margin-top: 4px">
+					</table>
+
+				</div>
+
+
+				<!-- /contents -->
+			</div>
+		</div>
+		<!-- end filter -->
+	</div><!-- /cell -->
+
+	<div class="cell">
+		<!-- start main column2 -->
+
+		<!-- start favorite -->
+		<div class="ntable" style="width: 400px;text-align:left" id="posbase_favorite">
+			<div class="header" style="">
+				<div id="header_favorite"><img src="image/sys/caption_favorite.png"> / <a href="javascript:void(0)" onclick="toggleFavoriteContents(1)"><img src="image/sys/caption_my_schedule.png" style="height: 16px;border: 0"></a></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_favorite">▲</span></div>
+			</div>
+
+			<div id="panel_main_favorite">
+
+				<!-- contents -->
+				<div id="toggle_panel_favorite">
+					<table width="90%">
+					<tr>
+						<td colspan="2"><select id="favorite_list" style="width:100%" size="7" class="control_general_area" ondblclick="dblclickFavorite()"></select></td>
+					</tr>
+					<tr>
+						<td align="left"><input type="button" id="favorite_show" value="确定" onclick="showFavorite()" class="control_general"></td>
+						<td align="right"><input type="button" id="favorite_delete" value="删除" onclick="deleteFavorite()" class="control_general"></td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="new_favorite_name" style="width:100%" value="" class="control_general_area">
+						</td>
+						<td align="right" style="width: 50px">
+							<input type="button" id="favorite_add" value="追加" onclick="addFavorite()" class="control_general" disabled="disabled" style="color: #808080">
+						</td>
+					</tr>
+					</table>
+				</div>
+
+				<div id="toggle_panel_myschedule" style="display: none">
+					<table width="90%">
+					<tr>
+						<td colspan="5"><select id="myschedule_list" style="width:100%" size="7" class="control_general_area"></select></td>
+					</tr>
+					<tr>
+						<td colspan="4">&nbsp;</td>
+						<td align="right"><input type="button" id="myschedule_delete" value="删除" onclick="deleteMySchedule()" class="control_general"></td>
+					</tr>
+					<tr>
+						<td id="myschedule_start">起点时间</td>
+						<td><label class="control_select_label"><select id="myschedule_start_time" class="control_select"><option>23:45</option></select><span class="control_select_mark">▼</span></label></td>
+						<td id="myschedule_span">有效时间</td>
+						<td><label class="control_select_label"><select id="myschedule_span_time" class="control_select"><option>0h30m</option></select><span class="control_select_mark">▼</span></label></td>
+						<td rowspan="2" align="right">
+							<input type="button" id="myschedule_add" value="追加" onclick="addMySchedule()" class="control_general" disabled="disabled" style="color: #808080">
+						</td>
+
+					</tr>
+					<tr>
+						<td id="myschedule_name">名称</td>
+						<td colspan="3" style="text-align:right"><input type="text" id="myschedule_name_text" style="width:100%" value="" class="control_general_area"></td>
+					</tr>
+					</table>
+				</div>
+				<!-- /contents -->
+
+			</div>
+		</div><!-- /.favorite -->
+
+		<!-- start detail -->
+		<div class="ntable" style="width: 400px;text-align:left" id="posbase_detail">
+			<div class="header" style="">
+				<div><img src="image/sys/caption_detail.png"></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_detail">▲</span></div>
+			</div>
+
+			<div id="panel_main_detail">
+
+				<!-- contents -->
+				<table cellspacing="3" cellpadding="1" style="margin-top:8px">
+				<tr><td class="caption_bold" id="mlt_time">时间</td><td id="detail_time">--:--</td><td></td></tr>
+				<tr><td class="caption_bold" id="mlt_type">种类</td><td id="detail_type">-</td><td></td></tr>
+
+				<tr><td class="caption_bold" valign="top" id="mlt_list">列表&nbsp;&nbsp;</td><td id="detail_item_area"></td><td id="panel_main_detail_list0" style="width: 302px"></td><td valign="top"><div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_detail_list" style="top: 0px !important">▲</span></div></td></tr>
+				<tr id="panel_main_detail_list1"><td class="caption_bold"></td><td id="detail_item_note"></td><td></td></tr>
+				<tr><td class="caption_bold" id="mlt_area">场所</td><td id="detail_map" style="width: 302px">-</td><td valign="top"><div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_detail_map" style="top: 0px !important">▲</span></div></td></tr>
+				<tr id="panel_main_detail_map"><td class="caption_bold" valign="top" id="mlt_map">地图</td><td>
+					<img id="map_mark" src="image/sys/mark0.png" style="width: 24px; height:24px; display:none; position:absolute">
+					<img id="detail_item_map" src="image/sys/map_error.png" style="width:300px; height:300px;border:1px solid #404040" onerror="this.src='image/sys/map_error.png'">
+				</td><td></td></tr>
+				</table>
+				<!-- /contents -->
+
+			</div>
+		</div><!-- /.detail -->
+
+		<!-- start alarm -->
+		<div class="ntable" style="width:400px;text-align:left" id="posbase_alarm">
+			<div class="header" style="">
+				<div><img src="image/sys/caption_alarm.png"></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_alarm">▲</span></div>
+			</div>
+
+			<div id="panel_main_alarm" style="">
+
+				<!-- contents -->
+				<span id="status_all_alarm" class="all_alarm all_alarm_enable"><img src="image/sys/bell.png" class="all_alarm_image"><span class="all_alarm_text">状态：提醒有效　（点击后取消闹铃）</span></span>
+				<table style="width:400px;margin-top:8px;margin-left:12px;" id="contents_all_alarm">
+				<tr>
+					<td width="30%" align="left"><span class="caption_bold" id="mlt_timing">通知时机</span></td>
+					<td align="left">
+						<label class="control_select_label"><select id="notify_timing" class="control_select" onclick="saveConfig()">
+							<option value="0" selected>刷新时</option>
+							<option value="1">1分钟前</option>
+							<option value="2">2分钟前</option>
+							<option value="3">3分钟前</option>
+							<option value="4">4分钟前</option>
+							<option value="5">5分钟前</option>
+							<option value="6">6分钟前</option>
+							<option value="7">7分钟前</option>
+							<option value="8">8分钟前</option>
+							<option value="9">9分钟前</option>
+							<option value="10">10分钟前</option>
+						</select><span class="control_select_mark">▼</span></label>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="30%" align="left"><span class="caption_bold" id="mlt_popup_notify">弹窗通知</span></td>
+					<td align="left"><input type="checkbox" id="alarm_popup" onclick="saveConfig()" checked><label for="alert_popup" id="mlt_notify">通知</label></td>
+				</tr>
+				<tr>
+					<td width="30%" align="left"><span class="caption_bold" id="mlt_desktop_notify">桌面通知</span></td>
+					<td align="left"><input type="checkbox" id="alarm_desktop" onclick="setNotificatePermission();saveConfig()" checked><label for="alarm_desktop" id="mlt_notify">通知</label>&nbsp;&nbsp;<span id="mlt_warning_chrome_only">※只支持chrome浏览器</span></td>
+				</tr>
+				<tr>
+					<td width="30%" align="left"><span class="caption_bold" id="mlt_sound">声音</span></td>
+					<td align="left">
+						<label class="control_select_label"><select id="alarm_sound" class="control_select" onclick="saveConfig()">
+							<option value="" selected>无</option>
+							<option value="0">beep01</option>
+							<option value="1">beep02</option>
+							<option value="2">jingle01</option>
+							<option value="3">jingle02</option>
+							<option value="4">jingle03</option>
+							<option value="5">flash</option>
+						</select><span class="control_select_mark">▼</span></label>
+						<input type="button" id="mltc_testplay" value="试听" onclick="testPlaySound()" class="control_general" style="vertical-align: -1px">
+					</td>
+				</tr>
+				<tr>
+					<td width="30%" align="left"><span class="caption_bold" id="mlt_volume">音量</span></td>
+					<td align="left">
+						<input type="range" id="alarm_volume" class="control_general" value="30" max="100" min="0" step="1" onchange="saveConfig()">
+					</td>
+				</tr>
+				</table>
+
+				<!-- /contents -->
+			</div>
+		</div><!-- /.alarm -->
+
+	</div><!-- /cell -->
+	</div><!-- /main_table -->
+	</div>
+
+	<br><br>
+
+	<!-- alarm dialog -->
+	<div id="alarmDialog" style="display:none; cursor:default;background-color:#404040;vertical-align:middle">
+		<div align="center">
+		<br><br>
+		<div style="color:#ffffff;font-weight:bold">[<span id="alarmDialogTime"></span>] <span id="alarmDialogTitle">所指定素材的时间到啦。</span></div><br>
+		<br>
+		<table><tr><td>
+		<div id="alarmDialogMessage" style="color:#ffffff;font-weight:bold;line-height:1.5">蚕茧, 玄铁矿</div>
+		</td></tr></table>
+
+		<br><br>
+		<input type="button" id="alarmDialogOK" value="关闭" class="control_general"><br>
+		<br><br>
+		</div>
+	</div>
+	<!-- /alarm dialog -->
+
+	<!-- footer -->
+	<div class="footer" id="posbase_footer">
+	</div><!-- /footer -->
+
+</div><!-- /centering -->
+
+<div id="back_gray0" class="back_lines"></div>
+<div id="back_gray1" class="back_lines"></div>
+
+
+</div></body>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a13bc04b2d80225bbc8fefec290b6bd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</html>

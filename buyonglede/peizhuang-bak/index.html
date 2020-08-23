@@ -1,0 +1,1340 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<title>pz|FFsusu</title>
+<link rel="shortcut icon" type="../LYJ/icon/Logo.png" href="../LYJ/icon/Logo.png" media="screen" />
+<script language="javascript">
+<!--
+//config
+var isSMP = false;
+
+var isDebug = false;
+var isRandom = true;
+var apVersion = (!isDebug ? "0.0.96.1" : "debug_fix");
+var currentDataVersion = "201703250900";
+var itemDataFile = "./equip_item_detail.LANG.json";
+var itemData = null;
+var isForceLoadItemData = false;
+var browserType = "chrome";
+
+//reload重置
+function setReload(){
+    window.location.reload();
+}
+
+//check browser
+checkBrowser();
+
+//get language
+var lang = getLangCookie();
+setLangCookie(lang);
+console.log("lang is " + lang);
+
+// load css and javascript
+var css_list = ["main.css"];
+var js_list = [
+	"jquery-2.0.3.min.js", 
+	"jqselector-0.0.1.js", 
+	"jquery.blockUI.js", 
+	"jquery.xdomainajax.js", 
+	"base64.min.js", 
+	"jszip.min.js",
+	"jqnud-0.0.1.js", 
+	"lang." + lang + ".js",
+	"meals_info." + lang + ".js", 
+	"limit_info.js",
+	"lang_base.js",
+	"main.js", 
+];
+
+
+for (css in css_list) {
+	document.write("<link href=\"css/" + css_list[css] + "?" + apVersion + "\" rel=\"stylesheet\">");
+}
+for (js in js_list) {
+	document.write("<script src=\"js/" + js_list[js] + "?" + apVersion + "\"></script>");
+}
+
+//for cookie
+function getLangCookie() {
+	var allCk = ";" + document.cookie + ";";
+	allCk = allCk.replace(" ", "");
+	var regEx = allCk.match(/lang=([a-z]+)/);
+	var value = "";
+	if (null != regEx && regEx.length >= 2) {
+		value = regEx[1];
+	}
+	if ("jp" != value && "en" != value && "fr" != value && "de" != value && "ch" != value) {
+		value = "jp";
+	}
+	//パラメタ上書き
+	var overwriteLang = "";
+	if (-1 != location.search.indexOf("lang=jp")) {
+		overwriteLang = "jp";
+	} else if (-1 != location.search.indexOf("lang=en")) {
+		overwriteLang = "en";
+	} else if (-1 != location.search.indexOf("lang=fr")) {
+		overwriteLang = "fr";
+	} else if (-1 != location.search.indexOf("lang=de")) {
+		overwriteLang = "de";
+	} else if (-1 != location.search.indexOf("lang=ch")) {
+		overwriteLang = "ch";
+	}
+	if ("" != overwriteLang) {
+		if (value != overwriteLang) {
+			window.localStorage.removeItem("dataVersion");
+			window.localStorage.removeItem("itemData");
+		}
+		value = overwriteLang;
+	}
+	return value;
+}
+
+//for cookie
+function setLangCookie(langValue) {
+	var domain = 
+		(-1 != location.host.indexOf("localhost") ? "es.localhost" : ".exdreams.net" );
+	var ck = 
+		"lang=" + langValue + "; " + 
+		"path=/; " + 
+		"domain=" + domain + "; " + 
+		"expires=Thr, 31-Dec-2037 23:59:59; ";
+	//console.log(ck);
+	document.cookie = ck;
+}
+//browser
+function checkBrowser() {
+	var ua = window.navigator.userAgent.toLowerCase();
+	if (-1 != ua.indexOf("chrome")) {
+		browserType = "chrome";
+	} else if (-1 != ua.indexOf("firefox")) {
+		browserType = "ff";
+	} else if (-1 != ua.indexOf("trident")) {
+		browserType = "ie";
+	/*
+	} else if (-1 != ua.indexOf("mac os x")) {
+		browserType = "safari";
+	*/
+	} else {
+		browserType = "chrome"; //default
+	}
+console.log(browserType);
+}
+// -->
+</script>
+
+<script>
+//documen.ready
+$(function(){
+	// unblock when ajax activity stops 
+	$(document).ajaxStop($.unblockUI); 
+
+	$("#version_info").text("ap version: " + apVersion + " / data version: " + currentDataVersion);
+	applyLanguage();
+	loadItemData();
+});
+
+//Share設定
+function createShareLinks() {
+	$("body").css("cursor", "wait");
+	$("#share_url").val(ml_generate_url);
+	$.ajax({
+		url:'http://nenge.net/api/tcn.php?url='+encodeURI(location.href.replace(/^(.+?)\?d=(.+?)$/,'$1'))+'&d='+createTextData(),
+		dataType:"jsonp",
+		success:function(json) {
+			shareURLInfo = json;
+			$("body").css("cursor", "auto");
+			if ("" == shareURLInfo || false == shareURLInfo["result"]) {
+				setShareLinksDisabled();
+				alert(ml_generate_url_failure);
+			} else {
+				setShareLinks();
+			}
+		},
+		error:function(jqXHR, textStatus, errorThrown) {
+			$("body").css("cursor", "wait");
+		}
+	})
+}
+function setShareLinks() {
+	//URL変更
+	$("#share_url").val(shareURLInfo["url"]);
+	$("#share_url").css("color", "#FFF");
+	console.log(shareURLInfo);
+}
+</script>
+</head>
+
+<body><div align="center">
+<!-- centering --><div class="base" id="base">
+
+	<!-- header link -->
+	<div class="ntable header_link">
+		syxgj&nbsp;&nbsp;<!--
+		--><a href="http://www.ffxiv.cn/" target="_blank"><b id="mlt_site_ap">主站</b></a> | <!--
+		--><a href="/caiji/" target="_blank"><b id="mlt_site_ap">cj</b></a> | <!--
+		--><a href="/peizhuang/" target="_blank"><b id="mlt_site_ap">pz</b></a> | <!--
+		--><a href="/crafter/" target="_blank"><b id="mlt_site_ap">sc</b></a> | <!--
+		--><a href="/peizhuang/meal_list.html" target="_blank"><b id="mlt_site_ap">料理大全</b></a> | <!--
+		--><a href="http://cn.ff14angler.com/" target="_blank"><b id="mlt_site_ap">钓鱼时钟</b></a> | <!--
+		--><a href="http://gt.nenge.net/#skywatcher/all" target="_blank"><b id="mlt_site_ap">天气预报</b></a> | <!--
+		--><a href="http://eriones.com/" target="_blank"><b id="mlt_site_ap">生产</b></a> | <!--
+		-->
+	</div><!-- /header_link -->
+
+	<table width="100%"><tr>
+		<td style="width:280px">
+			<img src="image/sys/fflogo.png" alt="final fantasy xiv equipment simulator">
+			<div style="margin-left:12px;margin-top:8px;background-color:#000000">
+			<span>语言</span>
+				<img id="lang_jp" onclick="changeLanguage('jp')" src="image/sys/ch.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<a href="javascript:void(0)" onclick="changeLanguage('')">[重新加载]</a>
+			</div>
+		</td>
+		<td>
+			<span id="version_info" style="font-weight:bold"></span><br>
+			<ul style="line-height:130%">
+			<li id="mlt_note_0">推荐使用chrome浏览器。firefox可以运行。IE未确认。</li>
+			<li id="mlt_note_0">如无法正常读取请点击→<a href="javascript:void(0)" onclick="changeLanguage(lang)">[重新加载]</a></li>
+			<li id="mlt_note_2">有什么问题联系以下地址↓已经作者源码授权</li>
+			<li>微博 : <a href="http://weibo.com/susubu2">@素素素素丶</a> 翻译@玥姬</li>
+			<li>原作者Twitter : <a href="https://twitter.com/dol_z_dreams">@dol_z_dreams</a> (JP Only)</li>
+			</ul>
+		</td>
+	</tr></table>
+	<br><br>
+
+	<div class="main_table">
+	<div class="cell cell_1st" id="main_cell_0">
+		<!-- start main column1 -->
+
+		<!-- start filter -->
+		<div class="ntable" style="width: 280px" id="filter_table">
+			<div class="header">
+				<div><span class="title">条件</span></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_filter">▲</span></div>
+			</div>
+
+			<div id="panel_main_filter">
+
+				<!-- contents -->
+				<table width="280" class="filter_table">
+				<tr>
+					<td id="l_god">守护神</td>
+					<td><label class="control_select_label"><select id="general_filter_god" class="control_select" onchange="onChangeGod()"></select><span class="control_select_mark">▼</span></label></td>
+				</tr>
+				<tr>
+					<td id="l_type">种族</td>
+					<td><label class="control_select_label"><select id="general_filter_tribe" class="control_select" onchange="onChangeTribe()"></select><span class="control_select_mark">▼</span></label></td>
+				</tr>
+				<tr>
+					<td id="l_job">职业</td>
+					<td><label class="control_select_label"><select id="general_filter_jobclass" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+				</tr>
+				<tr>
+					<td id="l_level">等级</td>
+					<td>
+						<input type="text" id="general_filter_level_from" size="8"/>&nbsp;&nbsp; - &nbsp;&nbsp;<input type="text" id="general_filter_level_to" size="8"/>
+					</td>
+				</tr>
+				<tr>
+					<td id="l_ilv">品级</td>
+					<td><label class="control_select_label"><select id="general_filter_ilv_from" class="control_select"></select><span class="control_select_mark">▼</span></label>&nbsp;&nbsp; - &nbsp;&nbsp;<label class="control_select_label"><select id="general_filter_ilv_to" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+				</tr>
+				<tr>
+					<td id="l_sort">分类</td>
+					<td><label class="control_select_label"><select id="general_filter_sort" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+				</tr>
+				<tr>
+					<td id="l_materia">魔晶石</td>
+					<td><label class="control_select_label"><select id="general_filter_materia" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="checkbox" id="general_filter_ignore_iddrop"><label id="l_expect_iddrop" for="general_filter_ignore_iddrop" class="check_label unselectable">排除副本掉落品</label></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="checkbox" id="general_filter_ignore_pvp" checked="checked"><label id="l_expect_pvp" for="general_filter_ignore_pvp" class="check_label unselectable">排除PVP装</label></td>
+				</tr>
+<!--
+				<tr>
+					<td colspan="2"><input type="checkbox" id="general_filter_adjust_job" checked="checked"><label id="l_adjust_job" for="general_filter_adjust_job" class="check_label unselectable">アクセはジョブ・クラスで調整</label></td>
+				</tr>
+-->
+				<tr>
+					<td colspan="2"><input type="checkbox" id="general_filter_craft_ilv" checked="checked"><label id="l_craft_ilv" for="general_filter_craft_ilv" class="check_label unselectable">生产职业装备按照第一阶段的装等处理</label></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input id="l_show" type="button" class="control_general" value="确定" style="width:100%" onclick="doFilterFromButton(true, null)"/><br><br>
+				</td>
+				</tr>
+				<tr>
+					<td colspan="2" nowrap>
+						<br>
+						<input type="button" id="l_reset" class="control_general" value="重置" style="width:49%" onclick="doReset()"/>
+						<input type="button" id="l_import" class="control_general" value="输入" style="width:49%" onclick="inputLodestoneURL()"/><br>
+						<input type="button" id="l_accuracy" class="control_general" value="命中调整" style="width:49%;margin-top:4px" onclick="showCalcAccuracyForm()" disabled="disabled"/>
+						<input type="button" id="l_coef" class="control_general" value="特性数值调整" style="width:49%" onclick="showCoefficientForm()"/><br>
+<!--
+						<input type="button" id="l_eqc" class="control_general" value="一括装備チェック" style="width:49%;margin-top:4px" onclick="showEQCForm()"/>
+-->
+
+
+				</td>
+				</tr>
+				</table>
+				<!-- /contents -->
+
+			</div>
+		</div>
+		<!-- end filter -->
+
+		<!-- start favorite -->
+		<div class="ntable" style="width: 280px;margin-top: 14px;" id="favorite_table">
+			<div class="header">
+				<div><span class="title" id="ft_header_text">收藏夹</span><a href="javascript:void(0)" onclick="toggleFavoriteType()" class="wf_link"><span id="ft_toggle_text"></span></a></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_favorite">▲</span></div>
+			</div>
+
+			<div id="panel_main_favorite">
+
+				<!-- contents -->
+				<table>
+				<tr>
+					<td colspan="2"><select id="favorite_list" style="width:270px" size="7" class="control_general_area" onchange="changeFavorite()" ondblclick="dblclickFavorite()"></select></td>
+				</tr>
+				<tr>
+					<td align="left"><input type="button" id="favorite_show" value="确定" onclick="showFavorite()" class="control_general"></td>
+					<td align="right"><input type="button" id="favorite_delete" value="删除" onclick="deleteFavorite()" class="control_general"></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="new_favorite_name" style="width:216px" value="" class="control_general_area">
+					</td>
+					<td align="right">
+						<input type="button" id="favorite_add" value="追加" onclick="addFavorite()" class="control_general">
+					</td>
+				</tr>
+				</table>
+				<!-- /contents -->
+
+			</div>
+		</div>
+		<div id="favorite_contents_local" style="display:none"></div>
+		<div id="favorite_contents_world" style="display:none">
+			<table>
+			<tr>
+				<td id="fw_label_jobclass">职业</td>
+				<td><label class="control_select_label"><select id="fw_jobclass" class="control_select" onchange="changeFWJobClass()"></select><span class="control_select_mark">▼</span></label></td>
+				<td valign="top" rowspan="5">
+					<select id="fw_list" style="width:150px" size="10" class="control_general_area" ondblclick="dblclickFW()"></select>
+				</td>
+			</tr>
+			<tr>
+				<td id="fw_label_ilv">品级</td>
+				<td><label class="control_select_label"><select id="fw_ilv" class="control_select">	</select><span class="control_select_mark">▼</span></label></td>
+			</tr>
+			<tr>
+				<td id="fw_label_trend">倾向</td>
+				<td><label class="control_select_label"><select id="fw_trend" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+			</tr>
+			<tr>
+				<td id="fw_label_craft">新式</td>
+				<td><label class="control_select_label"><select id="fw_crafter" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center"><br><input type="button" value="搜索" id="fw_label_search" class="control_general" style="width: 80%" onclick="searchFW()"><br><br></td>
+			</tr>
+			</table>
+		</div>
+		<div id="favorite_filter" style="display:none;position:absolute;border:1px solid #808080;text-align: center;background-color: #000000">
+			<span style="display:table-cell;vertical-align:middle" id="favorite_filter_contents"><img src="image/sys/load_black.gif" style="width:32px; height:32px"></span>
+		</div>
+		<!-- end favorite -->
+
+		<!-- start share -->
+		<div class="ntable" style="width: 280px;margin-top: 14px;">
+			<div class="header">
+				<div><span class="title">分享</span></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_share">▲</span></div>
+			</div>
+
+			<div id="panel_main_share">
+
+				<!-- contents -->
+				<br>
+				<div style="padding-left:8px" id="l_share_note">
+					可以把设置的装备信息分享到微博等网站<br>
+					点击按键即可生成链接。<br>
+				</div>
+				<br>
+
+				<div align="center">
+					<input id="l_share_generate" type="button" class="control_general" style="" value="生成链接" onclick="createShareLinks()">
+				</div>
+				<br>
+
+				<div style="padding-left:8px">
+					<input id="share_url" type="text" class="control_general" style="width:260px;color:#808080" value="（未生成）" readonly onclick="this.select(0,this.value.length)"><br><br>
+					<br>
+				</div>
+				<!-- /contents -->
+
+			</div>
+		</div>
+		<!-- end share -->
+
+	</div><!-- /cell -->
+	<div class="cell" id="main_cell_1">
+		<!-- start main column2 -->
+
+		<!-- start equipment -->
+		<div class="ntable" style="width: 500px" id="equip_table">
+			<div class="header">
+				<div><span class="title">配装</span></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_equipment">▲</span></div>
+			</div>
+
+			<div id="panel_main_equipment">
+					<!-- contents -->
+
+					<div style="display: table;width:99%">
+					<div id="total_ilv" class="ilv_avarage" style="display: table-cell">&nbsp;</div>
+					<div id="total_sort" class="sort_sum" style="display: table-cell">&nbsp;</div>
+					<div style="display: table-cell;text-align: right"><input type="checkbox" id="list_equip_select" style="vertical-align:-3px" onclick="onClickListEquipSelect()"><label for="list_equip_select" class="unselectable" id="l_list_equip">切换浏览模式</label></div>
+					</div>
+
+					<table class="equip_table" cellpadding="0" cellspacing="0">
+
+					<tr class="equip_tr"><td nowrap align="left"><span id="le_10">主武器</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_10" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_10" data-id="equip_selector_10" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_10" data-id="materia_selector_10" style="display:inline"></div></td><td nowrap><a id="link_equip_selector_10" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_10" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a><a id="link3_equip_selector_10" href="index-lang=ch&amp;r=284129.html#" style="visibilty:hidden;display:none;padding-left:4px">古武设定</a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_80">副武器</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_80" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_80" data-id="equip_selector_80" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_80" data-id="materia_selector_80" style="display:inline"></div></td><td><a id="link_equip_selector_80" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_80" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a><a id="link3_equip_selector_80" href="index-lang=ch&amp;r=284129.html#"  style="visibilty:hidden;display:none;padding-left:4px">古武设定</a></td></tr></table>
+					</td></tr>
+					<tr><td colspan="3"><hr class="main_border"></td></tr>
+
+					<tr class="equip_tr"><td><span id="le_20">头部</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_20" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_20" data-id="equip_selector_20" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_20" data-id="materia_selector_20" style="display:inline"></div></td><td><a id="link_equip_selector_20" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_20" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_30">上衣</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_30" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_30" data-id="equip_selector_30" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_30" data-id="materia_selector_30" style="display:inline"></div></td><td><a id="link_equip_selector_30" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_30" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_40">手部</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_40" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_40" data-id="equip_selector_40" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_40" data-id="materia_selector_40" style="display:inline"></div></td><td><a id="link_equip_selector_40" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_40" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_50">腰部</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_50" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_50" data-id="equip_selector_50" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_50" data-id="materia_selector_50" style="display:inline"></div></td><td><a id="link_equip_selector_50" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_50" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_60">腿部</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_60" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_60" data-id="equip_selector_60" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_60" data-id="materia_selector_60" style="display:inline"></div></td><td><a id="link_equip_selector_60" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_60" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_70">鞋子</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_70" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_70" data-id="equip_selector_70" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_70" data-id="materia_selector_70" style="display:inline"></div></td><td><a id="link_equip_selector_70" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_70" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+					<tr><td colspan="3"><hr class="main_border"></td></tr>
+
+
+					<tr class="equip_tr"><td><span id="le_100">耳环</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_100" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_100" data-id="equip_selector_100" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_100" data-id="materia_selector_100" style="display:inline"></div></td><td><a id="link_equip_selector_100" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_100" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_90">项链</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_90" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_90" data-id="equip_selector_90" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_90" data-id="materia_selector_90" style="display:inline"></div></td><td><a id="link_equip_selector_90" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_90" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_110">手镯</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_110" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_110" data-id="equip_selector_110" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_110" data-id="materia_selector_110" style="display:inline"></div></td><td><a id="link_equip_selector_110" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_110" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_120">戒指1</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector_120" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector_120" data-id="equip_selector_120" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector_120" data-id="materia_selector_120" style="display:inline"></div></td><td><a id="link_equip_selector_120" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector_120" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					<tr class="equip_tr"><td><span id="le_120_2">戒指2</span></td>
+					<td valign="top"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px"><img id="image_equip_selector2_120" src="" class="itemimage_disabled"></div></td>
+					<td valign="top">
+						<div id="equip_selector2_120" data-id="equip_selector2_120" style="margin-top:4px"></div>
+						<table border="0" cellpadding="0" cellspacing="0"><tr><td><div id="materia_selector2_120" data-id="materia_selector2_120" style="display:inline"></div></td><td><a id="link_equip_selector2_120" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a>&nbsp;<a id="link2_equip_selector2_120" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;padding-left:4px"></a></td></tr></table>
+					</td></tr>
+
+					</table>
+
+
+				<!-- /contents -->
+			</div>
+		</div>
+
+	</div><!-- /cell -->
+
+	<div class="cell" id="main_cell_2">
+		<!-- start main column3 -->
+
+		<!-- start option -->
+		<div class="ntable" style="width: 290px" id="option_table">
+			<div class="header">
+				<div><span class="title">設定</span></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_option">▲</span></div>
+			</div>
+
+			<div id="panel_main_option">
+				<!-- contents -->
+				<table width="100%">
+				<tr>
+					<td width="50" nowrap align="right" id="l_meal">食物&nbsp;</td>
+					<td>
+						<label class="control_select_label"><select id="sort_meal" class="control_select" style="width:180px;color:#808080" disabled="disabled" onchange="listupMeals()"></select><span class="control_select_mark">▼</span></label>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap align="right">
+						<div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px"><img id="image_meal" src="" class="itemimage_disabled" style="position:relative;left:-2px;top:0px"></div>
+					</td>
+					<td valign="top">
+						<label class="control_select_label"><select id="list_meal" class="control_select" style="width:220px;color:#808080" disabled="disabled" onchange="updateMeal()"></select><span class="control_select_mark">▼</span></label>
+						<span id="meal_detail" style="margin-top:2px;margin-bottom:4px;display:block;line-height:130%"></span>
+						<a id="meal_link_public" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;"></a>&nbsp;
+						<a id="meal_link_recipe" href="index-lang=ch&amp;r=284129.html#" target="_blank" style="visibilty:hidden;display:none;"></a>
+					</td>
+				</tr>
+				<tr>
+					<td width="50" nowrap align="right" id="l_ptbonus">队伍&nbsp;<br>加成&nbsp;</td>
+					<td><input type="checkbox" id="pt_bonus" disabled="disabled" onclick="updatePTBonus()"><label id="label_pt_bonus" for="pt_bonus" class="check_label" style="color:#808080">生效</label></td>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td style="text-align: left">
+					<a href="meal_list.html" target="_blank">食物大全一览</a><br>
+					<a href="javascript:void(0)" onclick="updateURLLinkToDPS()" oncontextmenu="updateURLLinkToDPS()" id="link_to_dps" class="link_to_dps_disabled" target="_blank">FF14伤害公式 (外部链接-日语)</a>
+					</td>
+				</tr>
+				</table>
+
+
+				<!-- /contents -->
+			</div>
+		</div>
+		<!-- end option -->
+
+		<!-- start paramters -->
+		<div class="ntable" style="width: 290px;margin-top: 14px;">
+			<div class="header">
+				<div><span class="title">属性</span></div>
+				<div class="header_toggle"><span class="panel_toggle_base" id="panel_toggle_parameters">▲</span></div>
+			</div>
+
+			<div id="panel_main_parameters">
+
+				<!-- contents -->
+				<table width="100%"><tr>
+					<td valign="top">
+						<!-- base -->
+						<img src="image/sys/title_base.png">
+						<table width="95%" style="padding-left:20px">
+							<tr>
+								<td class="caption_phy" style="width:20%" id="lp_hp">HP</td><td class="text_value" style="width:20%" id="p_hp">-</td>
+								<td width="10%">&nbsp;</td>
+								<td class="caption_mag" style="width:20%" id="lp_mp">MP</td><td class="text_value" style="width:20%" id="p_mp">-</td>
+							</tr>
+							<tr>
+								<td class="caption_gc" style="width:20%" id="lp_cp">CP</td><td class="text_value" style="width:20%" id="p_cp">0</td>
+								<td width="10%">&nbsp;</td>
+								<td class="caption_gc" style="width:20%" id="lp_gp">GP</td><td class="text_value" style="width:20%" id="p_gp">0</td>
+							</tr>
+						</table>
+						<!-- /base -->
+					</td>
+				</tr></table>
+
+
+				<table width="100%"><tr>
+					<td width="50%" valign="top">
+						<!-- attr -->
+						<img src="image/sys/title_attributes.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_phy" id="lp_str">力量</td><td class="text_value" id="p_str">0</td><td align="right" nowrap><span id="pb_str_minus" class="pb_button">－</span><input id="pb_str_value" type="text" class="pb_textinput" value="0"><span id="pb_str_plus" class="pb_button">＋</span></td></tr>
+							<tr><td class="caption_phy" id="lp_dex">灵巧</td><td class="text_value" id="p_dex">0</td><td align="right" nowrap><span id="pb_dex_minus" class="pb_button">－</span><input id="pb_dex_value" type="text" class="pb_textinput" value="0"><span id="pb_dex_plus" class="pb_button">＋</span></td></tr>
+							<tr><td class="caption_phy" id="lp_vit">耐力</td><td class="text_value" id="p_vit">0</td><td align="right" nowrap><span id="pb_vit_minus" class="pb_button">－</span><input id="pb_vit_value" type="text" class="pb_textinput" value="0"><span id="pb_vit_plus" class="pb_button">＋</span></td></tr>
+							<tr><td class="caption_mag" id="lp_int">智力</td><td class="text_value" id="p_int">0</td><td align="right" nowrap><span id="pb_int_minus" class="pb_button">－</span><input id="pb_int_value" type="text" class="pb_textinput" value="0"><span id="pb_int_plus" class="pb_button">＋</span></td></tr>
+							<tr><td class="caption_mag" id="lp_mnd">精神</td><td class="text_value" id="p_mnd">0</td><td align="right" nowrap><span id="pb_mnd_minus" class="pb_button">－</span><input id="pb_mnd_value" type="text" class="pb_textinput" value="0"><span id="pb_mnd_plus" class="pb_button">＋</span></td></tr>
+							<tr><td class="caption_mag" id="lp_pie">信仰</td><td class="text_value" id="p_pie">0</td><td align="right" nowrap><span id="pb_pie_minus" class="pb_button">－</span><input id="pb_pie_value" type="text" class="pb_textinput" value="0"><span id="pb_pie_plus" class="pb_button">＋</span></td></tr>
+							<tr><td colspan="2" class="caption_default" align="right" id="lp_bonus">加成<br>合计</td><td align="right" nowrap><span id="pb_sum" class="pb_sumvalue">0 / 0</span></td></tr>
+							<tr><td colspan="2" class="caption_default" align="right" id="lp_trait">特性</td><td align="right" nowrap><span id="traits_info" class="pb_sumvalue">-</span></td></tr>
+						</table>
+						<!-- /attr -->
+					</td>
+					<td width="48%" valign="top">
+						<!-- elem -->
+						<img src="image/sys/title_elemental.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_fire"    id="lp_fire">火</td><td class="text_value" id="p_fire">0</td></tr>
+							<tr><td class="caption_ice"     id="lp_ice">冰</td><td class="text_value" id="p_ice">0</td></tr>
+							<tr><td class="caption_wind"    id="lp_wind">风</td><td class="text_value" id="p_wind">0</td></tr>
+							<tr><td class="caption_earth"   id="lp_earth">土</td><td class="text_value" id="p_earth">0</td></tr>
+							<tr><td class="caption_thunder" id="lp_thunder">雷</td><td class="text_value" id="p_thunder">0</td></tr>
+							<tr><td class="caption_water"   id="lp_water">水</td><td class="text_value" id="p_water">0</td></tr>
+						</table>
+						<!-- /elem -->
+					</td>
+				</tr></table>
+
+				<table width="100%" cellpadding="0" cellspacing="0" style="margin-top:8px;margin-bottom:4px"><tr>
+					<td width="1%">&nbsp;</td>
+					<td width="48%" valign="top">
+						<a width="100%" id="paramtype_main" class="paramtype paramtype_disabled" href="javascript:void(0)" onclick="onClickShowParamType(0)">主属性</a>
+					</td>
+					<td width="48%" valign="top">
+						<a width="100%" id="paramtype_all" class="paramtype" href="javascript:void(0)" onclick="onClickShowParamType(1)">全属性</a>
+					</td>
+					<td width="1%">&nbsp;</td>
+				</tr></table>
+
+				<table width="100%" id="paramtable_main" style="display: block"><tr>
+					<td width="48%" valign="top">
+						<!-- offence -->
+						<img src="image/sys/title_offence2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default"><span id="accuracy2" class="accuracy">命中</span></td><td class="text_value" id="p_hit2">0</td></tr>
+							<tr><td class="caption_default" id="lp_crit2">暴击</td><td class="text_value" id="p_critical2">0</td></tr>
+							<tr><td class="caption_default" id="lp_will2">信念</td><td class="text_value" id="p_will2">0</td></tr>
+							<tr><td class="caption_default" id="lp_skill_speed2">技能速度</td><td class="text_value" id="p_skill_speed2">0</td></tr>
+							<tr><td class="caption_default" id="lp_spell_speed2">咏唱速度</td><td class="text_value" id="p_spell_speed2">0</td></tr>
+							<tr><td class="caption_default" id="lp_dodge2">招架</td><td class="text_value" id="p_dodge2">0</td></tr>
+						</table>
+						<!-- /offence -->
+					</td>
+					<td width="2%">&nbsp;</td>
+					<td width="48%" valign="top">
+						<!-- offence -->
+						<img src="image/sys/title_gathering2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_gain2">获得力</td><td class="text_value" id="p_gather_gain2">0</td></tr>
+							<tr><td class="caption_default" id="lp_quality2">鉴别力</td><td class="text_value" id="p_gather_quality2">0</td></tr>
+							<tr><td class="caption_default" id="lp_work2">作业精度</td><td class="text_value" id="p_craft_work2">0</td></tr>
+							<tr><td class="caption_default" id="lp_process2">加工精度</td><td class="text_value" id="p_craft_process2">0</td></tr>
+						</table>
+						<!-- /offence -->
+					</td>
+				</table>
+
+				<table width="100%" id="paramtable_all" style="display: none"><tr>
+					<td width="48%" valign="top">
+						<!-- offence -->
+						<img src="image/sys/title_offence2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default"><span id="accuracy" class="accuracy">命中力</span></td><td class="text_value" id="p_hit">0</td></tr>
+							<tr><td class="caption_default" id="lp_crit">暴击</td><td class="text_value" id="p_critical">0</td></tr>
+							<tr><td class="caption_default" id="lp_will">信念</td><td class="text_value" id="p_will">0</td></tr>
+						</table>
+						<!-- /offence -->
+
+						<!-- melee -->
+						<img src="image/sys/title_melle2.png" style="margin-top: 8px">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_phy_atk">物理攻击力</td><td class="text_value" id="p_phy_atk">0</td></tr>
+							<tr><td class="caption_default" id="lp_skill_speed">技能速度</td><td class="text_value" id="p_skill_speed">0</td></tr>
+						</table>
+						<!-- /melee -->
+
+						<!-- melee regist -->
+						<img src="image/sys/title_melleresists2.png" style="margin-top: 8px">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_tolerant_cut">斩击耐性</td><td class="text_value" id="p_reg_slash">0</td></tr>
+							<tr><td class="caption_default" id="lp_tolerant_pierce">突刺耐性</td><td class="text_value" id="p_reg_pierce">0</td></tr>
+							<tr><td class="caption_default" id="lp_tolerant_beat">打击耐性</td><td class="text_value" id="p_reg_blunt">0</td></tr>
+						</table>
+						<!-- /melee regist -->
+					</td>
+					<td width="2%">&nbsp;</td>
+					<td width="48%" valign="top">
+						<!-- defence -->
+						<img src="image/sys/title_deffence2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_phy_def">物理防御力</td><td class="text_value" id="p_phy_def">0</td></tr>
+							<tr><td class="caption_default" id="lp_dodge">招架发动力</td><td class="text_value" id="p_dodge">0</td></tr>
+							<tr><td class="caption_default" id="lp_mag_def">魔法防御力</td><td class="text_value" id="p_mag_def">0</td></tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							<!--
+							<tr><td class="caption_default" id="lp_block_rate">ブロック<br>発動率</td><td class="text_value" id="p_block_rate">0%</td></tr>
+							<tr><td class="caption_default" id="lp_parry_rate">受け流し<br>発動率</td><td class="text_value" id="p_parry_rate">0%</td></tr>
+							<tr><td class="caption_default" id="lp_block_def">ブロック<br>軽減率</td><td class="text_value" id="p_block_reduce">0%</td></tr>
+							<tr><td class="caption_default" id="lp_parry_def">受け流し<br>軽減率</td><td class="text_value" id="p_parry_reduce">0%</td></tr>
+							<tr><td colspan="2" id="lp_bp_rate_reduce" style="font-size:8pt;color:#808080">値は大まかな数値です</td></tr>
+							-->
+						</table>
+						<!-- /defence -->
+					</td>
+				</tr>
+
+				<tr>
+					<td width="48%" valign="top">
+						<!-- spell -->
+						<img src="image/sys/title_spell2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_mag_atk">攻击魔法威力</td><td class="text_value" id="p_mag_atk">0</td></tr>
+							<tr><td class="caption_default" id="lp_mag_heal">回复魔法威力</td><td class="text_value" id="p_mag_heal">0</td></tr>
+							<tr><td class="caption_default" id="lp_spell_speed">咏唱速度</td><td class="text_value" id="p_spell_speed">0</td></tr>
+						</table>
+						<!-- /spell -->
+					<td width="2%">&nbsp;</td>
+					<td width="48%" valign="top">
+						<!-- pvp -->
+						<img src="image/sys/title_pvpparam2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_moral">斗志</td><td class="text_value" id="p_pvp_moral">0</td></tr>
+						</table>
+						<!-- /craftering-->
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="48%" valign="top">
+						<!-- gathering -->
+						<img src="image/sys/title_gathering2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_gain">获得力</td><td class="text_value" id="p_gather_gain">0</td></tr>
+							<tr><td class="caption_default" id="lp_quality">鉴别力</td><td class="text_value" id="p_gather_quality">0</td></tr>
+						</table>
+						<!-- /gathering -->
+					</td>
+					<td width="2%">&nbsp;</td>
+					<td width="48%" valign="top">
+						<!-- craftering-->
+						<img src="image/sys/title_crafting2.png">
+						<table width="95%" style="padding-left:20px">
+							<tr><td class="caption_default" id="lp_work">作业精度</td><td class="text_value" id="p_craft_work">0</td></tr>
+							<tr><td class="caption_default" id="lp_process">加工精度</td><td class="text_value" id="p_craft_process">0</td></tr>
+						</table>
+						<!-- /craftering-->
+					</td>
+				</tr></table>
+
+				<table width="100%" id="paramtable_main" style="display: block"><tr>
+					<td width="48%" valign="top">
+						<table width="95%" style="padding-left:20px"><tr><td></td></tr>
+						</table>
+					</td>
+					<td width="2%">&nbsp;</td>
+					<td width="48%" valign="top">
+						<!-- offence -->
+						<table width="95%" style="padding-left:20px">
+							<tr><td>
+							<input type="checkbox" id="is_meister" disabled><label for="is_meister" id="l_meister" class="check_label disabled_label unselectable">专家之证</label>
+							</td></tr>
+						</table>
+						<!-- /offence -->
+					</td>
+				</table>
+
+				<span style="font-size:8pt;margin:8px;display:inline-block;" id="l_param_note">
+					※目前进度：汉化了国服现有的装备翻译(2.x~3.4)。<br>
+					※追加内容看情况补充。<br>
+					※60级以外的HP,MP数值可能有误差。<br>
+					<br>
+				</span>
+
+
+				<!-- /contents -->
+			</div>
+		</div>
+		<!-- end paramters -->
+
+	</div><!-- /cell -->
+	</div><!-- /main_table -->
+
+
+	<br><br>
+	<a name="update_note"></a>
+	<!-- comment --><div class="footer" style="text-align:left !important">
+	<b>更新日志·说明</b><br><br>
+	<br>
+<p>
+I noticed the complains from several site owners. I am greatly sorry about using your contents without your permission. Due to lacking understanding of Japanese language, I never tried to contact those oweners.
+I have decided to remove all the contents which violate your copyright immediately, and I am sorry about the inconvenience I caused.
+</p>
+<p>
+私はいくつかのサイト所有者からの不満に気づいた。私はあなたの許可なくあなたのコンテンツを使用することについて大変申し訳なく思っています。日本語の理解が不足しているため、私はこれらのオーナに連絡をとろうとはしませんでした。
+私はあなたの著作権に違反するすべてのコンテンツを直ちに削除することにしました。そして、私が引き起こしたご迷惑をおかけして申し訳ありません。
+</p>
+
+	<div style="border: 1px solid #8080dd; background-color: #202040;padding:10px;">
+	<b>关于基准值 @ 2016/03/15（来自原作者）</b><br><br>
+	<style>.upd_new { color: #ff6060;}
+	.upd_no  { color: #a0a0ff;}
+	</style>
+	・除了占\机以外的职业计算公式已对应3.4版本数值。<br>
+	・<a href="https://www.reddit.com/r/ffxiv/comments/48xe2r/updated_32_statweights_excl_blmmchhealers/" target="_blank">公式参考链接-外链</a><br>
+	<br>
+	・机工师和占星术士仍然是3.2的数据。(´・ω・｀)<br>
+	・总之能用就行了吧…<br>
+	・数值可能会产生偏差…总之先用着吧。<br>
+	</div>
+	<br><br>
+
+
+	2017/05/27<br>
+	<div style="margin-left:24px">
+	・更新汉化国服3.5版本。需<a href="javascript:void(0)" onclick="changeLanguage(lang)">[重新加载]</a><br>
+	・界面改版。<br>
+	</div><br><br>
+
+	2017/02/05<br>
+	<div style="margin-left:24px">
+	・已更新汉化国服3.4版本。同步国际服3.5版本内容。<br>
+	</div><br><br>
+
+	<a href="javascript:void(0)" onclick="$('#comment_old').show();$(this).hide();">⇒更多...<br></a><br>
+
+	<div id="comment_old" style="display:none"><!-- old comment -->
+
+
+	2016/10/12<br>
+	<div style="margin-left:24px">
+	・更新汉化国服3.3版本。<br>
+	</div><br><br>
+
+	2016/07/10<br>
+	<div style="margin-left:24px">
+	・已更新汉化国服3.2版本。
+	・更新国际服3.3版本数据。<br>
+	・更换各职业基础属性计算系数，对应3.2版本。<br>
+	・秘术师转职成学者后智力强行转为精神。T职业优先耐力。增加生产职业的“巨匠”按钮。<br>
+	・限制装备魔晶石镶嵌个数。<br>
+	</div><br><br>
+
+	2016/03/02<br>
+	<div style="margin-left:24px">
+	・更新3.2版本装备数据,未替换坦克的属性值计算公式。
+	</div><br><br>
+
+	2016/01/25<br>
+	<div style="margin-left:24px">
+	・修正了部分错字。
+	</div><br><br>
+
+	2016/01/23<br>
+	<div style="margin-left:24px">
+	・更新了180HQ装备的翻译，对应3.07。
+	</div><br><br>
+
+
+	</div><!-- /comment_old -->
+
+	</div><!-- /comment -->
+
+	<!-- footer --><div class="footer">
+	<span class="copyright">本网页上的会社名・道具名・系统名等均为各公司的注册商标。</span>
+	<span class="copyright">system: Copyright (C) 2013 - 2017 dreams All Rights Reserved.</span>
+	<span class="copyright">data, image: Copyright (C) 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved. &nbsp;<a href="http://jp.finalfantasyxiv.com/lodestone/" target="_blank">[site]</a></span>
+	</div><!-- /footer -->
+
+</div><!-- /centering -->
+
+
+<!-- coef form --><div id="coef_form" style="display:none; cursor:default;background-color:#404040;vertical-align:middle;line-height:130%">
+	<br>
+	<div align="center"><table><tr><td align="center">
+		<span id="cform_note0" >在分类条件的「职业专门化」以及「用户设定」<br>计算系数设定</span>
+		<br>
+		<br>
+
+		<table id="cform_table" style="background-color:#101010;padding:8px;border:1px solid #808080">
+		<tr>
+			<td colspan="2">
+				<label class="control_select_label"><select id="cform_jobclass" class="control_select" onchange="onChangeCoefJobClass()"></select><span class="control_select_mark">▼</span></label>
+			</td>
+			<td colspan="2">
+				<input type="button" id="cform_reset" class="control_general" onclick="onResetCoef()" value="回到默认值">
+			</td>
+		</tr>
+		<tr><td colspan="4" style="height: 8px"></td></tr>
+		<tr>
+			<td>物理基本性能</td>
+			<td><input type="text" id="cform_main_phy_base" value="0" class="control_general_area control_input_cform"></td>
+			<td>格挡性能</td>
+			<td><input type="text" id="cform_main_block_perf" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>物理自动攻击</td>
+			<td><input type="text" id="cform_main_phy_aa" value="0" class="control_general_area control_input_cform"></td>
+			<td>格挡发动力</td>
+			<td><input type="text" id="cform_main_block_chance" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>攻击间隔</td>
+			<td><input type="text" id="cform_main_atk_interval" value="0" class="control_general_area control_input_cform"></td>
+			<td>物理防御力</td>
+			<td><input type="text" id="cform_main_phy_def" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>魔法基本性能</td>
+			<td><input type="text" id="cform_main_mag_base" value="0" class="control_general_area control_input_cform"></td>
+			<td>魔法防御力</td>
+			<td><input type="text" id="cform_main_mag_def" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+
+		<tr><td colspan="4" style="height: 8px"></td></tr>
+		<tr>
+			<td>力量</td>
+			<td><input type="text" id="cform_bonus_str" value="0" class="control_general_area control_input_cform"></td>
+			<td>智力</td>
+			<td><input type="text" id="cform_bonus_int" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>灵巧</td>
+			<td><input type="text" id="cform_bonus_dex" value="0" class="control_general_area control_input_cform"></td>
+			<td>精神</td>
+			<td><input type="text" id="cform_bonus_mnd" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>耐力</td>
+			<td><input type="text" id="cform_bonus_vit" value="0" class="control_general_area control_input_cform"></td>
+			<td>信仰</td>
+			<td><input type="text" id="cform_bonus_pie" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr><td colspan="4" style="height: 8px"></td></tr>
+		<tr>
+			<td>信念</td>
+			<td><input type="text" id="cform_bonus_will" value="0" class="control_general_area control_input_cform"></td>
+			<td>技能速度</td>
+			<td><input type="text" id="cform_bonus_skill_speed" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>暴击</td>
+			<td><input type="text" id="cform_bonus_crit" value="0" class="control_general_area control_input_cform"></td>
+			<td>咏唱速度</td>
+			<td><input type="text" id="cform_bonus_spell_speed" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>招架发动力</td>
+			<td><input type="text" id="cform_bonus_dodge" value="0" class="control_general_area control_input_cform"></td>
+			<td>斗志</td>
+			<td><input type="text" id="cform_bonus_moral" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr><td colspan="4" style="height: 8px"></td></tr>
+		<tr>
+			<td>采集力</td>
+			<td><input type="text" id="cform_bonus_gp" value="0" class="control_general_area control_input_cform"></td>
+			<td>制作力</td>
+			<td><input type="text" id="cform_bonus_cp" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>获得力</td>
+			<td><input type="text" id="cform_bonus_gain" value="0" class="control_general_area control_input_cform"></td>
+			<td>作业精度</td>
+			<td><input type="text" id="cform_bonus_work" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr>
+			<td>鉴别力</td>
+			<td><input type="text" id="cform_bonus_quality" value="0" class="control_general_area control_input_cform"></td>
+			<td>加工精度</td>
+			<td><input type="text" id="cform_bonus_edit" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr><td colspan="4" style="height: 8px"></td></tr>
+		<tr>
+			<td>装备等级</td>
+			<td><input type="text" id="cform_base_glv" value="0" class="control_general_area control_input_cform"></td>
+			<td>装备品级</td>
+			<td><input type="text" id="cform_base_ilv" value="0" class="control_general_area control_input_cform"></td>
+		</tr>
+		<tr><td colspan="4" style="height: 8px"></td></tr>
+		<tr><td colspan="4">
+			<div style="color:#c0c0c0" id="cform_note1">※请设定0~100以内的数字。</div>
+			<div style="color:#c0c0c0" id="cform_note2">※输入范围外或无法读取的值的情况下默认为0。</div>
+			</td>
+		</tr>
+
+		</table>
+
+		<br>
+		<div align="center">
+			<input type="button" id="cform_ok" class="control_general" onclick="onOKCoefForm()" value="确认">
+			<input type="button" id="cform_cancel" class="control_general" onclick="onCancelCoefForm()" value="取消">
+			<br><br>
+		</div>
+
+	</td></tr></table></div>
+</div><!-- end coef form -->
+
+
+<!-- accuracy form --><div id="accuracy_form" style="display:none;cursor:default;background-color:#404040;vertical-align:middle;width:420px">
+	<br>
+	<div align="center"><table><tr><td>
+		<span id="aform_note0">在保证命中的情况下计算特定属性可组合的装备。</span>
+		<br>
+		<br>
+
+		<table style="background-color:#101010;padding:8px;border:1px solid #808080">
+		<tr>
+			<td id="aform_accuracy_caption" norwap class="accuracy">必要命中</td>
+			<td><input type="text" id="aform_accuracy_value" size="8"/></td>
+		</tr>
+		<tr>
+			<td id="aform_sort_caption" norwap>优先属性</td>
+			<td><label class="control_select_label"><select id="aform_sort_value" class="control_select"></select><span class="control_select_mark">▼</span></label></td>
+		</tr>
+		<tr>
+			<td id="aform_target_equips_caption" norwap>选择装备</td>
+			<td>
+				<label class="control_select_label"><select id="aform_target_equips" class="control_select"></select><span class="control_select_mark">▼</span></label><br>
+				<label class="control_select_label"><select id="aform_target_equips_rings" class="control_select"></select><span class="control_select_mark">▼</span></label><br>
+
+			</td>
+		</tr>
+		<tr>
+			<td id="aform_fixed_caption" valign="top" style="padding-top:5px" norwap>固定装备</td>
+			<td>
+				<div style="color:#c0c0c0;margin-top:4px;margin-bottom:4px;width:300px;font-size:8pt" id="aform_note1">※从已选择的装备中调整命中。</div>
+				<div><input type="checkbox" id="aform_equip_selector_10" style="vertical-align: -2px"><label for="aform_equip_selector_10" id="aform_equip_selector_10_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_80" style="vertical-align: -2px"><label for="aform_equip_selector_80" id="aform_equip_selector_80_value"></label></div>
+				<div style="margin-top:8px"><input type="checkbox" id="aform_equip_selector_20" style="vertical-align: -2px"><label for="aform_equip_selector_20" id="aform_equip_selector_20_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_30" style="vertical-align: -2px"><label for="aform_equip_selector_30" id="aform_equip_selector_30_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_40" style="vertical-align: -2px"><label for="aform_equip_selector_40" id="aform_equip_selector_40_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_50" style="vertical-align: -2px"><label for="aform_equip_selector_50" id="aform_equip_selector_50_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_60" style="vertical-align: -2px"><label for="aform_equip_selector_60" id="aform_equip_selector_60_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_70" style="vertical-align: -2px"><label for="aform_equip_selector_70" id="aform_equip_selector_70_value"></label></div>
+				<div style="margin-top:8px"><input type="checkbox" id="aform_equip_selector_100" style="vertical-align: -2px"><label  for="aform_equip_selector_100"  id="aform_equip_selector_100_value" ></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_90" style="vertical-align: -2px"><label for="aform_equip_selector_90" id="aform_equip_selector_90_value"></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_110" style="vertical-align: -2px"><label  for="aform_equip_selector_110"  id="aform_equip_selector_110_value" ></label></div>
+				<div><input type="checkbox" id="aform_equip_selector_120" style="vertical-align: -2px"><label  for="aform_equip_selector_120"  id="aform_equip_selector_120_value" ></label></div>
+				<div><input type="checkbox" id="aform_equip_selector2_120" style="vertical-align: -2px"><label for="aform_equip_selector2_120" id="aform_equip_selector2_120_value"></label></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div style="color:#c0c0c0;margin-top:4px;font-size:8pt" id="aform_note2">※有魔晶石套装设定的情况下，默认使用套装1。</div>
+				<div style="color:#c0c0c0;margin-top:4px;font-size:8pt" id="aform_note3">※根据选择条件可能会花费1分~数分钟的时间。</div>
+
+			</td>
+		</tr>
+
+		</table>
+
+		<br>
+		<div align="center">
+			<input type="button" id="aform_ok" class="control_general" onclick="onOKAccuracyForm()" value="计算开始">
+			<input type="button" id="aform_cancel" class="control_general" onclick="onCancelAccuracyForm()" value="取消">
+			<br><br>
+		</div>
+
+	</td></tr></table></div>
+</div><!-- end accuracy form -->
+
+<!-- accuracy_detail --><div id="accuracy_detail_for_form" style="display:none;position:absolute">
+</div>
+
+<!-- wait accuracy progress --><div id="accuracy_progress" style="display:none; cursor:default;background-color:#404040;vertical-align:middle">
+	<br><br>
+	<span style="font-weight:bold;color:#ffffff" id="aprogress_note">正在计算套装...</span><br>
+	<br><br>
+</div><!-- end accuracy progress -->
+
+
+<!-- import lodestone --><div id="import_lodestone" style="display:none">
+	<div id="inner_import_lodestone" style="cursor:default;background-color:#404040;vertical-align:middle">
+		<br>
+		<div align="center">
+			<table><tr><td><b id="l_import_note">
+			ロードストーンの情報からインポートを行います。<br>
+			URLを入力してください。（仅限国际服使用。）<br>
+			<br>
+			例：http://jp.finalfantasyxiv.com/lodestone/character/1659000/<br>
+			</b><br><br></td></tr></table>
+			<input type="text" id="url_lodestone" value="" class="control_general_area" style="width:370px"><br>
+			<br>
+			<input type="button" id="ok_input_lodestone" class="control_general" style="color:#808080" onclick="onOKInputLodestoneURL()" value="确认" disabled="disabled">
+			<input type="button" id="cancel_input_loadstone" class="control_general" onclick="onCancelInputLodestoneURL()" value="取消"><br>
+			<br><br>
+		</div>
+	</div>
+</div><!-- end import lodestone -->
+
+
+<!-- wait lodestone --><div id="wait_lodestone" style="display:none; cursor:default;background-color:#404040;vertical-align:middle">
+	<br><br>
+	<span style="font-weight:bold;color:#ffffff" id="l_import_wait">读取中...（数据量较大，请耐心等待）</span><br>
+	<br><br>
+</div><!-- end wait lodestone -->
+
+<!-- popup base --><div id="popup_equip_detail" style="display:none;visibility:hidden;position:absolute;left:0px;top:0px;text-align:left">
+	<div class="gb6"><div class="gb5"><div class="gb4"><div class="gb3"><div class="gb2"><div class="gb1"><div class="gb0">
+	<div class="ntable" style="width: 340px">
+
+		<table width="100%">
+		<tr id="caption_for_equip_list"><td colspan="2" style="font-weight: bold;padding-bottom: 8px" id="caption_text_for_equip_list">现在的装备</td></tr>
+		<tr>
+			<td width="48"><div style="background:url('image/sys/equip_frame.png') no-repeat 0 0;width:44px;height:44px"><img id="pu_data_image" src="" class="itemimage"></div></td>
+			<td class="pu_body_lh">
+				<span id="pu_data_roll_rare">单手剑 | RARE EX</span><br>
+				<span id="pu_data_name" class="pu_itemname_purple">无锋剑柯塔纳＋１</span>
+			</td>
+		</tr>
+		</table>
+
+		<table width="100%" class="pu_body_margin">
+		<tr>
+			<td width="32%" id="pu_data_main_name0" class="pu_main_param_name">物理基本性能</td>
+			<td width="2%">&nbsp;</td>
+			<td width="32%" id="pu_data_main_name1" class="pu_main_param_name">物理自动攻击</td>
+			<td width="2%">&nbsp;</td>
+			<td width="32%" id="pu_data_main_name2" class="pu_main_param_name">攻击间隔</td>
+		</tr>
+		<tr>
+			<td width="32%" id="pu_data_main_value0" class="pu_main_param_value">38</td>
+			<td width="2%">&nbsp;</td>
+			<td width="32%" id="pu_data_main_value1" class="pu_main_param_value">26.34</td>
+			<td width="2%">&nbsp;</td>
+			<td width="32%" id="pu_data_main_value2" class="pu_main_param_value">2.08</td>
+		</tr>
+		</table>
+
+		<table width="100%" class="pu_body_margin">
+		<tr>
+			<td class="pu_item_level"><span id="ld_ilv">品级</span> <span id="pu_data_itemlevel">50</span><span id="pu_data_refvalue"></span></td>
+		</tr>
+		<tr>
+			<td class="pu_body_lh pu_body_margin pu_body_padding">
+				<span id="pu_data_class" class="pu_text">剑术师　圣骑士</span><br>
+				<span class="pu_text"><span id="ld_glv">Lv</span> <span id="pu_data_gearlevel">50</span></span><br>
+				<span id="pu_data_class" class="pu_text"><span id="ld_materia">魔晶石孔</span>：<span id="pu_data_materia">4</span></span><br>
+				<span id="pu_data_invalid_equip" class="pu_text"></span><br>
+				<span id="pu_data_note" class="pu_text"></span><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="gain_info" style="display:none">
+				<div class="pu_border_text2" id="ld_gain">获取方法</div>
+				<hr class="pu_border">
+				<span id="gain_info_text" class="pu_body_lh pu_text"></span><br>
+				</div>
+
+				<div class="pu_border_text">属性</div>
+				<hr class="pu_border">
+				<table width="100%">
+				<tbody id="pu_data_bonus_area">
+				</tbody>
+				</table>
+
+			</td>
+		</tr>
+		</table>
+
+	</div><!-- /ntable -->
+	</div></div></div></div></div></div></div><!-- /gb -->
+
+</div><!-- /popup base -->
+
+<!-- measure text --><div id="measure_text_area"  style="visibility:hidden">
+	<span id="measure_text">&nbsp;</span>
+</div><!-- /measure text -->
+
+<!-- novus param --><div id="novus_param" style="display:none;position:absolute">
+	<div style="cursor:default">
+		<div class="pu_header3"></div>
+		<div class="pu_body3">
+
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="table_header_l"></td>
+					<td class="table_header_c" width="250"><b><span id="np_name">星尘杖·新星</span> <span id="ln_title">属性设定</span></b></td>
+					<td class="table_header_r"></td>
+				</tr>
+				<tr>
+					<td class="table_body_l"></td>
+					<td class="table_body_c" width="250" align="center">
+
+						<table class="np_tbl">
+						<tr class="ac_tbl_tr_head">
+							<th class="np_tbl_td_first" style="text-align:left !important" id="ln_sum">合计</th><th width="50">(<span id="ln_max0" style="color: yellow">最大</span><span id="np_max_sum" style="color: yellow">0</span>)</th>
+							<th nowrap><span class="pb_button" style="visibility:hidden">－</span><span id="np_sum" type="text" class="pb_textinput" style="display:inline-block;width:18px;font-weight:bold;text-align:right;background-color:#606060">0</span><span class="pb_button" style="visibility:hidden">＋</span></th>
+						</tr>
+						
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_pie">信仰</td><td>(<span id="ln_max1">最大</span><span id="np_max_pie">0</span>)</td>
+							<td nowrap><span id="np_pie_minus" class="pb_button">－</span><input id="np_pie_value" type="text" class="pb_textinput" value="0"><span id="np_pie_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_acr">命中力</td><td>(<span id="ln_max2">最大</span><span id="np_max_hit">0</span>)</td>
+							<td nowrap><span id="np_hit_minus" class="pb_button">－</span><input id="np_hit_value" type="text" class="pb_textinput" value="0"><span id="np_hit_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_will">信念</td><td>(<span id="ln_max3">最大</span><span id="np_max_will">0</span>)</td>
+							<td nowrap><span id="np_will_minus" class="pb_button">－</span><input id="np_will_value" type="text" class="pb_textinput" value="0"><span id="np_will_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_crit">暴击</td><td>(<span id="ln_max4">最大</span><span id="np_max_crit">0</span>)</td>
+							<td nowrap><span id="np_crit_minus" class="pb_button">－</span><input id="np_crit_value" type="text" class="pb_textinput" value="0"><span id="np_crit_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_sks">技能速度</td><td>(<span id="ln_max5">最大</span><span id="np_max_skill_speed">0</span>)</td>
+							<td nowrap><span id="np_skill_speed_minus" class="pb_button">－</span><input id="np_skill_speed_value" type="text" class="pb_textinput" value="0"><span id="np_skill_speed_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_sps">咏唱速度</td><td>(<span id="ln_max6">最大</span><span id="np_max_spell_speed">0</span>)</td>
+							<td nowrap><span id="np_spell_speed_minus" class="pb_button">－</span><input id="np_spell_speed_value" type="text" class="pb_textinput" value="0"><span id="np_spell_speed_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr class="np_tbl_tr">
+							<td class="np_tbl_td_first" id="ln_dge">招架发动力</td><td>(<span id="ln_max7">最大</span><span id="np_max_dodge">0</span>)</td>
+							<td nowrap><span id="np_dodge_minus" class="pb_button">－</span><input id="np_dodge_value" type="text" class="pb_textinput" value="0"><span id="np_dodge_plus" class="pb_button">＋</span></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="button" class="control_general" style="" value="确定" id="ln_ok" onclick="setNovusStatusComplete()">
+							</td>
+							<td colspan="1" align="center">
+								<input type="button" class="control_general" style="" value="重置" id="ln_reset" onclick="resetNovusStatus()">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" style="font-size:8pt" id="ln_note">
+							<br>
+							※最大值可能与游戏中古武的最大值不相同。<br>
+							※关于装备选择框上的「基准值」，直到下次按下确定按钮为止无法显示。<br>
+							</td>
+						</tr>
+						</table>
+					</td>
+					<td class="table_body_r"></td>
+				</tr>
+				<tr>
+				<td class="table_footer_l"></td>
+				<td class="table_footer_c" width="250"></td>
+				<td class="table_footer_r"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="pu_footer3"></div>
+
+	</div>
+</div><!-- /novus_param -->
+
+
+<!-- accuracy_detail --><div id="accuracy_detail" style="display:none;position:absolute">
+	<div class="gb6"><div class="gb5"><div class="gb4"><div class="gb3"><div class="gb2"><div class="gb1"><div class="gb0">
+
+		<div class="ntable">
+			<div style="font-weight:bold;padding-top:4px;padding-bottom:4px" id="la_acr">命中要求 [亚历山大律动篇]</div>
+			<table class="ac_tbl" cellpadding="0" cellspacing="0" id="ac_tbl_main">
+			<tr class="ac_tbl_tr ac_tbl_tr_head">
+				<th>-</th>
+				<th id="la_phy_front">物理<br>正面</th>
+				<th id="la_phy_side">物理<br>侧面</th>
+				<th id="la_phy_back">物理<br>背面</th>
+				<th id="la_mag">魔法</th>
+			</tr>
+			<tr class="ac_tbl_tr">
+				<td id="la_alex_zero_4">4层</td>
+				<td>699</td>
+				<td>645</td>
+				<td>592</td>
+				<td>592</td>
+			</tr>
+			<tr class="ac_tbl_tr">
+				<td id="la_alex_zero_3">3层</td>
+				<td>689</td>
+				<td>635</td>
+				<td>581</td>
+				<td>581</td>
+			</tr>
+			<tr class="ac_tbl_tr">
+				<td id="la_alex_zero_2">2层</td>
+				<td>676</td>
+				<td>622</td>
+				<td>568</td>
+				<td>568</td>
+			</tr>
+			<tr class="ac_tbl_tr">
+				<td id="la_alex_zero_1">1层</td>
+				<td>665</td>
+				<td>611</td>
+				<td>557</td>
+				<td>577</td>
+			</tr>
+			</table>
+
+			<div class="ac_tbl_note" id="la_note">
+				※数值不保证绝对正确。<br>
+			</div>
+
+		</div><!-- /ntable -->
+	
+	</div></div></div></div></div></div></div><!-- /gb -->
+
+</div><!-- /accuracy_detail -->
+
+<!-- equip list(mask) -->
+<div id="ev_mask" style="display: none" class="ev_mask"></div>
+
+<!-- equip list(current equip popup -->
+<div id="ev_popup" style="display:none;visibility:hidden;position:absolute;left:0px;top:0px;text-align:left"></div>
+
+<!-- ev_table --><div class="ntable" id="ev_table" style="width:812px;display:none">
+	<!-- contents -->
+	<div class="ev_title_line">
+		<div class="ev_title_column" style="text-align: left" id="ev_equip_part">头部装备</div>
+		<div class="ev_title_column" style="text-align: right"><a href="javascript:void(0)" onclick="onClickCancelEquipList()" id="ev_equip_cancel">取消</a></div>
+	</div>
+	<table cellpadding="0" cellspacing="0" id="ev_scroll" class="ev_scroll_base">
+		<tbody style="display:block; overflow-y:scroll;" id="ev_list_main"></tbody>
+	</table>
+	<!-- contents -->
+</div><!-- /.ev_table -->
+
+<!-- materia selector -->
+<div id="mat_selector" class="mat_selector unselectable" style="display:none; position:absolute;"></div>
+<!-- /.materia selector -->
+
+
+
+
+
+
+</div>
+
+</body></html>

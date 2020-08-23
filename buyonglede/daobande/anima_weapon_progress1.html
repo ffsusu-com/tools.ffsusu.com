@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>元灵武器进度确认器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anima_weapon_progress.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/jquery.socialbutton-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="viewmode_pc">
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    <style>.tab_menu a {
+            display: inline-block;
+            border-radius: 3px;
+            width: 80px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .tab_menu a:not(.current) {
+            background: #555;
+            box-shadow: 1px 1px 0px #000, -1px -1px 0px #888;
+        }
+        .tab_menu a.current {
+            color: #0f0;
+            background: #050;
+            box-shadow: 1px 1px 0px #888, -1px -1px 0px #000;
+        }
+
+        .icon_thum {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            border-radius: 2px;
+        }
+        .dungeon_img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 48px;
+            overflow: hidden;
+            z-index: 5;
+        }
+        .dungeon_thum {
+            position: relative;
+            width: 376px;
+            height: 120px;
+        }
+        #view_container.device_sp .dungeon_thum {
+            width: 300px;
+        }
+
+        table td{
+            vertical-align: top;
+        }
+
+        .progress_box_all,
+        .progress_box,
+        .progress_box2,
+        .progress_box3,
+        .progress_box4,
+        .progress_box5 {
+            position: relative;
+            display: inline-block;
+            width: 190px;
+            height: 20px;
+            background: #000;
+            border: 2px solid #aaa;
+            border-radius: 3px;
+        }
+        .progress_box2{
+            width: 179px;
+        }
+        .progress_box3{
+            width: 168px;
+        }
+        .progress_box_all .progress_bar {
+            display: inline-block;
+            background: linear-gradient(#333, #0ff, #333);
+            height: 16px;
+            transition: width 1s ease;
+        }
+        .progress_box .progress_bar {
+            display: inline-block;
+            background: linear-gradient(#333, #0f0, #333);
+            height: 16px;
+            transition: width 1s ease;
+        }
+        .progress_box2 .progress_bar {
+            display: inline-block;
+            background: linear-gradient(#333, #8b8, #333);
+            height: 16px;
+            transition: width 1s ease;
+        }
+        .progress_box3 .progress_bar {
+            display: inline-block;
+            background: linear-gradient(#333, #888, #333);
+            height: 16px;
+            transition: width 1s ease;
+        }
+        .progress_txt{
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            text-shadow:
+                1px 0px 0px #000,
+                0px 1px 0px #000,
+                -1px 0px 0px #000,
+                0px -1px 0px #000;
+        }
+
+        .commonBox {
+            display: inline-block;
+            width: 320px;
+            border: 1px solid #888;
+            border-radius: 3px;
+            margin-right: 10px;
+            margin-bottom: 15px;
+            background: #444;
+        }
+        #view_container.device_sp .commonBox {
+            margin-right: 0px;
+        }
+        .commonBox2 {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            margin-left: 10px;
+            border: 1px solid #888;
+            border-radius: 3px;
+            background: #333;
+            margin-bottom: 5px;
+        }
+        .disable:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+        }
+        .commonBox3 {
+            display: inline-block;
+            width: 280px;
+            margin-left: 10px;
+            border: 1px solid #888;
+            border-radius: 3px;
+            background: #222;
+        }
+        .commonBox4 {
+            position: relative;
+            display: block;
+            width: 376px;
+            height: 50px;
+            border: 1px solid #888;
+            border-radius: 3px;
+            background: #444;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        #view_container.device_sp .commonBox4 {
+            width: 300px;
+        }
+        .complete:before{
+            content: "";
+            position: absolute;
+            top: -15px;
+            right: 0px;
+            background: url("img/anima_weapon_progress/step2/check_stamp.png");
+            background-size: 80px 80px;
+            width: 80px;
+            height: 80px;
+            z-index: 9;
+        }
+        .complete:after{
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100%;
+            z-index: 8;
+        }
+        .commonBox4 p{
+            position: absolute;
+            width: 376px;
+            line-height: 50px;
+            z-index: 10;
+            font-weight: bold;
+            text-shadow:
+                1px 0px 0px #000,
+                0px 1px 0px #000,
+                -1px 0px 0px #000,
+                0px -1px 0px #000;
+            text-align: center;
+        }
+        #view_container.device_sp .commonBox4 p {
+            width: 300px;
+        }
+        .complete p {
+            color: #0f0;
+        }
+
+        input[type=number] {
+            width: 45px;
+            vertical-align: top;
+            margin-left: 5px;
+        }
+        input[type="checkbox"] {
+            vertical-align: middle;
+        }
+
+        #eorzeadb_tooltip {
+            z-index: 1000;
+        }
+    </style>
+
+    <div id="stage">
+
+        <div style="height:25px;">
+            <p style="font-weight:bold; vertical-align:top">元灵武器进度确认器 ver.patch3.3　</p>
+        </div>
+        <hr>
+
+        <div class="tab_menu">
+            <a class="show_progress_tab1" href="javascript:void(0)">第1阶段</a>
+            <a class="show_progress_tab2" href="javascript:void(0)">第2阶段</a>
+            <a class="show_progress_tab3 current" href="javascript:void(0)">第3阶段</a>
+            <a class="show_progress_tab4" href="javascript:void(0)">第4阶段</a>
+            <a class="show_progress_tab5" href="javascript:void(0)">第5阶段</a>
+        </div>
+        <hr>
+
+        <div class="progress_tab1">
+            <table>
+                <tr>
+                    <td><img class="icon_thum" src="img/anima_weapon_progress/icon_000.png"></td>
+                    <td>
+                        第1阶段·元灵(IL170)(IL170)<br>
+                        <div class="progress_box_all" id="step1_all_bar">
+                            <div class="progress_bar" style="width:0%"></div>
+                            <div class="progress_txt">0%</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_001.png"></td>
+                        <td>
+                            星极水晶 ×1<br>
+                            <div class="progress_box" id="step1_bar_1">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='1'>
+                        </td>
+                    </tr>
+                </table>
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_001_001.png"></td>
+                            <td>
+                                流光火之水晶 ×3<br>
+                                <div class="progress_box2" id="step1_bar_1_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='3'>
+                            </td>
+                        </tr>
+                    </table>
+                    　·魔大陆阿济兹拉 FATE<br>
+                </div>
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_001_002.png"></td>
+                            <td>
+                                流光风之水晶 ×3<br>
+                                <div class="progress_box2" id="step1_bar_1_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='3'>
+                            </td>
+                        </tr>
+                    </table>
+                    　·阿巴拉西亚云海 FATE<br>
+                </div>
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_001_003.png"></td>
+                            <td>
+                                流光雷之水晶 ×3<br>
+                                <div class="progress_box2" id="step1_bar_1_3">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='3'>
+                            </td>
+                        </tr>
+                    </table>
+                    　·翻云雾海 FATE<br>
+                </div>
+            </div>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_002.png"></td>
+                        <td>
+                            灵极水晶 ×1<br>
+                            <div class="progress_box" id="step1_bar_2">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='1'>
+                        </td>
+                    </tr>
+                </table>
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_002_001.png"></td>
+                            <td>
+                                流光冰之水晶 ×3<br>
+                                <div class="progress_box2" id="step1_bar_2_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='3'>
+                            </td>
+                        </tr>
+                    </table>
+                    　·库尔扎斯西部高地 FATE<br>
+                </div>
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_002_002.png"></td>
+                            <td>
+                                流光土之水晶 ×3<br>
+                                <div class="progress_box2" id="step1_bar_2_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='3'>
+                            </td>
+                        </tr>
+                    </table>
+                    　·龙堡参天高地 FATE<br>
+                </div>
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step1/icon_002_003.png"></td>
+                            <td>
+                                流光水之水晶 ×3<br>
+                                <div class="progress_box2" id="step1_bar_2_3">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='3'>
+                            </td>
+                        </tr>
+                    </table>
+                    　·龙堡内陆低地 FATE<br>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="progress_tab2">
+            <table>
+                <tr>
+                    <td><img class="icon_thum" src="img/anima_weapon_progress/icon_000.png"></td>
+                    <td>
+                        第2阶段·觉醒(IL200)<br>
+                        <div class="progress_box_all" id="step2_all_bar">
+                            <div class="progress_bar" style="width:0%"></div>
+                            <div class="progress_txt">0%</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="commonBox4" id="step2_1">
+                <p>凛冽洞天 披雪大冰壁</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_001.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_2">
+                <p>逆转要害 沙斯塔夏溶洞</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_002.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_3">
+                <p>苏醒遗迹 喀恩埋没圣堂</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_003.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_4">
+                <p>幻龙残骸 密约之塔</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_004.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_5">
+                <p>武装圣域 放浪神古神殿</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_005.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_6">
+                <p>邪念妖地 无限城古堡</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_006.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_7">
+                <p>冰雪废堡暮卫塔</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_007.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_8">
+                <p>天山绝顶 索姆阿尔灵峰</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_008.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_9">
+                <p>邪龙王座 龙巢神殿</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_009.png">
+                </div>
+            </div>
+
+            <div class="commonBox4" id="step2_10">
+                <p>圣教中枢 伊修加德教皇厅</p>
+                <div class="dungeon_img">
+                    <img class="dungeon_thum" src="img/anima_weapon_progress/step2/dungeon_010.png">
+                </div>
+            </div>
+
+            ※2.x的副本可以解除等级限制参加<br>
+            ※武器可以在退出副本时再更换<br>
+        </div>
+
+        <div class="progress_tab3">
+            <table style="float:left; clear:both">
+                <tr>
+                    <td><img class="icon_thum" src="img/anima_weapon_progress/icon_000.png"></td>
+                    <td>
+                        第3阶段·元灵成品(IL210)<br>
+                        <div class="progress_box_all" id="all_bar">
+                            <div class="progress_bar" style="width:0%"></div>
+                            <div class="progress_txt">0%</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <label for="hq_item_no_count">
+                    <div class="commonBox" style="padding: 10px; width: 290px; margin-bottom: 0px;">
+                        <input type="checkbox" id="hq_item_no_count" check="">排除HQ材料
+                    </div>
+                </label>
+            </div><br>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_004.png"></td>
+                        <td>
+                            附魔橡胶 ×1<br>
+                            <div class="progress_box" id="bar_4">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='1'>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/icon_004_001.png"></td>
+                            <td>
+                                神秘骨片 ×20<br>
+                                <div class="progress_box2" id="bar_4_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='20'>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_004_001_001.png"></td>
+                                <td>
+                                    高精度戈耳狄螺栓(1层) ×10<br>
+                                    <div class="progress_box3" id="bar_4_1_1">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='200'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_004_001_002.png"></td>
+                                <td>
+                                    白钢刀币(蛮族日常) ×13<br>
+                                    <div class="progress_box3" id="bar_4_1_2">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='260'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    　・【680】诗学兑换<br>
+                    　・【1000】同盟徽章兑换<br>
+                </div>
+
+                <div class="commonBox2 hq_item">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="http://jp.finalfantasyxiv.com/lodestone/playguide/db/item/dc6f27dbcc8/" class="eorzeadb_link">
+                                    <img class="icon_thum" src="img/anima_weapon_progress/icon_004_002.png">
+                                </a>
+                            </td>
+                            <td>
+                                精金投斧HQ ×4<br>
+                                <div class="progress_box2" id="bar_4_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='4'>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_003.png"></td>
+                        <td>
+                            亚拉戈上级硬化药 ×1<br>
+                            <div class="progress_box" id="bar_3">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='1'>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/icon_003_001.png"></td>
+                            <td>
+                                神秘贝壳 ×20<br>
+                                <div class="progress_box2" id="bar_3_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='20'>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_003_001_001.png"></td>
+                                <td>
+                                    高精度戈耳狄透镜(2层) ×10<br>
+                                    <div class="progress_box3" id="bar_3_1_1">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='200'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_003_001_002.png"></td>
+                                <td>
+                                    虹贝壳币(蛮族日常) ×13<br>
+                                    <div class="progress_box3" id="bar_3_1_2">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='260'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    　・【680】诗学兑换<br>
+                    　・【G7】陈旧的飞龙革地图<br>
+                </div>
+
+                <div class="commonBox2 hq_item">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="http://jp.finalfantasyxiv.com/lodestone/playguide/db/item/d59a10a968e/" class="eorzeadb_link">
+                                    <img class="icon_thum" src="img/anima_weapon_progress/icon_003_002.png"></td>
+                                </a>
+                            <td>
+                                钛合金镜HQ ×4<br>
+                                <div class="progress_box2" id="bar_3_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='4'>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_001.png"></td>
+                        <td>
+                            神圣水 ×1<br>
+                            <div class="progress_box" id="bar_1">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='1'>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/icon_001_001.png"></td>
+                            <td>
+                                神秘原石 ×20<br>
+                                <div class="progress_box2" id="bar_1_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='20'>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_001_001_001.png"></td>
+                                <td>
+                                    高精度戈耳狄弹簧(3层) ×10<br>
+                                    <div class="progress_box3" id="bar_1_1_1">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='200'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_001_001_002.png"></td>
+                                <td>
+                                    钴铁锤币(蛮族日常) ×13<br>
+                                    <div class="progress_box3" id="bar_1_1_2">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='260'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    　・【680】禁书兑换<br>
+                    　・【G6、G8】陈旧的古鸟革地图、巨龙革地图<br>
+                </div>
+
+                <div class="commonBox2 hq_item">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="http://jp.finalfantasyxiv.com/lodestone/playguide/db/item/e570163a3cc/" class="eorzeadb_link">
+                                    <img class="icon_thum" src="img/anima_weapon_progress/icon_001_002.png"></td>
+                                </a>
+                            <td>
+                                破魔箭HQ ×4<br>
+                                <div class="progress_box2" id="bar_1_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='4'>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_002.png"></td>
+                        <td>
+                            亚拉戈上级魔触媒 ×1<br>
+                            <div class="progress_box" id="bar_2">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='1'>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/icon_002_001.png"></td>
+                            <td>
+                                神秘种子 ×20<br>
+                                <div class="progress_box2" id="bar_2_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='20'>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_002_001_001.png"></td>
+                                <td>
+                                    高精度戈耳狄长杆(4层) ×10<br>
+                                    <div class="progress_box3" id="bar_2_1_1">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='200'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="commonBox3">
+                        <table>
+                            <tr>
+                                <td><img class="icon_thum" src="img/anima_weapon_progress/icon_002_001_002.png"></td>
+                                <td>
+                                    金叶币(蛮族日常) ×13<br>
+                                    <div class="progress_box3" id="bar_2_1_2">
+                                        <div class="progress_bar" style="width:0%"></div>
+                                        <div class="progress_txt">0%</div>
+                                    </div>
+                                    <input type='number' value='0' min='0' max='260'>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    　・【680】禁书兑换<br>
+                    　・【1000】同盟徽章兑换<br>
+                </div>
+
+                <div class="commonBox2 hq_item">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="http://jp.finalfantasyxiv.com/lodestone/playguide/db/item/d8e72c48ac6/" class="eorzeadb_link">
+                                    <img class="icon_thum" src="img/anima_weapon_progress/icon_002_002.png"></td>
+                                </a>
+                            <td>
+                                国王饼HQ ×4<br>
+                                <div class="progress_box2" id="bar_2_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='4'>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_005_001.png"></td>
+                        <td>
+                            白骨币(蛮族日常) ×18<br>
+                            <input id="item_5_1" type='number' value='0' min='0' max='360'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_005_002.png"></td>
+                        <td>
+                            伪黑铜币(蛮族日常) ×18<br>
+                            <input id="item_5_2" type='number' value='0' min='0' max='360'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/icon_005_003.png"></td>
+                        <td>
+                            精雕库啵果币(蛮族日常) ×18<br>
+                            <input id="item_5_3" type='number' value='0' min='0' max='360'>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="progress_tab4">
+            <table>
+                <tr>
+                    <td><img class="icon_thum" src="img/anima_weapon_progress/icon_000.png"></td>
+                    <td>
+                        第4阶段・超导(IL230)<br>
+                        <div class="progress_box_all" id="step4_all_bar">
+                            <div class="progress_bar" style="width:0%"></div>
+                            <div class="progress_txt">0%</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/step4/icon_001.png"></td>
+                        <td>
+                            亚拉戈绝灵油<br>
+                            <div class="progress_box2" id="step4_bar_1">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                            <input type='number' value='0' min='0' max='5'>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="progress_tab5">
+            <table>
+                <tr>
+                    <td><img class="icon_thum" src="img/anima_weapon_progress/icon_000.png"></td>
+                    <td>
+                        第5阶段・元灵武器(IL240)<br>
+                        <div class="progress_box_all" id="step5_all_bar">
+                            <div class="progress_bar" style="width:0%"></div>
+                            <div class="progress_txt">0%</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="commonBox">
+                <table>
+                    <tr>
+                        <td><img class="icon_thum" src="img/anima_weapon_progress/step5/icon_001.png"></td>
+                        <td>
+                            人造精灵的育成<br>
+                            <div class="progress_box2" id="step5_bar_1">
+                                <div class="progress_bar" style="width:0%"></div>
+                                <div class="progress_txt">0%</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="commonBox2">
+                    <table>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step5/icon_002.png"></td>
+                            <td>
+                                已交换的调整水晶砂<br>
+                                <div class="progress_box2" id="step5_bar_1_1">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='240'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img class="icon_thum" src="img/anima_weapon_progress/step5/icon_003.png"></td>
+                            <td>
+                                所持硬灵性岩<br>
+                                <div class="progress_box2" id="step5_bar_1_2">
+                                    <div class="progress_bar" style="width:0%"></div>
+                                    <div class="progress_txt">0%</div>
+                                </div>
+                                <input type='number' value='0' min='0' max='80'>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br>
+            ※硬灵性岩1个 → 调整水晶砂3个 此以最低获得点数计算<br>
+            ※交换时会存在稀有加成，加成不算在内，所以存在一定误差<br>
+        </div>
+
+        <hr>
+
+ 
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

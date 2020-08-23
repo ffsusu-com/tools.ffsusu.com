@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+<title>宠物出处一览</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/ajax/libs/jquery/2.1.3/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/jquery.csv.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/imgload.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/guide.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/music.js" charset="UTF-8"></script>
+
+<link href="css/main.css" rel="stylesheet" charset="UTF-8" type="text/css">
+</head>
+<style>
+#typenum 
+{
+    left: 50%;
+    position: relative;
+    clear: left;
+    float: left;
+}    
+#typenum a 
+{
+    position: relative;	
+	width: 50px;
+	height: 50px;	
+	background: url(tupian/logo/music.png) 0 0 no-repeat;
+	cursor: pointer;
+	color:rgba(0, 0, 0, 0);
+	top:10px;
+	right:50%	
+}
+#typenum a div
+{
+    position: absolute;	
+	width: 50px;
+	height: 50px;	
+	background: url(tupian/logo/music.png) 0 0 no-repeat;
+	font-size: 12px;
+	text-align: center;
+	bottom: 0px;
+	top:0px;		
+}
+#typenum a.on div
+{
+    background: url(tupian/logo/music.png) 0 0 no-repeat;
+    background-position: -8px -600px;
+}
+ #typenum a div p
+{   
+    font-size: 12px;
+	text-align: center;
+	bottom: 0px;
+	color:rgba(0, 0, 0, 0);
+}
+ #typenum a div:hover p
+{ 
+    color:#fff;
+    background: rgba(0, 0, 0, 0.5)
+}
+#music
+{
+    height:220px;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+#music li
+{
+    float: left;
+    width: 200px;
+    height:20px;    
+}
+#music li a
+{
+    float: left;
+    width: 200px;
+    height:16px;
+}
+#music li a:hover 
+{
+    border-radius: 15px 0px 0px 15px;    
+    background: linear-gradient(to right, #000000 , rgba(0, 0, 0, 0));
+}
+#music li p
+{
+    font-size: 12px;
+    color: #a8a8a8;
+    cursor:default;
+    font-weight: 800;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}    
+</style>
+<body>
+<div class="main" id="main">
+<div class="title" id="title">首页</div>
+            <div class="link-ex">
+                <ul></ul>
+                <a class="declaration" href="https://www.ffxiv.cn/show/282">免责声明</a>
+            </div>
+            <div id="link" class="link">
+            <div id="typenum" class="typenum"></div>
+            <ul id="music"></ul>
+            </div>
+            <div class="explain">                        
+            </div>                        
+</div>
+</body>
+</html>

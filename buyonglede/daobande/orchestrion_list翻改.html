@@ -1,0 +1,148 @@
+<html lang="cn">
+<head>
+    <title>管弦乐琴乐谱集 出处一览</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script src="http://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.csv.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/orchestrion_list.js" charset="UTF-8"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+<style type="text/css" media="screen">.orchestrion_list_layout {
+        width: 800px;
+        background: #000;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .orchestrion_list_layout th{
+        position: relative;
+        /* font-size: 10px; */
+        background: #888;
+        padding: 1px 3px;
+    }
+    .orchestrion_list_layout td{
+        position: relative;
+        /* font-size: 10px; */
+        background: #222;
+        padding: 1px 3px;
+    }
+    .orchestrion_list_layout td.checkbox{
+        padding-right: 20px;
+        cursor: pointer;
+    }
+    .orchestrion_list_layout td.check{
+        background: #383;
+    }
+    .orchestrion_list_layout td.check:after{
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background: url("img/triple_tryad/check.png");
+        background-size: 18px 15px;
+        width: 18px;
+        height: 15px;
+    }
+    .craft_memo_wrapper img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+    }
+    .craft_memo_wrapper td {
+        width: 310px;
+        background: #000;
+        border: 1px solid #888;
+        border-radius: 3px;
+        padding: 3px;
+    }
+    .switch_tab {
+        margin-bottom: -5px;
+    }
+    .switch_tab .btn_M {
+        width: 130px;
+    }
+    .display_none {
+        display: none;
+    }
+</style>
+
+    <div id="stage">
+
+        管弦乐琴乐谱集 出处一览 ver.patch3.5
+        <hr>
+
+<script type="text/javascript">
+    $(function(){
+        $('.switch_tab').find('.btn_M').click(function(){
+            $('.switch_tab').find('.btn_M').removeClass('current');
+            $(this).addClass('current');
+
+            var category = $(this).attr('id').slice(4,14);
+
+            if ( category == 'category_0' ) {
+                $('.orchestrion_list_layout').find('tr').removeClass('display_none');
+            }else{
+                $('.orchestrion_list_layout').find('tr').addClass('display_none');
+                $('.orchestrion_list_layout').find('.category_title').removeClass('display_none');
+                $('.orchestrion_list_layout').find('.'+category).removeClass('display_none');
+            }
+        })
+    })
+</script>
+
+        <div class="switch_tab">
+            <a id="tab_category_0_show" class="btn_M center current" href="javascript:void(0)">All</a>
+            <div style="vertical-align:middle; display:inline-block; margin-top: 12px; margin-left: 20px;">
+                获得数：<p class="count_comp_num color_orange">0</p>/<p class="count_num">0</p>
+            </div><br>
+
+            <a id="tab_category_1_show" class="btn_M center" href="javascript:void(0)">区域场景</a>
+            <a id="tab_category_2_show" class="btn_M center" href="javascript:void(0)">迷宫挑战</a>
+            <a id="tab_category_3_show" class="btn_M center" href="javascript:void(0)">讨伐歼灭战</a>
+            <a id="tab_category_4_show" class="btn_M center" href="javascript:void(0)">大型任务</a>
+            <a id="tab_category_5_show" class="btn_M center" href="javascript:void(0)">其他</a>
+            <a id="tab_category_6_show" class="btn_M center" href="javascript:void(0)">季节活动</a>
+        </div>
+
+        <table id="orchestrion_list_layout" class="orchestrion_list_layout">
+            <tr class="category_title">
+                <th>番号</th>
+                <th>管弦乐琴乐谱・名称</th>
+                <th>入手方法</th>
+                <th>备注</th>
+            </tr>
+        </table>
+
+		<br>
+
+        <hr>
+
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

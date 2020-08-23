@@ -1,0 +1,1365 @@
+
+/* 基本 */
+
+body {
+	background-color: #202020;
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	/* font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; */
+
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+
+}
+body, th, td {
+	font-size: 9pt;
+	color: #ffffff;
+
+}
+
+.base {
+	background-color: #000000;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: inline-block;
+	text-align: left;
+}
+
+a:link {
+	color: #73bfe6;
+	text-decoration: none;
+}
+a:visited {
+	color: #73bfe6;
+	text-decoration: none;
+}
+a:hover {
+	color: #7fd4ff;
+	text-decoration: underline;
+}
+a:active {
+	color: #7fd4ff;
+	text-decoration: underline;
+}
+
+/** タイトル系 */
+
+.title {
+	margin-left: 4px;
+	text-shadow: 0 0 10px #4040ff, 0 0 15px #4040ff, 0 0 20px #4040ff !important;
+	font-size: 13pt;
+	font-weight: bold;
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	text-decoration: underline;
+	cursor: default;
+}
+.title_inactive {
+	text-shadow: 0 0 10px #888888, 0 0 15px #888888, 0 0 20px #888888 !important;
+	text-decoration: underline;
+}
+.title_link {
+	cursor: pointer;
+}
+
+
+/* 汎用 */
+*.unselectable {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.control_general {
+	background: -prefix-linear-gradient(top, #666, #111);
+	background: linear-gradient(to bottom, #666, #111);
+	color: #ffffff;
+	border: 1px solid #d0d0d0;
+}
+.control_general_area {
+	/*
+	background: -prefix-linear-gradient(top, #333, #111);
+	background: linear-gradient(to bottom, #333, #111);
+	*/
+	background-color: #000000;
+	color: #ffffff;
+	border: 1px solid #d0d0d0;
+}
+.control_general_set_materia {
+	background: -prefix-linear-gradient(top, #666, #111);
+	background: linear-gradient(to bottom, #666, #111);
+	color: #ffffff;
+	border: 1px solid #d0d0d0;
+}
+.control_general:disabled {
+	color: #808080;
+}
+.control_general_grayout {
+	color: #808080;
+}
+.control_general_set_materia:disabled {
+	color: #808080;
+}
+.control_input_cform {
+	width: 48px;
+	text-align: right;
+	padding-right: 4px
+}
+.main_border {
+	margin-top:5px;
+	height: 0;
+	border: 0;
+	border-top: 2px solid #606060;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+/* セレクトボックスデザイン */
+.control_select {
+	font-size: 9pt;
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+
+    padding:2px;
+    margin: 0;
+    background: #000000;
+    color:#ffffff;
+    border:1px solid #ffffff;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none; 
+
+	/* height: 22px !important; */
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    .control_select {padding-right:18px}
+    .control_select_label {position:relative}
+
+	.control_select_mark {
+		font: 11px "Consolas", monospace;
+		color: #ccc;
+		position: absolute;
+		top: -2px;
+		pointer-events: none;
+		background: -prefix-linear-gradient(top, #555, #333);
+		background: linear-gradient(to bottom, #555, #333);
+		height: 14px;
+		width: 14px;
+		padding-top: 1px;
+		text-align: center !important;
+	}
+}
+
+@supports (-ms-accelerator:true) {
+	.control_select_mark {
+		font: 11px "Consolas", monospace;
+		color: #ccc;
+		position: absolute;
+		top: -1px;
+		pointer-events: none;
+		background: -prefix-linear-gradient(top, #555, #333);
+		background: linear-gradient(to bottom, #555, #333);
+		height: 15px;
+		width: 14px;
+		padding-top: 2px;
+		text-align: center !important;
+	}
+}
+
+/* selector用 */
+.selector_dd {
+	font: 11px "Consolas", monospace;
+	height: 15px;
+	width: 17px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding-top: 3px;
+	text-align: center !important;
+	cursor: default;
+}
+.selector_dd_disabled {
+	color: #666;
+	background: -prefix-linear-gradient(top, #333, #111);
+	background: linear-gradient(to bottom, #333, #111);
+}
+.selector_dd_normal {
+	color: #ccc;
+	background: -prefix-linear-gradient(top, #555, #333);
+	background: linear-gradient(to bottom, #555, #333);
+}
+.selector_dd_hover {
+	color: #ccc;
+	background: -prefix-linear-gradient(top, #777, #333);
+	background: linear-gradient(to bottom, #777, #333);
+}
+.selector_dd_press {
+	color: #ccc;
+	background: -prefix-linear-gradient(top, #999, #333);
+	background: linear-gradient(to bottom, #999, #333);
+}
+
+/* マテリア選択(PC) */
+.materia_item_base {
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	background-color: #101010;
+	border: 1px solid #ffffff;
+	zoom: 1;
+    cursor: default;
+}
+.materia_item_text {
+	display: block;
+	padding: 0px 18px 0px 4px;
+	width: 220px;
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: clip;
+}
+.mat_selector {
+	background-color: #303030;
+	border: 1px solid #ffffff;
+	text-align: left;
+}
+.mat_tabs {
+	padding: 0px;
+	margin: 0px;
+	cursor: default;
+}
+.mat_tabs li {
+	display: inline-block;
+	background-color: #404040;
+	border: 1px solid #ffffff;
+	border-top: 0px;
+	border-bottom: 0px;
+	padding: 4px;
+	font-weight: bold;
+}
+.mat_active {
+	background-color: #808080 !important;
+
+}
+.mat_table {
+	padding: 4px;
+	border-top: 1px solid #ffffff;
+}
+.mat_image {
+	width: 16px;
+	height: 16px;
+}
+.mat_title {
+    position: relative;
+    top: -4px;
+    left: 2px;
+}
+.mat_line a {
+    position: relative;
+    top: -1px;
+}
+
+/* nud用 */
+.nud_base {
+	background-color: #000000;
+	width: 44px;
+	height: 20px;
+	display: inline-block;
+	border: 1px solid #ffffff;
+	text-align: left;
+	position: relative;
+}
+.nud_text {
+	width: 30px;
+	height: 18px;
+	text-align: right;
+	background-color: #000000;
+	color: #ffffff;
+	border: none;
+	padding-right: 4px;
+}
+.nud_plus_base {
+	background: -prefix-linear-gradient(top, #777, #111);
+	background: linear-gradient(to bottom, #777, #111);
+
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 10px;
+	height: 10px;
+	cursor: default;
+}
+.nud_plus_text {
+	font: 11px Consolas, monospace;
+	color: #ccc;
+	position: absolute;
+	right: 0px;
+	pointer-events: none;
+	text-align: center !important;
+	width: 10px;
+
+	top: -1px;
+	margin-top: 0px;
+	height: 10px;
+	cursor: default;
+}
+.nud_minus_base {
+	background: -prefix-linear-gradient(top, #777, #111);
+	background: linear-gradient(to bottom, #777, #111);
+
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	width: 10px;
+	height: 10px;
+	cursor: default;
+}
+.nud_minus_text {
+	font: 11px Consolas, monospace;
+	color: #ccc;
+	position: absolute;
+	right: -1px;
+	pointer-events: none;
+	width: 10px;
+	text-align: center !important;
+
+	top: 9px;
+	margin-top: 0px;
+	height: 10px;
+	cursor: default;
+}
+
+.check_label {
+	position: relative;
+	top: -2px;
+}
+.disabled_label {
+	color: #808080;
+}
+.optgroup_general {
+	font-style: normal;
+	background-color:#404040;
+}
+/** パラメタ */
+.param_table {
+	width: 300px;
+}
+
+.param_table_header {
+	background: url(../image/sys/w300_header_long.png) no-repeat 0 0;
+}
+.param_table_body {
+	background: url(../image/sys/w300_body.png) repeat-y;
+	padding-left: 8px;
+}
+.param_table_footer {
+	background: url(../image/sys/w300_footer.png) no-repeat 0 0;
+}
+
+.pheader_attr {
+	width: 126px;
+	height: 20px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: url(../image/sys/title_attributes.png) no-repeat 0 0;
+}
+
+.pheader_elem {
+	width: 126px;
+	height: 20px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: url(../image/sys/title_elemental.png) no-repeat 0 0;
+}
+
+.caption_default {
+	color: #ffffff;
+}
+.caption_phy {
+	color: #80ff80;
+}
+.caption_mag {
+	color: #ff8080;
+}
+.caption_gc {
+	color: #ffff80;
+}
+.caption_fire {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_fire.png) no-repeat 0 0;
+}
+.caption_ice {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_ice.png) no-repeat 0 0;
+}
+.caption_wind {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_wind.png) no-repeat 0 0;
+}
+.caption_earth {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_earth.png) no-repeat 0 0;
+}
+.caption_thunder {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_thunder.png) no-repeat 0 0;
+}
+.caption_water {
+	color: #ffffff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 20px;
+	background: url(../image/sys/elem_water.png) no-repeat 0 0;
+}
+
+.text_value {
+	text-align: right;
+	color: #ffffff;
+}
+
+/* フィジカルボーナス */
+.pb_button {
+	border: 1px solid #808080;
+	background-color: #606060;
+	width: 10px;
+	height: 10px;
+	text-align: center;
+	display: inline-block;
+	cursor: default;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+}
+.pb_button_over {
+	border: 1px solid #a0a0a0 !important;
+	background-color: #808080 !important;
+}
+.pb_button_press {
+	border: 1px solid #606060 !important;
+	background-color: #404040 !important;
+}
+.pb_button_disabled {
+	border: 1px solid #606060 !important;
+	background-color: #404040 !important;
+	color: #a0a0a0 !important;
+}
+
+.pb_textinput {
+	background-color: #101010;
+	color: #ffffff;
+	border: none;
+	width: 18px;
+	height: 10px;
+	font-size: 9pt;
+	font-family:  'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'ＭＳ Ｐゴシック', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
+	text-align: right;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.pb_textinput_disabled {
+	color: #808080 !important;
+}
+
+.pb_sumvalue {
+	background-color: #101010;
+	color: #ffffff;
+	border: none;
+	font-size: 9pt;
+	text-align: right;
+	display: inline-block;
+	padding: 4px;
+	width: 40px;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+
+}
+.pb_sumvalue_disabled {
+	color: #808080 !important;
+}
+
+
+/* フッタ */
+.footer {
+	border-top: solid 1px #333333;
+	text-align: right;
+	line-height: 1.2;
+	padding-top:4px;
+}
+.footer .copyright {
+	font-size: 8pt;
+	color: #808080;
+	display: block;
+
+}
+
+/* ポップアップ用 */
+.pu_header {
+	width: 340px;
+	height: 14px;
+	background: url(../image/sys/g_header.png) no-repeat 0 0;
+	padding: 0;
+	margin: 0;
+
+}
+.pu_body {
+	width: 340px;
+	background: url(../image/sys/g_body.png) repeat-y 0 0;
+	padding: 0;
+	margin: 0;
+	padding-left: 10px;
+}
+.pu_body_lh {
+	line-height: 1.3;
+}
+.pu_body_margin {
+	margin-top: 8px;
+}
+.pu_body_padding {
+	padding-left: 12px;
+}
+
+.pu_footer {
+	width: 340px;
+	height: 14px;
+	background: url(../image/sys/g_footer.png) no-repeat 0 0;
+	padding: 0;
+	margin: 0;
+}
+.pu_itemname_purple {
+	font-weight: bold;
+	color: #b38cff;
+	font-size: 11.5pt;
+}
+.pu_itemname_blue {
+	font-weight: bold;
+	color: #5990ff;
+	font-size: 11.5pt;
+}
+.pu_itemname_green {
+	font-weight: bold;
+	color: #c0ffc0;
+	font-size: 11.5pt;
+}
+.pu_itemname_white {
+	font-weight: bold;
+	color: #f3f3f3;
+	font-size: 11.5pt;
+}
+.pu_itemname_aetherial {
+	font-weight: bold;
+	color: #d789b6;
+	font-size: 11.5pt;
+}
+
+.pu_itemname_small_purple {
+	color: #b38cff !important;
+}
+.pu_itemname_small_blue {
+	color: #5990ff !important;
+}
+.pu_itemname_small_green {
+	color: #c0ffc0 !important;
+}
+.pu_itemname_small_white {
+	color: #f3f3f3 !important;
+}
+.pu_itemname_small_aetherial {
+	color: #d789b6 !important;
+}
+
+
+.pu_main_param_name {
+	text-align: right;
+	color: #bfb097;
+}
+.pu_main_param_value {
+	font-weight: bold;
+	font-size: 14pt;
+	border-bottom: 4px solid #404040;
+	text-align: right;
+	color: #cccccc;
+}
+.pu_item_level {
+	border: 1px solid #3c3c3c;
+	padding: 6px;
+	color: #cccccc;
+	background-color: #141414;
+}
+.pu_text {
+	color: #cccccc;
+}
+.pu_novus {
+	color: #ffff80;
+}
+.put_setbonus {
+	padding-top: 6px;
+	padding-left: 4px;
+	color: #b0d063;
+}
+.put_sanc {
+	padding-top: 6px;
+	padding-left: 4px;
+	color: #b0d063;
+}
+
+.pu_border_text {
+	color: #666666;
+	margin-top: 6px;
+	padding-left: 2px;
+}
+.pu_border_text2 {
+	color: #9999dd;
+	margin-top: 6px;
+	padding-left: 2px;
+}
+.pu_border {
+	margin-top:0px;
+	height: 0;
+	border: 0;
+	border-top: 1px solid #161616;
+	border-bottom: 1px solid #343434;
+}
+
+/* アイテム画像枠 */
+.itemimage {
+	visibility: visible;
+	display: inline;
+	width :40px;
+	height :40px;
+	padding-left: 2px;
+	padding-top: 1px
+}
+.itemimage_disabled {
+	visibility: hidden;
+	display: none;
+}
+
+
+/* 命中フロート */
+.accuracy {
+	color: #a0b0ff;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.ac_tbl {
+	margin: 4px;
+}
+
+.ac_tbl_tr {
+}
+
+.ac_tbl_tr_head {
+	text-align: center;
+}
+
+.ac_tbl_tr_head th:first-child {
+	border-left: 1px solid #a0a0a0;
+}
+.ac_tbl_tr_head th {
+	font-weight: bold;
+	background-color: #606060;
+	white-space: nowrap;
+	padding: 4px;
+	width: 30px;
+
+	border-top: 1px solid #a0a0a0;
+	border-right: 1px solid #a0a0a0;
+}
+
+
+.ac_tbl_td_first {
+	text-align: left !important;
+	white-space: nowrap;
+	width: 70px !important;
+}
+
+.ac_tbl_tr td:first-child {
+	border-left: 1px solid #a0a0a0;
+	text-align: left !important;
+	white-space: nowrap;
+	width: 70px !important;
+}
+
+.ac_tbl_tr td {
+	padding: 2px;
+	text-align: right;
+	border-top: 1px solid #a0a0a0;
+	border-right: 1px solid #a0a0a0;
+}
+.ac_tbl tr:nth-last-of-type(1) td {
+	border-bottom: 1px solid #a0a0a0;
+}
+.ac_tbl_note {
+	font-size: 8pt;
+	text-align: left;
+	margin: 4px;
+}
+
+
+
+.
+.pu_header2 {
+	width: 240px;
+	height: 14px;
+	background: url(../image/sys/g_header2.png?5) no-repeat 0 0;
+	padding: 0;
+	margin: 0;
+
+}
+.pu_body2 {
+	width: 240px;
+	background: url(../image/sys/g_body2.png?5) repeat-y 0 0;
+	padding: 0;
+	margin: 0;
+	padding-left: 10px;
+}
+
+.pu_footer2 {
+	width: 240px;
+	height: 14px;
+	background: url(../image/sys/g_footer2.png?5) no-repeat 0 0;
+	padding: 0;
+	margin: 0;
+}
+
+
+.np_tbl {
+	margin-top: 0.2em;
+	margin-bottom: 1em;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-padding: 2px;
+	font-size: 100%;
+}
+
+
+np_tbl_tr {
+	border-bottom: 1px solid red;
+}
+
+.np_tbl_td_first {
+	text-align: right;
+	white-space: nowrap;
+	width: 110px !important;
+}
+
+
+.np_tbl_tr td {
+	padding: 4px;
+}
+
+
+.pu_header3 {
+	width: 284px;
+	height: 14px;
+	background: url(../image/sys/g_header3.png?1) no-repeat 0 0;
+	padding: 0;
+	margin: 0;
+
+}
+.pu_body3 {
+	width: 284px;
+	background: url(../image/sys/g_body3.png?1) repeat-y 0 0;
+	padding: 0;
+	margin: 0;
+	padding-left: 10px;
+}
+
+.pu_footer3 {
+	width: 284px;
+	height: 14px;
+	background: url(../image/sys/g_footer3.png?1) no-repeat 0 0;
+	padding: 0;
+	margin: 0;
+}
+
+/** 共有 **/
+.share_image {
+	margin-top: 4px;
+	margin-right: 4px;
+}
+
+
+/** 平均ILV **/
+.ilv_avarage {
+	padding: 10px;
+}
+/** 基準値合計 **/
+.sort_sum {
+	padding: 10px;
+}
+
+
+/* =================== 新スタイル =================== */
+
+/* 全体テーブル */
+.main_table {
+	display: table;
+}
+.main_table .cell {
+	display: table-cell;
+	padding-left: 12px;
+}
+.main_table .cell_1st {
+	padding-left: 0px !important;
+}
+
+/* ヘッダリンク */
+.header_link {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+	padding-left: 8px !important;
+	margin-bottom: 16px !important;
+}
+/* テーブル枠 */
+.ntable {
+	border-top:    1px solid #808080;
+	border-left:   1px solid #606060;
+	border-right:  1px solid #404040;
+	border-bottom: 1px solid #404040;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+
+	padding: 4px;
+	background: #202020;
+}
+
+
+
+/* 枠の金色装飾 */
+.gb0 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid #000000;
+}
+.gb1 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-top:    1px solid #4a3d25;
+	border-left:   1px solid #51432a;
+	border-right:  1px solid #615336;
+	border-bottom: 1px solid #cbc17d;
+}
+.gb2 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-top:    1px solid #574a30;
+	border-left:   1px solid #574a30;
+	border-right:  1px solid #55482f;
+	border-bottom: 1px solid #443925;
+}
+.gb3 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-top:    1px solid #fff29d;
+	border-left:   1px solid #605235;
+	border-right:  1px solid #4c3f28;
+	border-bottom: 1px solid #382e1c;
+}
+.gb4 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid #000000;
+}
+.gb5 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.gb6 {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* テーブルヘッダ＆パネルトグル */
+.ntable .header {
+	width: 100%;
+	display: table;
+}
+.ntable .header div {
+	display: table-cell;
+	vertical-align: top;
+}
+.ntable .header .header_toggle {
+	width: 22px;
+}
+
+
+/* パネルトグル */
+.panel_toggle_base  {
+	font: 11px "Consolas", monospace;
+	color: #ccc;
+	background: -prefix-linear-gradient(top, #777, #333);
+	background: linear-gradient(to bottom, #777, #333);
+	border: 1px solid #aaa;
+	display: block;
+	cursor: pointer;
+
+	width: 17px;
+	height: 14px;
+	position: relative;
+	top: 5px;
+	/* left: 20px; */
+
+	text-align: center !important;
+
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+	Introduced in IE 10.
+	See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+
+}
+.panel_toggle_hover {
+	background: -prefix-linear-gradient(top, #999, #666);
+	background: linear-gradient(to bottom, #999, #666);
+}
+.panel_toggle_press {
+	background: -prefix-linear-gradient(top, #aaa, #999);
+	background: linear-gradient(to bottom, #aaa, #999);
+}
+
+/* フィルタテーブル */
+.filter_table tr {
+	height: 26px;
+}
+/* 装備テーブル */
+.equip_table .equip_tr {
+	height: 52px;
+}
+
+/* TRホバー処理 */
+.equip_table .hoverItem {
+	background-color: red;
+}
+
+
+/* 装備一覧 */
+.ev_mask {
+	background-color: #000000;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.ev_title_line {
+	display: table;
+	width: 98%;
+	margin: 8px;
+}
+.ev_title_column {
+	display: table-cell;
+	font-weight: bold;
+}
+
+.ev_scroll_base {
+	padding: 5px;
+}
+
+.ev_cell_border {
+	border-top: 1px solid #c0c0c0;
+	border-left: 1px solid #c0c0c0;
+}
+.ev_cell_border_right {
+	border-right: 1px solid #c0c0c0;
+}
+.ev_cell_border_bottom {
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.ev_cell_name_header {
+	width: 419px !important;
+}
+.ev_checkbox_back {
+	background-color:red;
+}
+
+.ev_checkbox {
+	position: relative;
+	top: -4px;
+	width: 15px;
+	height: 15px;
+	margin-right: 4px;
+}
+
+/* for FF */
+@-moz-document url-prefix() {
+	.ev_cell_name_header {
+		width: 420px !important;
+	}
+}
+/* for IE */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.ev_cell_name_header {
+		width: 420px !important;
+	}
+}
+
+.ev_cell_name {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	width: 420px;
+}
+
+.ev_cell_param0 {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	text-align: right;
+	width: 40px;
+}
+.ev_cell_param1 {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	text-align: right;
+	width: 30px;
+}
+
+.ev_itemimage {
+	width: 24px;
+	height: 24px;
+	margin-top: 1px;
+}
+.ev_item_name {
+	display: inline-block;
+	width: 350px;
+	vertical-align: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ev_row_base {
+	background-color: #000000;
+}
+
+.ev_row_current {
+	background-color: #102050 !important;
+}
+.ev_row_selected {
+	background-color: #304070 !important;
+}
+
+/* パラメタ選択 */
+.paramtype_disabled {
+	background-color: #606060 !important;
+	border: 1px solid #909090 !important;
+	pointer-events: none;
+	color: #ffffff !important;
+
+}
+.paramtype {
+	background-color: #303030;
+	border: 1px solid #606060;
+	text-align: center;
+	padding: 2px;
+	display: block;
+	font-weight: bold;
+}
+
+/* ダメージ計算ツールリンク */
+.link_to_dps_disabled {
+	pointer-events: none;
+	color: #808080 !important;
+	text-decoration: underline !important;
+
+	display: inline-block;
+	margin-top: 8px;
+	margin-bottom: 8px;
+
+}
+.link_to_dps {
+	text-decoration: underline !important;
+
+	display: inline-block;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+
+/* 装備一括チェック */
+.eqc_table {
+	margin: 20px;
+}
+.eqc_title {
+	display: block;
+	font-weight: bold;
+	margin-top: 4px;
+}
+.eqc_block {
+	border: 1px solid #808080;
+	margin-top: 16px;
+	margin-left: 12px;
+}
+.eqc_block_top {
+	margin-top: 12px !important;
+}
+
+.eqc_block_check {
+	display: inline-block;
+	position: relative;
+	top: -10px;
+	left: -10px;
+	background-color: #202020;
+	padding-right: 4px;
+}
+.eqc_check_text {
+	position: relative;
+	top: -3px;
+}
+
+.eqc_subblock {
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-top: -10px;
+	margin-bottom: 4px;
+}
+.eqc_il {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left: 4px;
+}
+
+/** world favorite **/
+.wf_link {
+	position: relative;
+	top: -2px;
+	margin-left: 20px;
+	color: #7fd4ff !important;
+	text-decoration: underline !important;
+}
+/* テーブル枠 */
+.ntable2 {
+	border-top:    1px solid #807070;
+	border-left:   1px solid #605050;
+	border-right:  1px solid #403030;
+	border-bottom: 1px solid #403030;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+
+	padding: 4px;
+	background: #201010;
+}
+/* テーブルヘッダ＆パネルトグル */
+.ntable2 .header {
+	width: 100%;
+	display: table;
+}
+.ntable2 .header div {
+	display: table-cell;
+	vertical-align: top;
+}
+.ntable2 .header .header_toggle {
+	width: 22px;
+}
+.fw_error {
+	color: #ff0000;
+	font-weight: bold;
+	margin: 4px;
+}
+
+
+
+
+
+/* ------------------------------ */
+/* meals list */
+.meals_filter_block {
+	display: inline-block;
+	width: 120px;
+}
+
+.meals_filter_input {
+}
+.meals_filter_label {
+	position: relative;
+	top: -2px;
+}
+
+.meals_table_scroll {
+
+
+}
+
+.meals_table thead td {
+	background-color:#606060;
+	border: 1px solid #a0a0a0;
+	border-right: none;
+	color:#ffffff;
+	font-weight: bold;
+	text-align: center;
+	padding: 4px;
+	cursor: default;
+}
+.meals_table thead td:nth-last-child(1) {
+	border-right: 1px solid #a0a0a0 !important;
+}
+
+.meals_table tbody td {
+	border: 1px solid #606060;
+	border-right: none;
+	border-bottom: none;
+	color:#ffffff;
+	padding: 4px;
+	white-space: nowrap;
+	text-align: right;
+}
+.meals_table tbody td:nth-child(1) {
+	text-align: left !important;
+}
+.meals_table tbody td:nth-last-child(1) {
+	text-align: left !important;
+	border-right: 1px solid #606060 !important;
+}
+.meals_table tbody tr:nth-last-child(1) td {
+	border-bottom: 1px solid #606060 !important;
+}
+
+.meals_table tbody tr:nth-child(even) td {
+	background-color: #101010;
+}
+.meals_table tbody tr:nth-child(odd) td {
+	background-color: #202020;
+}
+
+.meal_image {
+	width: 32px;
+	height: 32px;
+	padding-top: 1px;
+}
+.meal_title > * {
+	vertical-align: middle;
+	margin: 0px;
+}
+.meal_name {
+	padding-left: 4px;
+}
+
+
+.sort_icon {
+	position: absolute;
+}
+.sort_icon img {
+	width: 12px;
+	height: 12px;
+}
+.note {
+	display: block;
+	margin-bottom: 4px;
+}
+
+/* マテリア上限パラメタ */
+.limitParam {
+	margin: 4px;
+}
+.limitParam td {
+	border-top: 1px solid #606060;
+	border-left: 1px solid #606060;
+}
+.limitParam td:nth-last-child(1) {
+	border-right: 1px solid #606060;
+}
+.limitParam tr:nth-last-child(1) td {
+	border-bottom: 1px solid #606060;
+}
+
+.limitParam .lp_header {
+	text-align: center !important;
+	background-color: #303030;
+}
+
+.limitParam .lp_name {
+	text-align: left;
+	background-color: #303030;
+
+}
+.limitParam .lp_base {
+	text-align: right;
+	margin-left: 2px;
+	font-weight: bold;
+}
+.limitParam .lp_add {
+	text-align: right;
+	margin-left: 2px;
+	font-weight: bold;
+}
+.limitParam .lp_limit {
+	text-align: right;
+	margin-left: 2px;
+	font-weight: bold;
+}
+.limitParam .v_add_over {
+	color: #ff0000;
+}
+.limitParam .v_add_ok {
+	color: #2dc3f2;
+}
+
+/* 自動マテリア */
+.auto_materia {
+    margin-left: 4px;
+    margin-bottom: 12px;
+}
+.auto_materia input[type=radio] {
+	position: relative;
+	top: 2px;
+
+	margin-left: 4px;
+}

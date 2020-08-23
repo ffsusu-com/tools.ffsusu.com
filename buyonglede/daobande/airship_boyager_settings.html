@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <title>飞空艇属性计算器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.csv.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/airship_boyager_settings.js"></script>
+
+    <link href="css/new_general.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="view_container">
+
+    <div id="header">
+        <!-- jsにより生成 -->
+        <div id="menu">
+            <ul><!-- jsにより生成 --></ul>
+        </div>
+    </div>
+
+    <div id="stage">
+
+        飞空艇属性计算器 ver.patch3.3<br>
+        <br>
+
+        <style type="text/css">.airship_settings_box tr td {
+                vertical-align: top;
+                /*text-align: center;*/
+                width: 155px;
+            }
+            .airship_settings_box tr td td{
+                width: auto;
+            }
+            .airship_settings_box tr td td:nth-child(2){
+                padding-left: 5px;
+                padding-right: 5px;
+                text-align: right;
+            }
+            .airship_settings_box tr td td:nth-child(3){
+                padding-left: 5px;
+                text-align: right;
+            }
+            input[type="radio"] {
+                display: none;
+            }
+            input:checked + label {
+                border: 1px solid #080;
+                background: #050;
+                color: #fff;
+            }
+            label {
+                display: block;
+                float: left;
+                cursor: pointer;
+                width: 150px;
+                margin-bottom: 3px;
+                padding: 4px;
+                background: #333;
+                color: #888;
+                text-align: left;
+                line-height: 1;
+                border: 1px solid #888;
+                border-radius: 3px;
+                transition: .1s;
+            }
+            label img {
+                vertical-align: middle;
+                width: 25px;
+                height: 25px;
+            }
+            table div {
+                display: block;
+                float: left;
+                width: 150px;
+                margin-bottom: 3px;
+                padding: 4px;
+                background: #000;
+                color: #fff;
+                text-align: left;
+                border: 1px solid #888;
+                border-radius: 3px;
+                transition: .1s;
+            }
+            div.total_status{
+                width: 310px;
+                padding: 10px 30px;
+            }
+            .total_status_notice{
+                width: 310px;
+                padding: 10px;
+            }
+            div p.red{
+                color : #f00;
+            }
+            .sentai_4_text,
+            .gisou_3_text,
+            .senshu_1_text,
+            .senshu_5_text,
+            .senbi_2_text{
+                color: #0f0;
+            }
+            .sentai_5_text,
+            .gisou_2_text,
+            .gisou_4_text,
+            .senbi_1_text,
+            .senbi_3_text{
+                color: #f00;
+            }
+            #airship_boyager_item_list{
+                margin: 0px auto;
+            }
+            #airship_boyager_item_list .item_list.close {
+                display: none;
+            }
+            #airship_boyager_item_list .item_list.open {
+                display: block;
+            }
+            #airship_boyager_item_list tr:first-child td:first-child {
+                border-radius: 3px 0px 0px 0px;
+            }
+            #airship_boyager_item_list tr:first-child td:last-child {
+                border-radius: 0px 3px 0px 0px;
+            }
+            #airship_boyager_item_list tr:last-child td:first-child {
+                border-radius: 0px 0px 0px 3px;
+            }
+            #airship_boyager_item_list tr:last-child td:last-child {
+                border-radius: 0px 0px 3px 0px;
+            }
+            #airship_boyager_item_list td {
+                font-size: 11px;
+                background: #111;
+                border: 1px solid #888;
+                text-align: center;
+                vertical-align: top;
+                padding: 3px;
+            }
+            #airship_boyager_item_list tr:not(:first-child) td:nth-child(1) p {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            #airship_boyager_item_list .item_list {
+                text-align: left;
+                font-size: 11px;
+            }
+            #airship_boyager_item_list span.red{
+                color: #f00;
+                font-weight: bold;
+            }
+            #airship_boyager_item_list span.green{
+                color: #0f8;
+                font-weight: bold;
+            }
+            #airship_boyager_item_list td.current {
+                background: #222;
+            }
+            #airship_boyager_item_list td .click_mark {
+                cursor: pointer;
+                font-size: 11px;
+            }
+            #airship_boyager_item_list td:hover .click_mark {
+                text-decoration: underline;
+                color: #fc0;
+            }
+    </style>
+
+        <table class="airship_settings_box" style="margin:auto">
+            <tr>
+                <td>
+                    <div class="total_status">
+                        <table>
+                            <tr><td>配件重量</td><td>：</td><td><p class="total_0_text"></p>/61</td></tr>
+                            <tr><td>探索性能</td><td>：</td><td><p class="total_1_text"></p></td></tr>
+                            <tr><td>収集性能</td><td>：</td><td><p class="total_2_text"></p></td></tr>
+                            <tr><td>巡航速度</td><td>：</td><td><p class="total_3_text"></p></td></tr>
+                            <tr><td>航行距离</td><td>：</td><td><p class="total_4_text"></p></td></tr>
+                            <tr><td>恩惠</td><td>：</td><td><p class="total_5_text"></p></td></tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="airship_settings_box" style="margin:auto">
+            <tr>
+                <td style="text-align:center;">船体</td>
+                <td style="text-align:center;">艤装</td>
+                <td style="text-align:center;">船首</td>
+                <td style="text-align:center;">船尾</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="sentai" id="sentai_1" checked><label for="sentai_1"><img src="img/airship_boyager/sentai_1.png">野马级</label>
+                    <input type="radio" name="sentai" id="sentai_2"><label for="sentai_2"><img src="img/airship_boyager/sentai_2.png">无敌级</label>
+                    <input type="radio" name="sentai" id="sentai_3"><label for="sentai_3"><img src="img/airship_boyager/sentai_3.png">企业级</label>
+                    <input type="radio" name="sentai" id="sentai_4"><label for="sentai_4"><img src="img/airship_boyager/sentai_4.png">无敌改级</label>
+                    <input type="radio" name="sentai" id="sentai_5"><label for="sentai_5"><img src="img/airship_boyager/sentai_5.png">奥德赛级</label>
+                    <input type="radio" name="sentai" id="sentai_6"><label for="sentai_6"><img src="img/airship_boyager/sentai_6.png">塔塔诺拉级</label>
+                    <input type="radio" name="sentai" id="sentai_7"><label for="sentai_7"><img src="img/airship_boyager/sentai_7.png">威尔特甘斯级</label>
+                    <div class="sentai_status">
+                        <table>
+                            <tr><td>配件重量</td><td>：</td><td><p class="sentai_0_text"></p></td></tr>
+                            <tr><td>探索性能</td><td>：</td><td><p class="sentai_1_text"></p></td></tr>
+                            <tr><td>収集性能</td><td>：</td><td><p class="sentai_2_text"></p></td></tr>
+                            <tr><td>巡航速度</td><td>：</td><td><p class="sentai_3_text"></p></td></tr>
+                            <tr><td>航行距离</td><td>：</td><td><p class="sentai_4_text"></p></td></tr>
+                            <tr><td>恩惠</td><td>：</td><td><p class="sentai_5_text"></p></td></tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <input type="radio" name="gisou" id="gisou_1" checked><label for="gisou_1"><img src="img/airship_boyager/gisou_1.png">野马级</label>
+                    <input type="radio" name="gisou" id="gisou_2"><label for="gisou_2"><img src="img/airship_boyager/gisou_2.png">无敌级</label>
+                    <input type="radio" name="gisou" id="gisou_3"><label for="gisou_3"><img src="img/airship_boyager/gisou_3.png">企业级</label>
+                    <input type="radio" name="gisou" id="gisou_4"><label for="gisou_4"><img src="img/airship_boyager/gisou_4.png">无敌改级</label>
+                    <input type="radio" name="gisou" id="gisou_5"><label for="gisou_5"><img src="img/airship_boyager/gisou_5.png">奥德赛级</label>
+                    <input type="radio" name="gisou" id="gisou_6"><label for="gisou_6"><img src="img/airship_boyager/gisou_6.png">塔塔诺拉级</label>
+                    <input type="radio" name="gisou" id="gisou_7"><label for="gisou_7"><img src="img/airship_boyager/gisou_7.png">威尔特甘斯级</label>
+                    <div class="gisou_status">
+                        <table>
+                            <tr><td>配件重量</td><td>：</td><td><p class="gisou_0_text"></p></td></tr>
+                            <tr><td>探索性能</td><td>：</td><td><p class="gisou_1_text"></p></td></tr>
+                            <tr><td>収集性能</td><td>：</td><td><p class="gisou_2_text"></p></td></tr>
+                            <tr><td>巡航速度</td><td>：</td><td><p class="gisou_3_text"></p></td></tr>
+                            <tr><td>航行距离</td><td>：</td><td><p class="gisou_4_text"></p></td></tr>
+                            <tr><td>恩惠</td><td>：</td><td><p class="gisou_5_text"></p></td></tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <input type="radio" name="senshu" id="senshu_1" checked><label for="senshu_1"><img src="img/airship_boyager/senshu_1.png">野马级</label>
+                    <input type="radio" name="senshu" id="senshu_2"><label for="senshu_2"><img src="img/airship_boyager/senshu_2.png">无敌级</label>
+                    <input type="radio" name="senshu" id="senshu_3"><label for="senshu_3"><img src="img/airship_boyager/senshu_3.png">企业级</label>
+                    <input type="radio" name="senshu" id="senshu_4"><label for="senshu_4"><img src="img/airship_boyager/senshu_4.png">无敌改级</label>
+                    <input type="radio" name="senshu" id="senshu_5"><label for="senshu_5"><img src="img/airship_boyager/senshu_5.png">奥德赛级</label>
+                    <input type="radio" name="senshu" id="senshu_6"><label for="senshu_6"><img src="img/airship_boyager/senshu_6.png">塔塔诺拉级</label>
+                    <input type="radio" name="senshu" id="senshu_7"><label for="senshu_7"><img src="img/airship_boyager/senshu_7.png">威尔特甘斯级</label>
+                    <div class="senshu_status">
+                        <table>
+                            <tr><td>配件重量</td><td>：</td><td><p class="senshu_0_text"></p></td></tr>
+                            <tr><td>探索性能</td><td>：</td><td><p class="senshu_1_text"></p></td></tr>
+                            <tr><td>収集性能</td><td>：</td><td><p class="senshu_2_text"></p></td></tr>
+                            <tr><td>巡航速度</td><td>：</td><td><p class="senshu_3_text"></p></td></tr>
+                            <tr><td>航行距离</td><td>：</td><td><p class="senshu_4_text"></p></td></tr>
+                            <tr><td>恩惠</td><td>：</td><td><p class="senshu_5_text"></p></td></tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <input type="radio" name="senbi" id="senbi_1" checked><label for="senbi_1"><img src="img/airship_boyager/senbi_1.png">野马级</label>
+                    <input type="radio" name="senbi" id="senbi_2"><label for="senbi_2"><img src="img/airship_boyager/senbi_2.png">无敌级</label>
+                    <input type="radio" name="senbi" id="senbi_3"><label for="senbi_3"><img src="img/airship_boyager/senbi_3.png">企业级</label>
+                    <input type="radio" name="senbi" id="senbi_4"><label for="senbi_4"><img src="img/airship_boyager/senbi_4.png">无敌改级</label>
+                    <input type="radio" name="senbi" id="senbi_5"><label for="senbi_5"><img src="img/airship_boyager/senbi_5.png">奥德赛级</label>
+                    <input type="radio" name="senbi" id="senbi_6"><label for="senbi_6"><img src="img/airship_boyager/senbi_6.png">塔塔诺拉级</label>
+                    <input type="radio" name="senbi" id="senbi_7"><label for="senbi_7"><img src="img/airship_boyager/senbi_7.png">威尔特甘斯级</label>
+                    <div class="senbi_status">
+                        <table>
+                            <tr><td>配件重量</td><td>：</td><td><p class="senbi_0_text"></p></td></tr>
+                            <tr><td>探索性能</td><td>：</td><td><p class="senbi_1_text"></p></td></tr>
+                            <tr><td>収集性能</td><td>：</td><td><p class="senbi_2_text"></p></td></tr>
+                            <tr><td>巡航速度</td><td>：</td><td><p class="senbi_3_text"></p></td></tr>
+                            <tr><td>航行距离</td><td>：</td><td><p class="senbi_4_text"></p></td></tr>
+                            <tr><td>恩惠</td><td>：</td><td><p class="senbi_5_text"></p></td></tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+<style type="text/css" media="screen">.all_open,
+    .all_close{
+        font-size: 11px;
+        cursor: pointer;
+    }
+    .all_open:hover,
+    .all_close:hover{
+        text-decoration: underline;
+        color: #fc0;
+    }
+    .all_close {
+        display: none;
+    }
+</style>
+
+        <table id="airship_boyager_item_list">
+            <tr>
+                <td>云海</td>
+                <td colspan="4">收集物品分类　　<a class="all_open">[+ 全部展开]</a><a class="all_close">[- 全部收起]</a></td>
+                <td>HQ判定</td>
+                <td>个数判定</td>
+                <td>奖励判定</td>
+            </tr>
+        </table>
+
+        <p class="size_S">
+            更新历史<br>
+            <br>
+            2016/7/21<br>
+            - 各云海判定条件追加。<br>
+            2016/2/26<br>
+            - 威尔特甘斯级追加。<br>
+        </p>
+        <br><br>
+    </div>
+
+    <div id="footer">
+        <!-- jsにより生成 -->
+    </div>
+
+</div>
+</body>
+</html>

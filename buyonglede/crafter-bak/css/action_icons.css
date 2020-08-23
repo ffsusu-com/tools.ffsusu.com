@@ -1,0 +1,4656 @@
+.action_icon_0 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.action_small .action_icon_0, .action_small_notext .action_icon_0 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.action_small2 .action_icon_0, .action_small2_notext .action_icon_0 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.action_small3 .action_icon_0, .action_small3_notext .action_icon_0 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.action_icon_1 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px 0px;
+}
+
+.action_small .action_icon_1, .action_small_notext .action_icon_1 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px 0px;
+}
+
+.action_small2 .action_icon_1, .action_small2_notext .action_icon_1 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px 0px;
+}
+
+.action_small3 .action_icon_1, .action_small3_notext .action_icon_1 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px 0px;
+}
+
+.action_icon_2 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px 0px;
+}
+
+.action_small .action_icon_2, .action_small_notext .action_icon_2 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px 0px;
+}
+
+.action_small2 .action_icon_2, .action_small2_notext .action_icon_2 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px 0px;
+}
+
+.action_small3 .action_icon_2, .action_small3_notext .action_icon_2 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px 0px;
+}
+
+.action_icon_3 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px 0px;
+}
+
+.action_small .action_icon_3, .action_small_notext .action_icon_3 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px 0px;
+}
+
+.action_small2 .action_icon_3, .action_small2_notext .action_icon_3 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px 0px;
+}
+
+.action_small3 .action_icon_3, .action_small3_notext .action_icon_3 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px 0px;
+}
+
+.action_icon_4 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px 0px;
+}
+
+.action_small .action_icon_4, .action_small_notext .action_icon_4 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px 0px;
+}
+
+.action_small2 .action_icon_4, .action_small2_notext .action_icon_4 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px 0px;
+}
+
+.action_small3 .action_icon_4, .action_small3_notext .action_icon_4 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px 0px;
+}
+
+.action_icon_5 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px 0px;
+}
+
+.action_small .action_icon_5, .action_small_notext .action_icon_5 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px 0px;
+}
+
+.action_small2 .action_icon_5, .action_small2_notext .action_icon_5 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px 0px;
+}
+
+.action_small3 .action_icon_5, .action_small3_notext .action_icon_5 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px 0px;
+}
+
+.action_icon_6 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px 0px;
+}
+
+.action_small .action_icon_6, .action_small_notext .action_icon_6 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px 0px;
+}
+
+.action_small2 .action_icon_6, .action_small2_notext .action_icon_6 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px 0px;
+}
+
+.action_small3 .action_icon_6, .action_small3_notext .action_icon_6 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px 0px;
+}
+
+.action_icon_7 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px 0px;
+}
+
+.action_small .action_icon_7, .action_small_notext .action_icon_7 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px 0px;
+}
+
+.action_small2 .action_icon_7, .action_small2_notext .action_icon_7 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px 0px;
+}
+
+.action_small3 .action_icon_7, .action_small3_notext .action_icon_7 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px 0px;
+}
+
+.action_icon_8 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px 0px;
+}
+
+.action_small .action_icon_8, .action_small_notext .action_icon_8 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px 0px;
+}
+
+.action_small2 .action_icon_8, .action_small2_notext .action_icon_8 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px 0px;
+}
+
+.action_small3 .action_icon_8, .action_small3_notext .action_icon_8 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px 0px;
+}
+
+.action_icon_9 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px 0px;
+}
+
+.action_small .action_icon_9, .action_small_notext .action_icon_9 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px 0px;
+}
+
+.action_small2 .action_icon_9, .action_small2_notext .action_icon_9 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px 0px;
+}
+
+.action_small3 .action_icon_9, .action_small3_notext .action_icon_9 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px 0px;
+}
+
+.action_icon_10 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px 0px;
+}
+
+.action_small .action_icon_10, .action_small_notext .action_icon_10 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px 0px;
+}
+
+.action_small2 .action_icon_10, .action_small2_notext .action_icon_10 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px 0px;
+}
+
+.action_small3 .action_icon_10, .action_small3_notext .action_icon_10 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px 0px;
+}
+
+.action_icon_11 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px 0px;
+}
+
+.action_small .action_icon_11, .action_small_notext .action_icon_11 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px 0px;
+}
+
+.action_small2 .action_icon_11, .action_small2_notext .action_icon_11 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px 0px;
+}
+
+.action_small3 .action_icon_11, .action_small3_notext .action_icon_11 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px 0px;
+}
+
+.action_icon_12 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px 0px;
+}
+
+.action_small .action_icon_12, .action_small_notext .action_icon_12 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px 0px;
+}
+
+.action_small2 .action_icon_12, .action_small2_notext .action_icon_12 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px 0px;
+}
+
+.action_small3 .action_icon_12, .action_small3_notext .action_icon_12 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px 0px;
+}
+
+.action_icon_13 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px 0px;
+}
+
+.action_small .action_icon_13, .action_small_notext .action_icon_13 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px 0px;
+}
+
+.action_small2 .action_icon_13, .action_small2_notext .action_icon_13 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px 0px;
+}
+
+.action_small3 .action_icon_13, .action_small3_notext .action_icon_13 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px 0px;
+}
+
+.action_icon_14 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px 0px;
+}
+
+.action_small .action_icon_14, .action_small_notext .action_icon_14 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px 0px;
+}
+
+.action_small2 .action_icon_14, .action_small2_notext .action_icon_14 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px 0px;
+}
+
+.action_small3 .action_icon_14, .action_small3_notext .action_icon_14 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px 0px;
+}
+
+.action_icon_15 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px 0px;
+}
+
+.action_small .action_icon_15, .action_small_notext .action_icon_15 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px 0px;
+}
+
+.action_small2 .action_icon_15, .action_small2_notext .action_icon_15 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px 0px;
+}
+
+.action_small3 .action_icon_15, .action_small3_notext .action_icon_15 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px 0px;
+}
+
+.action_icon_16 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -40px;
+}
+
+.action_small .action_icon_16, .action_small_notext .action_icon_16 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -32px;
+}
+
+.action_small2 .action_icon_16, .action_small2_notext .action_icon_16 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -24px;
+}
+
+.action_small3 .action_icon_16, .action_small3_notext .action_icon_16 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -16px;
+}
+
+.action_icon_17 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -40px;
+}
+
+.action_small .action_icon_17, .action_small_notext .action_icon_17 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -32px;
+}
+
+.action_small2 .action_icon_17, .action_small2_notext .action_icon_17 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -24px;
+}
+
+.action_small3 .action_icon_17, .action_small3_notext .action_icon_17 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -16px;
+}
+
+.action_icon_18 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -40px;
+}
+
+.action_small .action_icon_18, .action_small_notext .action_icon_18 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -32px;
+}
+
+.action_small2 .action_icon_18, .action_small2_notext .action_icon_18 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -24px;
+}
+
+.action_small3 .action_icon_18, .action_small3_notext .action_icon_18 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -16px;
+}
+
+.action_icon_19 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -40px;
+}
+
+.action_small .action_icon_19, .action_small_notext .action_icon_19 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -32px;
+}
+
+.action_small2 .action_icon_19, .action_small2_notext .action_icon_19 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -24px;
+}
+
+.action_small3 .action_icon_19, .action_small3_notext .action_icon_19 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -16px;
+}
+
+.action_icon_20 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -40px;
+}
+
+.action_small .action_icon_20, .action_small_notext .action_icon_20 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -32px;
+}
+
+.action_small2 .action_icon_20, .action_small2_notext .action_icon_20 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -24px;
+}
+
+.action_small3 .action_icon_20, .action_small3_notext .action_icon_20 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -16px;
+}
+
+.action_icon_21 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -40px;
+}
+
+.action_small .action_icon_21, .action_small_notext .action_icon_21 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -32px;
+}
+
+.action_small2 .action_icon_21, .action_small2_notext .action_icon_21 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -24px;
+}
+
+.action_small3 .action_icon_21, .action_small3_notext .action_icon_21 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -16px;
+}
+
+.action_icon_22 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -40px;
+}
+
+.action_small .action_icon_22, .action_small_notext .action_icon_22 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -32px;
+}
+
+.action_small2 .action_icon_22, .action_small2_notext .action_icon_22 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -24px;
+}
+
+.action_small3 .action_icon_22, .action_small3_notext .action_icon_22 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -16px;
+}
+
+.action_icon_23 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -40px;
+}
+
+.action_small .action_icon_23, .action_small_notext .action_icon_23 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -32px;
+}
+
+.action_small2 .action_icon_23, .action_small2_notext .action_icon_23 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -24px;
+}
+
+.action_small3 .action_icon_23, .action_small3_notext .action_icon_23 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -16px;
+}
+
+.action_icon_24 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -40px;
+}
+
+.action_small .action_icon_24, .action_small_notext .action_icon_24 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -32px;
+}
+
+.action_small2 .action_icon_24, .action_small2_notext .action_icon_24 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -24px;
+}
+
+.action_small3 .action_icon_24, .action_small3_notext .action_icon_24 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -16px;
+}
+
+.action_icon_25 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -40px;
+}
+
+.action_small .action_icon_25, .action_small_notext .action_icon_25 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -32px;
+}
+
+.action_small2 .action_icon_25, .action_small2_notext .action_icon_25 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -24px;
+}
+
+.action_small3 .action_icon_25, .action_small3_notext .action_icon_25 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -16px;
+}
+
+.action_icon_26 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -40px;
+}
+
+.action_small .action_icon_26, .action_small_notext .action_icon_26 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -32px;
+}
+
+.action_small2 .action_icon_26, .action_small2_notext .action_icon_26 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -24px;
+}
+
+.action_small3 .action_icon_26, .action_small3_notext .action_icon_26 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -16px;
+}
+
+.action_icon_27 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -40px;
+}
+
+.action_small .action_icon_27, .action_small_notext .action_icon_27 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -32px;
+}
+
+.action_small2 .action_icon_27, .action_small2_notext .action_icon_27 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -24px;
+}
+
+.action_small3 .action_icon_27, .action_small3_notext .action_icon_27 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -16px;
+}
+
+.action_icon_28 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -40px;
+}
+
+.action_small .action_icon_28, .action_small_notext .action_icon_28 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -32px;
+}
+
+.action_small2 .action_icon_28, .action_small2_notext .action_icon_28 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -24px;
+}
+
+.action_small3 .action_icon_28, .action_small3_notext .action_icon_28 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -16px;
+}
+
+.action_icon_29 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -40px;
+}
+
+.action_small .action_icon_29, .action_small_notext .action_icon_29 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -32px;
+}
+
+.action_small2 .action_icon_29, .action_small2_notext .action_icon_29 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -24px;
+}
+
+.action_small3 .action_icon_29, .action_small3_notext .action_icon_29 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -16px;
+}
+
+.action_icon_30 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -40px;
+}
+
+.action_small .action_icon_30, .action_small_notext .action_icon_30 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -32px;
+}
+
+.action_small2 .action_icon_30, .action_small2_notext .action_icon_30 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -24px;
+}
+
+.action_small3 .action_icon_30, .action_small3_notext .action_icon_30 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -16px;
+}
+
+.action_icon_31 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -40px;
+}
+
+.action_small .action_icon_31, .action_small_notext .action_icon_31 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -32px;
+}
+
+.action_small2 .action_icon_31, .action_small2_notext .action_icon_31 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -24px;
+}
+
+.action_small3 .action_icon_31, .action_small3_notext .action_icon_31 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -16px;
+}
+
+.action_icon_32 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -80px;
+}
+
+.action_small .action_icon_32, .action_small_notext .action_icon_32 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -64px;
+}
+
+.action_small2 .action_icon_32, .action_small2_notext .action_icon_32 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -48px;
+}
+
+.action_small3 .action_icon_32, .action_small3_notext .action_icon_32 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -32px;
+}
+
+.action_icon_33 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -80px;
+}
+
+.action_small .action_icon_33, .action_small_notext .action_icon_33 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -64px;
+}
+
+.action_small2 .action_icon_33, .action_small2_notext .action_icon_33 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -48px;
+}
+
+.action_small3 .action_icon_33, .action_small3_notext .action_icon_33 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -32px;
+}
+
+.action_icon_34 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -80px;
+}
+
+.action_small .action_icon_34, .action_small_notext .action_icon_34 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -64px;
+}
+
+.action_small2 .action_icon_34, .action_small2_notext .action_icon_34 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -48px;
+}
+
+.action_small3 .action_icon_34, .action_small3_notext .action_icon_34 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -32px;
+}
+
+.action_icon_35 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -80px;
+}
+
+.action_small .action_icon_35, .action_small_notext .action_icon_35 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -64px;
+}
+
+.action_small2 .action_icon_35, .action_small2_notext .action_icon_35 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -48px;
+}
+
+.action_small3 .action_icon_35, .action_small3_notext .action_icon_35 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -32px;
+}
+
+.action_icon_36 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -80px;
+}
+
+.action_small .action_icon_36, .action_small_notext .action_icon_36 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -64px;
+}
+
+.action_small2 .action_icon_36, .action_small2_notext .action_icon_36 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -48px;
+}
+
+.action_small3 .action_icon_36, .action_small3_notext .action_icon_36 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -32px;
+}
+
+.action_icon_37 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -80px;
+}
+
+.action_small .action_icon_37, .action_small_notext .action_icon_37 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -64px;
+}
+
+.action_small2 .action_icon_37, .action_small2_notext .action_icon_37 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -48px;
+}
+
+.action_small3 .action_icon_37, .action_small3_notext .action_icon_37 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -32px;
+}
+
+.action_icon_38 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -80px;
+}
+
+.action_small .action_icon_38, .action_small_notext .action_icon_38 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -64px;
+}
+
+.action_small2 .action_icon_38, .action_small2_notext .action_icon_38 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -48px;
+}
+
+.action_small3 .action_icon_38, .action_small3_notext .action_icon_38 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -32px;
+}
+
+.action_icon_39 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -80px;
+}
+
+.action_small .action_icon_39, .action_small_notext .action_icon_39 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -64px;
+}
+
+.action_small2 .action_icon_39, .action_small2_notext .action_icon_39 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -48px;
+}
+
+.action_small3 .action_icon_39, .action_small3_notext .action_icon_39 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -32px;
+}
+
+.action_icon_40 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -80px;
+}
+
+.action_small .action_icon_40, .action_small_notext .action_icon_40 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -64px;
+}
+
+.action_small2 .action_icon_40, .action_small2_notext .action_icon_40 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -48px;
+}
+
+.action_small3 .action_icon_40, .action_small3_notext .action_icon_40 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -32px;
+}
+
+.action_icon_41 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -80px;
+}
+
+.action_small .action_icon_41, .action_small_notext .action_icon_41 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -64px;
+}
+
+.action_small2 .action_icon_41, .action_small2_notext .action_icon_41 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -48px;
+}
+
+.action_small3 .action_icon_41, .action_small3_notext .action_icon_41 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -32px;
+}
+
+.action_icon_42 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -80px;
+}
+
+.action_small .action_icon_42, .action_small_notext .action_icon_42 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -64px;
+}
+
+.action_small2 .action_icon_42, .action_small2_notext .action_icon_42 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -48px;
+}
+
+.action_small3 .action_icon_42, .action_small3_notext .action_icon_42 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -32px;
+}
+
+.action_icon_43 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -80px;
+}
+
+.action_small .action_icon_43, .action_small_notext .action_icon_43 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -64px;
+}
+
+.action_small2 .action_icon_43, .action_small2_notext .action_icon_43 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -48px;
+}
+
+.action_small3 .action_icon_43, .action_small3_notext .action_icon_43 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -32px;
+}
+
+.action_icon_44 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -80px;
+}
+
+.action_small .action_icon_44, .action_small_notext .action_icon_44 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -64px;
+}
+
+.action_small2 .action_icon_44, .action_small2_notext .action_icon_44 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -48px;
+}
+
+.action_small3 .action_icon_44, .action_small3_notext .action_icon_44 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -32px;
+}
+
+.action_icon_45 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -80px;
+}
+
+.action_small .action_icon_45, .action_small_notext .action_icon_45 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -64px;
+}
+
+.action_small2 .action_icon_45, .action_small2_notext .action_icon_45 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -48px;
+}
+
+.action_small3 .action_icon_45, .action_small3_notext .action_icon_45 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -32px;
+}
+
+.action_icon_46 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -80px;
+}
+
+.action_small .action_icon_46, .action_small_notext .action_icon_46 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -64px;
+}
+
+.action_small2 .action_icon_46, .action_small2_notext .action_icon_46 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -48px;
+}
+
+.action_small3 .action_icon_46, .action_small3_notext .action_icon_46 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -32px;
+}
+
+.action_icon_47 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -80px;
+}
+
+.action_small .action_icon_47, .action_small_notext .action_icon_47 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -64px;
+}
+
+.action_small2 .action_icon_47, .action_small2_notext .action_icon_47 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -48px;
+}
+
+.action_small3 .action_icon_47, .action_small3_notext .action_icon_47 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -32px;
+}
+
+.action_icon_48 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -120px;
+}
+
+.action_small .action_icon_48, .action_small_notext .action_icon_48 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -96px;
+}
+
+.action_small2 .action_icon_48, .action_small2_notext .action_icon_48 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -72px;
+}
+
+.action_small3 .action_icon_48, .action_small3_notext .action_icon_48 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -48px;
+}
+
+.action_icon_49 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -120px;
+}
+
+.action_small .action_icon_49, .action_small_notext .action_icon_49 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -96px;
+}
+
+.action_small2 .action_icon_49, .action_small2_notext .action_icon_49 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -72px;
+}
+
+.action_small3 .action_icon_49, .action_small3_notext .action_icon_49 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -48px;
+}
+
+.action_icon_50 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -120px;
+}
+
+.action_small .action_icon_50, .action_small_notext .action_icon_50 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -96px;
+}
+
+.action_small2 .action_icon_50, .action_small2_notext .action_icon_50 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -72px;
+}
+
+.action_small3 .action_icon_50, .action_small3_notext .action_icon_50 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -48px;
+}
+
+.action_icon_51 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -120px;
+}
+
+.action_small .action_icon_51, .action_small_notext .action_icon_51 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -96px;
+}
+
+.action_small2 .action_icon_51, .action_small2_notext .action_icon_51 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -72px;
+}
+
+.action_small3 .action_icon_51, .action_small3_notext .action_icon_51 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -48px;
+}
+
+.action_icon_52 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -120px;
+}
+
+.action_small .action_icon_52, .action_small_notext .action_icon_52 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -96px;
+}
+
+.action_small2 .action_icon_52, .action_small2_notext .action_icon_52 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -72px;
+}
+
+.action_small3 .action_icon_52, .action_small3_notext .action_icon_52 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -48px;
+}
+
+.action_icon_53 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -120px;
+}
+
+.action_small .action_icon_53, .action_small_notext .action_icon_53 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -96px;
+}
+
+.action_small2 .action_icon_53, .action_small2_notext .action_icon_53 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -72px;
+}
+
+.action_small3 .action_icon_53, .action_small3_notext .action_icon_53 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -48px;
+}
+
+.action_icon_54 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -120px;
+}
+
+.action_small .action_icon_54, .action_small_notext .action_icon_54 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -96px;
+}
+
+.action_small2 .action_icon_54, .action_small2_notext .action_icon_54 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -72px;
+}
+
+.action_small3 .action_icon_54, .action_small3_notext .action_icon_54 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -48px;
+}
+
+.action_icon_55 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -120px;
+}
+
+.action_small .action_icon_55, .action_small_notext .action_icon_55 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -96px;
+}
+
+.action_small2 .action_icon_55, .action_small2_notext .action_icon_55 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -72px;
+}
+
+.action_small3 .action_icon_55, .action_small3_notext .action_icon_55 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -48px;
+}
+
+.action_icon_56 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -120px;
+}
+
+.action_small .action_icon_56, .action_small_notext .action_icon_56 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -96px;
+}
+
+.action_small2 .action_icon_56, .action_small2_notext .action_icon_56 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -72px;
+}
+
+.action_small3 .action_icon_56, .action_small3_notext .action_icon_56 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -48px;
+}
+
+.action_icon_57 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -120px;
+}
+
+.action_small .action_icon_57, .action_small_notext .action_icon_57 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -96px;
+}
+
+.action_small2 .action_icon_57, .action_small2_notext .action_icon_57 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -72px;
+}
+
+.action_small3 .action_icon_57, .action_small3_notext .action_icon_57 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -48px;
+}
+
+.action_icon_58 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -120px;
+}
+
+.action_small .action_icon_58, .action_small_notext .action_icon_58 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -96px;
+}
+
+.action_small2 .action_icon_58, .action_small2_notext .action_icon_58 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -72px;
+}
+
+.action_small3 .action_icon_58, .action_small3_notext .action_icon_58 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -48px;
+}
+
+.action_icon_59 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -120px;
+}
+
+.action_small .action_icon_59, .action_small_notext .action_icon_59 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -96px;
+}
+
+.action_small2 .action_icon_59, .action_small2_notext .action_icon_59 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -72px;
+}
+
+.action_small3 .action_icon_59, .action_small3_notext .action_icon_59 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -48px;
+}
+
+.action_icon_60 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -120px;
+}
+
+.action_small .action_icon_60, .action_small_notext .action_icon_60 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -96px;
+}
+
+.action_small2 .action_icon_60, .action_small2_notext .action_icon_60 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -72px;
+}
+
+.action_small3 .action_icon_60, .action_small3_notext .action_icon_60 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -48px;
+}
+
+.action_icon_61 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -120px;
+}
+
+.action_small .action_icon_61, .action_small_notext .action_icon_61 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -96px;
+}
+
+.action_small2 .action_icon_61, .action_small2_notext .action_icon_61 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -72px;
+}
+
+.action_small3 .action_icon_61, .action_small3_notext .action_icon_61 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -48px;
+}
+
+.action_icon_62 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -120px;
+}
+
+.action_small .action_icon_62, .action_small_notext .action_icon_62 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -96px;
+}
+
+.action_small2 .action_icon_62, .action_small2_notext .action_icon_62 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -72px;
+}
+
+.action_small3 .action_icon_62, .action_small3_notext .action_icon_62 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -48px;
+}
+
+.action_icon_63 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -120px;
+}
+
+.action_small .action_icon_63, .action_small_notext .action_icon_63 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -96px;
+}
+
+.action_small2 .action_icon_63, .action_small2_notext .action_icon_63 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -72px;
+}
+
+.action_small3 .action_icon_63, .action_small3_notext .action_icon_63 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -48px;
+}
+
+.action_icon_64 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -160px;
+}
+
+.action_small .action_icon_64, .action_small_notext .action_icon_64 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -128px;
+}
+
+.action_small2 .action_icon_64, .action_small2_notext .action_icon_64 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -96px;
+}
+
+.action_small3 .action_icon_64, .action_small3_notext .action_icon_64 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -64px;
+}
+
+.action_icon_65 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -160px;
+}
+
+.action_small .action_icon_65, .action_small_notext .action_icon_65 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -128px;
+}
+
+.action_small2 .action_icon_65, .action_small2_notext .action_icon_65 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -96px;
+}
+
+.action_small3 .action_icon_65, .action_small3_notext .action_icon_65 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -64px;
+}
+
+.action_icon_66 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -160px;
+}
+
+.action_small .action_icon_66, .action_small_notext .action_icon_66 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -128px;
+}
+
+.action_small2 .action_icon_66, .action_small2_notext .action_icon_66 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -96px;
+}
+
+.action_small3 .action_icon_66, .action_small3_notext .action_icon_66 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -64px;
+}
+
+.action_icon_67 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -160px;
+}
+
+.action_small .action_icon_67, .action_small_notext .action_icon_67 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -128px;
+}
+
+.action_small2 .action_icon_67, .action_small2_notext .action_icon_67 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -96px;
+}
+
+.action_small3 .action_icon_67, .action_small3_notext .action_icon_67 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -64px;
+}
+
+.action_icon_68 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -160px;
+}
+
+.action_small .action_icon_68, .action_small_notext .action_icon_68 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -128px;
+}
+
+.action_small2 .action_icon_68, .action_small2_notext .action_icon_68 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -96px;
+}
+
+.action_small3 .action_icon_68, .action_small3_notext .action_icon_68 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -64px;
+}
+
+.action_icon_69 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -160px;
+}
+
+.action_small .action_icon_69, .action_small_notext .action_icon_69 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -128px;
+}
+
+.action_small2 .action_icon_69, .action_small2_notext .action_icon_69 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -96px;
+}
+
+.action_small3 .action_icon_69, .action_small3_notext .action_icon_69 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -64px;
+}
+
+.action_icon_70 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -160px;
+}
+
+.action_small .action_icon_70, .action_small_notext .action_icon_70 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -128px;
+}
+
+.action_small2 .action_icon_70, .action_small2_notext .action_icon_70 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -96px;
+}
+
+.action_small3 .action_icon_70, .action_small3_notext .action_icon_70 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -64px;
+}
+
+.action_icon_71 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -160px;
+}
+
+.action_small .action_icon_71, .action_small_notext .action_icon_71 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -128px;
+}
+
+.action_small2 .action_icon_71, .action_small2_notext .action_icon_71 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -96px;
+}
+
+.action_small3 .action_icon_71, .action_small3_notext .action_icon_71 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -64px;
+}
+
+.action_icon_72 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -160px;
+}
+
+.action_small .action_icon_72, .action_small_notext .action_icon_72 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -128px;
+}
+
+.action_small2 .action_icon_72, .action_small2_notext .action_icon_72 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -96px;
+}
+
+.action_small3 .action_icon_72, .action_small3_notext .action_icon_72 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -64px;
+}
+
+.action_icon_73 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -160px;
+}
+
+.action_small .action_icon_73, .action_small_notext .action_icon_73 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -128px;
+}
+
+.action_small2 .action_icon_73, .action_small2_notext .action_icon_73 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -96px;
+}
+
+.action_small3 .action_icon_73, .action_small3_notext .action_icon_73 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -64px;
+}
+
+.action_icon_74 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -160px;
+}
+
+.action_small .action_icon_74, .action_small_notext .action_icon_74 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -128px;
+}
+
+.action_small2 .action_icon_74, .action_small2_notext .action_icon_74 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -96px;
+}
+
+.action_small3 .action_icon_74, .action_small3_notext .action_icon_74 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -64px;
+}
+
+.action_icon_75 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -160px;
+}
+
+.action_small .action_icon_75, .action_small_notext .action_icon_75 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -128px;
+}
+
+.action_small2 .action_icon_75, .action_small2_notext .action_icon_75 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -96px;
+}
+
+.action_small3 .action_icon_75, .action_small3_notext .action_icon_75 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -64px;
+}
+
+.action_icon_76 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -160px;
+}
+
+.action_small .action_icon_76, .action_small_notext .action_icon_76 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -128px;
+}
+
+.action_small2 .action_icon_76, .action_small2_notext .action_icon_76 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -96px;
+}
+
+.action_small3 .action_icon_76, .action_small3_notext .action_icon_76 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -64px;
+}
+
+.action_icon_77 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -160px;
+}
+
+.action_small .action_icon_77, .action_small_notext .action_icon_77 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -128px;
+}
+
+.action_small2 .action_icon_77, .action_small2_notext .action_icon_77 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -96px;
+}
+
+.action_small3 .action_icon_77, .action_small3_notext .action_icon_77 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -64px;
+}
+
+.action_icon_78 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -160px;
+}
+
+.action_small .action_icon_78, .action_small_notext .action_icon_78 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -128px;
+}
+
+.action_small2 .action_icon_78, .action_small2_notext .action_icon_78 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -96px;
+}
+
+.action_small3 .action_icon_78, .action_small3_notext .action_icon_78 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -64px;
+}
+
+.action_icon_79 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -160px;
+}
+
+.action_small .action_icon_79, .action_small_notext .action_icon_79 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -128px;
+}
+
+.action_small2 .action_icon_79, .action_small2_notext .action_icon_79 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -96px;
+}
+
+.action_small3 .action_icon_79, .action_small3_notext .action_icon_79 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -64px;
+}
+
+.action_icon_80 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -200px;
+}
+
+.action_small .action_icon_80, .action_small_notext .action_icon_80 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -160px;
+}
+
+.action_small2 .action_icon_80, .action_small2_notext .action_icon_80 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -120px;
+}
+
+.action_small3 .action_icon_80, .action_small3_notext .action_icon_80 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -80px;
+}
+
+.action_icon_81 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -200px;
+}
+
+.action_small .action_icon_81, .action_small_notext .action_icon_81 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -160px;
+}
+
+.action_small2 .action_icon_81, .action_small2_notext .action_icon_81 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -120px;
+}
+
+.action_small3 .action_icon_81, .action_small3_notext .action_icon_81 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -80px;
+}
+
+.action_icon_82 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -200px;
+}
+
+.action_small .action_icon_82, .action_small_notext .action_icon_82 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -160px;
+}
+
+.action_small2 .action_icon_82, .action_small2_notext .action_icon_82 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -120px;
+}
+
+.action_small3 .action_icon_82, .action_small3_notext .action_icon_82 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -80px;
+}
+
+.action_icon_83 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -200px;
+}
+
+.action_small .action_icon_83, .action_small_notext .action_icon_83 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -160px;
+}
+
+.action_small2 .action_icon_83, .action_small2_notext .action_icon_83 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -120px;
+}
+
+.action_small3 .action_icon_83, .action_small3_notext .action_icon_83 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -80px;
+}
+
+.action_icon_84 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -200px;
+}
+
+.action_small .action_icon_84, .action_small_notext .action_icon_84 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -160px;
+}
+
+.action_small2 .action_icon_84, .action_small2_notext .action_icon_84 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -120px;
+}
+
+.action_small3 .action_icon_84, .action_small3_notext .action_icon_84 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -80px;
+}
+
+.action_icon_85 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -200px;
+}
+
+.action_small .action_icon_85, .action_small_notext .action_icon_85 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -160px;
+}
+
+.action_small2 .action_icon_85, .action_small2_notext .action_icon_85 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -120px;
+}
+
+.action_small3 .action_icon_85, .action_small3_notext .action_icon_85 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -80px;
+}
+
+.action_icon_86 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -200px;
+}
+
+.action_small .action_icon_86, .action_small_notext .action_icon_86 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -160px;
+}
+
+.action_small2 .action_icon_86, .action_small2_notext .action_icon_86 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -120px;
+}
+
+.action_small3 .action_icon_86, .action_small3_notext .action_icon_86 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -80px;
+}
+
+.action_icon_87 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -200px;
+}
+
+.action_small .action_icon_87, .action_small_notext .action_icon_87 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -160px;
+}
+
+.action_small2 .action_icon_87, .action_small2_notext .action_icon_87 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -120px;
+}
+
+.action_small3 .action_icon_87, .action_small3_notext .action_icon_87 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -80px;
+}
+
+.action_icon_88 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -200px;
+}
+
+.action_small .action_icon_88, .action_small_notext .action_icon_88 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -160px;
+}
+
+.action_small2 .action_icon_88, .action_small2_notext .action_icon_88 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -120px;
+}
+
+.action_small3 .action_icon_88, .action_small3_notext .action_icon_88 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -80px;
+}
+
+.action_icon_89 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -200px;
+}
+
+.action_small .action_icon_89, .action_small_notext .action_icon_89 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -160px;
+}
+
+.action_small2 .action_icon_89, .action_small2_notext .action_icon_89 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -120px;
+}
+
+.action_small3 .action_icon_89, .action_small3_notext .action_icon_89 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -80px;
+}
+
+.action_icon_90 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -200px;
+}
+
+.action_small .action_icon_90, .action_small_notext .action_icon_90 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -160px;
+}
+
+.action_small2 .action_icon_90, .action_small2_notext .action_icon_90 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -120px;
+}
+
+.action_small3 .action_icon_90, .action_small3_notext .action_icon_90 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -80px;
+}
+
+.action_icon_91 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -200px;
+}
+
+.action_small .action_icon_91, .action_small_notext .action_icon_91 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -160px;
+}
+
+.action_small2 .action_icon_91, .action_small2_notext .action_icon_91 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -120px;
+}
+
+.action_small3 .action_icon_91, .action_small3_notext .action_icon_91 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -80px;
+}
+
+.action_icon_92 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -200px;
+}
+
+.action_small .action_icon_92, .action_small_notext .action_icon_92 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -160px;
+}
+
+.action_small2 .action_icon_92, .action_small2_notext .action_icon_92 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -120px;
+}
+
+.action_small3 .action_icon_92, .action_small3_notext .action_icon_92 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -80px;
+}
+
+.action_icon_93 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -200px;
+}
+
+.action_small .action_icon_93, .action_small_notext .action_icon_93 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -160px;
+}
+
+.action_small2 .action_icon_93, .action_small2_notext .action_icon_93 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -120px;
+}
+
+.action_small3 .action_icon_93, .action_small3_notext .action_icon_93 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -80px;
+}
+
+.action_icon_94 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -200px;
+}
+
+.action_small .action_icon_94, .action_small_notext .action_icon_94 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -160px;
+}
+
+.action_small2 .action_icon_94, .action_small2_notext .action_icon_94 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -120px;
+}
+
+.action_small3 .action_icon_94, .action_small3_notext .action_icon_94 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -80px;
+}
+
+.action_icon_95 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -200px;
+}
+
+.action_small .action_icon_95, .action_small_notext .action_icon_95 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -160px;
+}
+
+.action_small2 .action_icon_95, .action_small2_notext .action_icon_95 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -120px;
+}
+
+.action_small3 .action_icon_95, .action_small3_notext .action_icon_95 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -80px;
+}
+
+.action_icon_96 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -240px;
+}
+
+.action_small .action_icon_96, .action_small_notext .action_icon_96 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -192px;
+}
+
+.action_small2 .action_icon_96, .action_small2_notext .action_icon_96 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -144px;
+}
+
+.action_small3 .action_icon_96, .action_small3_notext .action_icon_96 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -96px;
+}
+
+.action_icon_97 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -240px;
+}
+
+.action_small .action_icon_97, .action_small_notext .action_icon_97 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -192px;
+}
+
+.action_small2 .action_icon_97, .action_small2_notext .action_icon_97 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -144px;
+}
+
+.action_small3 .action_icon_97, .action_small3_notext .action_icon_97 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -96px;
+}
+
+.action_icon_98 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -240px;
+}
+
+.action_small .action_icon_98, .action_small_notext .action_icon_98 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -192px;
+}
+
+.action_small2 .action_icon_98, .action_small2_notext .action_icon_98 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -144px;
+}
+
+.action_small3 .action_icon_98, .action_small3_notext .action_icon_98 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -96px;
+}
+
+.action_icon_99 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -240px;
+}
+
+.action_small .action_icon_99, .action_small_notext .action_icon_99 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -192px;
+}
+
+.action_small2 .action_icon_99, .action_small2_notext .action_icon_99 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -144px;
+}
+
+.action_small3 .action_icon_99, .action_small3_notext .action_icon_99 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -96px;
+}
+
+.action_icon_100 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -240px;
+}
+
+.action_small .action_icon_100, .action_small_notext .action_icon_100 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -192px;
+}
+
+.action_small2 .action_icon_100, .action_small2_notext .action_icon_100 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -144px;
+}
+
+.action_small3 .action_icon_100, .action_small3_notext .action_icon_100 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -96px;
+}
+
+.action_icon_101 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -240px;
+}
+
+.action_small .action_icon_101, .action_small_notext .action_icon_101 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -192px;
+}
+
+.action_small2 .action_icon_101, .action_small2_notext .action_icon_101 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -144px;
+}
+
+.action_small3 .action_icon_101, .action_small3_notext .action_icon_101 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -96px;
+}
+
+.action_icon_102 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -240px;
+}
+
+.action_small .action_icon_102, .action_small_notext .action_icon_102 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -192px;
+}
+
+.action_small2 .action_icon_102, .action_small2_notext .action_icon_102 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -144px;
+}
+
+.action_small3 .action_icon_102, .action_small3_notext .action_icon_102 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -96px;
+}
+
+.action_icon_103 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -240px;
+}
+
+.action_small .action_icon_103, .action_small_notext .action_icon_103 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -192px;
+}
+
+.action_small2 .action_icon_103, .action_small2_notext .action_icon_103 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -144px;
+}
+
+.action_small3 .action_icon_103, .action_small3_notext .action_icon_103 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -96px;
+}
+
+.action_icon_104 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -240px;
+}
+
+.action_small .action_icon_104, .action_small_notext .action_icon_104 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -192px;
+}
+
+.action_small2 .action_icon_104, .action_small2_notext .action_icon_104 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -144px;
+}
+
+.action_small3 .action_icon_104, .action_small3_notext .action_icon_104 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -96px;
+}
+
+.action_icon_105 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -240px;
+}
+
+.action_small .action_icon_105, .action_small_notext .action_icon_105 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -192px;
+}
+
+.action_small2 .action_icon_105, .action_small2_notext .action_icon_105 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -144px;
+}
+
+.action_small3 .action_icon_105, .action_small3_notext .action_icon_105 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -96px;
+}
+
+.action_icon_106 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -240px;
+}
+
+.action_small .action_icon_106, .action_small_notext .action_icon_106 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -192px;
+}
+
+.action_small2 .action_icon_106, .action_small2_notext .action_icon_106 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -144px;
+}
+
+.action_small3 .action_icon_106, .action_small3_notext .action_icon_106 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -96px;
+}
+
+.action_icon_107 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -240px;
+}
+
+.action_small .action_icon_107, .action_small_notext .action_icon_107 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -192px;
+}
+
+.action_small2 .action_icon_107, .action_small2_notext .action_icon_107 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -144px;
+}
+
+.action_small3 .action_icon_107, .action_small3_notext .action_icon_107 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -96px;
+}
+
+.action_icon_108 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -240px;
+}
+
+.action_small .action_icon_108, .action_small_notext .action_icon_108 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -192px;
+}
+
+.action_small2 .action_icon_108, .action_small2_notext .action_icon_108 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -144px;
+}
+
+.action_small3 .action_icon_108, .action_small3_notext .action_icon_108 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -96px;
+}
+
+.action_icon_109 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -240px;
+}
+
+.action_small .action_icon_109, .action_small_notext .action_icon_109 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -192px;
+}
+
+.action_small2 .action_icon_109, .action_small2_notext .action_icon_109 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -144px;
+}
+
+.action_small3 .action_icon_109, .action_small3_notext .action_icon_109 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -96px;
+}
+
+.action_icon_110 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -240px;
+}
+
+.action_small .action_icon_110, .action_small_notext .action_icon_110 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -192px;
+}
+
+.action_small2 .action_icon_110, .action_small2_notext .action_icon_110 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -144px;
+}
+
+.action_small3 .action_icon_110, .action_small3_notext .action_icon_110 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -96px;
+}
+
+.action_icon_111 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -240px;
+}
+
+.action_small .action_icon_111, .action_small_notext .action_icon_111 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -192px;
+}
+
+.action_small2 .action_icon_111, .action_small2_notext .action_icon_111 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -144px;
+}
+
+.action_small3 .action_icon_111, .action_small3_notext .action_icon_111 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -96px;
+}
+
+.action_icon_112 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -280px;
+}
+
+.action_small .action_icon_112, .action_small_notext .action_icon_112 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -224px;
+}
+
+.action_small2 .action_icon_112, .action_small2_notext .action_icon_112 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -168px;
+}
+
+.action_small3 .action_icon_112, .action_small3_notext .action_icon_112 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -112px;
+}
+
+.action_icon_113 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -280px;
+}
+
+.action_small .action_icon_113, .action_small_notext .action_icon_113 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -224px;
+}
+
+.action_small2 .action_icon_113, .action_small2_notext .action_icon_113 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -168px;
+}
+
+.action_small3 .action_icon_113, .action_small3_notext .action_icon_113 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -112px;
+}
+
+.action_icon_114 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -280px;
+}
+
+.action_small .action_icon_114, .action_small_notext .action_icon_114 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -224px;
+}
+
+.action_small2 .action_icon_114, .action_small2_notext .action_icon_114 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -168px;
+}
+
+.action_small3 .action_icon_114, .action_small3_notext .action_icon_114 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -112px;
+}
+
+.action_icon_115 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -280px;
+}
+
+.action_small .action_icon_115, .action_small_notext .action_icon_115 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -224px;
+}
+
+.action_small2 .action_icon_115, .action_small2_notext .action_icon_115 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -168px;
+}
+
+.action_small3 .action_icon_115, .action_small3_notext .action_icon_115 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -112px;
+}
+
+.action_icon_116 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -280px;
+}
+
+.action_small .action_icon_116, .action_small_notext .action_icon_116 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -224px;
+}
+
+.action_small2 .action_icon_116, .action_small2_notext .action_icon_116 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -168px;
+}
+
+.action_small3 .action_icon_116, .action_small3_notext .action_icon_116 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -112px;
+}
+
+.action_icon_117 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -280px;
+}
+
+.action_small .action_icon_117, .action_small_notext .action_icon_117 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -224px;
+}
+
+.action_small2 .action_icon_117, .action_small2_notext .action_icon_117 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -168px;
+}
+
+.action_small3 .action_icon_117, .action_small3_notext .action_icon_117 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -112px;
+}
+
+.action_icon_118 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -280px;
+}
+
+.action_small .action_icon_118, .action_small_notext .action_icon_118 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -224px;
+}
+
+.action_small2 .action_icon_118, .action_small2_notext .action_icon_118 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -168px;
+}
+
+.action_small3 .action_icon_118, .action_small3_notext .action_icon_118 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -112px;
+}
+
+.action_icon_119 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -280px;
+}
+
+.action_small .action_icon_119, .action_small_notext .action_icon_119 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -224px;
+}
+
+.action_small2 .action_icon_119, .action_small2_notext .action_icon_119 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -168px;
+}
+
+.action_small3 .action_icon_119, .action_small3_notext .action_icon_119 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -112px;
+}
+
+.action_icon_120 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -280px;
+}
+
+.action_small .action_icon_120, .action_small_notext .action_icon_120 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -224px;
+}
+
+.action_small2 .action_icon_120, .action_small2_notext .action_icon_120 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -168px;
+}
+
+.action_small3 .action_icon_120, .action_small3_notext .action_icon_120 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -112px;
+}
+
+.action_icon_121 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -280px;
+}
+
+.action_small .action_icon_121, .action_small_notext .action_icon_121 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -224px;
+}
+
+.action_small2 .action_icon_121, .action_small2_notext .action_icon_121 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -168px;
+}
+
+.action_small3 .action_icon_121, .action_small3_notext .action_icon_121 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -112px;
+}
+
+.action_icon_122 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -280px;
+}
+
+.action_small .action_icon_122, .action_small_notext .action_icon_122 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -224px;
+}
+
+.action_small2 .action_icon_122, .action_small2_notext .action_icon_122 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -168px;
+}
+
+.action_small3 .action_icon_122, .action_small3_notext .action_icon_122 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -112px;
+}
+
+.action_icon_123 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -280px;
+}
+
+.action_small .action_icon_123, .action_small_notext .action_icon_123 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -224px;
+}
+
+.action_small2 .action_icon_123, .action_small2_notext .action_icon_123 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -168px;
+}
+
+.action_small3 .action_icon_123, .action_small3_notext .action_icon_123 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -112px;
+}
+
+.action_icon_124 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -280px;
+}
+
+.action_small .action_icon_124, .action_small_notext .action_icon_124 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -224px;
+}
+
+.action_small2 .action_icon_124, .action_small2_notext .action_icon_124 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -168px;
+}
+
+.action_small3 .action_icon_124, .action_small3_notext .action_icon_124 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -112px;
+}
+
+.action_icon_125 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -280px;
+}
+
+.action_small .action_icon_125, .action_small_notext .action_icon_125 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -224px;
+}
+
+.action_small2 .action_icon_125, .action_small2_notext .action_icon_125 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -168px;
+}
+
+.action_small3 .action_icon_125, .action_small3_notext .action_icon_125 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -112px;
+}
+
+.action_icon_126 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -280px;
+}
+
+.action_small .action_icon_126, .action_small_notext .action_icon_126 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -224px;
+}
+
+.action_small2 .action_icon_126, .action_small2_notext .action_icon_126 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -168px;
+}
+
+.action_small3 .action_icon_126, .action_small3_notext .action_icon_126 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -112px;
+}
+
+.action_icon_127 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -280px;
+}
+
+.action_small .action_icon_127, .action_small_notext .action_icon_127 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -224px;
+}
+
+.action_small2 .action_icon_127, .action_small2_notext .action_icon_127 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -168px;
+}
+
+.action_small3 .action_icon_127, .action_small3_notext .action_icon_127 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -112px;
+}
+
+.action_icon_128 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -320px;
+}
+
+.action_small .action_icon_128, .action_small_notext .action_icon_128 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -256px;
+}
+
+.action_small2 .action_icon_128, .action_small2_notext .action_icon_128 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -192px;
+}
+
+.action_small3 .action_icon_128, .action_small3_notext .action_icon_128 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -128px;
+}
+
+.action_icon_129 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -320px;
+}
+
+.action_small .action_icon_129, .action_small_notext .action_icon_129 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -256px;
+}
+
+.action_small2 .action_icon_129, .action_small2_notext .action_icon_129 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -192px;
+}
+
+.action_small3 .action_icon_129, .action_small3_notext .action_icon_129 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -128px;
+}
+
+.action_icon_130 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -320px;
+}
+
+.action_small .action_icon_130, .action_small_notext .action_icon_130 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -256px;
+}
+
+.action_small2 .action_icon_130, .action_small2_notext .action_icon_130 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -192px;
+}
+
+.action_small3 .action_icon_130, .action_small3_notext .action_icon_130 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -128px;
+}
+
+.action_icon_131 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -320px;
+}
+
+.action_small .action_icon_131, .action_small_notext .action_icon_131 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -256px;
+}
+
+.action_small2 .action_icon_131, .action_small2_notext .action_icon_131 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -192px;
+}
+
+.action_small3 .action_icon_131, .action_small3_notext .action_icon_131 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -128px;
+}
+
+.action_icon_132 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -320px;
+}
+
+.action_small .action_icon_132, .action_small_notext .action_icon_132 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -256px;
+}
+
+.action_small2 .action_icon_132, .action_small2_notext .action_icon_132 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -192px;
+}
+
+.action_small3 .action_icon_132, .action_small3_notext .action_icon_132 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -128px;
+}
+
+.action_icon_133 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -320px;
+}
+
+.action_small .action_icon_133, .action_small_notext .action_icon_133 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -256px;
+}
+
+.action_small2 .action_icon_133, .action_small2_notext .action_icon_133 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -192px;
+}
+
+.action_small3 .action_icon_133, .action_small3_notext .action_icon_133 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -128px;
+}
+
+.action_icon_134 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -320px;
+}
+
+.action_small .action_icon_134, .action_small_notext .action_icon_134 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -256px;
+}
+
+.action_small2 .action_icon_134, .action_small2_notext .action_icon_134 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -192px;
+}
+
+.action_small3 .action_icon_134, .action_small3_notext .action_icon_134 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -128px;
+}
+
+.action_icon_135 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -320px;
+}
+
+.action_small .action_icon_135, .action_small_notext .action_icon_135 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -256px;
+}
+
+.action_small2 .action_icon_135, .action_small2_notext .action_icon_135 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -192px;
+}
+
+.action_small3 .action_icon_135, .action_small3_notext .action_icon_135 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -128px;
+}
+
+.action_icon_136 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -320px;
+}
+
+.action_small .action_icon_136, .action_small_notext .action_icon_136 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -256px;
+}
+
+.action_small2 .action_icon_136, .action_small2_notext .action_icon_136 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -192px;
+}
+
+.action_small3 .action_icon_136, .action_small3_notext .action_icon_136 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -128px;
+}
+
+.action_icon_137 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -320px;
+}
+
+.action_small .action_icon_137, .action_small_notext .action_icon_137 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -256px;
+}
+
+.action_small2 .action_icon_137, .action_small2_notext .action_icon_137 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -192px;
+}
+
+.action_small3 .action_icon_137, .action_small3_notext .action_icon_137 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -128px;
+}
+
+.action_icon_138 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -320px;
+}
+
+.action_small .action_icon_138, .action_small_notext .action_icon_138 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -256px;
+}
+
+.action_small2 .action_icon_138, .action_small2_notext .action_icon_138 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -192px;
+}
+
+.action_small3 .action_icon_138, .action_small3_notext .action_icon_138 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -128px;
+}
+
+.action_icon_139 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -320px;
+}
+
+.action_small .action_icon_139, .action_small_notext .action_icon_139 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -256px;
+}
+
+.action_small2 .action_icon_139, .action_small2_notext .action_icon_139 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -192px;
+}
+
+.action_small3 .action_icon_139, .action_small3_notext .action_icon_139 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -128px;
+}
+
+.action_icon_140 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -320px;
+}
+
+.action_small .action_icon_140, .action_small_notext .action_icon_140 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -256px;
+}
+
+.action_small2 .action_icon_140, .action_small2_notext .action_icon_140 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -192px;
+}
+
+.action_small3 .action_icon_140, .action_small3_notext .action_icon_140 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -128px;
+}
+
+.action_icon_141 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -320px;
+}
+
+.action_small .action_icon_141, .action_small_notext .action_icon_141 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -256px;
+}
+
+.action_small2 .action_icon_141, .action_small2_notext .action_icon_141 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -192px;
+}
+
+.action_small3 .action_icon_141, .action_small3_notext .action_icon_141 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -128px;
+}
+
+.action_icon_142 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -320px;
+}
+
+.action_small .action_icon_142, .action_small_notext .action_icon_142 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -256px;
+}
+
+.action_small2 .action_icon_142, .action_small2_notext .action_icon_142 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -192px;
+}
+
+.action_small3 .action_icon_142, .action_small3_notext .action_icon_142 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -128px;
+}
+
+.action_icon_143 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -320px;
+}
+
+.action_small .action_icon_143, .action_small_notext .action_icon_143 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -256px;
+}
+
+.action_small2 .action_icon_143, .action_small2_notext .action_icon_143 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -192px;
+}
+
+.action_small3 .action_icon_143, .action_small3_notext .action_icon_143 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -128px;
+}
+
+.action_icon_144 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -360px;
+}
+
+.action_small .action_icon_144, .action_small_notext .action_icon_144 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -288px;
+}
+
+.action_small2 .action_icon_144, .action_small2_notext .action_icon_144 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -216px;
+}
+
+.action_small3 .action_icon_144, .action_small3_notext .action_icon_144 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -144px;
+}
+
+.action_icon_145 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -360px;
+}
+
+.action_small .action_icon_145, .action_small_notext .action_icon_145 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -288px;
+}
+
+.action_small2 .action_icon_145, .action_small2_notext .action_icon_145 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -216px;
+}
+
+.action_small3 .action_icon_145, .action_small3_notext .action_icon_145 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -144px;
+}
+
+.action_icon_146 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -360px;
+}
+
+.action_small .action_icon_146, .action_small_notext .action_icon_146 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -288px;
+}
+
+.action_small2 .action_icon_146, .action_small2_notext .action_icon_146 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -216px;
+}
+
+.action_small3 .action_icon_146, .action_small3_notext .action_icon_146 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -144px;
+}
+
+.action_icon_147 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -360px;
+}
+
+.action_small .action_icon_147, .action_small_notext .action_icon_147 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -288px;
+}
+
+.action_small2 .action_icon_147, .action_small2_notext .action_icon_147 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -216px;
+}
+
+.action_small3 .action_icon_147, .action_small3_notext .action_icon_147 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -144px;
+}
+
+.action_icon_148 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -360px;
+}
+
+.action_small .action_icon_148, .action_small_notext .action_icon_148 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -288px;
+}
+
+.action_small2 .action_icon_148, .action_small2_notext .action_icon_148 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -216px;
+}
+
+.action_small3 .action_icon_148, .action_small3_notext .action_icon_148 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -144px;
+}
+
+.action_icon_149 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -360px;
+}
+
+.action_small .action_icon_149, .action_small_notext .action_icon_149 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -288px;
+}
+
+.action_small2 .action_icon_149, .action_small2_notext .action_icon_149 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -216px;
+}
+
+.action_small3 .action_icon_149, .action_small3_notext .action_icon_149 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -144px;
+}
+
+.action_icon_150 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -360px;
+}
+
+.action_small .action_icon_150, .action_small_notext .action_icon_150 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -288px;
+}
+
+.action_small2 .action_icon_150, .action_small2_notext .action_icon_150 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -216px;
+}
+
+.action_small3 .action_icon_150, .action_small3_notext .action_icon_150 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -144px;
+}
+
+.action_icon_151 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -360px;
+}
+
+.action_small .action_icon_151, .action_small_notext .action_icon_151 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -288px;
+}
+
+.action_small2 .action_icon_151, .action_small2_notext .action_icon_151 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -216px;
+}
+
+.action_small3 .action_icon_151, .action_small3_notext .action_icon_151 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -144px;
+}
+
+.action_icon_152 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -360px;
+}
+
+.action_small .action_icon_152, .action_small_notext .action_icon_152 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -288px;
+}
+
+.action_small2 .action_icon_152, .action_small2_notext .action_icon_152 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -216px;
+}
+
+.action_small3 .action_icon_152, .action_small3_notext .action_icon_152 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -144px;
+}
+
+.action_icon_153 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -360px;
+}
+
+.action_small .action_icon_153, .action_small_notext .action_icon_153 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -288px;
+}
+
+.action_small2 .action_icon_153, .action_small2_notext .action_icon_153 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -216px;
+}
+
+.action_small3 .action_icon_153, .action_small3_notext .action_icon_153 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -144px;
+}
+
+.action_icon_154 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -360px;
+}
+
+.action_small .action_icon_154, .action_small_notext .action_icon_154 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -288px;
+}
+
+.action_small2 .action_icon_154, .action_small2_notext .action_icon_154 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -216px;
+}
+
+.action_small3 .action_icon_154, .action_small3_notext .action_icon_154 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -144px;
+}
+
+.action_icon_155 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -360px;
+}
+
+.action_small .action_icon_155, .action_small_notext .action_icon_155 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -288px;
+}
+
+.action_small2 .action_icon_155, .action_small2_notext .action_icon_155 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -216px;
+}
+
+.action_small3 .action_icon_155, .action_small3_notext .action_icon_155 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -144px;
+}
+
+.action_icon_156 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -360px;
+}
+
+.action_small .action_icon_156, .action_small_notext .action_icon_156 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -288px;
+}
+
+.action_small2 .action_icon_156, .action_small2_notext .action_icon_156 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -216px;
+}
+
+.action_small3 .action_icon_156, .action_small3_notext .action_icon_156 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -144px;
+}
+
+.action_icon_157 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -360px;
+}
+
+.action_small .action_icon_157, .action_small_notext .action_icon_157 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -288px;
+}
+
+.action_small2 .action_icon_157, .action_small2_notext .action_icon_157 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -216px;
+}
+
+.action_small3 .action_icon_157, .action_small3_notext .action_icon_157 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -144px;
+}
+
+.action_icon_158 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -360px;
+}
+
+.action_small .action_icon_158, .action_small_notext .action_icon_158 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -288px;
+}
+
+.action_small2 .action_icon_158, .action_small2_notext .action_icon_158 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -216px;
+}
+
+.action_small3 .action_icon_158, .action_small3_notext .action_icon_158 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -144px;
+}
+
+.action_icon_159 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -360px;
+}
+
+.action_small .action_icon_159, .action_small_notext .action_icon_159 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -288px;
+}
+
+.action_small2 .action_icon_159, .action_small2_notext .action_icon_159 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -216px;
+}
+
+.action_small3 .action_icon_159, .action_small3_notext .action_icon_159 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -144px;
+}
+
+.action_icon_160 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -400px;
+}
+
+.action_small .action_icon_160, .action_small_notext .action_icon_160 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -320px;
+}
+
+.action_small2 .action_icon_160, .action_small2_notext .action_icon_160 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -240px;
+}
+
+.action_small3 .action_icon_160, .action_small3_notext .action_icon_160 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -160px;
+}
+
+.action_icon_161 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -400px;
+}
+
+.action_small .action_icon_161, .action_small_notext .action_icon_161 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -320px;
+}
+
+.action_small2 .action_icon_161, .action_small2_notext .action_icon_161 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -240px;
+}
+
+.action_small3 .action_icon_161, .action_small3_notext .action_icon_161 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -160px;
+}
+
+.action_icon_162 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -400px;
+}
+
+.action_small .action_icon_162, .action_small_notext .action_icon_162 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -320px;
+}
+
+.action_small2 .action_icon_162, .action_small2_notext .action_icon_162 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -240px;
+}
+
+.action_small3 .action_icon_162, .action_small3_notext .action_icon_162 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -160px;
+}
+
+.action_icon_163 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -400px;
+}
+
+.action_small .action_icon_163, .action_small_notext .action_icon_163 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -320px;
+}
+
+.action_small2 .action_icon_163, .action_small2_notext .action_icon_163 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -240px;
+}
+
+.action_small3 .action_icon_163, .action_small3_notext .action_icon_163 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -160px;
+}
+
+.action_icon_164 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -400px;
+}
+
+.action_small .action_icon_164, .action_small_notext .action_icon_164 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -320px;
+}
+
+.action_small2 .action_icon_164, .action_small2_notext .action_icon_164 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -240px;
+}
+
+.action_small3 .action_icon_164, .action_small3_notext .action_icon_164 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -160px;
+}
+
+.action_icon_165 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -400px;
+}
+
+.action_small .action_icon_165, .action_small_notext .action_icon_165 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -320px;
+}
+
+.action_small2 .action_icon_165, .action_small2_notext .action_icon_165 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -240px;
+}
+
+.action_small3 .action_icon_165, .action_small3_notext .action_icon_165 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -160px;
+}
+
+.action_icon_166 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -400px;
+}
+
+.action_small .action_icon_166, .action_small_notext .action_icon_166 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -320px;
+}
+
+.action_small2 .action_icon_166, .action_small2_notext .action_icon_166 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -240px;
+}
+
+.action_small3 .action_icon_166, .action_small3_notext .action_icon_166 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -160px;
+}
+
+.action_icon_167 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -400px;
+}
+
+.action_small .action_icon_167, .action_small_notext .action_icon_167 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -320px;
+}
+
+.action_small2 .action_icon_167, .action_small2_notext .action_icon_167 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -240px;
+}
+
+.action_small3 .action_icon_167, .action_small3_notext .action_icon_167 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -160px;
+}
+
+.action_icon_168 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -400px;
+}
+
+.action_small .action_icon_168, .action_small_notext .action_icon_168 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -320px;
+}
+
+.action_small2 .action_icon_168, .action_small2_notext .action_icon_168 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -240px;
+}
+
+.action_small3 .action_icon_168, .action_small3_notext .action_icon_168 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -160px;
+}
+
+.action_icon_169 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -400px;
+}
+
+.action_small .action_icon_169, .action_small_notext .action_icon_169 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -320px;
+}
+
+.action_small2 .action_icon_169, .action_small2_notext .action_icon_169 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -240px;
+}
+
+.action_small3 .action_icon_169, .action_small3_notext .action_icon_169 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -160px;
+}
+
+.action_icon_170 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -400px;
+}
+
+.action_small .action_icon_170, .action_small_notext .action_icon_170 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -320px;
+}
+
+.action_small2 .action_icon_170, .action_small2_notext .action_icon_170 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -240px;
+}
+
+.action_small3 .action_icon_170, .action_small3_notext .action_icon_170 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -160px;
+}
+
+.action_icon_171 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -400px;
+}
+
+.action_small .action_icon_171, .action_small_notext .action_icon_171 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -320px;
+}
+
+.action_small2 .action_icon_171, .action_small2_notext .action_icon_171 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -240px;
+}
+
+.action_small3 .action_icon_171, .action_small3_notext .action_icon_171 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -160px;
+}
+
+.action_icon_172 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -400px;
+}
+
+.action_small .action_icon_172, .action_small_notext .action_icon_172 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -320px;
+}
+
+.action_small2 .action_icon_172, .action_small2_notext .action_icon_172 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -240px;
+}
+
+.action_small3 .action_icon_172, .action_small3_notext .action_icon_172 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -160px;
+}
+
+.action_icon_173 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -400px;
+}
+
+.action_small .action_icon_173, .action_small_notext .action_icon_173 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -320px;
+}
+
+.action_small2 .action_icon_173, .action_small2_notext .action_icon_173 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -240px;
+}
+
+.action_small3 .action_icon_173, .action_small3_notext .action_icon_173 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -160px;
+}
+
+.action_icon_174 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -400px;
+}
+
+.action_small .action_icon_174, .action_small_notext .action_icon_174 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -320px;
+}
+
+.action_small2 .action_icon_174, .action_small2_notext .action_icon_174 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -240px;
+}
+
+.action_small3 .action_icon_174, .action_small3_notext .action_icon_174 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -160px;
+}
+
+.action_icon_175 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -400px;
+}
+
+.action_small .action_icon_175, .action_small_notext .action_icon_175 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -320px;
+}
+
+.action_small2 .action_icon_175, .action_small2_notext .action_icon_175 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -240px;
+}
+
+.action_small3 .action_icon_175, .action_small3_notext .action_icon_175 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -160px;
+}
+
+.action_icon_176 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -440px;
+}
+
+.action_small .action_icon_176, .action_small_notext .action_icon_176 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -352px;
+}
+
+.action_small2 .action_icon_176, .action_small2_notext .action_icon_176 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -264px;
+}
+
+.action_small3 .action_icon_176, .action_small3_notext .action_icon_176 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -176px;
+}
+
+.action_icon_177 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -440px;
+}
+
+.action_small .action_icon_177, .action_small_notext .action_icon_177 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -352px;
+}
+
+.action_small2 .action_icon_177, .action_small2_notext .action_icon_177 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -264px;
+}
+
+.action_small3 .action_icon_177, .action_small3_notext .action_icon_177 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -176px;
+}
+
+.action_icon_178 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -80px -440px;
+}
+
+.action_small .action_icon_178, .action_small_notext .action_icon_178 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -64px -352px;
+}
+
+.action_small2 .action_icon_178, .action_small2_notext .action_icon_178 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -48px -264px;
+}
+
+.action_small3 .action_icon_178, .action_small3_notext .action_icon_178 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -32px -176px;
+}
+
+.action_icon_179 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -120px -440px;
+}
+
+.action_small .action_icon_179, .action_small_notext .action_icon_179 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -96px -352px;
+}
+
+.action_small2 .action_icon_179, .action_small2_notext .action_icon_179 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -72px -264px;
+}
+
+.action_small3 .action_icon_179, .action_small3_notext .action_icon_179 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -48px -176px;
+}
+
+.action_icon_180 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -160px -440px;
+}
+
+.action_small .action_icon_180, .action_small_notext .action_icon_180 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -128px -352px;
+}
+
+.action_small2 .action_icon_180, .action_small2_notext .action_icon_180 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -96px -264px;
+}
+
+.action_small3 .action_icon_180, .action_small3_notext .action_icon_180 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -64px -176px;
+}
+
+.action_icon_181 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -200px -440px;
+}
+
+.action_small .action_icon_181, .action_small_notext .action_icon_181 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -160px -352px;
+}
+
+.action_small2 .action_icon_181, .action_small2_notext .action_icon_181 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -120px -264px;
+}
+
+.action_small3 .action_icon_181, .action_small3_notext .action_icon_181 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -80px -176px;
+}
+
+.action_icon_182 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -240px -440px;
+}
+
+.action_small .action_icon_182, .action_small_notext .action_icon_182 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -192px -352px;
+}
+
+.action_small2 .action_icon_182, .action_small2_notext .action_icon_182 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -144px -264px;
+}
+
+.action_small3 .action_icon_182, .action_small3_notext .action_icon_182 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -96px -176px;
+}
+
+.action_icon_183 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -280px -440px;
+}
+
+.action_small .action_icon_183, .action_small_notext .action_icon_183 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -224px -352px;
+}
+
+.action_small2 .action_icon_183, .action_small2_notext .action_icon_183 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -168px -264px;
+}
+
+.action_small3 .action_icon_183, .action_small3_notext .action_icon_183 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -112px -176px;
+}
+
+.action_icon_184 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -320px -440px;
+}
+
+.action_small .action_icon_184, .action_small_notext .action_icon_184 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -256px -352px;
+}
+
+.action_small2 .action_icon_184, .action_small2_notext .action_icon_184 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -192px -264px;
+}
+
+.action_small3 .action_icon_184, .action_small3_notext .action_icon_184 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -128px -176px;
+}
+
+.action_icon_185 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -360px -440px;
+}
+
+.action_small .action_icon_185, .action_small_notext .action_icon_185 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -288px -352px;
+}
+
+.action_small2 .action_icon_185, .action_small2_notext .action_icon_185 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -216px -264px;
+}
+
+.action_small3 .action_icon_185, .action_small3_notext .action_icon_185 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -144px -176px;
+}
+
+.action_icon_186 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -400px -440px;
+}
+
+.action_small .action_icon_186, .action_small_notext .action_icon_186 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -320px -352px;
+}
+
+.action_small2 .action_icon_186, .action_small2_notext .action_icon_186 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -240px -264px;
+}
+
+.action_small3 .action_icon_186, .action_small3_notext .action_icon_186 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -160px -176px;
+}
+
+.action_icon_187 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -440px -440px;
+}
+
+.action_small .action_icon_187, .action_small_notext .action_icon_187 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -352px -352px;
+}
+
+.action_small2 .action_icon_187, .action_small2_notext .action_icon_187 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -264px -264px;
+}
+
+.action_small3 .action_icon_187, .action_small3_notext .action_icon_187 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -176px -176px;
+}
+
+.action_icon_188 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -480px -440px;
+}
+
+.action_small .action_icon_188, .action_small_notext .action_icon_188 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -384px -352px;
+}
+
+.action_small2 .action_icon_188, .action_small2_notext .action_icon_188 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -288px -264px;
+}
+
+.action_small3 .action_icon_188, .action_small3_notext .action_icon_188 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -192px -176px;
+}
+
+.action_icon_189 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -520px -440px;
+}
+
+.action_small .action_icon_189, .action_small_notext .action_icon_189 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -416px -352px;
+}
+
+.action_small2 .action_icon_189, .action_small2_notext .action_icon_189 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -312px -264px;
+}
+
+.action_small3 .action_icon_189, .action_small3_notext .action_icon_189 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -208px -176px;
+}
+
+.action_icon_190 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -560px -440px;
+}
+
+.action_small .action_icon_190, .action_small_notext .action_icon_190 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -448px -352px;
+}
+
+.action_small2 .action_icon_190, .action_small2_notext .action_icon_190 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -336px -264px;
+}
+
+.action_small3 .action_icon_190, .action_small3_notext .action_icon_190 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -224px -176px;
+}
+
+.action_icon_191 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -600px -440px;
+}
+
+.action_small .action_icon_191, .action_small_notext .action_icon_191 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -480px -352px;
+}
+
+.action_small2 .action_icon_191, .action_small2_notext .action_icon_191 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -360px -264px;
+}
+
+.action_small3 .action_icon_191, .action_small3_notext .action_icon_191 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -240px -176px;
+}
+
+.action_icon_192 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: 0px -480px;
+}
+
+.action_small .action_icon_192, .action_small_notext .action_icon_192 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: 0px -384px;
+}
+
+.action_small2 .action_icon_192, .action_small2_notext .action_icon_192 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: 0px -288px;
+}
+
+.action_small3 .action_icon_192, .action_small3_notext .action_icon_192 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: 0px -192px;
+}
+
+.action_icon_193 {
+	background-image: url("../image/sys/action_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -40px -480px;
+}
+
+.action_small .action_icon_193, .action_small_notext .action_icon_193 {
+	background-image: url("../image/sys/action_sprite_small.png");
+	background-repeat: no-repeat;
+	background-position: -32px -384px;
+}
+
+.action_small2 .action_icon_193, .action_small2_notext .action_icon_193 {
+	background-image: url("../image/sys/action_sprite_small2.png");
+	background-repeat: no-repeat;
+	background-position: -24px -288px;
+}
+
+.action_small3 .action_icon_193, .action_small3_notext .action_icon_193 {
+	background-image: url("../image/sys/action_sprite_small3.png");
+	background-repeat: no-repeat;
+	background-position: -16px -192px;
+}
+

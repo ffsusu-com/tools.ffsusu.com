@@ -1,0 +1,710 @@
+﻿
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<title id="ml_title">生产模拟器|FFsusu</title>
+<link rel="shortcut icon" type="../LYJ/icon/Logo.png" href="../LYJ/icon/Logo.png" media="screen" />
+<script language="javascript">
+<!--
+
+//config
+
+var apVersion = (!isDebug ? "0.0.0.5" : "debug_fix");
+var isDebug = false;
+var currentDataVersion = "201602231900";
+var isForceLoadItemData = false;
+
+var itemDataFile = "../crafter/item_info.LANG.json" + "?" + Math.floor(Math.random() * 100000 + 1);
+var recipeDataFile = "../crafter/recipe_info.LANG.json" + "?" + Math.floor(Math.random() * 100000 + 1);
+var itemData = null;
+var recipeData = null;
+
+var browserType = "chrome";
+
+//check browser
+checkBrowser();
+
+//get language
+//var lang = getLangCookie();
+var lang = "jp"
+var langForView = ("en" == lang ? "na" : lang);
+setLangCookie(lang);
+console.log("lang is " + lang);
+
+var isLocal = (-1 != location.hostname.indexOf("localhost"));
+var isTmpIgnoreCache = ("0.0.0.0" == apVersion && !isLocal);
+
+var css_list = [
+	"jquery-ui.css",
+	"jquery.treeview.css",
+	"action_icons.css",
+	"main.css"];
+var js_list = [
+	"jquery-2.0.3.min.js",
+	"jquery.blockUI.js",
+	"jquery.treeview.js",
+	(isLocal ? "jquery-ui.js" : "jquery-ui.min.js"),
+	"jszip.min.js",
+	"jq_menu_selector.js",
+	"moji.standalone.js",
+	"jquery.zeroclipboard.min.js",
+	"base64.min.js",
+
+	"lang." + lang + ".js",
+	"lang_base.js",
+	"define.js" + (isTmpIgnoreCache ? "?" + Math.floor(Math.random() * 100000 + 1) : ""),
+	"meals_info." + lang + ".js",
+	"crafter_actions.js" + (isTmpIgnoreCache ? "?" + Math.floor(Math.random() * 100000 + 1) : ""),
+	"main.js" + (isTmpIgnoreCache ? "?" + Math.floor(Math.random() * 100000 + 1) : ""),
+	"recipe_detail.js" + (isTmpIgnoreCache ? "?" + Math.floor(Math.random() * 100000 + 1) : ""),
+	"template_logic.js" + (isTmpIgnoreCache ? "?" + Math.floor(Math.random() * 100000 + 1) : "")
+];
+
+//load
+if (isDebug) {
+	apVersion = "debug_fix";
+}
+
+for (css in css_list) {
+	document.write("<link href=\"css/" + css_list[css] + "?" + apVersion + "\" rel=\"stylesheet\">");
+}
+for (js in js_list) {
+	var prefix = "js/";
+	if (-1 != js_list[js].indexOf("https://") || -1 != js_list[js].indexOf("http://")) {
+		prefix = "";
+	}
+	document.write("<script src=\"" + prefix + js_list[js] + "?" + apVersion + "\"></script>");
+}
+
+//for cookie
+function getLangCookie() {
+	var allCk = ";" + document.cookie + ";";
+	allCk = allCk.replace(" ", "");
+	var regEx = allCk.match(/lang=([a-z]+)/);
+	var value = "";
+	if (null != regEx && regEx.length >= 2) {
+		value = regEx[1];
+	}
+	if ("jp" != value && "en" != value && "fr" != value && "de" != value && "ch" != value) {
+		value = "jp";
+	}
+	//パラメタ上書き
+	var overwriteLang = "";
+	if (-1 != location.search.indexOf("lang=jp")) {
+		overwriteLang = "jp";
+	} else if (-1 != location.search.indexOf("lang=en")) {
+		overwriteLang = "en";
+	} else if (-1 != location.search.indexOf("lang=fr")) {
+		overwriteLang = "fr";
+	} else if (-1 != location.search.indexOf("lang=de")) {
+		overwriteLang = "de";
+	} else if (-1 != location.search.indexOf("lang=ch")) {
+		overwriteLang = "ch";
+	}
+	if ("" != overwriteLang) {
+		if (value != overwriteLang) {
+			window.localStorage.removeItem("dataVersion");
+			window.localStorage.removeItem("itemData");
+		}
+		value = overwriteLang;
+	}
+	return value;
+}
+
+//for cookie
+function setLangCookie(langValue) {
+	var domain = 
+		(-1 != location.host.indexOf("localhost") ? "rs.localhost" : ".exdreams.net" );
+	var ck = 
+		"lang=" + langValue + "; " + 
+		"path=/; " + 
+		"domain=" + domain + "; " + 
+		"expires=Thr, 31-Dec-2037 23:59:59; ";
+	//console.log(ck);
+	document.cookie = ck;
+}
+//browser
+function checkBrowser() {
+	var ua = window.navigator.userAgent.toLowerCase();
+	if (-1 != ua.indexOf("trident") || -1 != ua.indexOf("edge")) {
+		browserType = "ie";
+
+	} else if (-1 != ua.indexOf("chrome")) {
+		browserType = "chrome";
+
+	} else if (-1 != ua.indexOf("firefox")) {
+		browserType = "ff";
+
+	/*
+	} else if (-1 != ua.indexOf("mac os x")) {
+		browserType = "safari";
+	*/
+	} else {
+		browserType = "chrome"; //default
+	}
+}
+
+// -->
+</script>
+
+<script>
+//documen.ready
+$(function(){
+	// unblock when ajax activity stops 
+	$(document).ajaxStop($.unblockUI); 
+
+	$("#version_info").html("ap version: " + apVersion + "<br>data version: " + currentDataVersion);
+	applyLanguage();
+	init();
+});
+
+</script>
+</head>
+
+<body align="center"><div align="center">
+<!-- centering --><div class="base">
+
+	<!-- header link -->
+	<div class="ntable header_link" id="posbase_header" style="width: 870px">
+		<span id="mlt_site_prefix">实用小工具</span>：&nbsp;&nbsp;<!--
+		--><a href="http://www.ffsusu.com/" target="_blank"><b id="mlt_site_ap">主站</b></a> | <!--
+		--><a href="http://tool.ffsusu.com/caiji/" target="_blank"><b id="mlt_site_ap">采集时钟</b></a> | <!--
+		--><a href="http://tool.ffsusu.com/peizhuang/" target="_blank"><b id="mlt_site_ap">配装模拟器</b></a> | <!--
+		--><a href="http://tool.ffsusu.com/crafter/" target="_blank"><b id="mlt_site_ap">工匠模拟器</b></a> | <!--
+		--><a href="http://tool.ffsusu.com/peizhuang/meal_list.html" target="_blank"><b id="mlt_site_ap">料理大全</b></a> | <!--
+		--><a href="http://cn.ff14angler.com/" target="_blank"><b id="mlt_site_ap">钓鱼时钟</b></a> | <!--
+		--><a href="http://gt.nenge.net/#skywatcher/all" target="_blank"><b id="mlt_site_ap">天气预报</b></a> | <!--
+		--><a href="http://eriones.com/" target="_blank"><b id="mlt_site_ap">生产配方</b></a> | <!--
+		-->
+	</div><!-- /header_link -->
+
+	<table><tr>
+		<td>
+			<img src="image/sys/fflogo_crafter.png" alt="final fantasy xiv recipe search - crafter">
+			<div style="margin-left:24px;background-color:#000000">
+			<span>语言</span>
+				<img id="lang_jp" onclick="changeLanguage('jp')" src="image/sys/jp.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<!--<img id="lang_en" onclick="changeLanguage('en')" src="image/sys/en.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<img id="lang_fr" onclick="changeLanguage('fr')" src="image/sys/fr.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<img id="lang_de" onclick="changeLanguage('de')" src="image/sys/de.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer">
+				<!-- img id="lang_ch" onclick="changeLanguage('ch')" src="image/sys/ch.png" style="width:24px;height:24px;border:1px solid black;vertical-align:middle;cursor:pointer" -->
+				<a href="javascript:void(0)" onclick="changeLanguage('')">[重新加载]</a>
+			</div>
+		</td>
+		<td nowrap style="line-height:130%">
+				<span id="version_info" style="font-weight:bold"></span><br>
+				<ul style="padding-left: 16px">
+				<li id="mlt_note_0">推荐使用chrome浏览器。firefox可以运行。</li>
+				<li id="mlt_note_2">有什么问题联系以下地址↓↓已经作者源码授权</li>
+				<li>微博 : <a href="http://weibo.com/susubu2">@素素素素丶</a></li>
+				<li>原作者Twitter : <a href="https://twitter.com/dol_z_dreams">@dol_z_dreams</a> (JP Only)</li>
+			</ul>
+		</td>
+	</tr></table>
+	<br>
+
+	<div class="param_table">
+		<div class="cell cell_1st">
+			<div class="ntable" style="width: 912px;height: 34px">
+				<div>
+					<span id="ml_job" class="param_margin">职业</span>
+					<div id="jqms_jobs"></div>
+
+					<span id="ml_lv" class="param_margin">Lv</span>
+					<span class="param_spinner"><input type="text" id="cd_lv" style="width:20px;height: 20px"></span>
+
+					<span id="ml_cs" class="param_margin">作业精度</span>
+					<span class="param_spinner"><input type="text" id="cd_cs" style="width:40px;height: 20px"></span><span id="cd_meal_cs" class="param_meal"></span>
+
+					<span id="ml_ctrl" class="param_margin">加工精度</span>
+					<span class="param_spinner"><input type="text" id="cd_ctrl" style="width: 40px;height: 20px"></span><span id="cd_meal_ctrl" class="param_meal"></span>
+
+					<span id="ml_cp" class="param_margin">制作力</span>
+					<span class="param_spinner"><input type="text" id="cd_cp" style="width: 40px;height: 20px"></span><span id="cd_meal_cp" class="param_meal"></span>
+
+					<span id="ml_meal" class="param_margin">料理</span>
+					<div id="jqms_meals"></div>
+				</div>
+			</div><!-- /.ntable -->
+		</div><!-- /.cell -->
+	</div><!--/.param_table -->
+
+
+	<div class="recipe_table" style="margin-top: 8px" id="recipe_panel_base">
+		<div class="cell cell_1st">
+			<div class="ntable" style="width: 912px;height: 34px">
+				<div>
+					<span id="ml_product" class="param_margin">制作物</span>
+					<div id="jqms_recipe"></div>
+
+					<span id="ml_recipe_lv" class="param_margin">Lv</span>
+					<span class="param_select"><select id="rcp_lv" style="width: 110px;height: 20px"></select></span>
+
+					<span id="ml_dur" class="param_margin">耐久</span>
+					<span class="param_spinner"><input type="text" id="rcp_dur" style="width: 40px;height: 20px"></span>
+
+					<span id="ml_process" class="param_margin">必要工数</span>
+					<span class="param_spinner"><input type="text" id="rcp_proc" style="width: 40px;height: 20px"></span>
+
+					<span id="ml_quality" class="param_margin">品质</span>
+					<span class="param_spinner"><input type="text" id="rcp_q" style="width: 40px;height: 20px"></span>
+
+					<span id="ml_quality_start" class="param_margin">初期品质</span>
+					<span class="param_spinner"><input type="text" id="rcp_q_start" style="width: 40px;height: 20px"></span>
+
+					<span id="ml_condition" class="param_margin" style="display: none">条件</span>
+					<span class="param_spinner" style="display: none"><span id="rcp_cd"></span></span>
+
+				</div>
+			</div><!-- /.ntable -->
+		</div><!-- /.cell -->
+	</div><!--/.recipe_table -->
+
+	<div class="main_table" style="margin-top: 8px">
+	<div class="cell cell_1st" id="helper_panel">
+		<!-- start main column1 -->
+
+		<div class="ntable" style="width: 290px">
+
+			<!-- tab -->
+			<div id="menu_tabs" class="menu_tabs">
+				<span class="action active" style="font-family:SimHei;">技能</span>
+				<span class="fav" style="font-family:SimHei;">收藏</span>
+				<span class="macro" style="font-family:SimHei;">宏</span>
+				<span class="etc" style="font-family:SimHei;">其他</span>
+			</div><!-- /.tab -->
+
+			<!-- action -->
+			<div class="menu_panel menu_panel_action" style="display: block">
+				<div class="header" style="margin-bottom: 8px;margin-top: 12px">
+					<div class="action_view_switch"><span class="button" id="ml_refresh_action_view" onclick="onClickRefreshActionView()">刷新</span><span class="button" id="ml_switch_action_view" onclick="onClickSwitchActionViewSize()">切换显示模式</span></div>
+				</div>
+				<div id="panel_main_action">
+					<div id="action_title_favorite" class="action_title">
+						<div class="inner_table">
+							<span class="text favorite" id="ml_action_favorite">经常使用的技能</span>
+							<div class="option_table"><input type="checkbox" id="shared_favorite_job"><label for="shared_favorite_job" class="option_label" id="ml_favorite_sharing">职业通用</label></div>
+						</div>
+					</div>
+					<div id="action_area_favorite" class="action_area action_area_favorite action_dropable"></div>
+					<div class="action_empty" id="ml_action_empty" style="position: absolute;display: none">可以将技能拖拽到这里追加技能<br>拖拽至框外可删除技能</div>
+					<div id="action_title_work" class="action_title"><span class="text work" id="ml_action_work">作业系技能</span></div>
+					<div id="action_area_work" class="action_area action_dropable"></div>
+
+					<div id="action_title_quality" class="action_title"><span class="text quality" id="ml_action_quality">加工系技能</span></div>
+					<div id="action_area_quality" class="action_area"></div>
+
+					<div id="action_title_buff" class="action_title"><span class="text buff" id="ml_action_buff">Buff系技能</span></div>
+					<div id="action_area_buff" class="action_area"></div>
+
+					<div id="action_title_meister" class="action_title"><span class="text meister" id="ml_action_meister">专精系技能</span></div>
+					<div id="action_area_meister" class="action_area"></div>
+
+					<div id="action_title_attr" class="action_title"><span class="text attr" id="ml_action_attr">美名系技能</span></div>
+					<div id="action_area_attr" class="action_area"></div>
+				</div>
+			</div><!-- /.action -->
+
+			<!-- fav -->
+			<div class="menu_panel menu_panel_fav" style="display: none">
+				<div id="fav_subtab" class="fav_subtab">
+					<span id="ml_fav_subtab_fav" class="line active">收藏</span>
+					<span id="ml_fav_subtab_tpl" class="line">我的模板</span>
+				</div>
+				<div id="menu_panel_fav_fav" class="menu_panel_fav_sub menu_panel_fav_sub_fav">
+					<span id="ml_fav_add" class="fav_add">添加到收藏</span>
+					<div id="panel_main_fav" class="fav_list"></div>
+					<span id="ml_fav_note" class="fav_note">※保存现在的作业·状态·饮食·制作物的信息。<br>※点击读取、双击可编辑名字</span>
+				</div>
+				<div id="menu_panel_fav_tpl" class="menu_panel_fav_sub menu_panel_fav_sub_tpl" style="display: none">
+					<span id="ml_tpl_add" class="tpl_add">添加到我的模板</span>
+					<div id="panel_main_tpl" class="tpl_list"></div>
+					<span id="ml_tpl_note" class="fav_note">※我的样板只保存现在的技能循环脚本。保存的脚本适用于任意制作菜单。<br>※点击读取、双击可编辑名字</span>
+				</div>
+
+			</div><!-- /.fav -->
+
+			<!-- macro -->
+			<div class="menu_panel menu_panel_macro" style="display: none">
+				<table class="macro_conf">
+				<tr>
+					<td id="ml_macro_line">1set行数</td>
+					<td><select id="macro_lines"><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15" selected>15</option></select></td>
+				</tr>
+				<tr>
+					<td id="ml_macro_continue_log">宏继续记录</td>
+					<td><input type="text" class="macro_input_line" id="macro_continue_log"></td>
+				</tr>
+				<tr>
+					<td id="ml_macro_complete_log">宏终了记录</td>
+					<td><input type="text" class="macro_input_line" id="macro_complete_log"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="checkbox" id="macro_precise" class="macro_check"><label for="macro_precise" id="ml_macro_precise">加工在可以集中加工的情况下执行</label></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="checkbox" id="macro_last_nowait" class="macro_check"><label for="macro_last_nowait" id="ml_macro_last_nowait">最终行不写wait</label></td>
+				</tr>
+				</table>
+
+				<div id="panel_main_macro" class="macro_list"></div>
+			</div><!-- /.macro -->
+
+			<!-- etc -->
+			<div class="menu_panel menu_panel_etc" style="display: none">
+				<div id="etc_subtab" class="etc_subtab">
+					<span id="ml_etc_subtab_etc" class="line active">其他</span>
+					<span id="ml_etc_subtab_gamelink" class="line">链接游戏</span>
+				</div>
+				<div id="menu_panel_etc_etc" class="menu_panel_etc_sub menu_panel_etc_sub_etc">
+					<!--<div id="ml_create_url" class="title">URL生成</div>
+					<div class="content">
+						<div id="ml_create_url_note" class="note">設定した装備情報をTwitter等で共有できます。<br>ボタンを押すと表示中装備のURLを生成します。</div>
+						<div class="url_area">
+							<span class="url" id="ml_create_url_none" onclick="selectAllContents(this)">（未生成）</span>
+							<span class="button create_url" id="ml_create_url_create">生成</span><br>
+							<input type="checkbox" id="is_include_memo_url" class="include_memo_url"><label for="is_include_memo_url" id="ml_include_memo_url">テキストメモを含める</label><br>
+							<span class="include_memo_warn" id="ml_include_memo_warn" style="display:none">※リンク押下時にIEで正しく再現できなくなる可能性があります。</span>
+						</div>
+						<div class="social_link">
+							<span id="share_tw"></span>
+							<span id="share_fb"></span>
+							<span id="share_gp"></span>
+						</div>
+					</div>-->
+
+					<div id="ml_stringify" class="title" style="margin-top: 16px">文本化</div>
+					<div class="content">
+						<div id="ml_stringify_note" class="note">将设定的内容转换成简单的表达形式</div>
+						<span class="button stringify_translate" id="ml_stringify_translate" style="margin-top:4px; margin-bottom:4px;display:inline-block">转换</span><br>
+						<div class="stringify_area" style="display: none" onclick="selectAllContents(this)"></div>
+					</div>
+
+					<div id="ml_opt" class="title" style="margin-top: 16px">动作设置</div>
+					<div class="content">
+						<input type="checkbox" id="opt_show_additional" class="opt_check"><label for="opt_show_additional" id="ml_opt_show_additional">表示追加技能一览</label><br>
+						<input type="checkbox" id="opt_scroll_action"   class="opt_check"><label for="opt_scroll_action"   id="ml_opt_scroll_action"  >追随技能图示滚动条</label><br>
+						<input type="checkbox" id="opt_scroll_result"   class="opt_check"><label for="opt_scroll_result"   id="ml_opt_scroll_result"  >追随结果图示滚动条</label><br>
+					</div>
+
+					<br>
+
+				</div>
+				<div id="menu_panel_etc_gamelink" class="menu_panel_etc_sub menu_panel_etc_sub_gamelink" style="display: none">
+					<div id="ml_gamelink" class="title">读取游戏内的技能</div>
+					<div class="content">
+						<div id="ml_gamelink_note" class="note">如要读取游戏内的制作作业<br>请先打开 <a href="http://ffxiv.ap.exdreams.net/" target="_blank">FF14捧读酱</a>的生产模拟器协助选项(仅国际服)</div>
+						<div class="linkstatus_area">
+							<span id="ml_gamelink_status_deactive" class="status" style="color: #ffaaaa">状态：未连接</span>
+							<span id="ml_gamelink_button_toactive" class="button gamelink">连接</span><br>
+							<span id="ml_gamelink_port" class="gamelink_port_label">端口号</span> <input type="text" id="gamelink_port" value="51080" class="gamelink_port_input">
+						</div>
+						<div class="link_note">
+							将读取游戏内以下情报<br>
+							<br>
+							・职业／LV／作业精度／加工精度／制作力<br>
+							吃了食物的情况下，读取食物buff数值。<br>
+							因此，请清除食物选择<br>
+							<br>
+							发动技能以及成否<br>
+							不读取技能发动的结果，而是在装备配装内计算<br>
+							实际的发动结果会有一定偏差<br>
+							<br><br>
+							游戏内制作开始时，重置脚本<br>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.etc -->
+
+
+		</div><!-- /.ntable -->
+
+	</div><!-- /cell -->
+	<div class="cell">
+		<!-- start main column2 -->
+
+		<!-- start detail -->
+		<div class="ntable" style="width:600px;min-height:300px;border: 1px solid #c0c0c0;position:relative;top:-3px;" id="main_panel">
+			<!-- tab -->
+			<div id="menu_main_tabs" class="menu_main_tabs">
+				<span class="senario active" style="font-family:SimHei;">模拟器</span>
+				<!-- span class="pattern">PATTERN</span -->
+				<span class="recipe" style="font-family:SimHei;">配方</span>
+			</div><!-- /.tab -->
+
+			<div id="senario_main_panel" class="main_menu_panel">
+				<!-- contents -->
+
+				<div id="senario_top_panel" class="senario_top_panel">
+					<div class="progress_panel_base" id="progress_panel_base">
+						<div class="progress_panel" id="progress_panel">
+							<table>
+							<tr>
+								<td><span class="title_dur" id="ml_senario_dur">耐久</span></td>
+								<td><span class="title_proc" id="ml_senario_proc">工数</span></td>
+								<td><div class="bar_base"><div id="progress_proc_bar" class="bar_proc" style="width: 0px">&nbsp;</div></div></td>
+								<td style="width:80px"><span class="value" id="progress_proc_value" >-/-</span></td>
+								<td><span class="title_cp" id="ml_senario_cp">制作力</span></td>
+								<td><div class="bar_base"><div id="progress_cp_bar" class="bar_cp" style="width: 0px">&nbsp;</div></div></td>
+								<td style="width:65px"><span class="value" id="progress_cp_value">-/-</span></td>
+							</tr>
+							<tr>
+								<td style="width:52px;text-align: center" rowspan="2"><span class="value" id="progress_dur_value">-/-</span></td>
+								<td><span class="title_quality" id="ml_senario_quality">品质</span></td>
+								<td><div class="bar_base"><div class="bar_quality" id="progress_quality_bar" style="width: 0px">&nbsp;</div></div></td>
+								<td colspan="4"><span class="value" id="progress_quality_value">-/-</span><span class="sub_value" id="progress_quality_percent">(HQ率 -%)</span></td>
+							</tr>
+							<tr>
+							</tr>
+							</table>
+						</div>
+
+						<div class="senario_menu_panel">
+							<select class="senario_menu_template" id="senario_menu_template">
+							<option id="ml_template_0" value="0" selected>模板</option>
+							<option id="ml_template_1" value="1">坚实set</option>
+							<option id="ml_template_2" value="2">仓促</option>
+							<option id="ml_template_3" value="3">简约仓促</option>
+							<option id="ml_template_4" value="4">坚信美名</option>
+							</select><br>
+							<span class="senario_menu_clear" id="ml_senario_menu_clear">清空</span>
+						</div>
+					</div>
+					<div id="additional_panel" class="additional_panel" style="display: none">
+						<div id="ml_additional" class="title">追加</div>
+						<div class="list"></div>
+					</div>
+					<table class="senario_action senario_action_header">
+					<tr>
+						<td class="col_image">&nbsp;</td>
+						<td class="header_col_title" id="ml_senario_action2">动作</td>
+						<td class="header_col_value" id="ml_senario_success2">成功率</td>
+						<td class="header_col_value" id="ml_senario_dur2">耐久</td>
+						<td class="header_col_value" id="ml_senario_proc2">工数</td>
+						<td class="header_col_value" id="ml_senario_quality2">品质</td>
+						<td class="header_col_value" id="ml_senario_cp2">制作力</td>
+					</tr>
+					</table>
+				</div>
+
+				<div id="senario_panel" class="action_dropable senario_main_panel" style=""></div>
+
+				<div class="senario_action_empty" id="ml_senario_action_empty" style="position: absolute;display: none">将技能拖拽至框内可追加技能<br>拖拽出框外则删除技能</div>
+
+				<!-- /contents -->
+			</div>
+
+<!--
+＠工数系
+
+作業		工面／仕事唄
+中級作業	工面／仕事唄
+堅実作業	
+模範		工面／仕事唄
+模範２		工面／仕事唄
+突貫		工面／仕事唄
+ピース		残工数
+確信		
+ﾌｨﾆｯｼｭﾜｰｸ	工面／仕事唄
+匠の技		工面／仕事唄
+ブランド系	工面／属性／アート有無／残工数／仕事唄
+
+＠品質系
+加工		品質状態／イノベ／グレスト／インナー
+集中加工	同上
+中級加工	同上
+上級加工	同上
+ヘイスティ	同上
+ﾋﾞｴﾙｺﾞ祝福	同上　※インナーは効率にも影響
+ﾋﾞｴﾙｺﾞ技巧	同上　※インナーは効率にも影響
+匠の技		同上
+ｲﾉﾍﾞｲﾃｨﾌﾞﾀｯﾁ同上
+ﾋﾞｴﾙｺﾞ奇跡	同上　※インナーは効率にも影響
+
+-->
+<!--
+			<div id="pattern_main_panel" class="main_menu_panel" style="display: none">
+				<div class="pattern_main">
+					<span class="title" id="ml_pattern_proc">工数進捗</span><br>
+					<span class="title" id="ml_pattern_proc">品質進捗</span><br>
+				</div>
+			</div>
+-->
+			<div id="recipe_main_panel" class="main_menu_panel" style="display: none">
+				<!-- contents -->
+				<table width="100%" class="recipe_main"><tr>
+					<td class="recipe_tree_area" valign="top">
+						<ul id="recipe_tree" class="treeview recipe_tree" style="margin-top:4px">no data</ul>
+					</td>
+					<td class="recipe_attr_area" valign="top">
+						<table cellpadding="2" width="100%" class="recipe_attr_table">
+							<tr><td colspan="2"><img src="http://img.finalfantasyxiv.com/lds/pc/global/images/itemicon/35/359c1d8fd7c0e9cac9365a4e2091db97ffd69893.png" id="recipe_detail_image" class="recipe_detail_image"></td></tr>
+							<tr><td nowrap id="ml_recipe_attr_product"  >生产品</td><td   id="recipe_detail_product">海滨瓦顶围墙</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_type"     >分类</td><td id="recipe_detail_type">外装建材(栅栏)</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_class"    >职业</td><td   id="recipe_detail_class">雕金匠</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_lv"       >级别</td><td   id="recipe_detail_lv">31</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_dur"      >耐久</td><td     id="recipe_detail_dur">80</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_proc"     >必要工数</td><td id="recipe_detail_proc">339</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_quality"  >品质</td><td     id="recipe_detail_quality">835</td></tr>
+							<tr><td nowrap id="ml_recipe_attr_condition">条件</td><td     id="recipe_detail_condition">HQ制作不可<br>简易制作不可<br></td></tr>
+						</table>
+					</td>
+				</tr></table>
+				<div id="ml_recipe_tree_note" class="recipe_tree_note">※括号内的数字是用下属的材料做成的物品完成数。</div>
+				<!-- /contents -->
+			</div>
+
+		</div>
+
+	</div><!-- /cell -->
+	</div><!-- /main_table -->
+
+	<div id="lower_panel">
+
+		<br><br>
+
+		<!-- comment -->
+		<a name="footer"></a>
+		<div class="footer" style="text-align:left !important">
+			<div style="line-height: 140%;padding:10px;border: 2px solid red;background-color:#400000">
+				<b style="color: #ffa0a0">注意</b><br><br>
+					・不能保证计算出的结果与游戏内数值完全一样。<br>
+					・特别是职业等级与配方等级差距大(配方等级低)时，数值差距也会变大。<br>
+					・使用IE, Edge浏览器显示会有错位。但是对使用功能没有影响、没有修复的打算。<br>
+			</div>
+			<br>
+			<!--<b>詳細説明・対応状況 (Updates/Mise à jour - JP only)</b><br>
+			<br><br>
+
+			<div style="line-height: 140%;padding:10px;border: 2px solid red;background-color:#400000">
+				<b style="color: #ffa0a0">利用にあたっての注意事項</b><br><br>
+				・ゲーム内にて算出される値と、必ずしも一致するものではありません。<br>
+				・特にクラフターレベルとレシピレベルの差が大きい（レシピレベルが低い）場合に差分が大きくなることを確認しています。<br>
+				<br>
+				・IE, Edgeにおいて一部想定通りのデザインにならない場所があります（グレーアウトする箇所）。動作には影響がないため、現時点での修正予定はありません。<br>
+				<br>
+				・問題があった場合は、どのような操作をしたかの情報と、短縮URL（ETCタブから作れます）を添えて <a href="https://twitter.com/dol_z_dreams">Twitter : @dol_z_dreams</a> にてご連絡ください。<br>
+				（URLだけだと、ヘイスティx1を追加した場合／ヘイスティ5個追加して4個削除した場合、とかがわからなかったりするので、できれば両方）<br>
+			</div>
+			<br><br>
+
+			2016/01/17 : ver 0.0.0.2<br>
+			<div style="margin-left:24px;line-height:140%">
+			[修正]<br>
+			・「加工を集中加工にできる場合は実行する」を有効にした場合、マクロが細切れになる問題を修正しました。たぶん！<br>
+			</div><br><br>
+
+			2016/01/16 : ver 0.0.0.1<br>
+			<div style="margin-left:24px;line-height:140%">
+			そろそろいいかなってことで本リリースでございます（’’<br>
+			<br>
+
+			[更新]<br>
+			・レシピ詳細を表示できるようにしました。<br>
+			・スクロール追従の動作について、ETCタブにオプション設定を用意しました。<br>
+			・アディショナル表示を追加しました（デフォルト非表示です。ETCタブオプション設定より表示可能です）。<br>
+			・お気に入り初期名称を変更しました。レシピ名とか入ります（マイテンプレはそのままです）。<br>
+			・お気に入り／テンプレ追加後、名前入力ボックスにフォーカスするようにしました。<br>
+			・制作物テキスト検索において、他ジョブアイテムを明示するように変更しました。また、別ジョブアイテムが選ばれた場合は、ジョブ指定も変更されます。<br>
+			&nbsp;&nbsp;&nbsp;※テキスト検索時だけダブルクリック（というより2回クリック）じゃないと選択できません。フォーカス回りが問題っぽいけど対応しきれてないのでこのまま（’’<br>
+			・食事／レシピの画像を遅延ロードするようにしました。テキスト検索で大量ヒットしたときやばそうなので（’’<br>
+			・マクロについて、「加工を集中加工にできる場合は実行する」オプションを付けました。つまり「/ac 集中加工, /ac 加工 <wait.3>」です。集中加工できる場合は勝手に発動するやつです。<br>
+			・マクロについて、「最終行はウェイトなしにする」オプションを付けました。複数に分かれる場合は、最後の以外はあったほうがいいかなぁとか悩みつつとりあえず実装。<br>
+			<br>
+
+			[修正]<br>
+			・仕事唄のスタック数が3の倍数のときに、作業効率が増加していなかった問題を修正しました。<br>
+			・中級作業のタイトルが中級加工になっていた問題を修正しました。<br>
+			・秘訣でCPが全快する問題を修正しました。<br>
+			・制作物テキスト検索において、意図しない形で他ジョブのアイテムも出力されていた問題を修正しました（鍛冶師で甲冑師のアダマンナゲットが作れる）。<br>
+			・テンプレ設定時に他職アクションを採用していた問題を修正しました（鍛冶師＋ヘイスティテンプレで、木工のインナーを入れていた）。<br>
+			&nbsp;&nbsp;&nbsp;※上記に伴い、本修正リリース前にお気に入りに追加したシナリオでアディショナルを表示すると、正しく出力されない恐れがあります。<br>
+			<br>
+			</div>
+			<br><br>
+
+			2016/01/09 : ver 0.0.0.0<br>
+			<div style="margin-left:24px">
+			[新規]<br>
+			・プレ公開中にございます。<br>
+
+				<div style="margin-left: 16px; margin-top: 4px;padding:4px; line-height: 140%;border: 1px solid #a0a0a0; background-color:#202020">
+					いろいろご意見ご要望募集でございます。<br>
+					→ご連絡はツイッターにて。<a href="https://twitter.com/dol_z_dreams">@dol_z_dreams</a> <br><br>
+					<br>
+				</div>
+				<br>
+
+				<div style="margin-left: 16px; margin-top: 4px;padding:4px; line-height: 140%;border: 1px solid #a0a0a0; background-color:#202020">
+					・本ツールではゲーム内アクションを取り込む機能があります。<br>
+					・機能の利用にはFF14棒読みちゃんが必要ですが、プレリリースにつき、まだ本機能の公開は行っていません。<br>
+					<br>
+					ご利用いただく場合は、以下のプレリリース版アプリをご利用ください。<br>
+					すでにご利用いただいている場合は、使っている物とは別のフォルダにインストールしてください（解凍して置くだけ）。<br>
+					<br>
+					<div style="margin-left: 16px">
+						<a href="ff14tr_pre00_0.0.23.0.zip">ff14tr_pre00_0.0.23.0.zip</a> (2016/01/09 9:39)<br>
+					</div>
+					<br>
+					ゲーム内リンクは、ゲーム内で最速でコマンド入れると逃すことがあるかもしれません（’’<br>
+					<br><br>
+				</div>
+				<br>
+
+			</div><br><br> -->
+
+			<!-- old comment -->
+			<!--<a id="comment_old_link" href="javascript:void(0)" onclick="$('#comment_old').css('display', 'block');$('#comment_old_link').css('display', 'none');">⇒もっと読む<br><br></a>
+			<div id="comment_old" style="display:none">
+			</div>-->
+			更新日志<br>
+			<div style="margin-top:8px;margin-left:8px">
+				<strong>2016.5.30</strong><br>
+				-更新ver3.15版本汉化，部分版本信息错误请无视。（需<a href="javascript:void(0)" onclick="changeLanguage('')">[重新加载]</a>）<br>新加入新古武制作配方和60级三星配方。<br><br>
+				<strong>2016.3.1</strong><br>
+				-更新ver3.1版本汉化，部分版本信息错误请无视。（需<a href="javascript:void(0)" onclick="changeLanguage('')">[重新加载]</a>）<br><br>
+				<strong>2016.2.8</strong><br>
+				-新加入“配方”选项，可直接查看选择中的制作物的配方。修正火狐浏览器浏览错误。(部分翻译问题请在FFsusu首页留言)<br><br>
+				<strong>2016.1.31</strong><br>
+				-修正了使用“观察”会消耗耐久的问题。(自主修复,与原作者无关)<br><br>
+				<strong>2016.1.29</strong><br>
+				-更新0.0.0.3版本,修正了没有内静状态下无法使用"革新"的问题。<br><br>
+				<strong>2016.1.25</strong><br>
+				-翻译生产模拟器
+			</div><br>
+			参考网址<br>
+			<div style="margin-top:8px;margin-left:8px">
+				<a href="http://ff14.nikeya.jp.net/crafter" target="_blank">· Crafter Retainer</a><br>
+				<a href="https://github.com/doxxx/ffxiv-craft-opt-web" target="_blank">· ffxiv-craft-opt-web</a><br>
+				<br>
+			</div>
+		</div><!-- /comment-->
+
+		<!-- footer -->
+		<div class="footer">
+			<span class="copyright">system: Copyright (C) 2013 - 2015 dreams All Rights Reserved.</span>
+			<span class="copyright">data, image: Copyright (C) 2010 - 2015 SQUARE ENIX CO., LTD. All Rights Reserved. &nbsp;<a href="http://jp.finalfantasyxiv.com/lodestone/" target="_blank">[site]</a></span>
+		</div><!-- /footer -->
+	</div><!-- /lower panel -->
+
+</div><!-- /centering -->
+
+<!-- work -->
+<div id="ml_macro_copied" class="macro_copied" style="display: none">复制成功!</div>
+
+<!-- google plus 用 -->
+<div class="g-plusone" data-size="small" data-annotation="none" data-href="http://ffxiv.rs.exdreams.net/crafter/"></div>
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ja', parsetags: 'explicit'};
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</div></body>
+</html>

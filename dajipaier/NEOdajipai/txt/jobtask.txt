@@ -1,0 +1,1 @@
+﻿<p class="explain-title">使用说明</p><p class="explain-main">因1-30任务皆在各职业公会处接取，所以1-30不做任务引导</p><p class="explain-main">因60-70的职业任务是由NPC提供材料做任务道具，所以也不会有缴纳物品提供</p>
